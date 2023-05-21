@@ -2,22 +2,26 @@ import tour1Img from './images/tour-1.jpeg';
 import tour2Img from './images/tour-2.jpeg';
 import tour3Img from './images/tour-3.jpeg';
 import tour4Img from './images/tour-4.jpeg';
+import { AiFillHome, AiFillInfoCircle, AiFillQuestionCircle } from 'react-icons/ai'
 
 export const pageLinks = [
   {
     id: 1,
     href: '#home',
     text: 'home',
+    icon: <AiFillHome />
   },
   {
     id: 2,
     href: '#about',
     text: 'about',
+    icon: <AiFillInfoCircle />
   },
   {
     id: 3,
     href: '#services',
     text: 'FAQs',
+    icon: <AiFillQuestionCircle />
   },
   // {
   //   id: 4,

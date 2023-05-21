@@ -1,13 +1,20 @@
 import { pageLinks, socialLinks } from '../data';
+import { useGlobalContext } from './Context';
 import logo from '../images/logo.svg';
 
 const Navbar = () => {
+  const { toggleSidebar, setToggleSidebar } = useGlobalContext();
   return (
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
           <img src={logo} className="nav-logo" alt="backroads" />
-          <button type="button" className="nav-toggle" id="nav-toggle">
+          <button
+            type="button"
+            className="nav-toggle"
+            id="nav-toggle"
+            onClick={toggleSidebar ? () => setToggleSidebar(false) : () => setToggleSidebar(true)}
+          >
             <i className="fas fa-bars"></i>
           </button>
         </div>

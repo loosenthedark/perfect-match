@@ -3,18 +3,18 @@ const Hero = () => {
     <section className="hero" id="home">
       <div className="hero-banner">
         <h1>
-          Group Chat <br />
-          for Everyone
+          Nanny Recruitment <br />
+          Done Differently
         </h1>
         <p>
-        Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.
+        Perfect Match will help you to find a nanny who fulfils all of your childcare needs.
         </p>
         <div className="hero-btn-container">
         <a href="#tours" className="btn hero-btn">
-          Download v1.3
+          Apply today
         </a>
         <a href="#tours" className="btn hero-btn hero-btn__secondary">
-          What is it?
+          Find out more
         </a>
         </div>
       </div>
