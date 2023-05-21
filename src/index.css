@@ -466,7 +466,7 @@ Services
   left: 0;
   right: 0;
   background-image: url(./images/image-footer.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   mix-blend-mode: normal;
   opacity: 0.15;
