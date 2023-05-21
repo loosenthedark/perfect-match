@@ -32,8 +32,10 @@ const Footer = () => {
         })}
       </ul>
       <p className="copyright">
-        copyright &copy; Perfect Match
-        <span id="date">{new Date().getFullYear()}</span> all rights reserved
+        Copyright &copy; Perfect Match
+        <span id="date">{new Date().getFullYear()}</span>
+        <br />
+        All rights reserved
       </p>
     </footer>
   );

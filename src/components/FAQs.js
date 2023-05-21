@@ -10,7 +10,7 @@ const FAQs = ({ faqs }) => {
   return (
     <section className="section section__about" id="about">
       <div className="section-center about-center">
-        <article className="about-info">
+        <article className="about-info about-info__faqs">
           <h3>find out more</h3>
           <h2>Perfect Match explained...</h2>
           {faqs.map((faq) => {
