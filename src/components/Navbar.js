@@ -8,12 +8,18 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <img src={logo} className="nav-logo" alt="backroads" />
+          <a href="#home">
+            <img src={logo} className="nav-logo" alt="Perfect Match logo" />
+          </a>
           <button
             type="button"
             className="nav-toggle"
             id="nav-toggle"
-            onClick={toggleSidebar ? () => setToggleSidebar(false) : () => setToggleSidebar(true)}
+            onClick={
+              toggleSidebar
+                ? () => setToggleSidebar(false)
+                : () => setToggleSidebar(true)
+            }
           >
             <i className="fas fa-bars"></i>
           </button>

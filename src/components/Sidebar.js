@@ -4,7 +4,7 @@ import { pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
 
 const Sidebar = () => {
-  const { toggleSidebar } = useGlobalContext();
+  const { toggleSidebar, setToggleSidebar } = useGlobalContext();
   return (
     <aside className={toggleSidebar ? 'sidebar show-sidebar' : 'sidebar'}>
       <ul className="links">
@@ -12,7 +12,11 @@ const Sidebar = () => {
           const { id, icon, href, text } = link;
           return (
             <li key={id}>
-              <a href={href}>
+              <a
+                role="button"
+                onClick={() => setToggleSidebar(false)}
+                href={href}
+              >
                 {icon} {text}
               </a>{' '}
             </li>

@@ -3,7 +3,7 @@ import Title from './Title';
 
 const Services = () => {
   return (
-    <section className="section section__services" id="services">
+    <section className="section section__services">
       <div className="overlay"></div>
       <Title textOne="Experience more together" />
       <div className="section-center services-center">
