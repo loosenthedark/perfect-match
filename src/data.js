@@ -181,6 +181,6 @@ export const faqs = [
   {
     id: 8,
     q: 'What if I\'m not happy with my nanny?',
-    a: 'We value the importance of finding the most suitable person to become part of your family, and wish to maintain a long-lasting relationship with those we work with. We will remain available to you and your nanny for the duration of their employment should you need any advice or to discuss any concerns you might have.',
+    a: 'We value the importance of finding the most suitable person to become part of your family, and wish to maintain a long-lasting relationship with those we work with. We will remain available to you and your nanny for the duration of their employment, should you need any advice or to discuss any concerns you might have.',
   },
 ];

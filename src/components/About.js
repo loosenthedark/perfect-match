@@ -1,7 +1,7 @@
 import aboutImg1 from '../images/image-woman-in-videocall.jpg';
 import aboutImg2 from '../images/image-women-videochatting.jpg';
-import aboutImg3 from '../images/image-men-in-meeting.jpg';
-import aboutImg4 from '../images/image-man-texting.jpg';
+import aboutImg3 from '../images/image-nanny-feeding-toddler.jpg';
+import aboutImg4 from '../images/image-nanny-outdoors-with-boy-and-girl.jpg';
 
 const About = () => {
   return (

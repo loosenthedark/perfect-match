@@ -60,3 +60,9 @@ package.json
     "eject": "react-scripts eject"
   },
 ```
+
+#### Credits
+
+[Photo by Kampus Production](https://www.pexels.com/photo/a-woman-doing-babysitter-7414391/)
+
+[Photo by Kampus Production](https://www.pexels.com/photo/nanny-and-kids-sitting-on-green-grass-8954794/)

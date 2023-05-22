@@ -762,6 +762,10 @@ Footer
   flex-wrap: wrap;
 }
 
+.footer-links {
+  grid-row-gap: 1rem;
+}
+
 .footer-link {
   color: var(--clr-off-white-text);
   text-transform: capitalize;
@@ -807,7 +811,7 @@ Navbar
   top: 0;
   left: 0;
   width: 100vw;
-  z-index: 2;
+  z-index: 11;
   height: 4rem;
   display: flex;
   align-items: center;
@@ -953,6 +957,7 @@ Sidebar
   padding-top: 4rem;
   /* toggle logic */
   transform: translateX(-100%);
+  z-index: 10;
 }
 
 .sidebar.show-sidebar {
