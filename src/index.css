@@ -202,6 +202,9 @@ p {
 .section-title {
   text-align: center;
   margin-bottom: 1.5rem;
+  max-width: 72vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-title h2 {
@@ -461,7 +464,7 @@ Services
 */
 .section__services {
   padding-bottom: 7.25rem;
-  padding-top: 5.625rem;
+  padding-top: 4.5rem;
   background: var(--clr-grey-10);
   background-color: var(--clr-primary-5);
   position: relative;
@@ -478,6 +481,7 @@ Services
   background-repeat: no-repeat;
   mix-blend-mode: normal;
   opacity: 0.15;
+  background-position-x: center;
 }
 
 .service {
@@ -667,6 +671,11 @@ Featured Tours
 FAQs
 ===============
 */
+
+.section__about.section__faqs {
+  padding-bottom: 8rem;
+  padding-top: 4rem;
+}
 
 .questions-wrapper {
   display: flex;

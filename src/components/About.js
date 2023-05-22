@@ -39,16 +39,15 @@ const About = () => {
         </div>
         <article className="about-info">
           <h3>explore the difference</h3>
-          <h2>Smarter meetings, all in one place</h2>
+          <h2>Let us help you find your Perfect Match</h2>
           <p>
-            Send messages, share files, show your screen, and record your
-            meetings — all in one workspace. Control who can join with
-            invite-only team access, data encryption, and data export.
+            We pride ourselves on going the extra mile, taking the time to
+            ensure our experienced and qualified nannies meet the exact
+            requirements of your family.
           </p>
           <p>
-            Send messages, share files, show your screen, and record your
-            meetings — all in one workspace. Control who can join with
-            invite-only team access, data encryption, and data export.
+            Through our bespoke recruitment process, we strive to ensure a
+            harmonious match, where every piece of the puzzle is met.
           </p>
           {/* <a href="#about" className="btn">
             read more

@@ -14,7 +14,7 @@ const Hero = () => {
           <a href="#tours" className="btn hero-btn">
             Apply today
           </a>
-          <a href="#tours" className="btn hero-btn hero-btn__secondary">
+          <a href="#about" className="btn hero-btn hero-btn__secondary">
             Find out more
           </a>
         </div>

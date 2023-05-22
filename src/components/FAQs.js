@@ -8,7 +8,7 @@ const FAQs = ({ faqs }) => {
     setExpandedQuestion(id);
   };
   return (
-    <section className="section section__about" id="faqs">
+    <section className="section section__about section__faqs" id="faqs">
       <div className="section-center about-center">
         <article className="about-info about-info__faqs">
           <h3>find out more</h3>
