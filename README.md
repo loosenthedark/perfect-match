@@ -1,7 +1,6 @@
 # Perfect Match Website
 
 [Working Application - Deployed](https://perfect-match-nanny-agency.netlify.app/)
-'
 
 #### SRC Folder (boilerplate)
 
