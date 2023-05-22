@@ -327,7 +327,7 @@ Hero
   .hero {
     /* background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
       url('./images/main.jpeg') center/cover no-repeat; */
-    background-image: url('./images//image-hero__tablet.png');
+    background-image: url('./images/image-hero__tablet__alt.png');
     background-position-y: 8rem;
     padding-bottom: 17rem;
   }
@@ -356,8 +356,8 @@ Hero
 @media screen and (min-width: 992px) {
   .hero {
     min-height: 93.44vh;
-    background-image: url(./images//image-hero-left.png), url(./images/image-hero-right.png);
-    background-position: -2.5rem 33%, calc(100% + 2.5rem) 40%;
+    background-image: url(./images//image-hero-left__alt.png), url(./images/image-hero-right__alt.png);
+    background-position: 0 33%, 100% 40%;
     background-size: auto 19rem, auto 19rem;
     padding-bottom: unset;
     align-items: flex-start;
