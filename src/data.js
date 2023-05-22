@@ -37,11 +37,6 @@ export const pageLinks = [
     text: 'Contact',
     icon: <AiOutlineMail />,
   },
-  // {
-  //   id: 4,
-  //   href: '#tours',
-  //   text: 'tours',
-  // },
 ];
 
 export const socialLinks = [
@@ -88,49 +83,6 @@ export const socialLinks = [
 //   //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
 //   //   icon: 'socks',
 //   // },
-// ];
-
-// export const tours = [
-//   {
-//     id: 1,
-//     date: 'august 26th, 2020',
-//     title: 'tibet adventure',
-//     image: tour1Img,
-//     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-//     country: 'china',
-//     duration: 6,
-//     price: 2100,
-//   },
-//   {
-//     id: 2,
-//     date: 'october 1st, 2020',
-//     title: 'best of java',
-//     image: tour2Img,
-//     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-//     country: 'indonesia',
-//     duration: 11,
-//     price: 1400,
-//   },
-//   {
-//     id: 3,
-//     date: 'september 15th, 2020',
-//     title: 'explore hong kong',
-//     image: tour3Img,
-//     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-//     country: 'hong kong',
-//     duration: 8,
-//     price: 5000,
-//   },
-//   {
-//     id: 4,
-//     date: 'december 5th, 2019',
-//     title: 'kenya highlights',
-//     image: tour4Img,
-//     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque vitae tempore voluptatum maxime reprehenderit eum quod exercitationem fugit, qui corporis.',
-//     country: 'kenya',
-//     duration: 20,
-//     price: 3300,
-//   },
 // ];
 
 export const faqs = [

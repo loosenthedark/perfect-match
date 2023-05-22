@@ -11,7 +11,7 @@ const Hero = () => {
           childcare needs.
         </p>
         <div className="hero-btn-container">
-          <a href="#tours" className="btn hero-btn">
+          <a href="#home" className="btn hero-btn">
             Apply today
           </a>
           <a href="#about" className="btn hero-btn hero-btn__secondary">

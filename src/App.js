@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import FAQs from './components/FAQs';
 import Services from './components/Services';
 import Sidebar from './components/Sidebar';
-// import Tours from './components/Tours';
 import { faqs } from './data';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
       <Hero />
       <About />
       <Services />
-      {/* <Tours /> */}
       <FAQs faqs={faqs} />
       <Footer />
     </>

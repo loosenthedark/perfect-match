@@ -16,7 +16,7 @@ const Services = () => {
             <p className="service-text">
               Get in touch today, and let us help you find your Perfect Match!
             </p>
-            <a href="#tours" className="btn hero-btn hero-btn__secondary">
+            <a href="#home" className="btn hero-btn hero-btn__secondary">
               Contact us
             </a>
           </div>
