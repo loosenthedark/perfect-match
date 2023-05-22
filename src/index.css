@@ -268,9 +268,8 @@ Hero
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./images/image-hero.png);
+  background-image: url(./images/image-hero__alt.png);
   background-repeat: no-repeat;
-  background-size: 110%;
   background-position-y: 100px;
   background-position-x: center;
   padding-bottom: 16rem;

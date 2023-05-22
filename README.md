@@ -66,4 +66,8 @@ package.json
 
 [Photo by Kampus Production](https://www.pexels.com/photo/nanny-and-kids-sitting-on-green-grass-8954794/)
 
+[Photo by Maria Orlova](https://www.pexels.com/photo/happy-mother-with-son-on-arms-in-park-4947596/)
+
+[Photo by cottonbro studio](https://www.pexels.com/photo/babysitter-with-boy-6986435/)
+
 [Looka (logo generator)](https://looka.com/dashboard)
