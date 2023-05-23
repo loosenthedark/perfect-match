@@ -14,6 +14,7 @@ Variables
   --clr-primary-4: hsl(184, 77%, 34%);
   /* primary/main color */
   --clr-primary-5: #4d96a9;
+  --clr-primary-5-active: #71c0d4;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(185, 57%, 50%);
   --clr-primary-7: hsl(184, 65%, 59%);
@@ -49,6 +50,7 @@ Variables
   --clr-off-white-text: #fafafa;
   --clr-bg-grey: #d8d8d8;
   --clr-secondary: #855fb1;
+  --clr-secondary-active: #b18bdd;
   /* font-weight */
   --fw-500: 500;
   --fw-700: 700;
@@ -194,11 +196,6 @@ p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.btn:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
-}
-
 /* section */
 .section {
   background: var(--clr-off-white);
@@ -232,7 +229,7 @@ p {
 @media screen and (min-width: 768px) {
   .section-center {
     width: 89.75vw;
-    max-width: 1167px;
+    max-width: 69.375rem;
   }
 
   .section-title h2 {
@@ -317,12 +314,6 @@ Hero
   width: 164px;
 }
 
-.hero-btn:hover {
-  background: transparent;
-  color: var(--clr-white);
-  border-color: var(--clr-white);
-}
-
 @media screen and (min-width: 768px) {
   .hero {
     /* background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
@@ -371,6 +362,14 @@ Hero
     max-width: 27.5rem;
     font-size: 1.125rem;
     line-height: 1.44;
+  }
+
+  .hero-btn:hover {
+    background: var(--clr-primary-5-active);
+  }
+
+  .hero-btn.hero-btn__secondary:hover {
+    background: var(--clr-secondary-active);
   }
 }
 
@@ -440,6 +439,8 @@ About
   .about-info {
     width: 77.1vw;
     max-width: 69.375rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .about-info h2 {
@@ -604,8 +605,8 @@ Services
 
   .section__services {
     display: grid;
-    grid-template-columns: 24.3vw 27.98vw;
-    grid-column-gap: 5vw;
+    grid-template-columns: 22.3vw 35.5vw;
+    grid-column-gap: 1.5vw;
     padding-top: 2.75rem;
     padding-bottom: 2.75rem;
     padding-left: 11.458vw;
@@ -777,13 +778,10 @@ Footer
   color: var(--clr-off-white-text);
   text-transform: capitalize;
   font-size: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   letter-spacing: var(--spacing);
   transition: var(--transition);
-}
-
-.footer-link:hover {
-  color: var(--clr-primary-5);
 }
 
 .footer-icon {
@@ -793,10 +791,6 @@ Footer
   transition: var(--transition);
 }
 
-.footer-icon:hover {
-  color: var(--clr-primary-5);
-}
-
 .copyright {
   letter-spacing: var(--spacing);
   color: var(--clr-white);
@@ -804,6 +798,16 @@ Footer
 
 .copyright span {
   margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .footer-link:hover {
+    color: var(--clr-primary-5);
+  }
+  
+  .footer-icon:hover {
+    color: var(--clr-primary-5);
+  }
 }
 
 /*
@@ -856,20 +860,15 @@ Navbar
 }
 
 .nav-link {
-  display: block;
-  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
   text-transform: capitalize;
-  letter-spacing: var(--spacing);
+  padding: 1rem 1.5rem 1rem 35%;
+  color: var(--grey-700);
   transition: var(--transition);
-  color: var(--clr-grey-1);
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.nav-link:hover {
-  color: var(--clr-primary-1);
-  background: var(--clr-primary-8);
-  padding-left: 2.25rem;
+  letter-spacing: var(--spacing-reduced);
 }
 
 /* nav toggle functionality */
@@ -921,10 +920,14 @@ Navbar
 
   .nav-icons {
     display: flex;
+    width: 7.4375rem;
+    justify-content: space-between;
   }
 
   .nav-link {
-    margin-right: 0.7rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    min-width: 5.0625rem;
   }
 
   .nav-icon {
@@ -935,7 +938,7 @@ Navbar
   }
 
   .nav-icon:hover {
-    color: var(--clr-primary-8);
+    color: var(--clr-secondary);
   }
 }
 
@@ -976,6 +979,10 @@ Sidebar
   .sidebar {
     width: 400px;
   }
+
+  .sidebar.show-sidebar {
+    box-shadow: var(--shadow-3);
+  }
 }
 
 .logo {
@@ -999,20 +1006,11 @@ Sidebar
   letter-spacing: var(--spacing-reduced);
 }
 
-.links a:hover {
-  background: var(--grey-100);
-  color: var(--grey-800);
-}
-
 .links a svg {
   font-size: 1.5rem;
   color: var(--clr-secondary);
   margin-right: 1rem;
   transition: var(--transition);
-}
-
-.links a svg:hover {
-  color: var(--clr-green-dark);
 }
 
 .social-links {
@@ -1028,6 +1026,17 @@ Sidebar
   transition: var(--transition);
 }
 
-.social-links a:hover {
-  color: var(--primary-800)
+@media screen and (min-width: 992px) {
+  .links a:hover {
+    background: var(--grey-100);
+    color: var(--grey-800);
+  }
+  
+  .links a svg:hover {
+    color: var(--clr-green-dark);
+  }
+
+  .social-links a:hover {
+    color: var(--primary-800)
+  }
 }
