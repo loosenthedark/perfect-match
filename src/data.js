@@ -124,7 +124,7 @@ export const faqs = [
   {
     id: 7,
     q: 'How can I be sure my nanny has been fully trained?',
-    a: 'Once you have chosen your Perfect Match nanny, we offer an optional service included in the placement fee where one of our partners, a registered nurse, will provide a full day\'s training with you and the nanny in your home before she officially starts. This is to ensure all of your care requirements for your children are understood and carried out to a very high standard. We believe that this is the most important part of our mission and the one closest to our hearts.',
+    a: 'Once you have chosen your Perfect Match nanny, we offer an optional service included in the placement fee where one of our partners, a registered nurse, will provide a full day\'s training with you and the nanny in your home before she officially starts. This is to ensure all of your care requirements for your children are understood and carried out to a very high standard. We believe that this is the most important part of our mission, and the one closest to our hearts.',
   },
   {
     id: 8,

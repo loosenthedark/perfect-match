@@ -183,6 +183,14 @@ p {
   h2 {
     font-size: 2.777777vw;
   }
+
+  h3 {
+    font-size: 1.1111vw;
+  }
+
+  h5 {
+    font-size: 1.2vw;
+  }
 }
 
 /*  global classes */
@@ -495,7 +503,7 @@ About
 @media screen and (min-width: 992px) {
   .section__about {
     padding-top: 0;
-    padding-bottom: 10.5rem;
+    padding-bottom: 11.6666666667vw;
   }
 
   .about-img,
@@ -636,14 +644,20 @@ Services
     display: grid;
     grid-template-columns: 22.3vw 35.5vw;
     grid-column-gap: 1.5vw;
-    padding-top: 2.75rem;
-    padding-bottom: 2.75rem;
+    padding-top: 3.055555555vw;
+    padding-bottom: 3.05555555vw;
     padding-left: 11.458vw;
-    min-height: 20rem;
+    min-height: 22.222222222vw;
+    margin-bottom: 3.6111111vw;
   }
 
   .section__services .overlay {
     background-image: url(./images/image-footer__desktop.jpg);
+  }
+
+  .service {
+    display: flex;
+    text-align: left;
   }
 
   .section-title {
@@ -658,33 +672,29 @@ Services
 
   .service-text {
     max-width: unset;
+    font-size: 1.25vw;
+    margin-bottom: 1.3888888889vw;
+  }
+
+  .service-text:nth-child(2) {
+    margin-bottom: unset;
   }
 
   .service-info .hero-btn.hero-btn__secondary {
-    left: calc(100% - 11.458vw - 6.03125rem);
+    left: calc(100% - 18.158vw);
     bottom: unset;
-    top: calc(50% - 1.8125rem);
+    top: calc(50% - 2.01vw);
     margin-top: unset;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 2.7vw;
+    padding-right: 2.7vw;
+    width: 13.4vw;
   }
 }
 
-@media screen and (min-width: 1170px) {
-  .service {
-    display: flex;
-    text-align: left;
-  }
-
-  .service-icon {
-    align-self: start;
-  }
-
-  .service-title {
-    margin-bottom: 0.5rem;
-  }
-}
+@media screen and (min-width: 1170px) {}
 
 /*
 =============== 
@@ -776,6 +786,37 @@ FAQs
   .question header {
     height: 5rem;
     align-items: start;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section__about.section__faqs {
+    padding-bottom: 8.88888888vw;
+    padding-top: 0.8333333333vw;
+  }
+
+  .questions-wrapper {
+    column-gap: 1.1111111111vw;
+  }
+
+  .question {
+    width: calc(50% - 0.5555555555554vw);
+    margin-bottom: 1.388888888vw;
+  }
+
+  .question header {
+    height: 5vw;
+    align-items: center;
+  }
+
+  .question-btn {
+    align-self: unset;
+    font-size: 1.5278vw;
+    padding: 0.1666666666667vw;
+  }
+
+  .about-info.about-info__faqs p {
+    font-size: 1.075vw;
   }
 }
 
