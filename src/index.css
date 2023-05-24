@@ -871,12 +871,39 @@ Footer
 }
 
 @media screen and (min-width: 992px) {
+  .footer {
+    padding: 5.55555vw 2.22222vw;
+  }
+
+  .footer-links,
+  .footer-icons {
+    margin-bottom: 1.6666666667vw;
+  }
+
+  .footer-link {
+    margin: 0 0.75vw;
+    width: 6.1111vw;
+    font-size: 1.1111vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .footer-link:hover {
     color: var(--clr-primary-5);
   }
 
+  .footer-icon {
+    font-size: 2.22222222vw;
+    margin: 0 1.5vw;
+  }
+
   .footer-icon:hover {
     color: var(--clr-primary-5);
+  }
+
+  .copyright {
+    font-size: 1.111111111vw;
   }
 }
 
