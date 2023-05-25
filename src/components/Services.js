@@ -10,8 +10,11 @@ const Services = () => {
           <div className="service-info">
             <p className="service-text">
               We pay great attention to detail when identifying your Perfect
-              Match nanny. Getting to know your family ensures that only the
-              most suitable nannies will be offered to you for interview.
+              Match nanny.
+            </p>
+            <p className="service-text">
+              Getting to know your family ensures that only the most suitable
+              nannies will be offered to you for interview.
             </p>
             <p className="service-text">
               Get in touch today, and let us help you find your Perfect Match!
