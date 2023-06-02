@@ -18,7 +18,12 @@ const ContactFormModal = () => {
           <GrFormClose />
         </button>
         <div>
-          <form method="POST" className="form" data-netlify="true">
+          <form
+            name="contactForm"
+            method="POST"
+            className="form"
+            data-netlify="true"
+          >
             {/* first name */}
             <div className="form-row">
               <input
@@ -48,10 +53,6 @@ const ContactFormModal = () => {
                 id="email"
                 name="email"
               />
-            </div>
-            {/* Netlify spam filtering */}
-            <div className="form-row">
-              <div data-netlify-recaptcha="true"></div>
             </div>
             <button
               type="submit"
