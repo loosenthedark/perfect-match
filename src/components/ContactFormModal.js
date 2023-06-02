@@ -55,7 +55,7 @@ const ContactFormModal = () => {
                 name="email"
               />
             </div>
-            <input type="hidden" name="formName" value="contactForm" />
+            <input type="hidden" name="form-name" value="contactForm" />
             <button
               type="submit"
               className="btn hero-btn hero-btn__contact-form"
