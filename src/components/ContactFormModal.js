@@ -24,6 +24,7 @@ const ContactFormModal = () => {
             className="form"
             data-netlify="true"
             onSubmit="submit"
+            data-netlify-recaptcha="true"
           >
             {/* first name */}
             <div className="form-row">
@@ -55,6 +56,8 @@ const ContactFormModal = () => {
                 name="email"
               />
             </div>
+            {/* Netlify spam filtering */}
+            <div data-netlify-recaptcha="true"></div>
             <input type="hidden" name="form-name" value="contactForm" />
             <button
               type="submit"
