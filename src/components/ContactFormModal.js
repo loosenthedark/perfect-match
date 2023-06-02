@@ -22,7 +22,8 @@ const ContactFormModal = () => {
             name="contactForm"
             method="POST"
             className="form"
-            netlify
+            data-netlify="true"
+            onSubmit="submit"
           >
             {/* first name */}
             <div className="form-row">
@@ -54,6 +55,7 @@ const ContactFormModal = () => {
                 name="email"
               />
             </div>
+            <input type="hidden" name="formName" value="contactForm" />
             <button
               type="submit"
               className="btn hero-btn hero-btn__contact-form"
