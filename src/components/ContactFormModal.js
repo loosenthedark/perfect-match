@@ -22,7 +22,7 @@ const ContactFormModal = () => {
             name="contactForm"
             method="POST"
             className="form"
-            data-netlify="true"
+            netlify
           >
             {/* first name */}
             <div className="form-row">
