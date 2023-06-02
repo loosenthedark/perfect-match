@@ -19,7 +19,7 @@ const ContactFormModal = () => {
         </button>
         <div>
           <form
-            name="contactForm"
+            form-name="contactForm"
             method="POST"
             className="form"
             data-netlify="true"
