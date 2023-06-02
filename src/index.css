@@ -1029,6 +1029,10 @@ Navbar
     margin-right: 1.11111111vw;
     margin-left: 1.11111111vw;
     min-width: 5.625vw;
+    border: none;
+    background: none;
+    font-family: var(--ff-primary);
+    line-height: 1.5;
   }
 
   .nav-link:hover {
@@ -1195,7 +1199,7 @@ Modal
   background: var(--clr-white);
   width: 90vw;
   height: 30vh;
-  border-radius: var(--radius-reduced);
+  border-radius: var(--radius);
   max-width: var(--width-fixed-600);
   text-align: center;
   display: grid;

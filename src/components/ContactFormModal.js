@@ -11,7 +11,7 @@ const ContactFormModal = () => {
       }
     >
       <div className="modal-container">
-        <h3>modal content goes here!</h3>
+        <h3>contact form content goes here!</h3>
         <button
           className="close-modal-btn"
           onClick={() => setToggleContactFormModal(false)}

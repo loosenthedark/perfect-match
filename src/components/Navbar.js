@@ -3,7 +3,8 @@ import { useGlobalContext } from './Context';
 import logo from '../images/logo.svg';
 
 const Navbar = () => {
-  const { toggleSidebar, setToggleSidebar } = useGlobalContext();
+  const { toggleSidebar, setToggleSidebar, setToggleContactFormModal } =
+    useGlobalContext();
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -35,6 +36,16 @@ const Navbar = () => {
               </li>
             );
           })}
+          <li>
+            <button
+              style={{ cursor: 'pointer' }}
+              type="button"
+              className="nav-link"
+              onClick={() => setToggleContactFormModal(true)}
+            >
+              Contact
+            </button>
+          </li>
         </ul>
 
         <ul className="nav-icons">

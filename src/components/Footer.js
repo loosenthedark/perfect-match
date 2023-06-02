@@ -19,6 +19,7 @@ const Footer = () => {
         <li>
           <button
             type="button"
+            style={{ cursor: 'pointer' }}
             className="footer-link footer-link__contact"
             onClick={() => setToggleContactFormModal(true)}
           >
