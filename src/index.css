@@ -38,6 +38,8 @@ Variables
   --primary-900: #164e63;
   --grey-100: #f1f5f9;
   --grey-200: #e2e8f0;
+  --grey-300: #dedede;
+  --grey-400: #3d3b48;
   --grey-500: #64748b;
   --grey-700: #334155;
   --grey-800: #1e293b;
@@ -53,6 +55,7 @@ Variables
   --clr-secondary-active: #b18bdd;
   /* font-weight */
   --fw-500: 500;
+  --fw-600: 600;
   --fw-700: 700;
   --fw-900: 900;
   --ff-primary: 'Red Hat Display', sans-serif;
@@ -60,6 +63,7 @@ Variables
   --spacing: 0.25rem;
   --spacing-reduced: 0.0625rem;
   --radius: 0.5rem;
+  --radius-input: 0.3125rem;
   --radius-reduced: 0.25rem;
   --width-fixed-600: 600px;
   /* box shadow */
@@ -327,6 +331,11 @@ Hero
   margin-top: 1rem;
   background: var(--clr-secondary);
   width: 164px;
+}
+
+.hero-btn.hero-btn__contact-form {
+  width: 100%;
+  border-radius: var(--radius-input);
 }
 
 @media screen and (min-width: 768px) {
@@ -1197,8 +1206,7 @@ Modal
 
 .modal-container {
   background: var(--clr-white);
-  width: 90vw;
-  height: 30vh;
+  width: 87.2vw;
   border-radius: var(--radius);
   max-width: var(--width-fixed-600);
   text-align: center;
@@ -1219,4 +1227,74 @@ Modal
 
 .close-modal-btn svg path {
   stroke: var(--clr-secondary);
+}
+
+/*
+=============== 
+Contact Form Modal
+===============
+*/
+
+.form {
+  width: 87.2vw;
+  max-width: var(--fixed-width);
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 1.5rem 1.5rem;
+  margin: 2.25rem auto 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--small-text);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.875rem 0.75rem 0.875rem 1.213125rem;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--grey-300);
+  font-size: 0.875rem;
+  line-height: 1.86;
+  font-family: var(--ff-primary);
+  color: var(--grey-400);
+  font-weight: var(--fw-600);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--grey-400);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 7rem;
+}
+
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+
+.form-alert {
+  color: var(--red-dark);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+
+/* extra styles */
+.form .form-label {
+  text-align: left;
+}
+
+.form .btn-block {
+  margin-top: 0.5rem;
 }
