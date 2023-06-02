@@ -1,10 +1,12 @@
 // import logo from '../images/logo.svg';
 // import { useGlobalContext } from './Context';
+import { AiOutlineMail } from 'react-icons/ai';
 import { pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
 
 const Sidebar = () => {
-  const { toggleSidebar, setToggleSidebar } = useGlobalContext();
+  const { toggleSidebar, setToggleSidebar, setToggleContactFormModal } =
+    useGlobalContext();
   return (
     <aside className={toggleSidebar ? 'sidebar show-sidebar' : 'sidebar'}>
       <ul className="links">
@@ -22,6 +24,11 @@ const Sidebar = () => {
             </li>
           );
         })}
+        <li>
+          <button type="button" onClick={() => setToggleContactFormModal(true)}>
+            <AiOutlineMail /> Contact
+          </button>{' '}
+        </li>
       </ul>
       <ul className="social-links">
         {socialLinks.map((link) => {

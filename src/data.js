@@ -3,7 +3,6 @@ import {
   AiOutlineInfoCircle,
   AiOutlineQuestionCircle,
   AiOutlineForm,
-  AiOutlineMail,
 } from 'react-icons/ai';
 
 export const pageLinks = [
@@ -31,12 +30,6 @@ export const pageLinks = [
     text: 'Apply',
     icon: <AiOutlineForm />,
   },
-  {
-    id: 5,
-    href: '#home',
-    text: 'Contact',
-    icon: <AiOutlineMail />,
-  },
 ];
 
 export const socialLinks = [
@@ -63,9 +56,9 @@ export const socialLinks = [
 //     title: 'saving money',
 //     blurb:
 //       `We pay great attention to detail when identifying your Perfect Match nanny. Our getting to know your family ensures that only the most suitable nannies will be offered to you for interview.
-      
+
 //       You can be certain that you will find what you are looking for.
-      
+
 //       Get in touch today, and let us help you find your Perfect Match!`,
 //     icon: 'wallet',
 //   },
@@ -103,7 +96,7 @@ export const faqs = [
   },
   {
     id: 4,
-    q: 'What\'s our approach?',
+    q: "What's our approach?",
     a: 'As a boutique nanny agency, we have a devoted and personal approach. We offer a unique service, as we call to your home and meet with you in your own environment. We listen carefully to your needs and expectations in order to ensure your standards are met and our reputation is upheld. We then search for your "Perfect Match".',
   },
   // {
@@ -124,11 +117,11 @@ export const faqs = [
   {
     id: 7,
     q: 'How can I be sure my nanny has been fully trained?',
-    a: 'Once you have chosen your Perfect Match nanny, we offer an optional service included in the placement fee where one of our partners, a registered nurse, will provide a full day\'s training with you and the nanny in your home before she officially starts. This is to ensure all of your care requirements for your children are understood and carried out to a very high standard. We believe that this is the most important part of our mission, and the one closest to our hearts.',
+    a: "Once you have chosen your Perfect Match nanny, we offer an optional service included in the placement fee where one of our partners, a registered nurse, will provide a full day's training with you and the nanny in your home before she officially starts. This is to ensure all of your care requirements for your children are understood and carried out to a very high standard. We believe that this is the most important part of our mission, and the one closest to our hearts.",
   },
   {
     id: 8,
-    q: 'What if I\'m not happy with my nanny?',
+    q: "What if I'm not happy with my nanny?",
     a: 'We value the importance of finding the most suitable person to become part of your family, and wish to maintain a long-lasting relationship with those we work with. We will remain available to you and your nanny for the duration of their employment, should you need any advice or to discuss any concerns you might have.',
   },
 ];

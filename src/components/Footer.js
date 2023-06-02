@@ -1,6 +1,9 @@
 import { pageLinks, socialLinks } from '../data';
+import { useGlobalContext } from './Context';
 
 const Footer = () => {
+  const { setToggleContactFormModal } = useGlobalContext();
+
   return (
     <footer className="section footer">
       <ul className="footer-links">
@@ -13,6 +16,15 @@ const Footer = () => {
             </li>
           );
         })}
+        <li>
+          <button
+            type="button"
+            className="footer-link footer-link__contact"
+            onClick={() => setToggleContactFormModal(true)}
+          >
+            Contact
+          </button>
+        </li>
       </ul>
       <ul className="footer-icons">
         {socialLinks.map((link) => {

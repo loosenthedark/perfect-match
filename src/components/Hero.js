@@ -1,4 +1,8 @@
+import { useGlobalContext } from './Context';
+
 const Hero = () => {
+  const { setToggleContactFormModal } = useGlobalContext();
+
   return (
     <section className="hero" id="home">
       <div className="hero-banner">
@@ -11,9 +15,13 @@ const Hero = () => {
           childcare needs.
         </p>
         <div className="hero-btn-container">
-          <a href="#home" className="btn hero-btn">
+          <button
+            type="button"
+            className="btn hero-btn"
+            onClick={() => setToggleContactFormModal(true)}
+          >
             Apply today
-          </a>
+          </button>
           <a href="#about" className="btn hero-btn hero-btn__secondary">
             Find out more
           </a>

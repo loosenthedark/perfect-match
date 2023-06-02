@@ -1,6 +1,9 @@
 import Title from './Title';
+import { useGlobalContext } from './Context';
 
 const Services = () => {
+  const { setToggleContactFormModal } = useGlobalContext();
+
   return (
     <section className="section section__services">
       <div className="overlay"></div>
@@ -19,9 +22,13 @@ const Services = () => {
             <p className="service-text">
               Get in touch today, and let us help you find your Perfect Match!
             </p>
-            <a href="#home" className="btn hero-btn hero-btn__secondary">
+            <button
+              type="button"
+              className="btn hero-btn hero-btn__secondary"
+              onClick={() => setToggleContactFormModal(true)}
+            >
               Contact us
-            </a>
+            </button>
           </div>
         </article>
       </div>

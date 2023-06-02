@@ -4,10 +4,16 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [toggleContactFormModal, setToggleContactFormModal] = useState(false);
 
   return (
     <AppContext.Provider
-      value={{ toggleSidebar, setToggleSidebar }}
+      value={{
+        toggleSidebar,
+        setToggleSidebar,
+        toggleContactFormModal,
+        setToggleContactFormModal,
+      }}
     >
       {children}
     </AppContext.Provider>
