@@ -1271,6 +1271,11 @@ Contact Form Modal
   color: var(--grey-400);
 }
 
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline-color: var(--clr-secondary);
+}
+
 .form-row {
   margin-bottom: 1rem;
 }
