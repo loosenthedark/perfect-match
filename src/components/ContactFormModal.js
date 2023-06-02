@@ -57,7 +57,9 @@ const ContactFormModal = () => {
               />
             </div>
             {/* Netlify spam filtering */}
+            <div className="form-row">
             <div data-netlify-recaptcha="true"></div>
+            </div>
             <input type="hidden" name="form-name" value="contactForm" />
             <button
               type="submit"
