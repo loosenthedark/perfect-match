@@ -48,6 +48,7 @@ Variables
   --clr-red-dark: #842029;
   --clr-green-dark: #0f5132;
   --clr-grey: #87879d;
+  --clr-grey-muted: #bab7d4;
   --clr-off-white: #f2f2f2;
   --clr-off-white-text: #fafafa;
   --clr-bg-grey: #d8d8d8;
@@ -1241,8 +1242,8 @@ Contact Form Modal
   background: var(--white);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
-  padding: 2rem 1.5rem 1.5rem;
-  margin: 2.25rem auto 1rem;
+  padding: 2rem 1.5rem 0;
+  margin: 2.25rem auto 0.5rem;
 }
 
 .form-label {
@@ -1302,4 +1303,22 @@ Contact Form Modal
 
 .form .btn-block {
   margin-top: 0.5rem;
+}
+
+.modal-footer {
+  margin-left: 11.9266%;
+  margin-right: 11.9266%;
+  padding-bottom: 4px;
+}
+
+.modal-footer-text {
+  color: var(--clr-grey-muted);
+  font-size: 12px;
+  line-height: 1.91;
+  font-weight: var(--fw-500);
+}
+
+.modal-footer-text span {
+  font-weight: var(--fw-700);
+  color: var(--clr-secondary);
 }

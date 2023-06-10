@@ -23,7 +23,6 @@ const ContactFormModal = () => {
             method="POST"
             className="form"
             data-netlify="true"
-            onSubmit="submit"
             data-netlify-recaptcha="true"
           >
             {/* first name */}
@@ -68,6 +67,12 @@ const ContactFormModal = () => {
               Find your Perfect Match!
             </button>
           </form>
+          <footer className="modal-footer">
+            <p className="modal-footer-text">
+              By clicking the button, you are agreeing to our{' '}
+              <span>Terms and Services</span>
+            </p>
+          </footer>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="hero-banner">
         <h1>
           Nanny Recruitment <br />
-          Done Differently
+          Done Better
         </h1>
         <p>
           Perfect Match will help you to find a nanny who fulfils all of your
