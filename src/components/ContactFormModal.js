@@ -55,6 +55,16 @@ const ContactFormModal = () => {
                 name="email"
               />
             </div>
+            {/* file upload */}
+            <div className="form-row">
+              <input
+                type="file"
+                placeholder="Upload file"
+                className="form-input"
+                id="upload"
+                name="upload"
+              />
+            </div>
             {/* Netlify spam filtering */}
             <div className="form-row">
               <div data-netlify-recaptcha="true"></div>
