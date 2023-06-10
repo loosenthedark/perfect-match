@@ -22,6 +22,7 @@ const ContactFormModal = () => {
             form-name="contactForm"
             method="POST"
             className="form"
+            netlify
             data-netlify="true"
             data-netlify-recaptcha="true"
           >
