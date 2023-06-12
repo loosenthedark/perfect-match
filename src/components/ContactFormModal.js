@@ -58,6 +58,9 @@ const ContactFormModal = () => {
             </div>
             {/* file upload */}
             <div className="form-row">
+              <label htmlFor="upload" className="btn form-label">
+                Upload CV
+              </label>
               <input
                 type="file"
                 placeholder="Upload file"
@@ -81,7 +84,13 @@ const ContactFormModal = () => {
           <footer className="modal-footer">
             <p className="modal-footer-text">
               By clicking the button, you are agreeing to our{' '}
-              <span>Terms and Services</span>
+              <a
+                target="_blank"
+                href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
+                rel="noreferrer"
+              >
+                <span>Terms and Conditions</span>
+              </a>
             </p>
           </footer>
         </div>

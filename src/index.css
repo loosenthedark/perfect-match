@@ -1247,14 +1247,6 @@ Contact Form Modal
   margin: 2.25rem auto 0.5rem;
 }
 
-.form-label {
-  display: block;
-  font-size: var(--small-text);
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
-  letter-spacing: var(--letterSpacing);
-}
-
 .form-input,
 .form-textarea {
   width: 100%;
@@ -1280,6 +1272,7 @@ Contact Form Modal
 
 .form-row {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .form-textarea {
@@ -1299,7 +1292,12 @@ Contact Form Modal
 
 /* extra styles */
 .form .form-label {
-  text-align: left;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: 1.213125rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.725rem;
+  background: var(--clr-secondary);
 }
 
 .form .btn-block {
