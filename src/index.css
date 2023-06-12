@@ -841,8 +841,8 @@ Footer
 .footer {
   background: var(--clr-secondary);
   text-align: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
 }
 
 .footer-links,
@@ -855,11 +855,21 @@ Footer
 
 .footer-links {
   grid-row-gap: 1rem;
+  align-items: center;
 }
 
 .footer-links li:last-child {
   margin-top: 1px;
   margin-bottom: 1px;
+}
+
+.footer-links:last-child {
+  flex-direction: column;
+}
+
+.footer-links:last-child .footer-link {
+  font-size: 0.875rem;
+  width: 9rem;
 }
 
 .footer-link {
@@ -870,6 +880,8 @@ Footer
   margin-right: 0.5rem;
   letter-spacing: var(--spacing);
   transition: var(--transition);
+  display: inline-block;
+  width: 5.5rem;
 }
 
 .footer-link.footer-link__contact {

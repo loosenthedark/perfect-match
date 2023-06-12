@@ -50,33 +50,18 @@ export const socialLinks = [
   },
 ];
 
-// export const services = [
-//   {
-//     id: 1,
-//     title: 'saving money',
-//     blurb:
-//       `We pay great attention to detail when identifying your Perfect Match nanny. Our getting to know your family ensures that only the most suitable nannies will be offered to you for interview.
-
-//       You can be certain that you will find what you are looking for.
-
-//       Get in touch today, and let us help you find your Perfect Match!`,
-//     icon: 'wallet',
-//   },
-//   // {
-//   //   id: 2,
-//   //   title: 'endless hiking',
-//   //   blurb:
-//   //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
-//   //   icon: 'tree',
-//   // },
-//   // {
-//   //   id: 3,
-//   //   title: 'amazing comfort',
-//   //   blurb:
-//   //     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, officia.',
-//   //   icon: 'socks',
-//   // },
-// ];
+export const extraLinks = [
+  {
+    id: 1,
+    href: 'https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions',
+    text: 'terms',
+  },
+  {
+    id: 2,
+    href: 'https://loosenthedark.tech/perfect-match-nanny-agency/privacy-policy',
+    text: 'privacy policy',
+  },
+];
 
 export const faqs = [
   {

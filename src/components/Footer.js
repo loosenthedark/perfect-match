@@ -1,4 +1,4 @@
-import { pageLinks, socialLinks } from '../data';
+import { extraLinks, pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
 
 const Footer = () => {
@@ -45,11 +45,27 @@ const Footer = () => {
         })}
       </ul>
       <p className="copyright">
-        Copyright &copy; Perfect Match
+        &copy; Perfect Match
         <span id="date">{new Date().getFullYear()}</span>
         <br />
         All rights reserved
       </p>
+      <ul className="footer-links">
+        {extraLinks.map((link) => {
+          return (
+            <li key={link.id}>
+              <a
+                target="_blank"
+                href={link.href}
+                className="footer-link"
+                rel="noreferrer"
+              >
+                {link.text}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </footer>
   );
 };
