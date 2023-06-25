@@ -6,6 +6,7 @@ import FAQs from './components/FAQs';
 import Services from './components/Services';
 import Sidebar from './components/Sidebar';
 import ContactFormModal from './components/ContactFormModal';
+import ApplicationFormNannyModal from './components/ApplicationFormNannyModal';
 import { faqs } from './data';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Sidebar />
       <ContactFormModal />
+      <ApplicationFormNannyModal />
       <Hero />
       <About />
       <Services />

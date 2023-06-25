@@ -83,7 +83,7 @@ const ContactFormModal = () => {
           </form>
           <footer className="modal-footer">
             <p className="modal-footer-text">
-              By clicking the button, you are agreeing to our{' '}
+              By clicking this button, you are agreeing to our{' '}
               <a
                 target="_blank"
                 href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"

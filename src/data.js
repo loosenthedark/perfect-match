@@ -110,3 +110,18 @@ export const faqs = [
     a: 'We value the importance of finding the most suitable person to become part of your family, and wish to maintain a long-lasting relationship with those we work with. We will remain available to you and your nanny for the duration of their employment, should you need any advice or to discuss any concerns you might have.',
   },
 ];
+
+export const formSteps = [
+  {
+    id: 1,
+    text: 'Your Details',
+  },
+  {
+    id: 2,
+    text: 'Your Address',
+  },
+  {
+    id: 3,
+    text: 'Your Profile',
+  },
+];

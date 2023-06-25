@@ -1,7 +1,7 @@
 import { useGlobalContext } from './Context';
 
 const Hero = () => {
-  const { setToggleContactFormModal } = useGlobalContext();
+  const { setToggleApplicationFormNannyModal } = useGlobalContext();
 
   return (
     <section className="hero" id="home">
@@ -18,7 +18,7 @@ const Hero = () => {
           <button
             type="button"
             className="btn hero-btn"
-            onClick={() => setToggleContactFormModal(true)}
+            onClick={() => setToggleApplicationFormNannyModal(true)}
           >
             Apply today
           </button>

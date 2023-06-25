@@ -339,6 +339,19 @@ Hero
   border-radius: var(--radius-input);
 }
 
+.hero-btn.next-btn,
+.hero-btn.back-btn {
+  font-size: 0.875rem;
+  width: calc(50% - .25rem);
+}
+
+.hero-btn.back-btn {
+  background: unset;
+  box-shadow: unset;
+  color: var(--clr-secondary);
+  font-weight: var(--fw-700);
+}
+
 @media screen and (min-width: 768px) {
   .hero {
     /* background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
@@ -1229,6 +1242,11 @@ Modal
   top: 2rem;
 }
 
+.modal-container.modal-container__application-form {
+  height: 30rem;
+  top: 3.625rem;
+}
+
 .close-modal-btn {
   position: absolute;
   top: 1rem;
@@ -1334,6 +1352,11 @@ Contact Form Modal
   color: var(--clr-secondary);
 }
 
+.modal-footer-text.modal-footer-text__application-form span {
+  font-weight: var(--fw-600);
+  color: var(--grey-400);
+}
+
 @media screen and (min-width: 768px) {
   .form {
     padding-left: 2.5rem;
@@ -1347,4 +1370,66 @@ Contact Form Modal
   .modal-footer-text {
     margin-bottom: 2.25rem;
   }
+}
+
+/*
+=============== 
+Application Form Modals
+===============
+*/
+
+.progress-bar {
+  position: absolute;
+  overflow: hidden;
+  counter-reset: step;
+  top: -4.25rem;
+  width: 90vw;
+}
+
+.progress-bar li {
+  list-style-type: none;
+  color: var(--clr-off-white-text);
+  text-transform: uppercase;
+  font-size: .75rem;
+  width: 33.33%;
+  float: left;
+  position: relative;
+}
+
+.progress-bar li.active {
+  color: var(--clr-off-white-text);
+}
+
+.progress-bar li.active::before,
+.progress-bar li.active::after {
+  background: var(--clr-primary-5);
+  color: var(--clr-off-white-text);
+}
+
+.progress-bar li::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 2rem;
+  line-height: 2rem;
+  display: block;
+  font-size: 1rem;
+  color: var(--clr-off-white-text);
+  background: var(--clr-secondary);
+  border-radius: 50%;
+  margin: 0 auto .375rem;
+}
+
+.progress-bar li::after {
+  content: "";
+  width: 100%;
+  height: .125rem;
+  background: var(--clr-secondary);
+  position: absolute;
+  left: -50%;
+  top: .7875rem;
+  z-index: -1;
+}
+
+.progress-bar li:first-child::after {
+  content: none;
 }
