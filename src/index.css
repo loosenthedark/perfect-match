@@ -1243,7 +1243,7 @@ Modal
 }
 
 .modal-container.modal-container__application-form {
-  height: 30rem;
+  height: 72vh;
   top: 3.625rem;
 }
 
@@ -1255,6 +1255,10 @@ Modal
   background: transparent;
   border-color: transparent;
   cursor: pointer;
+}
+
+.close-modal-btn.close-modal-btn__application-form {
+  top: .75rem;
 }
 
 .close-modal-btn svg path {

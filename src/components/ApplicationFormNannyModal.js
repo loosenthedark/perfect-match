@@ -78,7 +78,7 @@ const ApplicationFormNannyModal = () => {
         </ul>
         {/* end progress bar */}
         <button
-          className="close-modal-btn"
+          className="close-modal-btn close-modal-btn__application-form"
           onClick={() => setToggleApplicationFormNannyModal(false)}
         >
           <GrFormClose />
@@ -92,7 +92,7 @@ const ApplicationFormNannyModal = () => {
           {currentStep}
           <div
             style={{
-              marginTop: '1rem',
+              marginTop: '.5rem',
               display: 'flex',
               gap: '.5rem',
               justifyContent: 'flex-end',
