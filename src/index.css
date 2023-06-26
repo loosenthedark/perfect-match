@@ -1243,7 +1243,7 @@ Modal
 }
 
 .modal-container.modal-container__application-form {
-  height: 72vh;
+  height: 71vh;
   top: 3.625rem;
 }
 
@@ -1386,7 +1386,7 @@ Application Form Modals
   position: absolute;
   overflow: hidden;
   counter-reset: step;
-  top: -4.25rem;
+  top: -4rem;
   width: 90vw;
 }
 
