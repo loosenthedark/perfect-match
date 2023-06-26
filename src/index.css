@@ -1243,7 +1243,8 @@ Modal
 }
 
 .modal-container.modal-container__application-form {
-  height: 71vh;
+  height: 70.5vh;
+  max-height: 30rem;
   top: 3.625rem;
 }
 
