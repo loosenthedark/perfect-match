@@ -8,7 +8,6 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
           required
           autoFocus
           className="form-input"
-          id="street"
           type="text"
           placeholder="Street"
           value={street}
@@ -19,7 +18,6 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
         <input
           required
           className="form-input"
-          id="city"
           type="text"
           placeholder="Town / City"
           value={city}
@@ -30,7 +28,6 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
         <input
           required
           className="form-input"
-          id="county"
           type="text"
           placeholder="County"
           value={county}
@@ -41,7 +38,6 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
         <input
           required
           className="form-input"
-          id="postcode"
           type="text"
           placeholder="Postcode"
           value={postcode}

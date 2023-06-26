@@ -1,22 +1,23 @@
 import { GrFormClose } from 'react-icons/gr';
 import { useGlobalContext } from './Context';
 import useMultiStepForm from '../hooks/useMultiStepForm';
-import UserForm from './UserForm';
-import AddressForm from './AddressForm';
-import AccountForm from './AccountForm';
+import DetailsForm from './FormDetails';
+import AddressForm from './FormAddress';
+import EligibilityForm from './FormEligibility';
 import { useState } from 'react';
 import { formSteps } from '../data';
 
 const INITIAL_FORM_DATA = {
   firstName: '',
   lastName: '',
-  age: '',
+  phone: '',
+  emailNanny: '',
   street: '',
   city: '',
   county: '',
   postcode: '',
-  emailNanny: '',
-  password: '',
+  permit: '',
+  nationality: 'Irish',
 };
 
 const ApplicationFormNannyModal = () => {
@@ -42,9 +43,9 @@ const ApplicationFormNannyModal = () => {
     isFirstStep,
     isLastStep,
   } = useMultiStepForm([
-    <UserForm {...formData} updateFields={updateFormFields} />,
+    <DetailsForm {...formData} updateFields={updateFormFields} />,
     <AddressForm {...formData} updateFields={updateFormFields} />,
-    <AccountForm {...formData} updateFields={updateFormFields} />,
+    <EligibilityForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {

@@ -1,6 +1,6 @@
 import FormStepWrapper from './FormStepWrapper';
 
-const UserForm = ({ firstName, lastName, age, updateFields }) => {
+const DetailsForm = ({ firstName, lastName, phone, emailNanny, updateFields }) => {
   return (
     <FormStepWrapper>
       <div className="form-row">
@@ -8,7 +8,6 @@ const UserForm = ({ firstName, lastName, age, updateFields }) => {
           required
           autoFocus
           className="form-input"
-          id="firstName"
           type="text"
           placeholder="First Name"
           value={firstName}
@@ -19,7 +18,6 @@ const UserForm = ({ firstName, lastName, age, updateFields }) => {
         <input
           required
           className="form-input"
-          id="lastName"
           type="text"
           placeholder="Last Name"
           value={lastName}
@@ -29,17 +27,25 @@ const UserForm = ({ firstName, lastName, age, updateFields }) => {
       <div className="form-row">
         <input
           required
-          min={1}
-          max={70}
           className="form-input"
-          placeholder="Age"
-          id="age"
-          type="number"
-          value={age}
-          onChange={(e) => updateFields({ age: e.target.value })}
+          type="tel"
+          pattern="\+?[0-9]{6,20}"
+          placeholder="Phone"
+          value={phone}
+          onChange={(e) => updateFields({ phone: e.target.value })}
+        />
+      </div>
+      <div className="form-row">
+        <input
+          required
+          className="form-input"
+          type="email"
+          placeholder="Email"
+          value={emailNanny}
+          onChange={(e) => updateFields({ emailNanny: e.target.value })}
         />
       </div>
     </FormStepWrapper>
   );
 };
-export default UserForm;
+export default DetailsForm;
