@@ -28,6 +28,16 @@ const EligibilityFormNationality = ({
       <input type="hidden" value={county} name="Address line 3:" />
       <input type="hidden" value={postcode} name="Address line 4:" />
 
+      <h3
+        className="form-heading"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          top: '0',
+        }}
+      >
+        Your Eligibility
+      </h3>
       <div
         className="form-row"
         style={{ display: 'flex', flexDirection: 'column' }}

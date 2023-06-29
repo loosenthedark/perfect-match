@@ -28,21 +28,28 @@ const ExperienceForm = ({
       <input type="hidden" value={county} name="Address line 3:" />
       <input type="hidden" value={postcode} name="Address line 4:" />
 
+      <h3
+        className="form-heading"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          top: '0',
+        }}
+      >
+        Your Experience
+      </h3>
       <div className="form-row">
-        <div className="label-q">
-          <h6
-            className="form-input"
-            style={{
-              borderRadius: 'unset',
-              border: 'unset',
-              paddingLeft: 'unset',
-              paddingRight: 'unset',
-              fontSize: '.775rem',
-            }}
-          >
-            Do you have previous experience in childcare?
-          </h6>
-        </div>
+        <span
+          className="label-q form-input"
+          style={{
+            borderRadius: 'unset',
+            border: 'unset',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
+          }}
+        >
+          Do you have previous experience in childcare?
+        </span>
         <div
           className="slider-wrapper"
           style={{
@@ -53,9 +60,10 @@ const ExperienceForm = ({
           }}
         >
           <span style={{ textAlign: 'right' }}>NO</span>
-          <label className="switch">
+          <label htmlFor="experience" className="switch">
             <input
               checked={experienceChecked}
+              id="experience"
               type="checkbox"
               onChange={(e) => setExperienceChecked(e.target.checked)}
             />
@@ -65,20 +73,17 @@ const ExperienceForm = ({
         </div>
       </div>
       <div className="form-row">
-        <div className="label-q">
-          <h6
-            className="form-input"
-            style={{
-              borderRadius: 'unset',
-              border: 'unset',
-              paddingLeft: 'unset',
-              paddingRight: 'unset',
-              fontSize: '.775rem',
-            }}
-          >
-            Do you hold any formal childcare qualifications?
-          </h6>
-        </div>
+        <span
+          className="label-q form-input"
+          style={{
+            borderRadius: 'unset',
+            border: 'unset',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
+          }}
+        >
+          Do you hold any formal childcare qualifications?
+        </span>
         <div
           className="slider-wrapper"
           style={{
@@ -89,9 +94,10 @@ const ExperienceForm = ({
           }}
         >
           <span style={{ textAlign: 'right' }}>NO</span>
-          <label className="switch">
+          <label htmlFor="qualifications" className="switch">
             <input
               checked={qualificationsChecked}
+              id="qualifications"
               type="checkbox"
               onChange={(e) => setQualificationsChecked(e.target.checked)}
             />
@@ -101,17 +107,10 @@ const ExperienceForm = ({
         </div>
       </div>
       <div className="form-row">
-        {/* <input
-          required
-          className="form-input"
-          type="text"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => updateFields({ lastName: e.target.value })}
-        /> */}
         <textarea
           className="form-input"
           placeholder="If yes, please provide details..."
+          rows="3"
         ></textarea>
       </div>
     </FormStepWrapper>

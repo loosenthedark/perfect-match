@@ -1,8 +1,24 @@
 import FormStepWrapper from './FormStepWrapper';
 
-const DetailsForm = ({ firstName, lastName, phone, emailNanny, updateFields }) => {
+const DetailsForm = ({
+  firstName,
+  lastName,
+  phone,
+  emailNanny,
+  updateFields,
+}) => {
   return (
     <FormStepWrapper>
+      <h3
+        className="form-heading"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          top: '0',
+        }}
+      >
+        Your Details
+      </h3>
       <div className="form-row">
         <input
           required

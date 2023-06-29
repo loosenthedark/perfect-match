@@ -2,7 +2,7 @@ import FormStepWrapper from './FormStepWrapper';
 import { nationalities } from '../data';
 import { useState } from 'react';
 
-const EligibilityFormDriving = ({
+const AvailabilityForm = ({
   firstName,
   lastName,
   phone,
@@ -14,8 +14,8 @@ const EligibilityFormDriving = ({
   nationality,
   updateFields,
 }) => {
-  const [licenceChecked, setLicenceChecked] = useState(false);
-  const [carChecked, setCarChecked] = useState(false);
+  const [experienceChecked, setExperienceChecked] = useState(false);
+  const [qualificationsChecked, setQualificationsChecked] = useState(false);
 
   return (
     <FormStepWrapper>
@@ -36,41 +36,28 @@ const EligibilityFormDriving = ({
           top: '0',
         }}
       >
-        Your Eligibility
+        Your Availability
       </h3>
       <div className="form-row">
-        <div className="label-q">
-          <h6
-            className="form-input"
-            style={{
-              borderRadius: 'unset',
-              border: 'unset',
-              paddingLeft: '.75rem',
-            }}
-          >
-            Do you hold a valid Irish driving licence?
-          </h6>
-        </div>
-        <div
-          className="slider-wrapper"
+        <label
+          htmlFor="availability"
+          className="label-q form-input"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '.5rem',
+            borderRadius: 'unset',
+            border: 'unset',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
           }}
         >
-          <span style={{ textAlign: 'right' }}>NO</span>
-          <label className="switch">
-            <input
-              checked={licenceChecked}
-              type="checkbox"
-              onChange={(e) => setLicenceChecked(e.target.checked)}
-            />
-            <span className="slider round"></span>
-          </label>
-          <span>YES</span>
-        </div>
+          What days/hours are you available to work?
+        </label>
+        <input
+          required
+          className="form-input"
+          id="availability"
+          type="text"
+          placeholder="Please submit your availability..."
+        />
       </div>
       <div className="form-row">
         <div className="label-q">
@@ -79,10 +66,11 @@ const EligibilityFormDriving = ({
             style={{
               borderRadius: 'unset',
               border: 'unset',
-              paddingLeft: '.75rem',
+              paddingLeft: 'unset',
+              paddingRight: 'unset',
             }}
           >
-            Do you own or have regular access to a car?
+            Are you currently employed?
           </h6>
         </div>
         <div
@@ -97,16 +85,37 @@ const EligibilityFormDriving = ({
           <span style={{ textAlign: 'right' }}>NO</span>
           <label className="switch">
             <input
-              checked={carChecked}
+              checked={qualificationsChecked}
               type="checkbox"
-              onChange={(e) => setCarChecked(e.target.checked)}
+              onChange={(e) => setQualificationsChecked(e.target.checked)}
             />
             <span className="slider round"></span>
           </label>
           <span>YES</span>
         </div>
+      </div>
+      <div className="form-row">
+        <label
+          htmlFor="start-date"
+          className="label-q form-input"
+          style={{
+            borderRadius: 'unset',
+            border: 'unset',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
+          }}
+        >
+          If yes, what is your earliest available start date?
+        </label>
+        <input
+          required
+          className="form-input"
+          id="start-date"
+          type="date"
+          placeholder="Please indicate a prospective start date..."
+        />
       </div>
     </FormStepWrapper>
   );
 };
-export default EligibilityFormDriving;
+export default AvailabilityForm;

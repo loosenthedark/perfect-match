@@ -3,6 +3,16 @@ import FormStepWrapper from './FormStepWrapper';
 const AddressForm = ({ street, city, county, postcode, updateFields }) => {
   return (
     <FormStepWrapper>
+      <h3
+        className="form-heading"
+        style={{
+          position: 'absolute',
+          width: '100%',
+          top: '0',
+        }}
+      >
+        Your Address
+      </h3>
       <div className="form-row">
         <input
           required

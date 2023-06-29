@@ -1285,10 +1285,10 @@ Contact Form Modal
 .form-input,
 .form-textarea {
   width: 100%;
-  padding: 0.875rem 0.75rem 0.875rem 1.213125rem;
+  padding: 0.775rem 0.75rem 0.775rem 1.125rem;
   border-radius: var(--radius-input);
   border: 1px solid var(--grey-300);
-  font-size: 0.875rem;
+  font-size: 0.775rem;
   line-height: 1.86;
   font-family: var(--ff-primary);
   color: var(--grey-400);
@@ -1310,7 +1310,7 @@ Contact Form Modal
 }
 
 .form-row {
-  margin-bottom: 1rem;
+  margin-bottom: .75rem;
   position: relative;
 }
 
@@ -1397,16 +1397,13 @@ Application Form Modals
 
 .progress-bar li {
   list-style-type: none;
-  color: var(--clr-off-white-text);
+  /* color: var(--clr-off-white-text); */
+  color: transparent;
   text-transform: uppercase;
   font-size: .75rem;
-  width: 25%;
+  width: 16.6666666666%;
   float: left;
   position: relative;
-}
-
-.progress-bar li.active {
-  color: var(--clr-off-white-text);
 }
 
 .progress-bar li.active::before,
@@ -1443,13 +1440,17 @@ Application Form Modals
   content: none;
 }
 
+.form-heading {
+  color: var(--clr-grey);
+}
+
 /* custom radio buttons - based on https://www.w3schools.com/howto/howto_css_switch.asp */
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 53px;
+  height: 30px;
 }
 
 .switch input {
@@ -1473,10 +1474,10 @@ Application Form Modals
 .slider::before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 23px;
+  width: 23px;
+  left: 3.5px;
+  bottom: 3.5px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;

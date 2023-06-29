@@ -8,6 +8,7 @@ import EligibilityFormDriving from './FormEligibilityDriving';
 import ExperienceForm from './FormExperience';
 import { useState } from 'react';
 import { formSteps } from '../data';
+import AvailabilityForm from './FormAvailability';
 
 const INITIAL_FORM_DATA = {
   firstName: '',
@@ -44,14 +45,15 @@ const ApplicationFormNannyModal = () => {
     isFirstStep,
     isLastStep,
   } = useMultiStepForm([
-    // <DetailsForm {...formData} updateFields={updateFormFields} />,
-    // <AddressForm {...formData} updateFields={updateFormFields} />,
+    <DetailsForm {...formData} updateFields={updateFormFields} />,
+    <AddressForm {...formData} updateFields={updateFormFields} />,
     <EligibilityFormNationality
       {...formData}
       updateFields={updateFormFields}
     />,
     <EligibilityFormDriving {...formData} updateFields={updateFormFields} />,
     <ExperienceForm {...formData} updateFields={updateFormFields} />,
+    <AvailabilityForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {
