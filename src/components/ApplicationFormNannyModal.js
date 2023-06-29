@@ -3,7 +3,9 @@ import { useGlobalContext } from './Context';
 import useMultiStepForm from '../hooks/useMultiStepForm';
 import DetailsForm from './FormDetails';
 import AddressForm from './FormAddress';
-import EligibilityForm from './FormEligibility';
+import EligibilityFormNationality from './FormEligibilityNationality';
+import EligibilityFormDriving from './FormEligibilityDriving';
+import ExperienceForm from './FormExperience';
 import { useState } from 'react';
 import { formSteps } from '../data';
 
@@ -16,7 +18,6 @@ const INITIAL_FORM_DATA = {
   city: '',
   county: '',
   postcode: '',
-  permit: '',
   nationality: 'Irish',
 };
 
@@ -43,9 +44,14 @@ const ApplicationFormNannyModal = () => {
     isFirstStep,
     isLastStep,
   } = useMultiStepForm([
-    <DetailsForm {...formData} updateFields={updateFormFields} />,
-    <AddressForm {...formData} updateFields={updateFormFields} />,
-    <EligibilityForm {...formData} updateFields={updateFormFields} />,
+    // <DetailsForm {...formData} updateFields={updateFormFields} />,
+    // <AddressForm {...formData} updateFields={updateFormFields} />,
+    <EligibilityFormNationality
+      {...formData}
+      updateFields={updateFormFields}
+    />,
+    <EligibilityFormDriving {...formData} updateFields={updateFormFields} />,
+    <ExperienceForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {

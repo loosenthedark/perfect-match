@@ -124,6 +124,10 @@ export const formSteps = [
     id: 3,
     text: 'Your Eligibility',
   },
+  {
+    id: 4,
+    text: 'Your Eligibility',
+  },
 ];
 
 export const nationalities = [
