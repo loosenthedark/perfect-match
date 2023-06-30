@@ -8,7 +8,7 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-1.5rem',
+          top: '-12.8vw',
         }}
       >
         Your Address
@@ -16,7 +16,6 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
       <div className="form-row">
         <input
           required
-          autoFocus
           className="form-input"
           type="text"
           placeholder="Street"

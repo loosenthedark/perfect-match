@@ -76,7 +76,7 @@ const AvailabilityForm = ({
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-1.5rem',
+          top: '-12.8vw',
         }}
       >
         Your Availability

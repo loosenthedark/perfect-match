@@ -14,7 +14,7 @@ const DetailsForm = ({
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-1.5rem',
+          top: '-12.8vw',
         }}
       >
         Your Details
@@ -22,7 +22,6 @@ const DetailsForm = ({
       <div className="form-row">
         <input
           required
-          autoFocus
           className="form-input"
           type="text"
           placeholder="First Name"
