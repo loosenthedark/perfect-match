@@ -1,5 +1,5 @@
 import FormStepWrapper from './FormStepWrapper';
-import { nationalities } from '../data';
+import { useGlobalContext } from './Context';
 import { useState } from 'react';
 
 const AvailabilityForm = ({
@@ -12,10 +12,26 @@ const AvailabilityForm = ({
   county,
   postcode,
   nationality,
+  qualificationDetails,
+  availability,
   updateFields,
 }) => {
-  const [experienceChecked, setExperienceChecked] = useState(false);
-  const [qualificationsChecked, setQualificationsChecked] = useState(false);
+  const {
+    permitChecked,
+    licenceChecked,
+    carChecked,
+    experienceChecked,
+    qualificationsChecked,
+    employedChecked,
+    setEmployedChecked,
+  } = useGlobalContext();
+
+  const [startDate, setStartDate] = useState('');
+
+  const formatDateString = (dateString) => {
+    const dateArray = dateString.split('-');
+    return `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
+  };
 
   return (
     <FormStepWrapper>
@@ -27,13 +43,40 @@ const AvailabilityForm = ({
       <input type="hidden" value={city} name="Address line 2:" />
       <input type="hidden" value={county} name="Address line 3:" />
       <input type="hidden" value={postcode} name="Address line 4:" />
+      <input type="hidden" value={nationality} name="Nationality:" />
+      <input
+        type="hidden"
+        value={permitChecked ? 'Yes' : 'No'}
+        name="Work Permit?"
+      />
+      <input
+        type="hidden"
+        value={licenceChecked ? 'Yes' : 'No'}
+        name="Driving Licence?"
+      />
+      <input type="hidden" value={carChecked ? 'Yes' : 'No'} name="Car?" />
+      <input
+        type="hidden"
+        value={experienceChecked ? 'Yes' : 'No'}
+        name="Childcare experience?"
+      />
+      <input
+        type="hidden"
+        value={qualificationsChecked ? 'Yes' : 'No'}
+        name="Formal childcare qualifications?"
+      />
+      <input
+        type="hidden"
+        value={qualificationDetails}
+        name="Details of formal childcare qualifications:"
+      />
 
       <h3
         className="form-heading"
         style={{
           position: 'absolute',
           width: '100%',
-          top: '0',
+          top: '-1.5rem',
         }}
       >
         Your Availability
@@ -47,6 +90,8 @@ const AvailabilityForm = ({
             border: 'unset',
             paddingLeft: 'unset',
             paddingRight: 'unset',
+            paddingBottom: '.25rem',
+            display: 'block',
           }}
         >
           What days/hours are you available to work?
@@ -56,22 +101,27 @@ const AvailabilityForm = ({
           className="form-input"
           id="availability"
           type="text"
+          name="Availability:"
           placeholder="Please submit your availability..."
+          value={availability}
+          onChange={(e) => updateFields({ availability: e.target.value })}
         />
       </div>
       <div className="form-row">
         <div className="label-q">
-          <h6
-            className="form-input"
+          <span
+            className="label-q form-input"
             style={{
               borderRadius: 'unset',
               border: 'unset',
+              paddingTop: 'unset',
               paddingLeft: 'unset',
               paddingRight: 'unset',
+              display: 'block',
             }}
           >
             Are you currently employed?
-          </h6>
+          </span>
         </div>
         <div
           className="slider-wrapper"
@@ -83,16 +133,22 @@ const AvailabilityForm = ({
           }}
         >
           <span style={{ textAlign: 'right' }}>NO</span>
-          <label className="switch">
+          <label htmlFor="employed" className="switch">
             <input
-              checked={qualificationsChecked}
+              checked={employedChecked}
+              id="employed"
               type="checkbox"
-              onChange={(e) => setQualificationsChecked(e.target.checked)}
+              onChange={(e) => setEmployedChecked(e.target.checked)}
             />
             <span className="slider round"></span>
           </label>
           <span>YES</span>
         </div>
+        <input
+          type="hidden"
+          value={employedChecked ? 'Yes' : 'No'}
+          name="Currently employed?"
+        />
       </div>
       <div className="form-row">
         <label
@@ -101,18 +157,26 @@ const AvailabilityForm = ({
           style={{
             borderRadius: 'unset',
             border: 'unset',
+            paddingTop: 'unset',
             paddingLeft: 'unset',
             paddingRight: 'unset',
+            paddingBottom: '.25rem',
+            display: 'block',
           }}
         >
           If yes, what is your earliest available start date?
         </label>
         <input
-          required
           className="form-input"
           id="start-date"
           type="date"
-          placeholder="Please indicate a prospective start date..."
+          value={startDate}
+          onChange={(e) => setStartDate(e.target.value)}
+        />
+        <input
+          type="hidden"
+          value={formatDateString(startDate)}
+          name="Earliest available start date:"
         />
       </div>
     </FormStepWrapper>

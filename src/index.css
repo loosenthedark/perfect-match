@@ -317,8 +317,8 @@ Hero
 
 .hero-btn {
   font-family: var(--ff-primary);
-  padding-top: 0.95rem;
-  padding-bottom: 0.95rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
   font-size: 1rem;
   font-weight: 900;
   background: var(--clr-primary-5);
@@ -341,7 +341,7 @@ Hero
 
 .hero-btn.next-btn,
 .hero-btn.back-btn {
-  font-size: 0.875rem;
+  font-size: 0.775rem;
   width: calc(50% - .25rem);
 }
 
@@ -1293,6 +1293,15 @@ Contact Form Modal
   font-family: var(--ff-primary);
   color: var(--grey-400);
   font-weight: var(--fw-600);
+}
+
+.form-input.form-input__select {
+  padding-top: .875rem;
+  padding-bottom: .875rem;
+}
+
+.form-input.label-q {
+  padding-bottom: .5rem;
 }
 
 .form-input.form-input__select>div {

@@ -1,39 +1,22 @@
 import FormStepWrapper from './FormStepWrapper';
-import { nationalities } from '../data';
-import { useState } from 'react';
+import { useGlobalContext } from './Context';
 
-const ExperienceForm = ({
-  firstName,
-  lastName,
-  phone,
-  emailNanny,
-  street,
-  city,
-  county,
-  postcode,
-  nationality,
-  updateFields,
-}) => {
-  const [experienceChecked, setExperienceChecked] = useState(false);
-  const [qualificationsChecked, setQualificationsChecked] = useState(false);
+const ExperienceForm = ({ qualificationDetails, updateFields }) => {
+  const {
+    experienceChecked,
+    setExperienceChecked,
+    qualificationsChecked,
+    setQualificationsChecked,
+  } = useGlobalContext();
 
   return (
     <FormStepWrapper>
-      <input type="hidden" value={firstName} name="First Name:" />
-      <input type="hidden" value={lastName} name="Last Name:" />
-      <input type="hidden" value={phone} name="Phone Number:" />
-      <input type="hidden" value={emailNanny} name="Email Address:" />
-      <input type="hidden" value={street} name="Address line 1:" />
-      <input type="hidden" value={city} name="Address line 2:" />
-      <input type="hidden" value={county} name="Address line 3:" />
-      <input type="hidden" value={postcode} name="Address line 4:" />
-
       <h3
         className="form-heading"
         style={{
           position: 'absolute',
           width: '100%',
-          top: '0',
+          top: '-1.5rem',
         }}
       >
         Your Experience
@@ -46,6 +29,7 @@ const ExperienceForm = ({
             border: 'unset',
             paddingLeft: 'unset',
             paddingRight: 'unset',
+            display: 'block',
           }}
         >
           Do you have previous experience in childcare?
@@ -78,8 +62,10 @@ const ExperienceForm = ({
           style={{
             borderRadius: 'unset',
             border: 'unset',
+            paddingTop: 'unset',
             paddingLeft: 'unset',
             paddingRight: 'unset',
+            display: 'block',
           }}
         >
           Do you hold any formal childcare qualifications?
@@ -111,6 +97,10 @@ const ExperienceForm = ({
           className="form-input"
           placeholder="If yes, please provide details..."
           rows="3"
+          value={qualificationDetails}
+          onChange={(e) =>
+            updateFields({ qualificationDetails: e.target.value })
+          }
         ></textarea>
       </div>
     </FormStepWrapper>

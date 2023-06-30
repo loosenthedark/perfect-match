@@ -20,6 +20,8 @@ const INITIAL_FORM_DATA = {
   county: '',
   postcode: '',
   nationality: 'Irish',
+  qualificationDetails: '',
+  availability: '',
 };
 
 const ApplicationFormNannyModal = () => {

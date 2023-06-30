@@ -1,56 +1,35 @@
 import FormStepWrapper from './FormStepWrapper';
-import { nationalities } from '../data';
-import { useState } from 'react';
+import { useGlobalContext } from './Context';
 
-const EligibilityFormDriving = ({
-  firstName,
-  lastName,
-  phone,
-  emailNanny,
-  street,
-  city,
-  county,
-  postcode,
-  nationality,
-  updateFields,
-}) => {
-  const [licenceChecked, setLicenceChecked] = useState(false);
-  const [carChecked, setCarChecked] = useState(false);
+const EligibilityFormDriving = () => {
+  const { licenceChecked, setLicenceChecked, carChecked, setCarChecked } =
+    useGlobalContext();
 
   return (
     <FormStepWrapper>
-      <input type="hidden" value={firstName} name="First Name:" />
-      <input type="hidden" value={lastName} name="Last Name:" />
-      <input type="hidden" value={phone} name="Phone Number:" />
-      <input type="hidden" value={emailNanny} name="Email Address:" />
-      <input type="hidden" value={street} name="Address line 1:" />
-      <input type="hidden" value={city} name="Address line 2:" />
-      <input type="hidden" value={county} name="Address line 3:" />
-      <input type="hidden" value={postcode} name="Address line 4:" />
-
       <h3
         className="form-heading"
         style={{
           position: 'absolute',
           width: '100%',
-          top: '0',
+          top: '-1.5rem',
         }}
       >
         Your Eligibility
       </h3>
       <div className="form-row">
-        <div className="label-q">
-          <h6
-            className="form-input"
-            style={{
-              borderRadius: 'unset',
-              border: 'unset',
-              paddingLeft: '.75rem',
-            }}
-          >
-            Do you hold a valid Irish driving licence?
-          </h6>
-        </div>
+        <span
+          className="label-q form-input"
+          style={{
+            borderRadius: 'unset',
+            border: 'unset',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
+            display: 'block',
+          }}
+        >
+          Do you hold a valid Irish driving licence?
+        </span>
         <div
           className="slider-wrapper"
           style={{
@@ -61,9 +40,10 @@ const EligibilityFormDriving = ({
           }}
         >
           <span style={{ textAlign: 'right' }}>NO</span>
-          <label className="switch">
+          <label htmlFor="licence" className="switch">
             <input
               checked={licenceChecked}
+              id="licence"
               type="checkbox"
               onChange={(e) => setLicenceChecked(e.target.checked)}
             />
@@ -73,18 +53,18 @@ const EligibilityFormDriving = ({
         </div>
       </div>
       <div className="form-row">
-        <div className="label-q">
-          <h6
-            className="form-input"
-            style={{
-              borderRadius: 'unset',
-              border: 'unset',
-              paddingLeft: '.75rem',
-            }}
-          >
-            Do you own or have regular access to a car?
-          </h6>
-        </div>
+        <span
+          className="label-q form-input"
+          style={{
+            borderRadius: 'unset',
+            border: 'unset',
+            paddingLeft: 'unset',
+            paddingRight: 'unset',
+            display: 'block',
+          }}
+        >
+          Do you own or have regular access to a car?
+        </span>
         <div
           className="slider-wrapper"
           style={{
@@ -95,9 +75,10 @@ const EligibilityFormDriving = ({
           }}
         >
           <span style={{ textAlign: 'right' }}>NO</span>
-          <label className="switch">
+          <label htmlFor="car" className="switch">
             <input
               checked={carChecked}
+              id="car"
               type="checkbox"
               onChange={(e) => setCarChecked(e.target.checked)}
             />

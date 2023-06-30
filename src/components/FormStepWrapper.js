@@ -13,7 +13,7 @@ const FormStepWrapper = ({ title, children }) => {
           flexDirection: 'column',
           justifyContent: 'center',
           position: 'relative',
-          paddingTop: '2.25rem'
+          paddingTop: '1.25rem'
         }}
       >
         {children}

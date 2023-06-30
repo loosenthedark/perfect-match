@@ -7,6 +7,12 @@ export const AppProvider = ({ children }) => {
   const [toggleContactFormModal, setToggleContactFormModal] = useState(false);
   const [toggleApplicationFormNannyModal, setToggleApplicationFormNannyModal] =
     useState(false);
+  const [permitChecked, setPermitChecked] = useState(false);
+  const [licenceChecked, setLicenceChecked] = useState(false);
+  const [carChecked, setCarChecked] = useState(false);
+  const [experienceChecked, setExperienceChecked] = useState(false);
+  const [qualificationsChecked, setQualificationsChecked] = useState(false);
+  const [employedChecked, setEmployedChecked] = useState(false);
 
   return (
     <AppContext.Provider
@@ -17,6 +23,18 @@ export const AppProvider = ({ children }) => {
         setToggleContactFormModal,
         toggleApplicationFormNannyModal,
         setToggleApplicationFormNannyModal,
+        permitChecked,
+        setPermitChecked,
+        licenceChecked,
+        setLicenceChecked,
+        carChecked,
+        setCarChecked,
+        experienceChecked,
+        setExperienceChecked,
+        qualificationsChecked,
+        setQualificationsChecked,
+        employedChecked,
+        setEmployedChecked,
       }}
     >
       {children}
