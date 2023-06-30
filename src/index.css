@@ -1400,9 +1400,9 @@ Application Form Modals
   position: absolute;
   overflow: hidden;
   counter-reset: step;
-  top: -13.67vh;
+  top: -24.32vw;
   width: 90vw;
-  padding-top: 4.08vh;
+  padding-top: 47.25vw;
 }
 
 .progress-bar li {
