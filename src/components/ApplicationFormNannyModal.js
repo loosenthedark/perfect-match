@@ -9,6 +9,8 @@ import ExperienceForm from './FormExperience';
 import { useState } from 'react';
 import { formSteps } from '../data';
 import AvailabilityForm from './FormAvailability';
+import EmployedForm from './FormEmployed';
+import CVForm from './FormCV';
 
 const INITIAL_FORM_DATA = {
   firstName: '',
@@ -21,7 +23,8 @@ const INITIAL_FORM_DATA = {
   postcode: '',
   nationality: 'Irish',
   qualificationDetails: '',
-  availability: '',
+  availability: [],
+  startDate: '',
 };
 
 const ApplicationFormNannyModal = () => {
@@ -56,6 +59,8 @@ const ApplicationFormNannyModal = () => {
     <EligibilityFormDriving {...formData} updateFields={updateFormFields} />,
     <ExperienceForm {...formData} updateFields={updateFormFields} />,
     <AvailabilityForm {...formData} updateFields={updateFormFields} />,
+    <EmployedForm {...formData} updateFields={updateFormFields} />,
+    <CVForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {

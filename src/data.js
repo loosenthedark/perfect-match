@@ -136,6 +136,14 @@ export const formSteps = [
     id: 6,
     text: 'Your Availability',
   },
+  {
+    id: 7,
+    text: 'Your Availability',
+  },
+  {
+    id: 8,
+    text: 'Your CV',
+  },
 ];
 
 export const nationalities = [
