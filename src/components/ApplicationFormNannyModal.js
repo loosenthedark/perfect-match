@@ -104,7 +104,7 @@ const ApplicationFormNannyModal = () => {
           method="POST"
           className="form"
           onSubmit={handleSubmit}
-          enctype="multipart/form-data
+          enctype="multipart/form-data"
         >
           {currentStep}
           <div
