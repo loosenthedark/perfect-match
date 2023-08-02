@@ -1,6 +1,5 @@
 import FormStepWrapper from './FormStepWrapper';
 import { useGlobalContext } from './Context';
-import { useState } from 'react';
 
 const CVForm = ({
   firstName,
@@ -24,8 +23,6 @@ const CVForm = ({
     qualificationsChecked,
     employedChecked,
   } = useGlobalContext();
-
-  const [cv, setCv] = useState('');
 
   const formatDateString = (dateString) => {
     const dateArray = dateString.split('-');
@@ -126,10 +123,8 @@ const CVForm = ({
           className="form-input"
           id="cv-upload"
           type="file"
-          value={cv}
-          onChange={(e) => setCv(e.target.value)}
+          name="CV upload:"
         />
-        <input type="hidden" value={cv} name="CV upload:" />
       </div>
     </FormStepWrapper>
   );
