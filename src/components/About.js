@@ -41,13 +41,22 @@ const About = () => {
           <h3>explore the difference</h3>
           <h2>Let us help you find your Perfect Match</h2>
           <p>
-            We pride ourselves on going the extra mile, taking the time to
-            ensure our experienced and qualified nannies meet the exact
-            requirements of your family.
+            As a boutique nanny agency, we have a devoted, personal and unique
+            approach. We will call to your home and meet with you in your own
+            environment. We will listen carefully to your needs and expectations
+            in order to ensure that your requirements are fully met. We will
+            then send you a selection of our most suitable nannies for
+            interview.
           </p>
           <p>
-            Through our bespoke recruitment process, we strive to ensure a
-            harmonious match, where every piece of the puzzle is met.
+            We also offer an optional service, at no added cost, where one of us
+            will spend a full day with you and your nanny, training her in your
+            home to ensure your needs will be carried out to the very highest
+            standard.
+          </p>
+          <p>
+            We believe that this is the most important part of our mission, and
+            the one closest to our hearts.
           </p>
           {/* <a href="#about" className="btn">
             read more

@@ -57,6 +57,48 @@ const FAQs = ({ faqs }) => {
                 </p>
               )}
             </div>
+            <div className="question">
+              <header
+                className={
+                  faqs.length + 2 !== expandedQuestion && 'not-expanded'
+                }
+              >
+                <h5>What if I'm not happy with my nanny?</h5>
+                <button
+                  className="question-btn"
+                  onClick={
+                    faqs.length + 2 === expandedQuestion
+                      ? () => handleSetExpandedQuestion(null)
+                      : () => handleSetExpandedQuestion(faqs.length + 2)
+                  }
+                >
+                  {faqs.length + 2 === expandedQuestion ? (
+                    <FiMinus />
+                  ) : (
+                    <FiPlus />
+                  )}
+                </button>
+              </header>
+              {faqs.length + 2 === expandedQuestion && (
+                <p>
+                  We value the importance of finding the most suitable person to
+                  become part of your family, and wish to maintain a
+                  long-lasting relationship with those we work with. We will
+                  remain available to you and your nanny for the duration of
+                  their employment, should you need any advice or to discuss any
+                  concerns you might have. For more information on replacement
+                  nannies and refunds please see our{' '}
+                  <a
+                    href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Terms and Conditions
+                  </a>
+                  .
+                </p>
+              )}
+            </div>
           </div>
           {/* <a href="#about" className="btn">
             read more

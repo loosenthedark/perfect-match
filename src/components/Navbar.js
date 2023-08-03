@@ -1,6 +1,6 @@
 import { pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
-import logo from '../images/logo.svg';
+// import logoNew from '../images/perfect-match-logo_original_compressed.png';
 
 const Navbar = () => {
   const { toggleSidebar, setToggleSidebar, setToggleContactFormModal } =
@@ -9,9 +9,18 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <a href="#home">
-            <img src={logo} className="nav-logo" alt="Perfect Match logo" />
-          </a>
+          {/* <a
+            href="#home"
+            style={{ marginLeft: 'calc(50% - 80px)', marginTop: '2.5rem' }}
+          > */}
+            {/* <img src={logo} className="nav-logo" alt="Perfect Match logo" /> */}
+            {/* <img
+              src={logoNew}
+              width="160"
+              className="nav-logo"
+              alt="Perfect Match Nanny Agency logo"
+            /> */}
+          {/* </a> */}
           <button
             type="button"
             className="nav-toggle"
