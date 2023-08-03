@@ -12,14 +12,18 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-12.8vw',
+          top: '-17vw',
         }}
       >
         Your Eligibility
       </h3>
       <div
         className="form-row"
-        style={{ display: 'flex', flexDirection: 'column' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          marginBottom: '2rem',
+        }}
       >
         <label
           className="form-input"
@@ -48,7 +52,7 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
           })}
         </select>
       </div>
-      <div className="form-row">
+      <div className="form-row" style={{ marginBottom: '3rem' }}>
         <span
           className="label-q form-input"
           style={{

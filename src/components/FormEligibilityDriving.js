@@ -12,12 +12,12 @@ const EligibilityFormDriving = () => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-12.8vw',
+          top: '-17vw',
         }}
       >
         Your Eligibility
       </h3>
-      <div className="form-row">
+      <div className="form-row" style={{ marginBottom: '3.586875rem' }}>
         <span
           className="label-q form-input"
           style={{
@@ -52,7 +52,7 @@ const EligibilityFormDriving = () => {
           <span>YES</span>
         </div>
       </div>
-      <div className="form-row">
+      <div className="form-row" style={{ marginBottom: '3rem' }}>
         <span
           className="label-q form-input"
           style={{

@@ -5,7 +5,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
   const renderCustomDateCell = (time, selected, innerRef) => (
     <div
       style={{
-        height: '2.5vh',
+        height: '2.875vh',
         width: '100%',
         background: selected ? '#71c0d4' : '#b18bdd',
         borderRadius: '.125rem',
@@ -17,7 +17,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
   const renderCustomTimeLabel = (time) => (
     <div
       style={{
-        lineHeight: '2.5vh',
+        lineHeight: '2.875vh',
         width: '100%',
         fontSize: '.7rem',
         paddingRight: '.5rem',
@@ -58,19 +58,19 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-12.8vw',
+          top: '-17vw',
         }}
       >
         Your Availability
       </h3>
-      <div className="form-row" style={{ top: '-1vh' }}>
+      <div className="form-row" style={{ top: '-2vh' }}>
         <label
           htmlFor="available"
           className="label-q form-input"
           style={{
             borderRadius: 'unset',
             border: 'unset',
-            padding: '0 0 .75rem',
+            padding: '0 0 .25rem',
             display: 'block',
           }}
         >

@@ -8,7 +8,7 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-12.8vw',
+          top: '-17vw',
         }}
       >
         Your Address
