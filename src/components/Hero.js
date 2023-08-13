@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-banner">
-        <h1>Let us help you find <br />your Perfect M@tch</h1>
+        <h1>Let us help you find <br />your Perfect Match</h1>
         <p>
           Perfect Match is Ireland’s newest professional nanny agency. We are
           committed to helping you find a warm, caring and responsible nanny,
