@@ -763,7 +763,7 @@ FAQs
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background: var(--clr-secondary);
+  background: var(--clr-secondary-active);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -794,7 +794,7 @@ FAQs
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--clr-primary-5);
+  color: var(--clr-primary-5-active);
   background-color: var(--clr-off-white);
   border-color: transparent;
   cursor: pointer;
