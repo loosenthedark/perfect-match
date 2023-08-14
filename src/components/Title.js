@@ -1,7 +1,7 @@
 const Title = (props) => {
   const { textOne, textTwo } = props;
   return (
-    <div className="section-title">
+    <div style={{ position: 'relative', zIndex: '2' }} className="section-title">
       <h2>
         {textOne} <span>{textTwo}</span>
       </h2>

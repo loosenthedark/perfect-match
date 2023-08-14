@@ -1,5 +1,6 @@
 import FormStepWrapper from './FormStepWrapper';
 import { useGlobalContext } from './Context';
+import logoBackground from '../images/perfect-match-logo_square_no-text.png';
 
 const CVForm = ({
   firstName,
@@ -104,6 +105,17 @@ const CVForm = ({
       >
         Your CV
       </h3>
+      <div
+        style={{
+          height: '17.5vh',
+          width: '17.5vh',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginBottom: '2vh',
+          backgroundImage: 'url(' + logoBackground + ')',
+          backgroundSize: 'cover',
+        }}
+      ></div>
       <div className="form-row">
         <label
           htmlFor="cv-upload"
@@ -121,12 +133,30 @@ const CVForm = ({
           Please upload a copy of your CV:
         </label>
         <input
+          required
           className="form-input"
           id="cv-upload"
           type="file"
           name="CV upload:"
         />
       </div>
+      <p
+        className="modal-footer-text modal-footer-text__application-form"
+        style={{
+          marginTop: '1vh',
+          marginLeft: '4%',
+          marginRight: '4%',
+        }}
+      >
+        By submitting this form, you are agreeing to our{' '}
+        <a
+          target="_blank"
+          href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
+          rel="noreferrer"
+        >
+          <span>Terms and Conditions</span>
+        </a>
+      </p>
     </FormStepWrapper>
   );
 };

@@ -129,7 +129,8 @@ const ApplicationFormNannyModal = () => {
             </button>
           </div>
         </form>
-        {/* <footer className="modal-footer">
+        {/* {isLastStep && (
+          <footer className="modal-footer">
           <p className="modal-footer-text modal-footer-text__application-form">
             By submitting this form, you are agreeing to our{' '}
             <a
@@ -140,7 +141,8 @@ const ApplicationFormNannyModal = () => {
               <span>Terms and Conditions</span>
             </a>
           </p>
-        </footer> */}
+        </footer>
+        )} */}
       </div>
     </div>
   );

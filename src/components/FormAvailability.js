@@ -7,7 +7,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
       style={{
         height: '2.875vh',
         width: '100%',
-        background: selected ? '#71c0d4' : '#b18bdd',
+        background: selected ? '#ffc8dd' : '#d8d8d8',
         borderRadius: '.125rem',
       }}
       ref={innerRef}
@@ -71,7 +71,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
           style={{
             borderRadius: 'unset',
             border: 'unset',
-            padding: '0 0 .25rem',
+            padding: '0 0 1.5vh',
             display: 'block',
           }}
         >

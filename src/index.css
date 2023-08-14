@@ -13,8 +13,8 @@ Variables
   --clr-primary-3: hsl(185, 81%, 29%);
   --clr-primary-4: hsl(184, 77%, 34%);
   /* primary/main color */
-  --clr-primary-5: #4d96a9;
-  --clr-primary-5-active: #71c0d4;
+  --clr-primary-5: #a2d2ff;
+  --clr-primary-5-active: #80c1ff;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(185, 57%, 50%);
   --clr-primary-7: hsl(184, 65%, 59%);
@@ -52,8 +52,8 @@ Variables
   --clr-off-white: #f2f2f2;
   --clr-off-white-text: #fafafa;
   --clr-bg-grey: #d8d8d8;
-  --clr-secondary: #855fb1;
-  --clr-secondary-active: #b18bdd;
+  --clr-secondary: #ffc8dd;
+  --clr-secondary-active: #ffb3d0;
   /* font-weight */
   --fw-500: 500;
   --fw-600: 600;
@@ -137,7 +137,7 @@ h2 {
 
 h3 {
   font-size: 1.25rem;
-  color: var(--clr-primary-5);
+  color: var(--clr-primary-5-active);
   text-transform: uppercase;
   font-size: 1rem;
   line-height: 1.625;
@@ -345,10 +345,14 @@ Hero
   width: calc(50% - .25rem);
 }
 
+.hero-btn.next-btn {
+  background: var(--clr-primary-5-active);
+}
+
 .hero-btn.back-btn {
   background: unset;
   box-shadow: unset;
-  color: var(--clr-secondary);
+  color: var(--clr-secondary-active);
   font-weight: var(--fw-700);
 }
 
@@ -594,7 +598,7 @@ Services
   background-size: cover;
   background-repeat: no-repeat;
   mix-blend-mode: normal;
-  opacity: 0.15;
+  opacity: 0.25;
   background-position-x: center;
 }
 
@@ -617,10 +621,11 @@ Services
   padding-left: 2.4375rem;
   padding-right: 2.4375rem;
   position: absolute;
-  bottom: 4.5rem;
+  bottom: -40%;
   left: 50%;
   transform: translateX(-50%);
   width: 12.0625rem;
+  background: var(--clr-secondary-active);
 }
 
 .service-text {
@@ -758,7 +763,7 @@ FAQs
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background: var(--clr-primary-5);
+  background: var(--clr-secondary);
   border-top-left-radius: var(--radius);
   border-top-right-radius: var(--radius);
 }
@@ -789,7 +794,7 @@ FAQs
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: var(--clr-secondary);
+  color: var(--clr-primary-5);
   background-color: var(--clr-off-white);
   border-color: transparent;
   cursor: pointer;
@@ -856,7 +861,7 @@ Footer
 ===============
 */
 .footer {
-  background: var(--clr-secondary);
+  background: var(--clr-primary-5);
   text-align: center;
   padding-left: 1.75rem;
   padding-right: 1.75rem;
@@ -1173,7 +1178,7 @@ Sidebar
 .links a svg,
 .links button svg {
   font-size: 1.5rem;
-  color: var(--clr-secondary);
+  color: var(--clr-secondary-active);
   margin-right: 1rem;
   transition: var(--transition);
 }
@@ -1264,11 +1269,11 @@ Modal
 }
 
 .close-modal-btn.close-modal-btn__application-form {
-  top: calc(5vh - 1.5625rem);
+  top: 2.5vh;
 }
 
 .close-modal-btn svg path {
-  stroke: var(--clr-secondary);
+  stroke: var(--clr-secondary-active);
 }
 
 /*
@@ -1320,7 +1325,7 @@ Contact Form Modal
 
 .form-input:focus-visible,
 .form-textarea:focus-visible {
-  outline-color: var(--clr-secondary);
+  outline-color: var(--clr-primary-5);
 }
 
 .form-row {
@@ -1423,7 +1428,7 @@ Application Form Modals
 
 .progress-bar li.active::before,
 .progress-bar li.active::after {
-  background: var(--clr-primary-5);
+  background: var(--clr-primary-5-active);
   color: var(--clr-off-white-text);
 }
 
@@ -1435,7 +1440,7 @@ Application Form Modals
   display: block;
   font-size: 1rem;
   color: var(--clr-off-white-text);
-  background: var(--clr-secondary);
+  background: var(--clr-secondary-active);
   border-radius: 50%;
   margin: 0 auto .375rem;
 }
@@ -1444,7 +1449,7 @@ Application Form Modals
   content: "";
   width: 100%;
   height: .125rem;
-  background: var(--clr-secondary);
+  background: var(--clr-secondary-active);
   position: absolute;
   left: -50%;
   top: .7875rem;

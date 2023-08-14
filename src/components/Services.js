@@ -8,7 +8,7 @@ const Services = () => {
     <section className="section section__services">
       <div className="overlay"></div>
       <Title textOne="Schedule a call with us today" />
-      <div className="section-center services-center">
+      <div className="section-center services-center" style={{ position: 'relative', zIndex: '2' }}>
         <article className="service">
           <div className="service-info">
             <p className="service-text">
