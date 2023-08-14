@@ -1121,7 +1121,7 @@ Sidebar
   height: 100%;
   background: var(--clr-off-white);
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
   row-gap: 1rem;
   box-shadow: var(--clr-red-dark);
   transition: var(--transition);
@@ -1187,6 +1187,15 @@ Sidebar
   display: flex;
   justify-content: center;
   padding-bottom: 2rem;
+}
+
+.social-links.logo-text {
+  height: 22vw;
+  padding-bottom: unset;
+  background-image: url(./images/perfect-match-logo_only-text.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .social-links a {

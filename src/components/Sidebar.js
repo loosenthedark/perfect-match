@@ -9,7 +9,8 @@ const Sidebar = () => {
     useGlobalContext();
   return (
     <aside className={toggleSidebar ? 'sidebar show-sidebar' : 'sidebar'}>
-      <ul className="links">
+      <div className="social-links logo-text"></div>
+      <ul className="links" style={{ paddingBottom: '20%' }}>
         {pageLinks.map((link) => {
           const { id, icon, href, text } = link;
           return (
