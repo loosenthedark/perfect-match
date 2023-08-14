@@ -1264,7 +1264,7 @@ Modal
 }
 
 .close-modal-btn.close-modal-btn__application-form {
-  top: 3vh;
+  top: calc(5vh - 1.5625rem);
 }
 
 .close-modal-btn svg path {
@@ -1284,7 +1284,7 @@ Contact Form Modal
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 3vh 1.5rem 0;
-  margin: 3vh auto 0.5rem;
+  margin: 3vh auto 1vh;
 }
 
 .form-input,

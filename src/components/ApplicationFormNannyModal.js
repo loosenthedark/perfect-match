@@ -109,7 +109,7 @@ const ApplicationFormNannyModal = () => {
           {currentStep}
           <div
             style={{
-              marginTop: '.5rem',
+              marginTop: '1vh',
               display: 'flex',
               gap: '.5rem',
               justifyContent: 'flex-end',

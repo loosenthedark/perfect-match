@@ -58,12 +58,12 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: 'calc(3.75rem - 12vh)',
+          top: '-5.8vh',
         }}
       >
         Your Availability
       </h3>
-      <div className="form-row" style={{ top: '-2vh' }}>
+      <div className="form-row">
         <label
           htmlFor="available"
           className="label-q form-input"
