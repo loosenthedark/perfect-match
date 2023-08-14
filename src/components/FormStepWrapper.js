@@ -8,7 +8,7 @@ const FormStepWrapper = ({ title, children }) => {
       )}
       <div
         style={{
-          height: !title ? '17rem' : null,
+          height: !title ? '48vh' : null,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',

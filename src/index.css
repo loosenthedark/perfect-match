@@ -1283,8 +1283,8 @@ Contact Form Modal
   background: var(--white);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
-  padding: 2rem 1.5rem 0;
-  margin: 2.25rem auto 0.5rem;
+  padding: 3vh 1.5rem 0;
+  margin: 3vh auto 0.5rem;
 }
 
 .form-input,

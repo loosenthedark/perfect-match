@@ -16,7 +16,7 @@ const ExperienceForm = ({ qualificationDetails, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-17vw',
+          top: 'calc(3.75rem - 12vh)',
         }}
       >
         Your Experience
