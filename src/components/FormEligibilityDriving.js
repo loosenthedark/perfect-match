@@ -12,7 +12,8 @@ const EligibilityFormDriving = () => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-5.8vh',
+          top: '-5vh',
+          fontSize: '1.125rem',
         }}
       >
         Your Eligibility

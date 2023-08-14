@@ -2,10 +2,7 @@ import FormStepWrapper from './FormStepWrapper';
 import { useGlobalContext } from './Context';
 
 const EmployedForm = ({ startDate, updateFields }) => {
-  const {
-    employedChecked,
-    setEmployedChecked,
-  } = useGlobalContext();
+  const { employedChecked, setEmployedChecked } = useGlobalContext();
 
   return (
     <FormStepWrapper>
@@ -14,7 +11,8 @@ const EmployedForm = ({ startDate, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-5.8vh',
+          top: '-5vh',
+          fontSize: '1.125rem',
         }}
       >
         Your Availability
