@@ -2,15 +2,24 @@ import { extraLinks, pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
 
 const Footer = () => {
-  const { setToggleContactFormModal } = useGlobalContext();
+  const { setToggleContactFormModal, setToggleApplicationFormNannyModal } =
+    useGlobalContext();
 
   return (
     <footer className="section footer">
       <ul className="footer-links">
-        {pageLinks.map((link) => {
+        {pageLinks.slice(0, pageLinks.length - 2).map((link) => {
           return (
             <li key={link.id}>
-              <a href={link.href} className="footer-link">
+              <a
+                onClick={
+                  link.id === pageLinks.length - 2
+                    ? () => setToggleApplicationFormNannyModal(true)
+                    : null
+                }
+                href={link.id !== pageLinks.length - 2 ? link.href : null}
+                className="footer-link"
+              >
                 {link.text}
               </a>
             </li>

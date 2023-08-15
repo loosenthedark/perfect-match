@@ -105,6 +105,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: var(--clr-primary-5-active);
 }
 
 img:not(.nav-logo) {
@@ -863,8 +864,8 @@ Footer
 .footer {
   background: var(--clr-primary-5);
   text-align: center;
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .footer-links,
@@ -900,10 +901,10 @@ Footer
   font-size: 1rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  letter-spacing: var(--spacing);
+  letter-spacing: var(--spacing-slightly-reduced);
   transition: var(--transition);
   display: inline-block;
-  width: 5.5rem;
+  width: 5.75rem;
 }
 
 .footer-link.footer-link__contact {
@@ -920,7 +921,7 @@ Footer
 }
 
 .copyright {
-  letter-spacing: var(--spacing);
+  letter-spacing: var(--spacing-slightly-reduced);
   color: var(--clr-white);
 }
 
@@ -1153,7 +1154,7 @@ Sidebar
 .links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .links a,
@@ -1181,6 +1182,14 @@ Sidebar
   color: var(--clr-secondary-active);
   margin-right: 1rem;
   transition: var(--transition);
+}
+
+.links .submenu-link a {
+  padding-left: calc(33% + 2.5rem);
+}
+
+.links .submenu-link a svg {
+  color: var(--clr-primary-5);
 }
 
 .social-links {

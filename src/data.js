@@ -3,6 +3,8 @@ import {
   AiOutlineInfoCircle,
   AiOutlineQuestionCircle,
   AiOutlineForm,
+  AiOutlineUserAdd,
+  AiOutlineUsergroupAdd,
 } from 'react-icons/ai';
 
 export const pageLinks = [
@@ -29,6 +31,18 @@ export const pageLinks = [
     href: '#home',
     text: 'Apply',
     icon: <AiOutlineForm />,
+  },
+  {
+    id: 5,
+    href: '#home',
+    text: 'Nanny',
+    icon: <AiOutlineUserAdd />,
+  },
+  {
+    id: 6,
+    href: '#home',
+    text: 'Parents',
+    icon: <AiOutlineUsergroupAdd />,
   },
 ];
 

@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar';
 import ContactFormModal from './components/ContactFormModal';
 import ApplicationFormNannyModal from './components/ApplicationFormNannyModal';
 import { faqs } from './data';
+import ApplicationFormParentsModal from './components/ApplicationFormParentsModal';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Sidebar />
       <ContactFormModal />
       <ApplicationFormNannyModal />
+      <ApplicationFormParentsModal />
       <Hero />
       <About />
       <Services />

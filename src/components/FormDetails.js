@@ -1,4 +1,5 @@
 import FormStepWrapper from './FormStepWrapper';
+import { useGlobalContext } from './Context';
 
 const DetailsForm = ({
   firstName,
@@ -7,6 +8,8 @@ const DetailsForm = ({
   emailNanny,
   updateFields,
 }) => {
+  const { toggleApplicationFormParentsModal } = useGlobalContext();
+
   return (
     <FormStepWrapper>
       <h3
@@ -18,7 +21,9 @@ const DetailsForm = ({
           fontSize: '1.125rem',
         }}
       >
-        Your Details
+        {toggleApplicationFormParentsModal
+          ? 'Parent #1 Details'
+          : 'Your Details'}
       </h3>
       <div className="form-row">
         <input

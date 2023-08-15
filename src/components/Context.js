@@ -7,6 +7,8 @@ export const AppProvider = ({ children }) => {
   const [toggleContactFormModal, setToggleContactFormModal] = useState(false);
   const [toggleApplicationFormNannyModal, setToggleApplicationFormNannyModal] =
     useState(false);
+  const [toggleApplicationFormParentsModal, setToggleApplicationFormParentsModal] =
+    useState(false);
   const [permitChecked, setPermitChecked] = useState(false);
   const [licenceChecked, setLicenceChecked] = useState(false);
   const [carChecked, setCarChecked] = useState(false);
@@ -22,7 +24,9 @@ export const AppProvider = ({ children }) => {
         toggleContactFormModal,
         setToggleContactFormModal,
         toggleApplicationFormNannyModal,
+        toggleApplicationFormParentsModal,
         setToggleApplicationFormNannyModal,
+        setToggleApplicationFormParentsModal,
         permitChecked,
         setPermitChecked,
         licenceChecked,

@@ -3,21 +3,74 @@
 import { AiOutlineMail } from 'react-icons/ai';
 import { pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
+import { useState } from 'react';
 
 const Sidebar = () => {
-  const { toggleSidebar, setToggleSidebar, setToggleContactFormModal } =
-    useGlobalContext();
+  const {
+    toggleSidebar,
+    setToggleSidebar,
+    setToggleContactFormModal,
+    setToggleApplicationFormNannyModal,
+    setToggleApplicationFormParentsModal,
+  } = useGlobalContext();
+
+  const [isApplySubmenuShown, setIsApplySubmenuShown] = useState(false);
+
   return (
     <aside className={toggleSidebar ? 'sidebar show-sidebar' : 'sidebar'}>
-      <div className="social-links logo-text"></div>
-      <ul className="links" style={{ paddingBottom: '20%' }}>
+      <div
+        className="social-links logo-text"
+        onClick={() => {
+          setToggleSidebar(false);
+          setIsApplySubmenuShown(false);
+        }}
+      ></div>
+      <ul className="links">
         {pageLinks.map((link) => {
           const { id, icon, href, text } = link;
           return (
-            <li key={id}>
+            <li
+              style={{
+                display:
+                  !isApplySubmenuShown &&
+                  (id === pageLinks.length || id === pageLinks.length - 1)
+                    ? 'none'
+                    : 'list-item',
+              }}
+              className={
+                id === pageLinks.length || id === pageLinks.length - 1
+                  ? 'submenu-link'
+                  : ''
+              }
+              key={id}
+            >
               <a
                 role="button"
-                onClick={() => setToggleSidebar(false)}
+                style={{
+                  paddingTop:
+                    id === pageLinks.length || id === pageLinks.length - 1
+                      ? '.8515625rem'
+                      : '1rem',
+                  paddingBottom:
+                    id === pageLinks.length || id === pageLinks.length - 1
+                      ? '.8515625rem'
+                      : '1rem',
+                }}
+                onClick={
+                  id === pageLinks.length - 2
+                    ? () => setIsApplySubmenuShown(!isApplySubmenuShown)
+                    : id === pageLinks.length - 1
+                    ? () => setToggleApplicationFormNannyModal(true)
+                    : id === pageLinks.length
+                    ? () => {
+                        setToggleApplicationFormParentsModal(true);
+                        console.log(pageLinks);
+                      }
+                    : () => {
+                        setToggleSidebar(false);
+                        setIsApplySubmenuShown(false);
+                      }
+                }
                 href={href}
               >
                 {icon} {text}
