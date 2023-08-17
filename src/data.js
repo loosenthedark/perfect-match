@@ -125,7 +125,7 @@ export const faqs = [
   // },
 ];
 
-export const formSteps = [
+export const formNannySteps = [
   {
     id: 1,
     text: 'Your Details',
@@ -158,6 +158,33 @@ export const formSteps = [
     id: 8,
     text: 'Your CV',
   },
+];
+
+export const formParentsSteps = [
+  {
+    id: 1,
+    text: 'Parent #1 Details',
+  },
+  {
+    id: 2,
+    text: 'Parent #2 Details',
+  },
+  {
+    id: 3,
+    text: 'Home Address',
+  },
+  {
+    id: 4,
+    text: 'Your Children',
+  },
+  {
+    id: 5,
+    text: 'Child #1 Details',
+  },
+  {
+    id: 6,
+    text: 'Other Requirements',
+  }
 ];
 
 export const nationalities = [

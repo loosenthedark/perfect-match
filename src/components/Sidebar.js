@@ -62,10 +62,7 @@ const Sidebar = () => {
                     : id === pageLinks.length - 1
                     ? () => setToggleApplicationFormNannyModal(true)
                     : id === pageLinks.length
-                    ? () => {
-                        setToggleApplicationFormParentsModal(true);
-                        console.log(pageLinks);
-                      }
+                    ? () => setToggleApplicationFormParentsModal(true)
                     : () => {
                         setToggleSidebar(false);
                         setIsApplySubmenuShown(false);

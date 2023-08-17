@@ -7,7 +7,7 @@ import EligibilityFormNationality from './FormEligibilityNationality';
 import EligibilityFormDriving from './FormEligibilityDriving';
 import ExperienceForm from './FormExperience';
 import { useState } from 'react';
-import { formSteps } from '../data';
+import { formNannySteps } from '../data';
 import AvailabilityForm from './FormAvailability';
 import EmployedForm from './FormEmployed';
 import CVForm from './FormCV';
@@ -17,10 +17,10 @@ const INITIAL_FORM_DATA = {
   lastName: '',
   phone: '',
   emailNanny: '',
-  street: '',
-  city: '',
-  county: '',
-  postcode: '',
+  address1: '',
+  address2: '',
+  address3: '',
+  address4: '',
   nationality: 'Irish',
   qualificationDetails: '',
   availability: [],
@@ -81,7 +81,7 @@ const ApplicationFormNannyModal = () => {
       <div className="modal-container modal-container__application-form">
         {/* progress bar */}
         <ul className="progress-bar">
-          {formSteps.map((step) => {
+          {formNannySteps.map((step) => {
             return (
               <li
                 key={step.id}
@@ -129,20 +129,6 @@ const ApplicationFormNannyModal = () => {
             </button>
           </div>
         </form>
-        {/* {isLastStep && (
-          <footer className="modal-footer">
-          <p className="modal-footer-text modal-footer-text__application-form">
-            By submitting this form, you are agreeing to our{' '}
-            <a
-              target="_blank"
-              href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
-              rel="noreferrer"
-            >
-              <span>Terms and Conditions</span>
-            </a>
-          </p>
-        </footer>
-        )} */}
       </div>
     </div>
   );

@@ -48,6 +48,8 @@ Variables
   --clr-red-dark: #842029;
   --clr-green-dark: #0f5132;
   --clr-grey: #87879d;
+  --clr-lighter-grey: #e3e3e8;
+  --clr-light-grey: #c7c7d1;
   --clr-grey-muted: #bab7d4;
   --clr-off-white: #f2f2f2;
   --clr-off-white-text: #fafafa;
@@ -55,6 +57,7 @@ Variables
   --clr-secondary: #ffc8dd;
   --clr-secondary-active: #ffb3d0;
   /* font-weight */
+  --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
   --fw-700: 700;
@@ -350,11 +353,24 @@ Hero
   background: var(--clr-primary-5-active);
 }
 
+.hero-btn.next-btn.btn-secondary,
 .hero-btn.back-btn {
   background: unset;
+  font-weight: var(--fw-700);
+}
+
+.hero-btn.back-btn {
   box-shadow: unset;
   color: var(--clr-secondary-active);
-  font-weight: var(--fw-700);
+}
+
+.hero-btn.back-btn.btn-secondary {
+  color: var(--clr-grey-muted);
+}
+
+.hero-btn.next-btn.btn-secondary {
+  color: var(--clr-primary-5-active);
+  border: .15rem solid var(--clr-primary-5-active);
 }
 
 @media screen and (min-width: 768px) {
@@ -1338,7 +1354,8 @@ Contact Form Modal
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: var(--grey-400);
+  color: var(--clr-light-grey);
+  font-weight: var(--fw-400);
 }
 
 .form-input:focus-visible,

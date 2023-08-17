@@ -1,10 +1,10 @@
 import FormStepWrapper from './FormStepWrapper';
 
-const DetailsForm = ({
-  firstName,
-  lastName,
-  phone,
-  emailNanny,
+const Parent2DetailsForm = ({
+  firstNameParent2,
+  lastNameParent2,
+  phoneParent2,
+  emailParent2,
   updateFields,
 }) => {
   return (
@@ -18,50 +18,50 @@ const DetailsForm = ({
           fontSize: '1.125rem',
         }}
       >
-        Your Details
+        Parent #2 Details
       </h3>
       <div className="form-row">
         <input
-          required
           className="form-input"
           type="text"
           placeholder="First Name"
-          value={firstName}
-          onChange={(e) => updateFields({ firstName: e.target.value })}
+          name="Parent #2 First Name:"
+          value={firstNameParent2}
+          onChange={(e) => updateFields({ firstNameParent2: e.target.value })}
         />
       </div>
       <div className="form-row">
         <input
-          required
           className="form-input"
           type="text"
           placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => updateFields({ lastName: e.target.value })}
+          name="Parent #2 Last Name:"
+          value={lastNameParent2}
+          onChange={(e) => updateFields({ lastNameParent2: e.target.value })}
         />
       </div>
       <div className="form-row">
         <input
-          required
           className="form-input"
           type="tel"
           pattern="\+?[0-9]{6,20}"
           placeholder="Phone"
-          value={phone}
-          onChange={(e) => updateFields({ phone: e.target.value })}
+          name="Parent #2 Phone Number:"
+          value={phoneParent2}
+          onChange={(e) => updateFields({ phoneParent2: e.target.value })}
         />
       </div>
       <div className="form-row">
         <input
-          required
           className="form-input"
           type="email"
           placeholder="Email"
-          value={emailNanny}
-          onChange={(e) => updateFields({ emailNanny: e.target.value })}
+          name="Parent #2 Email Address:"
+          value={emailParent2}
+          onChange={(e) => updateFields({ emailParent2: e.target.value })}
         />
       </div>
     </FormStepWrapper>
   );
 };
-export default DetailsForm;
+export default Parent2DetailsForm;

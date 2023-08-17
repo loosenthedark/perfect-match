@@ -1,6 +1,15 @@
+import { useGlobalContext } from './Context';
 import FormStepWrapper from './FormStepWrapper';
 
-const AddressForm = ({ street, city, county, postcode, updateFields }) => {
+const AddressForm = ({
+  address1,
+  address2,
+  address3,
+  address4,
+  updateFields,
+}) => {
+  const { toggleApplicationFormParentsModal } = useGlobalContext();
+
   return (
     <FormStepWrapper>
       <h3
@@ -12,16 +21,16 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
           fontSize: '1.125rem',
         }}
       >
-        Your Address
+        {toggleApplicationFormParentsModal ? 'Home Address' : 'Your Address'}
       </h3>
       <div className="form-row">
         <input
           required
           className="form-input"
           type="text"
-          placeholder="Street"
-          value={street}
-          onChange={(e) => updateFields({ street: e.target.value })}
+          placeholder="Address line 1"
+          value={address1}
+          onChange={(e) => updateFields({ address1: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -29,9 +38,9 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
           required
           className="form-input"
           type="text"
-          placeholder="Town / City"
-          value={city}
-          onChange={(e) => updateFields({ city: e.target.value })}
+          placeholder="Address line 2"
+          value={address2}
+          onChange={(e) => updateFields({ address2: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -39,9 +48,9 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
           required
           className="form-input"
           type="text"
-          placeholder="County"
-          value={county}
-          onChange={(e) => updateFields({ county: e.target.value })}
+          placeholder="Address line 3"
+          value={address3}
+          onChange={(e) => updateFields({ address3: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -49,9 +58,9 @@ const AddressForm = ({ street, city, county, postcode, updateFields }) => {
           required
           className="form-input"
           type="text"
-          placeholder="Postcode"
-          value={postcode}
-          onChange={(e) => updateFields({ postcode: e.target.value })}
+          placeholder="Address line 4"
+          value={address4}
+          onChange={(e) => updateFields({ address4: e.target.value })}
         />
       </div>
     </FormStepWrapper>

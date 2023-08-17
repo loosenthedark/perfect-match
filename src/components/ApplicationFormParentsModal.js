@@ -1,30 +1,38 @@
 import { GrFormClose } from 'react-icons/gr';
 import { useGlobalContext } from './Context';
 import useMultiStepForm from '../hooks/useMultiStepForm';
-import DetailsForm from './FormDetails';
 import AddressForm from './FormAddress';
-import EligibilityFormNationality from './FormEligibilityNationality';
-import EligibilityFormDriving from './FormEligibilityDriving';
-import ExperienceForm from './FormExperience';
+// import EligibilityFormNationality from './FormEligibilityNationality';
+// import EligibilityFormDriving from './FormEligibilityDriving';
+// import ExperienceForm from './FormExperience';
 import { useState } from 'react';
-import { formSteps } from '../data';
-import AvailabilityForm from './FormAvailability';
-import EmployedForm from './FormEmployed';
-import CVForm from './FormCV';
+import { formParentsSteps } from '../data';
+import Parent1DetailsForm from './FormDetailsParent1';
+import Parent2DetailsForm from './FormDetailsParent2';
+import OtherRequirementsForm from './FormRequirementsOther';
+import ChildrenForm from './FormChildren';
+import ChildDetailsForm from './FormDetailsChild';
+// import AvailabilityForm from './FormAvailability';
+// import EmployedForm from './FormEmployed';
+// import CVForm from './FormCV';
 
 const INITIAL_FORM_DATA = {
-  firstName: '',
-  lastName: '',
-  phone: '',
-  emailNanny: '',
-  street: '',
-  city: '',
-  county: '',
-  postcode: '',
-  nationality: 'Irish',
-  qualificationDetails: '',
-  availability: [],
-  startDate: '',
+  firstNameParent1: '',
+  lastNameParent1: '',
+  phoneParent1: '',
+  emailParent1: '',
+  firstNameParent2: '',
+  lastNameParent2: '',
+  phoneParent2: '',
+  emailParent2: '',
+  address1: '',
+  address2: '',
+  address3: '',
+  address4: '',
+  numberOfChildren: 1,
+  // qualificationDetails: '',
+  // availability: [],
+  // startDate: '',
 };
 
 const ApplicationFormParentsModal = () => {
@@ -40,6 +48,7 @@ const ApplicationFormParentsModal = () => {
   const {
     toggleApplicationFormParentsModal,
     setToggleApplicationFormParentsModal,
+    howManyKids
   } = useGlobalContext();
 
   const {
@@ -50,17 +59,16 @@ const ApplicationFormParentsModal = () => {
     isFirstStep,
     isLastStep,
   } = useMultiStepForm([
-    <DetailsForm {...formData} updateFields={updateFormFields} />,
+    <Parent1DetailsForm {...formData} updateFields={updateFormFields} />,
+    <Parent2DetailsForm {...formData} updateFields={updateFormFields} />,
     <AddressForm {...formData} updateFields={updateFormFields} />,
-    <EligibilityFormNationality
-      {...formData}
-      updateFields={updateFormFields}
-    />,
-    <EligibilityFormDriving {...formData} updateFields={updateFormFields} />,
-    <ExperienceForm {...formData} updateFields={updateFormFields} />,
-    <AvailabilityForm {...formData} updateFields={updateFormFields} />,
-    <EmployedForm {...formData} updateFields={updateFormFields} />,
-    <CVForm {...formData} updateFields={updateFormFields} />,
+    <ChildrenForm {...formData} updateFields={updateFormFields} />,
+    <ChildDetailsForm {...formData} numberOfKids={howManyKids} updateFields={updateFormFields} />,
+    // <EligibilityFormDriving {...formData} updateFields={updateFormFields} />,
+    // <ExperienceForm {...formData} updateFields={updateFormFields} />,
+    // <AvailabilityForm {...formData} updateFields={updateFormFields} />,
+    // <EmployedForm {...formData} updateFields={updateFormFields} />,
+    <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {
@@ -81,7 +89,7 @@ const ApplicationFormParentsModal = () => {
       <div className="modal-container modal-container__application-form">
         {/* progress bar */}
         <ul className="progress-bar">
-          {formSteps.map((step) => {
+          {formParentsSteps.map((step) => {
             return (
               <li
                 key={step.id}
@@ -100,7 +108,7 @@ const ApplicationFormParentsModal = () => {
           <GrFormClose />
         </button>
         <form
-          action="https://formspree.io/f/xnqkajby"
+          action="https://formspree.io/f/xvojklzb"
           method="POST"
           className="form"
           onSubmit={handleSubmit}
@@ -129,20 +137,6 @@ const ApplicationFormParentsModal = () => {
             </button>
           </div>
         </form>
-        {/* {isLastStep && (
-          <footer className="modal-footer">
-          <p className="modal-footer-text modal-footer-text__application-form">
-            By submitting this form, you are agreeing to our{' '}
-            <a
-              target="_blank"
-              href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
-              rel="noreferrer"
-            >
-              <span>Terms and Conditions</span>
-            </a>
-          </p>
-        </footer>
-        )} */}
       </div>
     </div>
   );

@@ -1,29 +1,23 @@
 import FormStepWrapper from './FormStepWrapper';
 import { useGlobalContext } from './Context';
-import logoBackground from '../images/perfect-match-logo_square_no-text.png';
+// import logoBackground from '../images/perfect-match-logo_square_no-text.png';
 
-const CVForm = ({
-  firstName,
-  lastName,
-  phone,
-  emailNanny,
+const OtherRequirementsForm = ({
+  firstNameParent1,
+  lastNameParent1,
+  phoneParent1,
+  emailParent1,
+  firstNameParent2,
+  lastNameParent2,
+  phoneParent2,
+  emailParent2,
   address1,
   address2,
   address3,
   address4,
-  nationality,
-  qualificationDetails,
-  availability,
-  startDate,
+  numberOfChildren,
 }) => {
-  const {
-    permitChecked,
-    licenceChecked,
-    carChecked,
-    experienceChecked,
-    qualificationsChecked,
-    employedChecked,
-  } = useGlobalContext();
+  const { inputFieldsChildren } = useGlobalContext();
 
   const formatDateString = (dateString) => {
     const dateArray = dateString.split('-');
@@ -34,11 +28,34 @@ const CVForm = ({
     <FormStepWrapper>
       <input
         type="hidden"
-        value={firstName + ' ' + lastName}
-        name="Name:"
+        value={firstNameParent1 + ' ' + lastNameParent1}
+        name="Parent #1 name:"
       />
-      <input type="hidden" value={phone} name="Phone number:" />
-      <input type="hidden" value={emailNanny} name="Email address:" />
+      <input
+        type="hidden"
+        value={phoneParent1}
+        name="Parent #1 phone number:"
+      />
+      <input
+        type="hidden"
+        value={emailParent1}
+        name="Parent #1 email address:"
+      />
+      <input
+        type="hidden"
+        value={firstNameParent2 + ' ' + lastNameParent2}
+        name="Parent #2 name:"
+      />
+      <input
+        type="hidden"
+        value={phoneParent2}
+        name="Parent #2 phone number:"
+      />
+      <input
+        type="hidden"
+        value={emailParent2}
+        name="Parent #2 email address:"
+      />
       <input
         type="hidden"
         value={
@@ -46,16 +63,38 @@ const CVForm = ({
         }
         name="Address:"
       />
-      <input type="hidden" value={nationality} name="Nationality:" />
+      <input type="hidden" value={numberOfChildren} name="How many children?" />
+      {inputFieldsChildren.map((inputGroup, index) => {
+        return (
+          <div key={index} className="current-child-wrapper">
+            <input
+              type="hidden"
+              value={inputGroup.nameChild}
+              name={'Child #' + (index + 1) + ' name:'}
+            />
+            <input
+              type="hidden"
+              value={formatDateString(inputGroup.dobChild)}
+              name={'Child #' + (index + 1) + ' date of birth:'}
+            />
+            <input
+              type="hidden"
+              value={inputGroup.schoolLocationChild}
+              name={'Child #' + (index + 1) + ' school/Montessori location:'}
+            />
+          </div>
+        );
+      })}
+      {/* <input type="hidden" value={nationality} name="Nationality:" />
       <input
         type="hidden"
         value={permitChecked ? 'Yes' : 'No'}
-        name="Work permit?"
+        name="Work Permit?"
       />
       <input
         type="hidden"
         value={licenceChecked ? 'Yes' : 'No'}
-        name="Driving licence?"
+        name="Driving Licence?"
       />
       <input type="hidden" value={carChecked ? 'Yes' : 'No'} name="Car?" />
       <input
@@ -93,12 +132,7 @@ const CVForm = ({
         type="hidden"
         value={employedChecked ? 'Yes' : 'No'}
         name="Currently employed?"
-      />
-      <input
-        type="hidden"
-        value={formatDateString(startDate)}
-        name="Earliest available start date:"
-      />
+      /> */}
 
       <h3
         className="form-heading"
@@ -109,9 +143,9 @@ const CVForm = ({
           fontSize: '1.125rem',
         }}
       >
-        Your CV
+        Other Requirements
       </h3>
-      <div
+      {/* <div
         style={{
           height: '17.5vh',
           width: '17.5vh',
@@ -162,8 +196,8 @@ const CVForm = ({
         >
           <span>Terms and Conditions</span>
         </a>
-      </p>
+      </p> */}
     </FormStepWrapper>
   );
 };
-export default CVForm;
+export default OtherRequirementsForm;

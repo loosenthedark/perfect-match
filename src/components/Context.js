@@ -15,6 +15,8 @@ export const AppProvider = ({ children }) => {
   const [experienceChecked, setExperienceChecked] = useState(false);
   const [qualificationsChecked, setQualificationsChecked] = useState(false);
   const [employedChecked, setEmployedChecked] = useState(false);
+  const [howManyKids, setHowManyKids] = useState(1);
+  const [inputFieldsChildren, setInputFieldsChildren] = useState([])
 
   return (
     <AppContext.Provider
@@ -39,6 +41,10 @@ export const AppProvider = ({ children }) => {
         setQualificationsChecked,
         employedChecked,
         setEmployedChecked,
+        howManyKids,
+        setHowManyKids,
+        inputFieldsChildren,
+        setInputFieldsChildren,
       }}
     >
       {children}

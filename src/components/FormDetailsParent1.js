@@ -1,10 +1,10 @@
 import FormStepWrapper from './FormStepWrapper';
 
-const DetailsForm = ({
-  firstName,
-  lastName,
-  phone,
-  emailNanny,
+const Parent1DetailsForm = ({
+  firstNameParent1,
+  lastNameParent1,
+  phoneParent1,
+  emailParent1,
   updateFields,
 }) => {
   return (
@@ -18,7 +18,7 @@ const DetailsForm = ({
           fontSize: '1.125rem',
         }}
       >
-        Your Details
+        Parent #1 Details
       </h3>
       <div className="form-row">
         <input
@@ -26,8 +26,8 @@ const DetailsForm = ({
           className="form-input"
           type="text"
           placeholder="First Name"
-          value={firstName}
-          onChange={(e) => updateFields({ firstName: e.target.value })}
+          value={firstNameParent1}
+          onChange={(e) => updateFields({ firstNameParent1: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -36,8 +36,8 @@ const DetailsForm = ({
           className="form-input"
           type="text"
           placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => updateFields({ lastName: e.target.value })}
+          value={lastNameParent1}
+          onChange={(e) => updateFields({ lastNameParent1: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -47,8 +47,8 @@ const DetailsForm = ({
           type="tel"
           pattern="\+?[0-9]{6,20}"
           placeholder="Phone"
-          value={phone}
-          onChange={(e) => updateFields({ phone: e.target.value })}
+          value={phoneParent1}
+          onChange={(e) => updateFields({ phoneParent1: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -57,11 +57,11 @@ const DetailsForm = ({
           className="form-input"
           type="email"
           placeholder="Email"
-          value={emailNanny}
-          onChange={(e) => updateFields({ emailNanny: e.target.value })}
+          value={emailParent1}
+          onChange={(e) => updateFields({ emailParent1: e.target.value })}
         />
       </div>
     </FormStepWrapper>
   );
 };
-export default DetailsForm;
+export default Parent1DetailsForm;
