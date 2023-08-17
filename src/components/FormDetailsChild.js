@@ -61,6 +61,7 @@ const ChildDetailsForm = ({
   const { setInputFieldsChildren, inputFieldsChildren } = useGlobalContext();
   useEffect(() => {
     setInputFieldsChildren(inputFieldsChildrenConfig.slice(0, numberOfKids));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFormChange = (i, e) => {
