@@ -7,16 +7,26 @@ export const AppProvider = ({ children }) => {
   const [toggleContactFormModal, setToggleContactFormModal] = useState(false);
   const [toggleApplicationFormNannyModal, setToggleApplicationFormNannyModal] =
     useState(false);
-  const [toggleApplicationFormParentsModal, setToggleApplicationFormParentsModal] =
-    useState(false);
+  const [
+    toggleApplicationFormParentsModal,
+    setToggleApplicationFormParentsModal,
+  ] = useState(false);
   const [permitChecked, setPermitChecked] = useState(false);
   const [licenceChecked, setLicenceChecked] = useState(false);
   const [carChecked, setCarChecked] = useState(false);
   const [experienceChecked, setExperienceChecked] = useState(false);
   const [qualificationsChecked, setQualificationsChecked] = useState(false);
   const [employedChecked, setEmployedChecked] = useState(false);
+  const [pregnantChecked, setPregnantChecked] = useState(false);
+  const [petsChecked, setPetsChecked] = useState(false);
+  const [temporaryOrPermanent, setTemporaryOrPermanent] = useState(false);
+  const [partOrFullTime, setPartOrFullTime] = useState(false);
+  const [liveInOrOut, setLiveInOrOut] = useState(false);
+  const [driver, setDriver] = useState(false);
+  const [nonSmoker, setNonSmoker] = useState(false);
+  const [cooking, setCooking] = useState(false);
   const [howManyKids, setHowManyKids] = useState(1);
-  const [inputFieldsChildren, setInputFieldsChildren] = useState([])
+  const [inputFieldsChildren, setInputFieldsChildren] = useState([]);
 
   return (
     <AppContext.Provider
@@ -41,10 +51,26 @@ export const AppProvider = ({ children }) => {
         setQualificationsChecked,
         employedChecked,
         setEmployedChecked,
+        pregnantChecked,
+        setPregnantChecked,
+        petsChecked,
+        setPetsChecked,
+        temporaryOrPermanent,
+        setTemporaryOrPermanent,
+        partOrFullTime,
+        setPartOrFullTime,
+        liveInOrOut,
+        setLiveInOrOut,
         howManyKids,
         setHowManyKids,
         inputFieldsChildren,
         setInputFieldsChildren,
+        driver,
+        setDriver,
+        nonSmoker,
+        setNonSmoker,
+        cooking,
+        setCooking,
       }}
     >
       {children}

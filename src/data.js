@@ -183,8 +183,20 @@ export const formParentsSteps = [
   },
   {
     id: 6,
+    text: 'Additional Details',
+  },
+  {
+    id: 7,
+    text: 'Core Requirements',
+  },
+  {
+    id: 8,
+    text: 'Times Required',
+  },
+  {
+    id: 9,
     text: 'Other Requirements',
-  }
+  },
 ];
 
 export const nationalities = [

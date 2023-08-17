@@ -3,13 +3,7 @@ import FormStepWrapper from './FormStepWrapper';
 import { useGlobalContext } from './Context';
 import { useEffect } from 'react';
 
-const ChildDetailsForm = ({
-  nameChild1,
-  dobChild1,
-  schoolLocationChild1,
-  updateFields,
-  numberOfKids,
-}) => {
+const ChildDetailsForm = ({ numberOfKids }) => {
   const inputFieldsChildrenConfig = [
     {
       nameChild: '',
@@ -54,14 +48,10 @@ const ChildDetailsForm = ({
   ];
 
   const [currentChild, setCurrentChild] = useState(1);
-  // const numberOfKidsArray = Array.from(
-  //   { length: numberOfKids },
-  //   (_, i) => i + 1
-  // );
   const { setInputFieldsChildren, inputFieldsChildren } = useGlobalContext();
   useEffect(() => {
     setInputFieldsChildren(inputFieldsChildrenConfig.slice(0, numberOfKids));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFormChange = (i, e) => {

@@ -37,8 +37,8 @@ const CVForm = ({
         value={firstName + ' ' + lastName}
         name="Name:"
       />
-      <input type="hidden" value={phone} name="Phone number:" />
-      <input type="hidden" value={emailNanny} name="Email address:" />
+      <input type="hidden" value={phone} name="Phone:" />
+      <input type="hidden" value={emailNanny} name="Email:" />
       <input
         type="hidden"
         value={

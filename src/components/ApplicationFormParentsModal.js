@@ -2,19 +2,16 @@ import { GrFormClose } from 'react-icons/gr';
 import { useGlobalContext } from './Context';
 import useMultiStepForm from '../hooks/useMultiStepForm';
 import AddressForm from './FormAddress';
-// import EligibilityFormNationality from './FormEligibilityNationality';
-// import EligibilityFormDriving from './FormEligibilityDriving';
-// import ExperienceForm from './FormExperience';
 import { useState } from 'react';
 import { formParentsSteps } from '../data';
 import Parent1DetailsForm from './FormDetailsParent1';
 import Parent2DetailsForm from './FormDetailsParent2';
+import CoreRequirementsForm from './FormRequirementsCore';
 import OtherRequirementsForm from './FormRequirementsOther';
 import ChildrenForm from './FormChildren';
 import ChildDetailsForm from './FormDetailsChild';
-// import AvailabilityForm from './FormAvailability';
-// import EmployedForm from './FormEmployed';
-// import CVForm from './FormCV';
+import PregnantOrPetsForm from './FormPregnantOrPets';
+import AvailabilityForm from './FormAvailability';
 
 const INITIAL_FORM_DATA = {
   firstNameParent1: '',
@@ -30,9 +27,11 @@ const INITIAL_FORM_DATA = {
   address3: '',
   address4: '',
   numberOfChildren: 1,
-  // qualificationDetails: '',
-  // availability: [],
-  // startDate: '',
+  petDetails: '',
+  dueDate: '',
+  startDate: '',
+  availability: [],
+  otherRequirements: ''
 };
 
 const ApplicationFormParentsModal = () => {
@@ -48,7 +47,7 @@ const ApplicationFormParentsModal = () => {
   const {
     toggleApplicationFormParentsModal,
     setToggleApplicationFormParentsModal,
-    howManyKids
+    howManyKids,
   } = useGlobalContext();
 
   const {
@@ -63,11 +62,10 @@ const ApplicationFormParentsModal = () => {
     <Parent2DetailsForm {...formData} updateFields={updateFormFields} />,
     <AddressForm {...formData} updateFields={updateFormFields} />,
     <ChildrenForm {...formData} updateFields={updateFormFields} />,
-    <ChildDetailsForm {...formData} numberOfKids={howManyKids} updateFields={updateFormFields} />,
-    // <EligibilityFormDriving {...formData} updateFields={updateFormFields} />,
-    // <ExperienceForm {...formData} updateFields={updateFormFields} />,
-    // <AvailabilityForm {...formData} updateFields={updateFormFields} />,
-    // <EmployedForm {...formData} updateFields={updateFormFields} />,
+    <ChildDetailsForm numberOfKids={howManyKids} />,
+    <PregnantOrPetsForm {...formData} updateFields={updateFormFields} />,
+    <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
+    <AvailabilityForm {...formData} updateFields={updateFormFields} />,
     <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
   ]);
 

@@ -16,8 +16,27 @@ const OtherRequirementsForm = ({
   address3,
   address4,
   numberOfChildren,
+  dueDate,
+  petDetails,
+  startDate,
+  availability,
+  otherRequirements,
+  updateFields,
 }) => {
-  const { inputFieldsChildren } = useGlobalContext();
+  const {
+    inputFieldsChildren,
+    pregnantChecked,
+    petsChecked,
+    temporaryOrPermanent,
+    partOrFullTime,
+    liveInOrOut,
+    driver,
+    setDriver,
+    nonSmoker,
+    setNonSmoker,
+    cooking,
+    setCooking,
+  } = useGlobalContext();
 
   const formatDateString = (dateString) => {
     const dateArray = dateString.split('-');
@@ -31,31 +50,15 @@ const OtherRequirementsForm = ({
         value={firstNameParent1 + ' ' + lastNameParent1}
         name="Parent #1 name:"
       />
-      <input
-        type="hidden"
-        value={phoneParent1}
-        name="Parent #1 phone number:"
-      />
-      <input
-        type="hidden"
-        value={emailParent1}
-        name="Parent #1 email address:"
-      />
+      <input type="hidden" value={phoneParent1} name="Parent #1 phone:" />
+      <input type="hidden" value={emailParent1} name="Parent #1 email:" />
       <input
         type="hidden"
         value={firstNameParent2 + ' ' + lastNameParent2}
         name="Parent #2 name:"
       />
-      <input
-        type="hidden"
-        value={phoneParent2}
-        name="Parent #2 phone number:"
-      />
-      <input
-        type="hidden"
-        value={emailParent2}
-        name="Parent #2 email address:"
-      />
+      <input type="hidden" value={phoneParent2} name="Parent #2 phone:" />
+      <input type="hidden" value={emailParent2} name="Parent #2 email:" />
       <input
         type="hidden"
         value={
@@ -85,32 +88,31 @@ const OtherRequirementsForm = ({
           </div>
         );
       })}
-      {/* <input type="hidden" value={nationality} name="Nationality:" />
       <input
         type="hidden"
-        value={permitChecked ? 'Yes' : 'No'}
-        name="Work Permit?"
+        value={pregnantChecked ? 'Yes' : 'No'}
+        name="Currently pregnant?"
       />
       <input
         type="hidden"
-        value={licenceChecked ? 'Yes' : 'No'}
-        name="Driving Licence?"
+        value={formatDateString(dueDate)}
+        name="Pregnancy due date:"
       />
-      <input type="hidden" value={carChecked ? 'Yes' : 'No'} name="Car?" />
+      <input type="hidden" value={petsChecked ? 'Yes' : 'No'} name="Pet(s)?" />
+      <input type="hidden" value={petDetails} name="Details of pet(s):" />
       <input
         type="hidden"
-        value={experienceChecked ? 'Yes' : 'No'}
-        name="Childcare experience?"
-      />
-      <input
-        type="hidden"
-        value={qualificationsChecked ? 'Yes' : 'No'}
-        name="Formal childcare qualifications?"
-      />
-      <input
-        type="hidden"
-        value={qualificationDetails}
-        name="Details of formal childcare qualifications:"
+        value={
+          (temporaryOrPermanent ? 'Permanent' : 'Temporary') +
+          '\n' +
+          (partOrFullTime ? 'Full-time' : 'Part-time') +
+          '\n' +
+          (liveInOrOut ? 'Live in' : 'Live out') +
+          '\n' +
+          'Preferred start date: ' +
+          formatDateString(startDate)
+        }
+        name="Core requirements:"
       />
       <input
         type="hidden"
@@ -124,16 +126,12 @@ const OtherRequirementsForm = ({
               })
               .replace(', ', ' @ ')
               .replace('0 pm', '12 pm')
+              .replace(' am', 'am')
+              .replace(' pm', 'pm')
           )
           .join('\n')}
-        name="Availability:"
+        name="Times required:"
       />
-      <input
-        type="hidden"
-        value={employedChecked ? 'Yes' : 'No'}
-        name="Currently employed?"
-      /> */}
-
       <h3
         className="form-heading"
         style={{
@@ -143,60 +141,95 @@ const OtherRequirementsForm = ({
           fontSize: '1.125rem',
         }}
       >
-        Other Requirements
+        Additional Requirements
       </h3>
-      {/* <div
-        style={{
-          height: '17.5vh',
-          width: '17.5vh',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          marginBottom: '2vh',
-          backgroundImage: 'url(' + logoBackground + ')',
-          backgroundSize: 'cover',
-        }}
-      ></div>
-      <div className="form-row">
-        <label
-          htmlFor="cv-upload"
-          className="label-q form-input"
+      <div className="form-row" style={{ marginBottom: '1rem' }}>
+        <div
+          className="slider-wrapper"
           style={{
-            borderRadius: 'unset',
-            border: 'unset',
-            paddingTop: 'unset',
-            paddingLeft: 'unset',
-            paddingRight: 'unset',
-            paddingBottom: '.25rem',
-            display: 'block',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '.5rem',
           }}
         >
-          Please upload a copy of your CV:
-        </label>
-        <input
-          required
-          className="form-input"
-          id="cv-upload"
-          type="file"
-          name="CV upload:"
-        />
+          <label htmlFor="driver" className="switch">
+            <input
+              checked={driver}
+              id="driver"
+              type="checkbox"
+              onChange={(e) => setDriver(e.target.checked)}
+            />
+            <span className="slider round"></span>
+          </label>
+          <span style={{ textAlign: 'left', width: '6.75rem' }}>DRIVER</span>
+        </div>
       </div>
-      <p
-        className="modal-footer-text modal-footer-text__application-form"
-        style={{
-          marginTop: '1vh',
-          marginLeft: '4%',
-          marginRight: '4%',
-        }}
-      >
-        By submitting this form, you are agreeing to our{' '}
-        <a
-          target="_blank"
-          href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
-          rel="noreferrer"
+      <div className="form-row" style={{ marginBottom: '1rem' }}>
+        <div
+          className="slider-wrapper"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '.5rem',
+          }}
         >
-          <span>Terms and Conditions</span>
-        </a>
-      </p> */}
+          <label htmlFor="non-smoker" className="switch">
+            <input
+              checked={nonSmoker}
+              id="non-smoker"
+              type="checkbox"
+              onChange={(e) => setNonSmoker(e.target.checked)}
+            />
+            <span className="slider round"></span>
+          </label>
+          <span style={{ textAlign: 'left', width: '6.75rem' }}>
+            NON-SMOKER
+          </span>
+        </div>
+      </div>
+      <div className="form-row" style={{ marginBottom: '1rem' }}>
+        <div
+          className="slider-wrapper"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '.5rem',
+          }}
+        >
+          <label htmlFor="cook" className="switch">
+            <input
+              checked={cooking}
+              id="cook"
+              type="checkbox"
+              onChange={(e) => setCooking(e.target.checked)}
+            />
+            <span className="slider round"></span>
+          </label>
+          <span style={{ textAlign: 'left', width: '6.75rem' }}>LIVE IN</span>
+        </div>
+      </div>
+      <div className="form-row">
+        <textarea
+          className="form-input"
+          placeholder="Please let us know of any other requirements..."
+          rows="3"
+          value={otherRequirements}
+          onChange={(e) => updateFields({ otherRequirements: e.target.value })}
+        ></textarea>
+      </div>
+      <input
+        type="hidden"
+        value={
+          (driver ? 'Driver\n' : '') +
+          (nonSmoker ? 'Non-smoker\n' : '') +
+          (cooking ? 'Cooking\n' : '') +
+          ('Other requirements: ' + otherRequirements)
+        }
+        name="Additional requirements:"
+      />
     </FormStepWrapper>
   );
 };
