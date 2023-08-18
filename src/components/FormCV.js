@@ -32,11 +32,7 @@ const CVForm = ({
 
   return (
     <FormStepWrapper>
-      <input
-        type="hidden"
-        value={firstName + ' ' + lastName}
-        name="Name:"
-      />
+      <input type="hidden" value={firstName + ' ' + lastName} name="Name:" />
       <input type="hidden" value={phone} name="Phone:" />
       <input type="hidden" value={emailNanny} name="Email:" />
       <input
@@ -85,6 +81,8 @@ const CVForm = ({
               })
               .replace(', ', ' @ ')
               .replace('0 pm', '12 pm')
+              .replace(' am', 'am')
+              .replace(' pm', 'pm')
           )
           .join('\n')}
         name="Availability:"
@@ -107,6 +105,7 @@ const CVForm = ({
           width: '100%',
           top: '-5vh',
           fontSize: '1.125rem',
+          lineHeight: '1.5',
         }}
       >
         Your CV

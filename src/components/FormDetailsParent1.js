@@ -16,6 +16,7 @@ const Parent1DetailsForm = ({
           width: '100%',
           top: '-5vh',
           fontSize: '1.125rem',
+          lineHeight: '1.5',
         }}
       >
         Parent #1 Details

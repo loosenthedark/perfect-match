@@ -163,7 +163,7 @@ p {
 
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   h2 {
@@ -313,6 +313,11 @@ Hero
   color: var(--clr-grey);
 }
 
+.hero-banner p:nth-of-type(2),
+.hero-banner p:nth-of-type(3) {
+  display: none;
+}
+
 .hero-btn-container {
   display: flex;
   flex-direction: column;
@@ -377,18 +382,29 @@ Hero
   .hero {
     /* background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
       url('./images/main.jpeg') center/cover no-repeat; */
-    background-image: url('./images/image-hero__tablet__alt.png');
-    background-position-y: 8rem;
+    /* background-image: url('./images/image-hero__tablet__alt.png'); */
+    background-size: 75%;
+    background-position-y: 7rem;
     padding-bottom: 17rem;
   }
 
   .hero-banner {
     padding: 0;
-    margin-top: 50vh;
+    margin-top: 39vh;
   }
 
   .hero-banner p {
-    max-width: 23rem;
+    max-width: 29rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-banner p:nth-of-type(2),
+  .hero-banner p:nth-of-type(3) {
+    display: block;
+  }
+
+  .hero-banner p:nth-of-type(3) {
+    margin-bottom: 2.5rem;
   }
 
   .hero-btn-container {

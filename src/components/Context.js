@@ -23,6 +23,7 @@ export const AppProvider = ({ children }) => {
   const [partOrFullTime, setPartOrFullTime] = useState(false);
   const [liveInOrOut, setLiveInOrOut] = useState(false);
   const [driver, setDriver] = useState(false);
+  const [ownCar, setOwnCar] = useState(false);
   const [nonSmoker, setNonSmoker] = useState(false);
   const [cooking, setCooking] = useState(false);
   const [howManyKids, setHowManyKids] = useState(1);
@@ -67,6 +68,8 @@ export const AppProvider = ({ children }) => {
         setInputFieldsChildren,
         driver,
         setDriver,
+        ownCar,
+        setOwnCar,
         nonSmoker,
         setNonSmoker,
         cooking,

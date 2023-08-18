@@ -1,3 +1,4 @@
+import { useGlobalContext } from './Context';
 import FormStepWrapper from './FormStepWrapper';
 import ScheduleSelector from 'react-schedule-selector';
 
@@ -51,6 +52,8 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     updateFields({ availability: newAvailability });
   };
 
+  const { toggleApplicationFormNannyModal } = useGlobalContext();
+
   return (
     <FormStepWrapper>
       <h3
@@ -60,9 +63,12 @@ const AvailabilityForm = ({ availability, updateFields }) => {
           width: '100%',
           top: '-5vh',
           fontSize: '1.125rem',
+          lineHeight: '1.5',
         }}
       >
-        Your Availability
+        {toggleApplicationFormNannyModal
+          ? 'Your Availability'
+          : 'Times Required'}
       </h3>
       <div className="form-row">
         <label
@@ -73,9 +79,12 @@ const AvailabilityForm = ({ availability, updateFields }) => {
             border: 'unset',
             padding: '0 0 1.5vh',
             display: 'block',
+            lineHeight: '1.4',
           }}
         >
-          What days/hours are you available to work?
+          {toggleApplicationFormNannyModal
+            ? 'What days/hours are you available to work?'
+            : 'What days/hours will you want your nanny to work?'}
         </label>
         <ScheduleSelector
           id="available"

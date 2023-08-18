@@ -32,6 +32,8 @@ const OtherRequirementsForm = ({
     liveInOrOut,
     driver,
     setDriver,
+    ownCar,
+    setOwnCar,
     nonSmoker,
     setNonSmoker,
     cooking,
@@ -139,11 +141,15 @@ const OtherRequirementsForm = ({
           width: '100%',
           top: '-5vh',
           fontSize: '1.125rem',
+          lineHeight: '1.5',
         }}
       >
         Additional Requirements
       </h3>
-      <div className="form-row" style={{ marginBottom: '1rem' }}>
+      <div
+        className="form-row"
+        style={{ marginBottom: '.75rem', marginTop: '1.25rem' }}
+      >
         <div
           className="slider-wrapper"
           style={{
@@ -165,7 +171,29 @@ const OtherRequirementsForm = ({
           <span style={{ textAlign: 'left', width: '6.75rem' }}>DRIVER</span>
         </div>
       </div>
-      <div className="form-row" style={{ marginBottom: '1rem' }}>
+      <div className="form-row" style={{ marginBottom: '.75rem' }}>
+        <div
+          className="slider-wrapper"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '.5rem',
+          }}
+        >
+          <label htmlFor="own-car" className="switch">
+            <input
+              checked={ownCar}
+              id="own-car"
+              type="checkbox"
+              onChange={(e) => setOwnCar(e.target.checked)}
+            />
+            <span className="slider round"></span>
+          </label>
+          <span style={{ textAlign: 'left', width: '6.75rem' }}>OWN CAR</span>
+        </div>
+      </div>
+      <div className="form-row" style={{ marginBottom: '.75rem' }}>
         <div
           className="slider-wrapper"
           style={{
@@ -189,7 +217,7 @@ const OtherRequirementsForm = ({
           </span>
         </div>
       </div>
-      <div className="form-row" style={{ marginBottom: '1rem' }}>
+      <div className="form-row" style={{ marginBottom: '.75rem' }}>
         <div
           className="slider-wrapper"
           style={{
@@ -211,7 +239,7 @@ const OtherRequirementsForm = ({
           <span style={{ textAlign: 'left', width: '6.75rem' }}>LIVE IN</span>
         </div>
       </div>
-      <div className="form-row">
+      <div className="form-row" style={{ marginBottom: '.25rem' }}>
         <textarea
           className="form-input"
           placeholder="Please let us know of any other requirements..."
@@ -224,11 +252,16 @@ const OtherRequirementsForm = ({
         type="hidden"
         value={
           (driver ? 'Driver\n' : '') +
+          (ownCar ? 'Own car\n' : '') +
           (nonSmoker ? 'Non-smoker\n' : '') +
-          (cooking ? 'Cooking\n' : '') +
-          ('Other requirements: ' + otherRequirements)
+          (cooking ? 'Cooking' : '')
         }
         name="Additional requirements:"
+      />
+      <input
+        type="hidden"
+        value={otherRequirements}
+        name="Other requirements:"
       />
     </FormStepWrapper>
   );
