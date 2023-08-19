@@ -14,6 +14,7 @@ Variables
   --clr-primary-4: hsl(184, 77%, 34%);
   /* primary/main color */
   --clr-primary-5: #a2d2ff;
+  --clr-primary-5-dark: #0069cc;
   --clr-primary-5-active: #80c1ff;
   /* lighter shades of primary color */
   --clr-primary-6: hsl(185, 57%, 50%);
@@ -295,6 +296,10 @@ Hero
   padding-bottom: 16rem;
 }
 
+.hero-line-break-tablet {
+  display: none;
+}
+
 .hero-banner {
   margin-top: 33vh;
   text-align: center;
@@ -383,14 +388,22 @@ Hero
     /* background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
       url('./images/main.jpeg') center/cover no-repeat; */
     /* background-image: url('./images/image-hero__tablet__alt.png'); */
-    background-size: 75%;
+    background-size: 64%;
     background-position-y: 7rem;
     padding-bottom: 17rem;
   }
 
+  .hero-line-break-mobile {
+    display: none;
+  }
+
+  .hero-line-break-tablet {
+    display: inline;
+  }
+
   .hero-banner {
     padding: 0;
-    margin-top: 39vh;
+    margin-top: 35vh;
   }
 
   .hero-banner p {
@@ -404,7 +417,7 @@ Hero
   }
 
   .hero-banner p:nth-of-type(3) {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
   }
 
   .hero-btn-container {
@@ -537,7 +550,7 @@ About
   }
 
   .about-info h2 {
-    max-width: 30rem;
+    max-width: 34rem;
     margin: 0 auto 2rem;
     line-height: 1.1;
   }
@@ -615,8 +628,7 @@ Services
 .section__services {
   padding-bottom: 7.25rem;
   padding-top: 4.5rem;
-  background: var(--clr-grey-10);
-  background-color: var(--clr-primary-5);
+  background-color: var(--clr-primary-5-dark);
   position: relative;
   margin-bottom: 3.25rem;
 }
@@ -627,12 +639,12 @@ Services
   bottom: 0;
   left: 0;
   right: 0;
-  background-image: url(./images/image-footer.jpg);
+  opacity: 0.15;
+  background: url(./images/image-footer.jpg);
   background-size: cover;
+  background-color: var(--clr-light-grey);
   background-repeat: no-repeat;
-  mix-blend-mode: normal;
-  opacity: 0.25;
-  background-position-x: center;
+  background-blend-mode: darken;
 }
 
 .service {
@@ -694,6 +706,10 @@ Services
 
   .section__services .overlay {
     background-image: url(./images/image-footer__tablet.jpg);
+  }
+
+  .service-info .hero-btn.hero-btn__secondary {
+    bottom: -50%;
   }
 }
 
@@ -950,6 +966,10 @@ Footer
   margin-right: 1rem;
   color: var(--clr-white);
   transition: var(--transition);
+}
+
+.footer-icons li:last-child .footer-icon {
+  margin-right: 0;
 }
 
 .copyright {

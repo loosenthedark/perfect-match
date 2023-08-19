@@ -39,7 +39,7 @@ const About = () => {
         </div>
         <article className="about-info">
           <h3>explore the difference</h3>
-          <h2>Let us help you find your Perfect Match</h2>
+          <h2>Nanny recruitment done better</h2>
           <p>
             As a boutique nanny agency, we have a devoted, personal and unique
             approach. We will call to your home and meet with you in your own
