@@ -1,5 +1,5 @@
-import FormStepWrapper from './FormStepWrapper';
-import { useGlobalContext } from './Context';
+import FormStepWrapper from "./FormStepWrapper";
+import { useGlobalContext } from "./Context";
 
 const CoreRequirementsForm = ({ startDate, updateFields }) => {
   const {
@@ -16,26 +16,28 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
       <h3
         className="form-heading"
         style={{
-          position: 'absolute',
-          width: '100%',
-          top: '-5vh',
-          fontSize: '1.125rem',
-          lineHeight: '1.5',
+          position: "absolute",
+          width: "100%",
+
+          lineHeight: "1.5",
         }}
       >
         Core Requirements
       </h3>
-      <div className="form-row" style={{ marginBottom: '1.5rem' }}>
+      <div className="form-row form-row__requirements">
         <div
           className="slider-wrapper"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '.5rem',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: ".5rem",
           }}
         >
-          <span style={{ textAlign: 'right', width: '6.125rem' }}>
+          <span
+            className="core-requirements"
+            style={{ textAlign: "right" }}
+          >
             TEMPORARY
           </span>
           <label htmlFor="tempOrPerm" className="switch">
@@ -47,22 +49,28 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             />
             <span className="slider round"></span>
           </label>
-          <span style={{ textAlign: 'left', width: '6.125rem' }}>
+          <span
+            className="core-requirements"
+            style={{ textAlign: "left" }}
+          >
             PERMANENT
           </span>
         </div>
       </div>
-      <div className="form-row" style={{ marginBottom: '1.5rem' }}>
+      <div className="form-row form-row__requirements">
         <div
           className="slider-wrapper"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '.5rem',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: ".5rem",
           }}
         >
-          <span style={{ textAlign: 'right', width: '6.125rem' }}>
+          <span
+            className="core-requirements"
+            style={{ textAlign: "right" }}
+          >
             PART-TIME
           </span>
           <label htmlFor="ptOrFt" className="switch">
@@ -74,22 +82,28 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             />
             <span className="slider round"></span>
           </label>
-          <span style={{ textAlign: 'left', width: '6.125rem' }}>
+          <span
+            className="core-requirements"
+            style={{ textAlign: "left" }}
+          >
             FULL-TIME
           </span>
         </div>
       </div>
-      <div className="form-row" style={{ marginBottom: '1.5rem' }}>
+      <div className="form-row form-row__requirements">
         <div
           className="slider-wrapper"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '.5rem',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: ".5rem",
           }}
         >
-          <span style={{ textAlign: 'right', width: '6.125rem' }}>
+          <span
+            className="core-requirements"
+            style={{ textAlign: "right" }}
+          >
             LIVE OUT
           </span>
           <label htmlFor="liveInOrOut" className="switch">
@@ -101,7 +115,12 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             />
             <span className="slider round"></span>
           </label>
-          <span style={{ textAlign: 'left', width: '6.125rem' }}>LIVE IN</span>
+          <span
+            className="core-requirements"
+            style={{ textAlign: "left" }}
+          >
+            LIVE IN
+          </span>
         </div>
       </div>
       <div className="form-row">
@@ -109,7 +128,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           className="form-input"
           placeholder="What is your preferred start date?"
           value={startDate}
-          onFocus={(e) => (e.target.type = 'date')}
+          onFocus={(e) => (e.target.type = "date")}
           onChange={(e) => updateFields({ startDate: e.target.value })}
         />
       </div>

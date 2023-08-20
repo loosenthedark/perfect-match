@@ -179,7 +179,7 @@ export const formParentsSteps = [
   },
   {
     id: 5,
-    text: 'Child #1 Details',
+    text: 'Children Details',
   },
   {
     id: 6,

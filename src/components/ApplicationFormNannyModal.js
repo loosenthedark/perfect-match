@@ -80,7 +80,7 @@ const ApplicationFormNannyModal = () => {
     >
       <div className="modal-container modal-container__application-form">
         {/* progress bar */}
-        <ul className="progress-bar">
+        <ul className="progress-bar progress-bar__nanny">
           {formNannySteps.map((step) => {
             return (
               <li
@@ -109,7 +109,6 @@ const ApplicationFormNannyModal = () => {
           {currentStep}
           <div
             style={{
-              marginTop: '1vh',
               display: 'flex',
               gap: '.5rem',
               justifyContent: 'flex-end',

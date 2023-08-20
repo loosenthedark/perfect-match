@@ -12,8 +12,7 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-5vh',
-          fontSize: '1.125rem',
+         
           lineHeight: '1.5',
         }}
       >

@@ -429,6 +429,17 @@ Hero
   .hero-btn.hero-btn__secondary {
     margin-top: unset;
   }
+
+  .hero-btn {
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+  }
+
+  .hero-btn.next-btn,
+  .hero-btn.back-btn {
+    font-size: 0.875rem;
+    width: calc(50% - .5rem);
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1091,6 +1102,13 @@ Navbar
 }
 
 /* nav at bigger screen size */
+@media screen and (min-width: 768px) {
+
+  .nav-center {
+    width: calc(100vw - 3rem);
+  }
+}
+
 @media screen and (min-width: 992px) {
 
   /* hide nav toggle button */
@@ -1180,23 +1198,13 @@ Sidebar
   transition: var(--transition);
   padding-top: 3.75rem;
   /* toggle logic */
-  transform: translateX(-100%);
+  transform: translateX(100%);
   z-index: 10;
 }
 
 .sidebar.show-sidebar {
   /* toggle logic */
   transform: translateX(0);
-}
-
-@media screen and (min-width: 676px) {
-  .sidebar {
-    width: 400px;
-  }
-
-  .sidebar.show-sidebar {
-    box-shadow: var(--shadow-3);
-  }
 }
 
 .logo {
@@ -1264,6 +1272,68 @@ Sidebar
   margin: 0 0.5rem;
   color: var(--clr-primary-5);
   transition: var(--transition);
+}
+
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
+
+  .sidebar.show-sidebar {
+    box-shadow: var(--shadow-3);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    height: calc(100vh - 3.75rem);
+    background-color: hsla(213, 24%, 15%, .6);
+    width: 100vw;
+    top: 3.75rem;
+    padding: 0;
+    row-gap: 0;
+  }
+
+  .social-links,
+  .links {
+    background-color: var(--clr-off-white-text);
+  }
+
+  .social-links a {
+    font-size: 1.75rem;
+    margin: 0 1rem;
+  }
+
+  .social-links {
+    height: 23vh;
+  }
+
+  .social-links.logo-text {
+    height: 28.75vh;
+  }
+
+  .social-links {
+    clip-path: polygon(0% 0%, 100% 0, 100% 25%, 37% 100%, 0% 100%);
+  }
+
+  .social-links.logo-text {
+    background-size: 36%;
+    background-position-y: 66%;
+    clip-path: polygon(0% 63%, 63% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .links a,
+  .links button {
+    padding-left: 40%;
+  }
+
+  .links a svg {
+    font-size: 1.75rem;
+  }
+
+  .links .submenu-link a {
+    padding-left: calc(40% + 2.5rem);
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1346,6 +1416,20 @@ Modal
   stroke: var(--clr-secondary-active);
 }
 
+@media screen and (min-width: 768px) {
+  .modal-container.modal-container__application-form {
+    max-height: 35rem;
+  }
+
+  .close-modal-btn {
+    font-size: 2rem;
+  }
+
+  .close-modal-btn.close-modal-btn__application-form {
+    top: 1rem;
+  }
+}
+
 /*
 =============== 
 Contact Form Modal
@@ -1360,6 +1444,15 @@ Contact Form Modal
   box-shadow: var(--shadow-2);
   padding: 3vh 1.5rem 0;
   margin: 3vh auto 1vh;
+}
+
+.form .fixed-height {
+  height: 48vh;
+  max-height: 20rem;
+}
+
+.form .fixed-height+div {
+  margin-top: 1vh;
 }
 
 .form-input,
@@ -1384,6 +1477,10 @@ Contact Form Modal
   padding-bottom: .5rem;
 }
 
+.form-input.label-q.label-q__availability {
+  padding: 0 0 1.5vh
+}
+
 .form-input.form-input__select>div {
   margin-right: 0;
 }
@@ -1402,6 +1499,14 @@ Contact Form Modal
 .form-row {
   margin-bottom: .75rem;
   position: relative;
+}
+
+.form-row.form-row__requirements {
+  margin-bottom: 1.5rem;
+}
+
+.form-row.form-row__additional-requirements {
+  margin-bottom: .75rem;
 }
 
 .form-textarea {
@@ -1460,14 +1565,47 @@ Contact Form Modal
   .form {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    margin-bottom: 2vh;
+    padding-top: 1vh;
   }
 
   .form-row {
     margin-bottom: 1.25rem;
   }
 
+  .form-row:last-child {
+    margin-bottom: 0;
+  }
+
   .modal-footer-text {
     margin-bottom: 2.25rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    font-size: 0.875rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .form-input.form-input__select {
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+  }
+
+  .form .fixed-height {
+    max-height: 25.5rem;
+  }
+
+  .form-input.label-q.label-q__availability {
+    padding-bottom: .75vh;
+  }
+
+  .form-row.form-row__requirements {
+    margin-bottom: 2.5rem;
+  }
+
+  .form-row.form-row__additional-requirements {
+    margin-bottom: 1.75rem;
   }
 }
 
@@ -1490,7 +1628,6 @@ Application Form Modals
 
 .progress-bar li {
   list-style-type: none;
-  /* color: var(--clr-off-white-text); */
   color: transparent;
   text-transform: uppercase;
   font-size: .75rem;
@@ -1536,6 +1673,45 @@ Application Form Modals
 .form-heading {
   color: var(--clr-grey);
   letter-spacing: var(--spacing-slightly-reduced);
+  font-size: 1.125rem;
+  top: -5vh;
+}
+
+@media screen and (min-width: 768px) {
+  .progress-bar {
+    width: 95vw;
+  }
+
+  .progress-bar__parents {
+    width: 96vw;
+  }
+
+  .progress-bar li {
+    color: var(--clr-off-white-text);
+    font-weight: var(--fw-600);
+    width: 11.11111%;
+    font-size: .775rem;
+  }
+
+  .progress-bar__parents li {
+    font-size: .65rem;
+  }
+
+  .progress-bar li::before {
+    width: 2.25rem;
+    line-height: 2.25rem;
+    font-size: 1.05rem;
+  }
+
+  .progress-bar li::after {
+    top: 1rem;
+  }
+
+  .form-heading {
+    margin-bottom: 0;
+    font-size: 1.375rem;
+    top: -3.575vh;
+  }
 }
 
 /* custom radio buttons - based on https://www.w3schools.com/howto/howto_css_switch.asp */
@@ -1584,6 +1760,14 @@ Application Form Modals
   width: 1.875rem;
 }
 
+.slider-wrapper>.core-requirements {
+  width: 6.125rem;
+}
+
+.slider-wrapper>.slider-label-additional {
+  width: 6.75rem;
+}
+
 input:checked+.slider {
   background-color: var(--clr-primary-5);
 }
@@ -1604,4 +1788,30 @@ input:checked+.slider::before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .switch {
+    width: 4rem;
+    height: 2rem;
+  }
+
+  .slider::before {
+    height: 25px;
+    width: 25px;
+  }
+
+  input:checked+.slider::before {
+    -webkit-transform: translateX(2rem);
+    -ms-transform: translateX(2rem);
+    transform: translateX(2rem);
+  }
+
+  .slider-wrapper>.core-requirements {
+    width: 6.875rem;
+  }
+
+  .slider-wrapper>.slider-label-additional {
+    width: 7.625rem;
+  }
 }

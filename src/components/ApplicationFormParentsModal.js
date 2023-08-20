@@ -86,7 +86,7 @@ const ApplicationFormParentsModal = () => {
     >
       <div className="modal-container modal-container__application-form">
         {/* progress bar */}
-        <ul className="progress-bar">
+        <ul className="progress-bar progress-bar__parents">
           {formParentsSteps.map((step) => {
             return (
               <li
