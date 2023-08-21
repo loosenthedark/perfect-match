@@ -11,6 +11,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         width: "100%",
         background: selected ? "#ffc8dd" : "#d8d8d8",
         borderRadius: ".125rem",
+        cursor: 'pointer'
       }}
       ref={innerRef}
     ></div>

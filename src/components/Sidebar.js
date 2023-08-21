@@ -1,5 +1,3 @@
-// import logo from '../images/logo.svg';
-// import { useGlobalContext } from './Context';
 import { AiOutlineMail } from 'react-icons/ai';
 import { pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
