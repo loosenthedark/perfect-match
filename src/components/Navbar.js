@@ -3,6 +3,8 @@ import { useGlobalContext } from "./Context";
 
 const Navbar = () => {
   const {
+    toggleSidebar,
+    setToggleSidebar,
     setToggleContactFormModal,
     setToggleApplicationFormNannyModal,
     setToggleApplicationFormParentsModal,
@@ -10,7 +12,20 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-center">
-        <div className="nav-header"></div>
+        <div className="nav-header">
+          <button
+            type="button"
+            className="nav-toggle"
+            id="nav-toggle"
+            onClick={
+              toggleSidebar
+                ? () => setToggleSidebar(false)
+                : () => setToggleSidebar(true)
+            }
+          >
+            <i className="fas fa-bars"></i>
+          </button>
+        </div>
         <ul className="nav-links" id="nav-links">
           {pageLinks.slice(0, pageLinks.length - 2).map((link, index) => {
             return index !== pageLinks.length - 3 ? (
