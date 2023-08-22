@@ -197,6 +197,10 @@ export const formParentsSteps = [
     id: 9,
     text: 'Other Requirements',
   },
+  {
+    id: 10,
+    text: 'Agreement',
+  },
 ];
 
 export const nationalities = [

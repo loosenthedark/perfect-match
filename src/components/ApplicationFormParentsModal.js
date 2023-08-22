@@ -12,6 +12,7 @@ import ChildrenForm from './FormChildren';
 import ChildDetailsForm from './FormDetailsChild';
 import PregnantOrPetsForm from './FormPregnantOrPets';
 import AvailabilityForm from './FormAvailability';
+import SignedAgreementForm from './FormSignedAgreement';
 
 const INITIAL_FORM_DATA = {
   firstNameParent1: '',
@@ -67,6 +68,7 @@ const ApplicationFormParentsModal = () => {
     <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
     <AvailabilityForm {...formData} updateFields={updateFormFields} />,
     <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
+    <SignedAgreementForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {
