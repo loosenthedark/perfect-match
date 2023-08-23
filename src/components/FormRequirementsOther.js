@@ -137,7 +137,7 @@ const OtherRequirementsForm = ({
             className="slider-label-additional"
             style={{ textAlign: "left" }}
           >
-            LIVE IN
+            COOKING
           </span>
         </div>
       </div>
@@ -150,21 +150,6 @@ const OtherRequirementsForm = ({
           onChange={(e) => updateFields({ otherRequirements: e.target.value })}
         ></textarea>
       </div>
-      <input
-        type="hidden"
-        value={
-          (driver ? "Driver\n" : "") +
-          (ownCar ? "Own car\n" : "") +
-          (nonSmoker ? "Non-smoker\n" : "") +
-          (cooking ? "Cooking" : "")
-        }
-        name="Additional requirements:"
-      />
-      <input
-        type="hidden"
-        value={otherRequirements}
-        name="Other requirements:"
-      />
     </FormStepWrapper>
   );
 };

@@ -1,9 +1,9 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import SignatureCanvas from "react-signature-canvas";
-import { useState } from "react";
-// import logoBackground from '../images/perfect-match-logo_square_no-text.png';
-import { LuFileSignature } from "react-icons/lu";
+import { useRef, useState } from "react";
+import logoBackground from "../images/perfect-match-logo_square_no-text.png";
+import { LuFileSignature, LuHeartHandshake } from "react-icons/lu";
 
 const SignedAgreementForm = ({
   firstNameParent1,
@@ -24,7 +24,6 @@ const SignedAgreementForm = ({
   startDate,
   availability,
   otherRequirements,
-  updateFields,
 }) => {
   const {
     inputFieldsChildren,
@@ -34,16 +33,31 @@ const SignedAgreementForm = ({
     partOrFullTime,
     liveInOrOut,
     driver,
-    setDriver,
     ownCar,
-    setOwnCar,
     nonSmoker,
-    setNonSmoker,
     cooking,
-    setCooking,
+    isAgreementShown,
+    setIsAgreementShown,
+    setIsAgreementSigned,
   } = useGlobalContext();
 
-  const [isAgreementShown, setIsAgreementShown] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [imageURL, setImageURL] = useState(null);
+  const sigCanvas = useRef();
+
+  const create = () => {
+    const URL = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
+    setImageURL(URL);
+    setOpenModal(false);
+    setIsAgreementSigned(true);
+  };
+
+  // const download = () => {
+  //   const dlink = document.createElement("a");
+  //   dlink.setAttribute("href", imageURL);
+  //   dlink.setAttribute("download", "signature.png");
+  //   dlink.click();
+  // };
 
   const formatDateString = (dateString) => {
     const dateArray = dateString.split("-");
@@ -114,12 +128,14 @@ const SignedAgreementForm = ({
           "\n" +
           (partOrFullTime ? "Full-time" : "Part-time") +
           "\n" +
-          (liveInOrOut ? "Live in" : "Live out") +
-          "\n" +
-          "Preferred start date: " +
-          formatDateString(startDate)
+          (liveInOrOut ? "Live in" : "Live out")
         }
         name="Core requirements:"
+      />
+      <input
+        type="hidden"
+        value={formatDateString(startDate)}
+        name="Preferred start date:"
       />
       <input
         type="hidden"
@@ -139,137 +155,6 @@ const SignedAgreementForm = ({
           .join("\n")}
         name="Times required:"
       />
-      <h3
-        className="form-heading"
-        style={{
-          position: "absolute",
-          width: "100%",
-          lineHeight: "1.5",
-          visibility: isAgreementShown ? "visible" : "hidden",
-        }}
-      >
-        Agreement
-      </h3>
-      {/* <div
-        className="form-row form-row__additional-requirements"
-        style={{ marginTop: "1.25rem" }}
-      >
-        <div
-          className="slider-wrapper"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: ".5rem",
-          }}
-        >
-          <label htmlFor="driver" className="switch">
-            <input
-              checked={driver}
-              id="driver"
-              type="checkbox"
-              onChange={(e) => setDriver(e.target.checked)}
-            />
-            <span className="slider round"></span>
-          </label>
-          <span
-            className="slider-label-additional"
-            style={{ textAlign: "left" }}
-          >
-            DRIVER
-          </span>
-        </div>
-      </div>
-      <div className="form-row form-row__additional-requirements">
-        <div
-          className="slider-wrapper"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: ".5rem",
-          }}
-        >
-          <label htmlFor="own-car" className="switch">
-            <input
-              checked={ownCar}
-              id="own-car"
-              type="checkbox"
-              onChange={(e) => setOwnCar(e.target.checked)}
-            />
-            <span className="slider round"></span>
-          </label>
-          <span
-            className="slider-label-additional"
-            style={{ textAlign: "left" }}
-          >
-            OWN CAR
-          </span>
-        </div>
-      </div>
-      <div className="form-row form-row__additional-requirements">
-        <div
-          className="slider-wrapper"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: ".5rem",
-          }}
-        >
-          <label htmlFor="non-smoker" className="switch">
-            <input
-              checked={nonSmoker}
-              id="non-smoker"
-              type="checkbox"
-              onChange={(e) => setNonSmoker(e.target.checked)}
-            />
-            <span className="slider round"></span>
-          </label>
-          <span
-            className="slider-label-additional"
-            style={{ textAlign: "left" }}
-          >
-            NON-SMOKER
-          </span>
-        </div>
-      </div>
-      <div className="form-row form-row__additional-requirements">
-        <div
-          className="slider-wrapper"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: ".5rem",
-          }}
-        >
-          <label htmlFor="cook" className="switch">
-            <input
-              checked={cooking}
-              id="cook"
-              type="checkbox"
-              onChange={(e) => setCooking(e.target.checked)}
-            />
-            <span className="slider round"></span>
-          </label>
-          <span
-            className="slider-label-additional"
-            style={{ textAlign: "left" }}
-          >
-            LIVE IN
-          </span>
-        </div>
-      </div>
-      <div className="form-row" style={{ marginBottom: ".25rem" }}>
-        <textarea
-          className="form-input"
-          placeholder="Please let us know of any other requirements..."
-          rows="3"
-          value={otherRequirements}
-          onChange={(e) => updateFields({ otherRequirements: e.target.value })}
-        ></textarea>
-      </div>
       <input
         type="hidden"
         value={
@@ -284,61 +169,187 @@ const SignedAgreementForm = ({
         type="hidden"
         value={otherRequirements}
         name="Other requirements:"
-      /> */}
-
+      />
+      <h3
+        className="form-heading"
+        style={{
+          position: "absolute",
+          width: "100%",
+          lineHeight: "1.5",
+          visibility: isAgreementShown ? "visible" : "hidden",
+        }}
+      >
+        Agreement Form
+      </h3>
       <div className="form-row form-row__additional-requirements">
-        <LuFileSignature
-          color="#ffb3d0"
-          style={{ width: "2.5rem", height: "2.5rem", marginBottom: ".75rem" }}
-        />
+        {!isAgreementShown ? (
+          <LuFileSignature
+            color="#ffb3d0"
+            style={{
+              width: "2.5rem",
+              height: "2.5rem",
+              marginBottom: ".75rem",
+            }}
+          />
+        ) : !imageURL ? (
+          <div
+            style={{
+              backgroundImage: "url(" + logoBackground + ")",
+              height: "10vh",
+              width: "10vh",
+              backgroundSize: "cover",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: "2vh",
+            }}
+          ></div>
+        ) : (
+          <LuHeartHandshake
+            color="#ffb3d0"
+            style={{
+              width: "2.5rem",
+              height: "2.5rem",
+              marginBottom: ".75rem",
+            }}
+          />
+        )}
         <h5
           style={{
             fontSize: "1.5rem",
             color: "#102a42",
             marginBottom: ".375rem",
+            display: isAgreementShown ? "none" : "block",
           }}
         >
           Thank you!
         </h5>
         <p
           style={{
-            color: "#87879d",
-            fontSize: ".95rem",
-            lineHeight: "1.5625",
-            marginBottom: '.375rem'
+            color: !isAgreementShown ? "#87879d" : "#666",
+            fontSize: !isAgreementShown ? ".95rem" : ".825rem",
+            lineHeight: !isAgreementShown ? "1.5625" : "1.4",
+            marginBottom: !isAgreementShown ? ".375rem" : ".25rem",
+            textAlign: !isAgreementShown ? "center" : "left",
           }}
         >
-          Thanks for joining our agency. We look forward to working with you and
-          finding your Perfect Match.
+          {!isAgreementShown
+            ? "Thanks for joining our agency. We look forward to working with you and finding your Perfect Match."
+            : "In the event of us deciding to employ one of your nannies, we agree to settle your account in full within seven days of receiving your invoice."}
         </p>
         <p
           style={{
-            color: "#87879d",
-            fontSize: ".95rem",
-            lineHeight: "1.5625",
+            color: !isAgreementShown ? "#87879d" : "#666",
+            fontSize: !isAgreementShown ? ".95rem" : ".825rem",
+            lineHeight: !isAgreementShown ? "1.5625" : "1.4",
+            textAlign: !isAgreementShown ? "center" : "left",
           }}
         >
-          Please read and sign the following form so we can begin our search
-          for you and your family...
+          {!isAgreementShown
+            ? "Please read and sign the following form so we can begin our search for you and your family..."
+            : "We confirm that we have read and are in agreement with the Terms & Conditions of the agency."}
         </p>
-        <div
+        {isAgreementShown && !setIsAgreementSigned && (
+          <button
+            className="btn hero-btn next-btn btn-secondary"
+            onClick={() => setOpenModal(true)}
+          >
+            Create signature
+          </button>
+        )}
+        <br />
+        {/* {imageURL && (
+          <>
+            <img
+              src={imageURL}
+              height="100"
+              width="auto"
+              alt="signature"
+              className="signature"
+            />
+            <br />
+            <button
+              onClick={download}
+              style={{ padding: ".3125rem", marginTop: ".3125rem" }}
+            >
+              Download
+            </button>
+          </>
+        )}
+        <br /> */}
+        {openModal && (
+          <div
+            className="modal-container"
+            style={{
+              position: "fixed",
+              width: "100vw",
+              height: "100%",
+              display: "flex",
+              top: "0",
+              bottom: "0",
+              left: "0",
+              right: "0",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+            }}
+          >
+            <div
+              className="modal"
               style={{
-                marginTop: '1vh',
-                display: 'flex',
-                justifyContent: 'center',
+                width: "90%",
+                maxWidth: "31.25rem",
+                border: ".3125rem",
+                padding: ".625rem",
+                backgroundColor: "#fff",
+                boxSizing: "border-box",
               }}
             >
-              <button
-                className="btn hero-btn next-btn btn-secondary"
+              <div className="sigPadContainer">
+                <SignatureCanvas
+                  penColor="blue"
+                  canvasProps={{ className: "sigCanvas" }}
+                  ref={sigCanvas}
+                />
+                <hr />
+                <button onClick={() => sigCanvas.current.clear()}>Clear</button>
+              </div>
+              <div
+                className="modal__bottom"
+                style={{
+                  marginTop: "1vh",
+                  display: "flex",
+                  gap: ".5rem",
+                  justifyContent: "flex-end",
+                }}
               >
-                Sign form
-              </button>
+                <button
+                  className="btn hero-btn back-btn"
+                  onClick={() => setOpenModal(false)}
+                >
+                  Cancel
+                </button>
+                <button className="btn hero-btn next-btn" onClick={create}>
+                  Create
+                </button>
+              </div>
             </div>
+          </div>
+        )}
+        <div
+          style={{
+            marginTop: "1vh",
+            display: !isAgreementShown ? "flex" : "none",
+            justifyContent: "center",
+          }}
+        >
+          <button
+            className="btn hero-btn next-btn btn-secondary"
+            onClick={() => setIsAgreementShown(true)}
+          >
+            Sign form
+          </button>
+        </div>
       </div>
-      {/* <SignatureCanvas
-        penColor="blue"
-        canvasProps={{ width: 500, height: 200 }}
-      /> */}
     </FormStepWrapper>
   );
 };

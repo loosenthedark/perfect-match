@@ -28,6 +28,8 @@ export const AppProvider = ({ children }) => {
   const [cooking, setCooking] = useState(false);
   const [howManyKids, setHowManyKids] = useState(1);
   const [inputFieldsChildren, setInputFieldsChildren] = useState([]);
+  const [isAgreementShown, setIsAgreementShown] = useState(false);
+  const [isAgreementSigned, setIsAgreementSigned] = useState(false);
 
   return (
     <AppContext.Provider
@@ -74,6 +76,10 @@ export const AppProvider = ({ children }) => {
         setNonSmoker,
         cooking,
         setCooking,
+        isAgreementShown,
+        setIsAgreementShown,
+        isAgreementSigned,
+        setIsAgreementSigned
       }}
     >
       {children}

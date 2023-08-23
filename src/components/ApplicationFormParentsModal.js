@@ -49,6 +49,8 @@ const ApplicationFormParentsModal = () => {
     toggleApplicationFormParentsModal,
     setToggleApplicationFormParentsModal,
     howManyKids,
+    isAgreementShown,
+    isAgreementSigned
   } = useGlobalContext();
 
   const {
@@ -72,7 +74,7 @@ const ApplicationFormParentsModal = () => {
   ]);
 
   const handleSubmit = (event) => {
-    if (!isLastStep) {
+    if (!isLastStep || !isAgreementSigned) {
       event.preventDefault();
       goToNext();
     }
@@ -118,7 +120,7 @@ const ApplicationFormParentsModal = () => {
           <div
             style={{
               marginTop: '1vh',
-              display: 'flex',
+              display: isLastStep && !isAgreementSigned ? 'none' : 'flex',
               gap: '.5rem',
               justifyContent: 'flex-end',
             }}
