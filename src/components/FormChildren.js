@@ -8,7 +8,6 @@ const ChildrenForm = ({ numberOfChildren, updateFields }) => {
   const handleChange = (event) => {
     updateFields({ numberOfChildren: event.target.value });
     setHowManyKids(event.target.value);
-    console.log(howManyKids);
   };
 
   return (

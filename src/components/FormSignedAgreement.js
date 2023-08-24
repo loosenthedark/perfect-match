@@ -38,6 +38,7 @@ const SignedAgreementForm = ({
     cooking,
     isAgreementShown,
     setIsAgreementShown,
+    IsAgreementSigned,
     setIsAgreementSigned,
   } = useGlobalContext();
 
@@ -248,7 +249,7 @@ const SignedAgreementForm = ({
             ? "Please read and sign the following form so we can begin our search for you and your family..."
             : "We confirm that we have read and are in agreement with the Terms & Conditions of the agency."}
         </p>
-        {isAgreementShown && !setIsAgreementSigned && (
+        {isAgreementShown && !IsAgreementSigned && (
           <button
             className="btn hero-btn next-btn btn-secondary"
             onClick={() => setOpenModal(true)}
