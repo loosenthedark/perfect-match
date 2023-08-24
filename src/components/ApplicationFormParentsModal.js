@@ -1,38 +1,38 @@
-import { GrFormClose } from 'react-icons/gr';
-import { useGlobalContext } from './Context';
-import useMultiStepForm from '../hooks/useMultiStepForm';
-import AddressForm from './FormAddress';
-import { useState } from 'react';
-import { formParentsSteps } from '../data';
-import Parent1DetailsForm from './FormDetailsParent1';
-import Parent2DetailsForm from './FormDetailsParent2';
-import CoreRequirementsForm from './FormRequirementsCore';
-import OtherRequirementsForm from './FormRequirementsOther';
-import ChildrenForm from './FormChildren';
-import ChildDetailsForm from './FormDetailsChild';
-import PregnantOrPetsForm from './FormPregnantOrPets';
-import AvailabilityForm from './FormAvailability';
-import SignedAgreementForm from './FormSignedAgreement';
+import { GrFormClose } from "react-icons/gr";
+import { useGlobalContext } from "./Context";
+import useMultiStepForm from "../hooks/useMultiStepForm";
+import AddressForm from "./FormAddress";
+import { useState } from "react";
+import { formParentsSteps } from "../data";
+import Parent1DetailsForm from "./FormDetailsParent1";
+import Parent2DetailsForm from "./FormDetailsParent2";
+import CoreRequirementsForm from "./FormRequirementsCore";
+import OtherRequirementsForm from "./FormRequirementsOther";
+import ChildrenForm from "./FormChildren";
+import ChildDetailsForm from "./FormDetailsChild";
+import PregnantOrPetsForm from "./FormPregnantOrPets";
+import AvailabilityForm from "./FormAvailability";
+import SignedAgreementForm from "./FormSignedAgreement";
 
 const INITIAL_FORM_DATA = {
-  firstNameParent1: '',
-  lastNameParent1: '',
-  phoneParent1: '',
-  emailParent1: '',
-  firstNameParent2: '',
-  lastNameParent2: '',
-  phoneParent2: '',
-  emailParent2: '',
-  address1: '',
-  address2: '',
-  address3: '',
-  address4: '',
+  firstNameParent1: "",
+  lastNameParent1: "",
+  phoneParent1: "",
+  emailParent1: "",
+  firstNameParent2: "",
+  lastNameParent2: "",
+  phoneParent2: "",
+  emailParent2: "",
+  address1: "",
+  address2: "",
+  address3: "",
+  address4: "",
   numberOfChildren: 1,
-  petDetails: '',
-  dueDate: '',
-  startDate: '',
+  petDetails: "",
+  dueDate: "",
+  startDate: "",
   availability: [],
-  otherRequirements: ''
+  otherRequirements: "",
 };
 
 const ApplicationFormParentsModal = () => {
@@ -49,8 +49,7 @@ const ApplicationFormParentsModal = () => {
     toggleApplicationFormParentsModal,
     setToggleApplicationFormParentsModal,
     howManyKids,
-    isAgreementShown,
-    isAgreementSigned
+    isAgreementSigned,
   } = useGlobalContext();
 
   const {
@@ -84,8 +83,8 @@ const ApplicationFormParentsModal = () => {
     <div
       className={
         toggleApplicationFormParentsModal
-          ? 'modal-overlay show-modal'
-          : 'modal-overlay'
+          ? "modal-overlay show-modal"
+          : "modal-overlay"
       }
     >
       <div className="modal-container modal-container__application-form">
@@ -95,7 +94,7 @@ const ApplicationFormParentsModal = () => {
             return (
               <li
                 key={step.id}
-                className={currentStepIndex + 1 >= step.id ? 'active' : null}
+                className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
                 {step.text}
               </li>
@@ -119,10 +118,10 @@ const ApplicationFormParentsModal = () => {
           {currentStep}
           <div
             style={{
-              marginTop: '1vh',
-              display: isLastStep && !isAgreementSigned ? 'none' : 'flex',
-              gap: '.5rem',
-              justifyContent: 'flex-end',
+              marginTop: "1vh",
+              display: isLastStep && !isAgreementSigned ? "none" : "flex",
+              gap: ".5rem",
+              justifyContent: "flex-end",
             }}
           >
             {!isFirstStep && (
@@ -135,7 +134,7 @@ const ApplicationFormParentsModal = () => {
               </button>
             )}
             <button type="submit" className="btn hero-btn next-btn">
-              {isLastStep ? 'Submit form' : 'Next step'}
+              {isLastStep ? "Submit form" : "Next step"}
             </button>
           </div>
         </form>
