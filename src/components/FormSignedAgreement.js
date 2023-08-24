@@ -38,7 +38,7 @@ const SignedAgreementForm = ({
     cooking,
     isAgreementShown,
     setIsAgreementShown,
-    IsAgreementSigned,
+    isAgreementSigned,
     setIsAgreementSigned,
   } = useGlobalContext();
 
@@ -177,7 +177,8 @@ const SignedAgreementForm = ({
           position: "absolute",
           width: "100%",
           lineHeight: "1.5",
-          visibility: isAgreementShown ? "visible" : "hidden",
+          visibility:
+            isAgreementShown && !isAgreementSigned ? "visible" : "hidden",
         }}
       >
         Agreement Form
@@ -219,44 +220,51 @@ const SignedAgreementForm = ({
             fontSize: "1.5rem",
             color: "#102a42",
             marginBottom: ".375rem",
-            display: isAgreementShown ? "none" : "block",
+            display: isAgreementShown && !isAgreementSigned ? "none" : "block",
           }}
         >
-          Thank you!
+          {!isAgreementSigned ? "Almost there!" : "Thank you!"}
         </h5>
         <p
           style={{
-            color: !isAgreementShown ? "#87879d" : "#666",
-            fontSize: !isAgreementShown ? ".95rem" : ".825rem",
-            lineHeight: !isAgreementShown ? "1.5625" : "1.4",
-            marginBottom: !isAgreementShown ? ".375rem" : ".25rem",
-            textAlign: !isAgreementShown ? "center" : "left",
+            color: !isAgreementShown || isAgreementSigned ? "#87879d" : "#666",
+            fontSize: !isAgreementShown || isAgreementSigned ? ".95rem" : ".825rem",
+            lineHeight: !isAgreementShown || isAgreementSigned ? "1.5625" : "1.4",
+            marginBottom: !isAgreementShown || isAgreementSigned ? ".375rem" : ".25rem",
+            textAlign: !isAgreementShown || isAgreementSigned ? "center" : "left",
           }}
         >
           {!isAgreementShown
             ? "Thanks for joining our agency. We look forward to working with you and finding your Perfect Match."
-            : "In the event of us deciding to employ one of your nannies, we agree to settle your account in full within seven days of receiving your invoice."}
+            : !isAgreementSigned
+            ? "In the event of us deciding to employ one of your nannies, we agree to settle your account in full within seven days of receiving your invoice."
+            : "We have received your Application details and signed Agreement form, and will be in contact with you soon."}
         </p>
         <p
           style={{
-            color: !isAgreementShown ? "#87879d" : "#666",
-            fontSize: !isAgreementShown ? ".95rem" : ".825rem",
-            lineHeight: !isAgreementShown ? "1.5625" : "1.4",
-            textAlign: !isAgreementShown ? "center" : "left",
+            color: !isAgreementShown || isAgreementSigned ? "#87879d" : "#666",
+            fontSize: !isAgreementShown || isAgreementSigned ? ".95rem" : ".825rem",
+            lineHeight: !isAgreementShown || isAgreementSigned ? "1.5625" : "1.4",
+            textAlign: !isAgreementShown || isAgreementSigned ? "center" : "left",
           }}
         >
           {!isAgreementShown
             ? "Please read and sign the following form so we can begin our search for you and your family..."
-            : "We confirm that we have read and are in agreement with the Terms & Conditions of the agency."}
+            : !isAgreementSigned
+            ? "We confirm that we have read and are in agreement with the Terms & Conditions of the agency."
+            : "Please submit a Registration fee of €100 (VAT included), which will be deducted from our placement fee if you employ one of our nannies."}
         </p>
-        {isAgreementShown && !IsAgreementSigned && (
-          <button
-            className="btn hero-btn next-btn btn-secondary"
-            onClick={() => setOpenModal(true)}
-          >
-            Create signature
-          </button>
-        )}
+        <button
+          className="btn hero-btn next-btn btn-secondary"
+          style={{
+            width: "9.6875rem",
+            display:
+              isAgreementShown && !isAgreementSigned ? "inline-block" : "none",
+          }}
+          onClick={() => setOpenModal(true)}
+        >
+          Create signature
+        </button>
         <br />
         {/* {imageURL && (
           <>

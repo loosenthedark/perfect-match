@@ -120,7 +120,6 @@ const ApplicationFormParentsModal = () => {
             style={{
               marginTop: "1vh",
               display: isLastStep && !isAgreementSigned ? "none" : "flex",
-              gap: ".5rem",
               justifyContent: "flex-end",
             }}
           >
@@ -128,13 +127,24 @@ const ApplicationFormParentsModal = () => {
               <button
                 type="button"
                 className="btn hero-btn back-btn"
+                style={{
+                  width: "50%",
+                  fontSize: '2.666666667vw'
+                }}
                 onClick={goToPrev}
               >
                 Go back
               </button>
             )}
-            <button type="submit" className="btn hero-btn next-btn">
-              {isLastStep ? "Submit form" : "Next step"}
+            <button
+              type="submit"
+              className="btn hero-btn next-btn"
+              style={{
+                width: "50%",
+                fontSize: '2.666666667vw'
+              }}
+            >
+              {isLastStep ? "Proceed to payment" : "Next step"}
             </button>
           </div>
         </form>
