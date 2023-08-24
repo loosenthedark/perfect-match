@@ -3,7 +3,7 @@ import logoBackground from '../images/perfect-match-logo_square_no-text.png';
 import { useGlobalContext } from './Context';
 
 const ChildrenForm = ({ numberOfChildren, updateFields }) => {
-  const { howManyKids, setHowManyKids } = useGlobalContext();
+  const { setHowManyKids } = useGlobalContext();
 
   const handleChange = (event) => {
     updateFields({ numberOfChildren: event.target.value });
