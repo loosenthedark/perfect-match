@@ -1,7 +1,5 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
-import SignatureCanvas from "react-signature-canvas";
-import { useRef, useState } from "react";
 import logoBackground from "../images/perfect-match-logo_square_no-text.png";
 import { LuFileSignature, LuHeartHandshake } from "react-icons/lu";
 
@@ -38,27 +36,10 @@ const SignedAgreementForm = ({
     cooking,
     isAgreementShown,
     setIsAgreementShown,
-    isAgreementSigned,
-    setIsAgreementSigned,
+    isAgreementChecked,
+    setIsAgreementChecked,
+    isFinalScreenShown,
   } = useGlobalContext();
-
-  const [openModal, setOpenModal] = useState(false);
-  const [imageURL, setImageURL] = useState(null);
-  const sigCanvas = useRef();
-
-  const create = () => {
-    const URL = sigCanvas.current.getTrimmedCanvas().toDataURL("image/png");
-    setImageURL(URL);
-    setOpenModal(false);
-    setIsAgreementSigned(true);
-  };
-
-  // const download = () => {
-  //   const dlink = document.createElement("a");
-  //   dlink.setAttribute("href", imageURL);
-  //   dlink.setAttribute("download", "signature.png");
-  //   dlink.click();
-  // };
 
   const formatDateString = (dateString) => {
     const dateArray = dateString.split("-");
@@ -178,10 +159,10 @@ const SignedAgreementForm = ({
           width: "100%",
           lineHeight: "1.5",
           visibility:
-            isAgreementShown && !isAgreementSigned ? "visible" : "hidden",
+            isAgreementShown && !isFinalScreenShown ? "visible" : "hidden",
         }}
       >
-        Agreement Form
+        Agreement
       </h3>
       <div className="form-row form-row__additional-requirements">
         {!isAgreementShown ? (
@@ -193,7 +174,7 @@ const SignedAgreementForm = ({
               marginBottom: ".75rem",
             }}
           />
-        ) : !imageURL ? (
+        ) : !isFinalScreenShown ? (
           <div
             style={{
               backgroundImage: "url(" + logoBackground + ")",
@@ -220,52 +201,127 @@ const SignedAgreementForm = ({
             fontSize: "1.5rem",
             color: "#102a42",
             marginBottom: ".375rem",
-            display: isAgreementShown && !isAgreementSigned ? "none" : "block",
+            display: isAgreementShown && !isFinalScreenShown ? "none" : "block",
           }}
         >
-          {!isAgreementSigned ? "Almost there!" : "Thank you!"}
+          {!isFinalScreenShown ? "Almost there!" : "Thank you!"}
         </h5>
         <p
           style={{
-            color: !isAgreementShown || isAgreementSigned ? "#87879d" : "#666",
-            fontSize: !isAgreementShown || isAgreementSigned ? ".95rem" : ".825rem",
-            lineHeight: !isAgreementShown || isAgreementSigned ? "1.5625" : "1.4",
-            marginBottom: !isAgreementShown || isAgreementSigned ? ".375rem" : ".25rem",
-            textAlign: !isAgreementShown || isAgreementSigned ? "center" : "left",
+            color: !isAgreementShown || isFinalScreenShown ? "#87879d" : "#666",
+            fontSize:
+              !isAgreementShown || isFinalScreenShown ? ".95rem" : ".825rem",
+            lineHeight:
+              !isAgreementShown || isFinalScreenShown ? "1.5625" : "1.4",
+            marginBottom:
+              !isAgreementShown || isFinalScreenShown ? ".375rem" : ".25rem",
+            textAlign:
+              !isAgreementShown || isFinalScreenShown ? "center" : "left",
           }}
         >
           {!isAgreementShown
             ? "Thanks for joining our agency. We look forward to working with you and finding your Perfect Match."
-            : !isAgreementSigned
+            : !isFinalScreenShown
             ? "In the event of us deciding to employ one of your nannies, we agree to settle your account in full within seven days of receiving your invoice."
-            : "We have received your Application details and signed Agreement form, and will be in contact with you soon."}
+            : "We have received your application details and will be in contact with you soon."}
         </p>
-        <p
-          style={{
-            color: !isAgreementShown || isAgreementSigned ? "#87879d" : "#666",
-            fontSize: !isAgreementShown || isAgreementSigned ? ".95rem" : ".825rem",
-            lineHeight: !isAgreementShown || isAgreementSigned ? "1.5625" : "1.4",
-            textAlign: !isAgreementShown || isAgreementSigned ? "center" : "left",
-          }}
-        >
-          {!isAgreementShown
-            ? "Please read and sign the following form so we can begin our search for you and your family..."
-            : !isAgreementSigned
-            ? "We confirm that we have read and are in agreement with the Terms & Conditions of the agency."
-            : "Please submit a Registration fee of €100 (VAT included), which will be deducted from our placement fee if you employ one of our nannies."}
-        </p>
-        <button
+        {!isAgreementShown ? (
+          <p
+            style={{
+              color: "#87879d",
+              fontSize: ".95rem",
+              lineHeight: "1.5625",
+              textAlign: "center",
+            }}
+          >
+            Please read and confirm the following agreement so we can begin our
+            search for you and your family...
+          </p>
+        ) : !isFinalScreenShown ? (
+          <p
+            style={{
+              color: "#666",
+              fontSize: ".825rem",
+              lineHeight: "1.4",
+              textAlign: "left",
+            }}
+          >
+            We confirm that we have read and are in agreement with the{" "}
+            <a
+              target="_blank"
+              href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
+              rel="noreferrer"
+            >
+              <span
+                style={{
+                  color: "#ffb3d0",
+                  fontWeight: "500",
+                }}
+              >
+                Terms and Conditions
+              </span>
+            </a>{" "}
+            of the agency.
+          </p>
+        ) : (
+          <p
+            style={{
+              color: "#87879d",
+              fontSize: ".95rem",
+              lineHeight: "1.5625",
+              textAlign: "center",
+            }}
+          >
+            Please submit a registration fee of €100 (VAT included), which will
+            be deducted from our placement fee if you employ one of our nannies.
+          </p>
+        )}
+        {/* <button
           className="btn hero-btn next-btn btn-secondary"
           style={{
             width: "9.6875rem",
             display:
-              isAgreementShown && !isAgreementSigned ? "inline-block" : "none",
+              isAgreementShown && !isAgreementChecked ? "inline-block" : "none",
           }}
-          onClick={() => setOpenModal(true)}
+          onClick={() => {
+            setIsAgreementChecked(!isAgreementChecked);
+          }}
         >
           Create signature
-        </button>
-        <br />
+        </button> */}
+        <div
+          className="form-row form-row__additional-requirements"
+          style={{
+            marginTop: "1.25rem",
+          }}
+        >
+          <div
+            className="slider-wrapper"
+            style={{
+              display: isAgreementShown && !isFinalScreenShown ? "flex" : "none",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: ".5rem",
+            }}
+          >
+            <label htmlFor="agreed" className="switch">
+              <input
+                checked={isAgreementChecked}
+                id="agreed"
+                type="checkbox"
+                onChange={(e) => setIsAgreementChecked(e.target.checked)}
+              />
+              <span className="slider round"></span>
+            </label>
+            <span
+              className="slider-label-additional"
+              style={{ textAlign: "left", width: "4.5rem" }}
+            >
+              CONFIRM
+            </span>
+          </div>
+        </div>
+        {/* <br /> */}
         {/* {imageURL && (
           <>
             <img
@@ -285,7 +341,7 @@ const SignedAgreementForm = ({
           </>
         )}
         <br /> */}
-        {openModal && (
+        {/* {openModal && (
           <div
             className="modal-container"
             style={{
@@ -343,7 +399,7 @@ const SignedAgreementForm = ({
               </div>
             </div>
           </div>
-        )}
+        )} */}
         <div
           style={{
             marginTop: "1vh",
@@ -354,11 +410,19 @@ const SignedAgreementForm = ({
           <button
             className="btn hero-btn next-btn btn-secondary"
             onClick={() => setIsAgreementShown(true)}
+            style={{
+              width: "10rem",
+            }}
           >
-            Sign form
+            Confirm agreement
           </button>
         </div>
       </div>
+      <input
+        type="hidden"
+        value={isAgreementChecked ? "Yes" : "No"}
+        name="Agreement confirmed?"
+      />
     </FormStepWrapper>
   );
 };

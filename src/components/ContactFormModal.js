@@ -89,7 +89,10 @@ const ContactFormModal = () => {
                 href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
                 rel="noreferrer"
               >
-                <span>Terms and Conditions</span>
+                <span style={{
+                  color: '#ffb3d0',
+                  fontWeight: '500'
+                }} >Terms and Conditions</span>
               </a>
             </p>
           </footer>

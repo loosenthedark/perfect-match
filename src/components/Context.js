@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext } from "react";
 
 const AppContext = createContext();
 
@@ -29,7 +29,9 @@ export const AppProvider = ({ children }) => {
   const [howManyKids, setHowManyKids] = useState(1);
   const [inputFieldsChildren, setInputFieldsChildren] = useState([]);
   const [isAgreementShown, setIsAgreementShown] = useState(false);
-  const [isAgreementSigned, setIsAgreementSigned] = useState(false);
+  const [isAgreementChecked, setIsAgreementChecked] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isFinalScreenShown, setIsFinalScreenShown] = useState(false);
 
   return (
     <AppContext.Provider
@@ -78,8 +80,12 @@ export const AppProvider = ({ children }) => {
         setCooking,
         isAgreementShown,
         setIsAgreementShown,
-        isAgreementSigned,
-        setIsAgreementSigned
+        isAgreementChecked,
+        setIsAgreementChecked,
+        isFormSubmitted,
+        setIsFormSubmitted,
+        isFinalScreenShown,
+        setIsFinalScreenShown
       }}
     >
       {children}

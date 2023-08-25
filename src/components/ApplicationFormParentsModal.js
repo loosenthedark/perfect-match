@@ -49,7 +49,12 @@ const ApplicationFormParentsModal = () => {
     toggleApplicationFormParentsModal,
     setToggleApplicationFormParentsModal,
     howManyKids,
-    isAgreementSigned,
+    isAgreementShown,
+    isAgreementChecked,
+    isFormSubmitted,
+    setIsFormSubmitted,
+    isFinalScreenShown,
+    setIsFinalScreenShown,
   } = useGlobalContext();
 
   const {
@@ -73,11 +78,20 @@ const ApplicationFormParentsModal = () => {
   ]);
 
   const handleSubmit = (event) => {
-    if (!isLastStep || !isAgreementSigned) {
+    if (!isLastStep) {
       event.preventDefault();
       goToNext();
+    } else {
+      if (!isFormSubmitted) {
+        event.preventDefault();
+      }
     }
   };
+
+  // useEffect(() => {
+  //   console.log('BANANAS!');
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isFormSubmitted]);
 
   return (
     <div
@@ -118,34 +132,52 @@ const ApplicationFormParentsModal = () => {
           {currentStep}
           <div
             style={{
-              marginTop: "1vh",
-              display: isLastStep && !isAgreementSigned ? "none" : "flex",
-              justifyContent: "flex-end",
+              marginTop: isLastStep ? "0" : "1vh",
+              display: isLastStep && !isAgreementShown ? "none" : "flex",
+              justifyContent: isLastStep ? "center" : "flex-end",
             }}
           >
-            {!isFirstStep && (
+            {!isFirstStep && !isLastStep && (
               <button
                 type="button"
                 className="btn hero-btn back-btn"
-                style={{
-                  width: "50%",
-                  fontSize: '2.666666667vw'
-                }}
                 onClick={goToPrev}
               >
                 Go back
               </button>
             )}
-            <button
-              type="submit"
-              className="btn hero-btn next-btn"
-              style={{
-                width: "50%",
-                fontSize: '2.666666667vw'
-              }}
-            >
-              {isLastStep ? "Proceed to payment" : "Next step"}
-            </button>
+            {!isLastStep ? (
+              <button
+                type="submit"
+                className="btn hero-btn next-btn"
+                style={{
+                  paddingLeft: ".75rem",
+                  paddingRight: ".75rem",
+                  width: "calc(50% - .25rem)",
+                }}
+              >
+                Next step
+              </button>
+            ) : (
+              <button
+                type="submit"
+                className="btn hero-btn next-btn"
+                style={{
+                  paddingLeft: "1.375rem",
+                  paddingRight: "1.375rem",
+                  width: "10.75rem",
+                  opacity: !isAgreementChecked ? ".625" : 1,
+                }}
+                onClick={
+                  !isFinalScreenShown
+                    ? () => setIsFinalScreenShown(true)
+                    : () => setIsFormSubmitted(true)
+                }
+                disabled={!isAgreementChecked}
+              >
+                {!isFinalScreenShown ? "Next step" : "Proceed to payment"}
+              </button>
+            )}
           </div>
         </form>
       </div>
