@@ -12,7 +12,6 @@ import ApplicationFormParentsModal from './components/ApplicationFormParentsModa
 import StripeCheckout from './components/StripeCheckout';
 
 function App() {
-  console.log(process.env);
   return (
     <>
       <Navbar />

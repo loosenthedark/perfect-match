@@ -11,7 +11,7 @@ import {
 import axios from "axios";
 import styled from "styled-components";
 
-const promise = loadStripe(process.env.PERFECT_MATCH_STRIPE_PUBLIC_KEY);
+const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
   const [succeeded, setSucceeded] = useState(false);
