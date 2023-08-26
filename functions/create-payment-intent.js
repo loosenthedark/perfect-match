@@ -1,8 +1,10 @@
 // domain/.netlify/functions/create-payment-intent
 
-require("dotenv").config();
+require('dotenv').config({
+  path: '/Users/paulharrington/Documents/webdev/perfect-match/.env'
+});
 
-const stripe = require("stripe")(process.env.PERFECT_MATCH_STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.PERFECT_MATCH_STRIPE_SECRET_KEY);
 
 exports.handler = async function (event, context) {
   console.log(event);
