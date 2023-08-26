@@ -32,6 +32,7 @@ export const AppProvider = ({ children }) => {
   const [isAgreementChecked, setIsAgreementChecked] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isFinalScreenShown, setIsFinalScreenShown] = useState(false);
+  const [stripeCheckout, toggleStripeCheckout] = useState(true);
 
   return (
     <AppContext.Provider
@@ -85,7 +86,9 @@ export const AppProvider = ({ children }) => {
         isFormSubmitted,
         setIsFormSubmitted,
         isFinalScreenShown,
-        setIsFinalScreenShown
+        setIsFinalScreenShown,
+        stripeCheckout,
+        toggleStripeCheckout,
       }}
     >
       {children}

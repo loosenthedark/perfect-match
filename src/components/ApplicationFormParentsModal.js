@@ -88,11 +88,6 @@ const ApplicationFormParentsModal = () => {
     }
   };
 
-  // useEffect(() => {
-  //   console.log('BANANAS!');
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [isFormSubmitted]);
-
   return (
     <div
       className={
