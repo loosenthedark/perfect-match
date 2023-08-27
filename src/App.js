@@ -9,7 +9,6 @@ import ContactFormModal from './components/ContactFormModal';
 import ApplicationFormNannyModal from './components/ApplicationFormNannyModal';
 import { faqs } from './data';
 import ApplicationFormParentsModal from './components/ApplicationFormParentsModal';
-import StripeCheckout from './components/StripeCheckout';
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
       <ContactFormModal />
       <ApplicationFormNannyModal />
       <ApplicationFormParentsModal />
-      <StripeCheckout />
       <Hero />
       <About />
       <Services />

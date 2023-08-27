@@ -32,7 +32,11 @@ export const AppProvider = ({ children }) => {
   const [isAgreementChecked, setIsAgreementChecked] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isFinalScreenShown, setIsFinalScreenShown] = useState(false);
-  const [stripeCheckout, toggleStripeCheckout] = useState(true);
+  const [stripeCheckout, toggleStripeCheckout] = useState(false);
+  const [stripePaymentSubmitted, setStripePaymentSubmitted] = useState(false);
+  const [clientSecret, setClientSecret] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState(null);
 
   return (
     <AppContext.Provider
@@ -89,6 +93,14 @@ export const AppProvider = ({ children }) => {
         setIsFinalScreenShown,
         stripeCheckout,
         toggleStripeCheckout,
+        stripePaymentSubmitted,
+        setStripePaymentSubmitted,
+        clientSecret,
+        setClientSecret,
+        isLoading,
+        setIsLoading,
+        message,
+        setMessage
       }}
     >
       {children}

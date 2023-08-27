@@ -3,10 +3,10 @@ import { GrFormClose } from "react-icons/gr";
 import { useGlobalContext } from "./Context";
 import { loadStripe } from "@stripe/stripe-js";
 import {
-  CardElement,
   useStripe,
   Elements,
   useElements,
+  PaymentElement,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
 import styled from "styled-components";
@@ -14,99 +14,133 @@ import styled from "styled-components";
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const CheckoutForm = () => {
-  const [succeeded, setSucceeded] = useState(false);
-  const [error, setError] = useState(null);
-  const [processing, setProcessing] = useState("");
-  const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
   const elements = useElements();
 
-  const { toggleStripeCheckout } = useGlobalContext();
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState(null);
 
-  const cardStyle = {
-    style: {
-      base: {
-        color: "#32325d",
-        fontFamily: "Arial, sans-serif",
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
-        "::placeholder": {
-          color: "#32325d",
-        },
-      },
-      invalid: {
-        color: "#fa755a",
-        iconColor: "#fa755a",
-      },
-    },
-  };
+  const { clientSecret } =
+    useGlobalContext();
 
-  const createPaymentIntent = async () => {
-    try {
-      const data = await axios.post(
-        "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":100}'
-      );
-      // console.log(data);
-      setClientSecret(data.data.clientSecret);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
+  // const handleChange = async (event) => {
+  //   setDisabled(event.empty);
+  //   setError(event.error ? event.error.message : "");
+  // };
 
   useEffect(() => {
-    createPaymentIntent();
-  }, []);
+    // console.log("BANANAS!");
+    // console.log(clientSecret);
+    if (!stripe) {
+      return;
+    }
+    if (!clientSecret) {
+      return;
+    }
+    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+      switch (paymentIntent.status) {
+        case "succeeded":
+          setMessage("Payment succeeded!");
+          break;
+        case "processing":
+          setMessage("Your payment is processing.");
+          break;
+        // case "requires_payment_method":
+        //   setMessage("Your payment was not successful, please try again.");
+        //   break;
+        default:
+          setMessage("Please enter your payment details above");
+          break;
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stripe]);
 
-  const handleChange = async (event) => {
-    setDisabled(event.empty);
-    setError(event.error ? event.error.message : "");
-  };
+  // const handleSubmit = async (ev) => {
+  //   ev.preventDefault();
+  //   setProcessing(true);
+  //   const payload = await stripe.confirmCardPayment(clientSecret, {
+  //     payment_method: {
+  //       card: elements.getElement(CardElement),
+  //     },
+  //   });
+  //   if (payload.error) {
+  //     setError(`Payment failed - ${payload.error.message}`);
+  //     setProcessing(false);
+  //   } else {
+  //     setError(null);
+  //     setProcessing(false);
+  //     setSucceeded(true);
+  //     setTimeout(() => {
+  //       toggleStripeCheckout(false);
+  //     }, 5000);
+  //   }
+  // };
 
-  const handleSubmit = async (ev) => {
-    ev.preventDefault();
-    setProcessing(true);
-    const payload = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!stripe || !elements) {
+      // Stripe.js hasn't yet loaded.
+      // Make sure to disable form submission until Stripe.js has loaded.
+      return;
+    }
+
+    setIsLoading(true);
+
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        // Make sure to change this to your payment completion page
+        return_url: "http://localhost:8888",
       },
     });
-    if (payload.error) {
-      setError(`Payment failed - ${payload.error.message}`);
-      setProcessing(false);
+
+    // This point will only be reached if there is an immediate error when
+    // confirming the payment. Otherwise, your customer will be redirected to
+    // your `return_url`. For some payment methods like iDEAL, your customer will
+    // be redirected to an intermediate site first to authorize the payment, then
+    // redirected to the `return_url`.
+    if (error.type === "card_error" || error.type === "validation_error") {
+      setMessage(error.message);
     } else {
-      setError(null);
-      setProcessing(false);
-      setSucceeded(true);
-      setTimeout(() => {
-        toggleStripeCheckout(false);
-      }, 5000);
+      setMessage("An unexpected error occurred.");
     }
+
+    setIsLoading(false);
+  };
+
+  const paymentElementOptions = {
+    layout: "tabs",
   };
 
   return (
-    <div>
-      {succeeded ? (
-        <article>
-          <h4>Thank you!</h4>
-          <h5>Your payment was successful</h5>
-          <h6>Redirecting you to the home page shortly...</h6>
-        </article>
-      ) : (
-        <article>
-          <h4>Hello</h4>
-          <h5>Your total is €100</h5>
-          <h6>Test Card Number: 4242 4242 4242 4242</h6>
-        </article>
-      )}
-      <form id="payment-form" onSubmit={handleSubmit}>
-        <CardElement
+    <form
+      id="payment-form"
+      onSubmit={handleSubmit}
+    >
+      {/* <LinkAuthenticationElement
+        id="link-authentication-element"
+        onChange={(e) => setEmail(e.target?.value)}
+      /> */}
+      <PaymentElement id="payment-element" options={paymentElementOptions} />
+      <button disabled={isLoading || !stripe || !elements} id="submit">
+        <span id="button-text">
+          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+        </span>
+      </button>
+      {/* Show any error or success messages */}
+      {message && <div id="payment-message">{message}</div>}
+      {/* <CardElement
           id="card-element"
           options={cardStyle}
           onChange={handleChange}
         />
-        <button disabled={processing || disabled || succeeded} type="submit" id="submit">
+        <button
+          disabled={processing || disabled || succeeded}
+          type="submit"
+          id="submit"
+        >
           <span id="button-text">
             {processing ? <div className="spinner" id="spinner"></div> : "Pay"}
           </span>
@@ -127,20 +161,55 @@ const CheckoutForm = () => {
           </a>
           .<br />
           Refresh the page to pay again.
-        </p>
-      </form>
-    </div>
+        </p> */}
+    </form>
   );
 };
 
 const StripeCheckout = () => {
-  const { stripeCheckout, toggleStripeCheckout } = useGlobalContext();
+  const {
+    stripeCheckout,
+    toggleStripeCheckout,
+    clientSecret,
+    setClientSecret,
+  } = useGlobalContext();
+
+  const createPaymentIntent = async () => {
+    try {
+      const data = await axios.post(
+        "/.netlify/functions/create-payment-intent",
+        '{"payment_amount":100}'
+      );
+      // console.log(data);
+      setClientSecret(data.data.clientSecret);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
+  useEffect(() => {
+    createPaymentIntent();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const appearance = {
+    theme: "stripe",
+  };
+  const options = {
+    clientSecret,
+    appearance,
+  };
 
   return (
     <div
       className={stripeCheckout ? "modal-overlay show-modal" : "modal-overlay"}
     >
-      <div className="modal-container modal-container__application-form">
+      <div
+        className="modal-container modal-container__application-form"
+        style={{
+          height: "auto",
+        }}
+      >
         <button
           className="close-modal-btn close-modal-btn__application-form"
           onClick={() => toggleStripeCheckout(false)}
@@ -148,9 +217,11 @@ const StripeCheckout = () => {
           <GrFormClose />
         </button>
         <Wrapper>
-          <Elements stripe={promise}>
-            <CheckoutForm />
-          </Elements>
+          {clientSecret && (
+            <Elements options={options} stripe={promise}>
+              <CheckoutForm />
+            </Elements>
+          )}
         </Wrapper>
       </div>
     </div>
@@ -160,6 +231,7 @@ const StripeCheckout = () => {
 const Wrapper = styled.section`
   form {
     width: 30vw;
+    min-width: 500px;
     align-self: center;
     box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
       0px 2px 5px 0px rgba(50, 50, 93, 0.1),
@@ -167,54 +239,25 @@ const Wrapper = styled.section`
     border-radius: 7px;
     padding: 40px;
   }
-  input {
-    border-radius: 6px;
-    margin-bottom: 6px;
-    padding: 12px;
-    border: 1px solid rgba(50, 50, 93, 0.1);
-    max-height: 44px;
-    font-size: 16px;
-    width: 100%;
-    background: white;
-    box-sizing: border-box;
-  }
-  .result-message {
-    line-height: 22px;
-    font-size: 16px;
-  }
-  .result-message a {
-    color: rgb(89, 111, 214);
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .hidden {
-    display: none;
-  }
-  #card-error {
+
+  #payment-message {
     color: rgb(105, 115, 134);
     font-size: 16px;
     line-height: 20px;
-    margin-top: 12px;
+    padding-top: 12px;
     text-align: center;
   }
-  #card-element {
-    border-radius: 4px 4px 0 0;
-    padding: 12px;
-    border: 1px solid rgba(50, 50, 93, 0.1);
-    max-height: 44px;
-    width: 100%;
-    background: white;
-    box-sizing: border-box;
+
+  #payment-element {
+    margin-bottom: 24px;
   }
-  #payment-request-button {
-    margin-bottom: 32px;
-  }
+
   /* Buttons and links */
   button {
     background: #5469d4;
     font-family: Arial, sans-serif;
     color: #ffffff;
-    border-radius: 0 0 4px 4px;
+    border-radius: 4px;
     border: 0;
     padding: 12px 16px;
     font-size: 16px;
@@ -225,19 +268,23 @@ const Wrapper = styled.section`
     box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
     width: 100%;
   }
+
   button:hover {
     filter: contrast(115%);
   }
+
   button:disabled {
     opacity: 0.5;
     cursor: default;
   }
+
   /* spinner/processing state, errors */
   .spinner,
   .spinner:before,
   .spinner:after {
     border-radius: 50%;
   }
+
   .spinner {
     color: #ffffff;
     font-size: 22px;
@@ -251,11 +298,13 @@ const Wrapper = styled.section`
     -ms-transform: translateZ(0);
     transform: translateZ(0);
   }
+
   .spinner:before,
   .spinner:after {
     position: absolute;
     content: "";
   }
+
   .spinner:before {
     width: 10.4px;
     height: 20.4px;
@@ -268,6 +317,7 @@ const Wrapper = styled.section`
     -webkit-animation: loading 2s infinite ease 1.5s;
     animation: loading 2s infinite ease 1.5s;
   }
+
   .spinner:after {
     width: 10.4px;
     height: 10.2px;
@@ -280,6 +330,7 @@ const Wrapper = styled.section`
     -webkit-animation: loading 2s infinite ease;
     animation: loading 2s infinite ease;
   }
+
   @keyframes loading {
     0% {
       -webkit-transform: rotate(0deg);
@@ -290,9 +341,11 @@ const Wrapper = styled.section`
       transform: rotate(360deg);
     }
   }
+
   @media only screen and (max-width: 600px) {
     form {
-      width: 80vw;
+      width: 87.2vw;
+      min-width: initial;
     }
   }
 `;

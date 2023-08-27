@@ -51,10 +51,12 @@ const ApplicationFormParentsModal = () => {
     howManyKids,
     isAgreementShown,
     isAgreementChecked,
-    isFormSubmitted,
-    setIsFormSubmitted,
+    stripePaymentSubmitted,
     isFinalScreenShown,
     setIsFinalScreenShown,
+    toggleStripeCheckout,
+    stripeCheckout,
+    setStripePaymentSubmitted,
   } = useGlobalContext();
 
   const {
@@ -82,7 +84,7 @@ const ApplicationFormParentsModal = () => {
       event.preventDefault();
       goToNext();
     } else {
-      if (!isFormSubmitted) {
+      if (!stripePaymentSubmitted) {
         event.preventDefault();
       }
     }
@@ -96,9 +98,20 @@ const ApplicationFormParentsModal = () => {
           : "modal-overlay"
       }
     >
-      <div className="modal-container modal-container__application-form">
+      <div
+        className="modal-container modal-container__application-form"
+        style={{
+          height: !stripeCheckout ? "66vh" : "auto",
+          maxHeight: !stripeCheckout ? "39rem" : "unset",
+        }}
+      >
         {/* progress bar */}
-        <ul className="progress-bar progress-bar__parents">
+        <ul
+          className="progress-bar progress-bar__parents"
+          style={{
+            display: !stripeCheckout ? "flex" : "none",
+          }}
+        >
           {formParentsSteps.map((step) => {
             return (
               <li
@@ -123,12 +136,16 @@ const ApplicationFormParentsModal = () => {
           className="form"
           onSubmit={handleSubmit}
           encType="multipart/form-data"
+          id="payment-form"
         >
           {currentStep}
           <div
             style={{
               marginTop: isLastStep ? "0" : "1vh",
-              display: isLastStep && !isAgreementShown ? "none" : "flex",
+              display:
+                isLastStep && (!isAgreementShown || stripeCheckout)
+                  ? "none"
+                  : "flex",
               justifyContent: isLastStep ? "center" : "flex-end",
             }}
           >
@@ -160,17 +177,25 @@ const ApplicationFormParentsModal = () => {
                 style={{
                   paddingLeft: "1.375rem",
                   paddingRight: "1.375rem",
-                  width: "10.75rem",
+                  width: !stripePaymentSubmitted ? "10.75rem" : "11.75rem",
                   opacity: !isAgreementChecked ? ".625" : 1,
                 }}
                 onClick={
-                  !isFinalScreenShown
-                    ? () => setIsFinalScreenShown(true)
-                    : () => setIsFormSubmitted(true)
+                  !stripeCheckout
+                    ? !isFinalScreenShown
+                      ? () => setIsFinalScreenShown(true)
+                      : !stripePaymentSubmitted
+                      ? () => toggleStripeCheckout(true)
+                      : () => console.log("Registration flow complete!")
+                    : () => setStripePaymentSubmitted(true)
                 }
                 disabled={!isAgreementChecked}
               >
-                {!isFinalScreenShown ? "Next step" : "Proceed to payment"}
+                {!isFinalScreenShown
+                  ? "Next step"
+                  : !stripeCheckout && !stripePaymentSubmitted
+                  ? "Proceed to payment"
+                  : "Complete registration"}
               </button>
             )}
           </div>

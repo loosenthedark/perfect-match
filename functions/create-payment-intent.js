@@ -5,11 +5,11 @@ require('dotenv').config();
 const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY);
 
 exports.handler = async function (event, context) {
-  console.log(event);
+  // console.log(event);
 
   if (event.body) {
     const { payment_amount } = JSON.parse(event.body);
-    console.log(payment_amount);
+    // console.log(payment_amount);
 
     const calculateOrderAmount = () => {
       // Replace this constant with a calculation of the order's amount
