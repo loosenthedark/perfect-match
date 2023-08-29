@@ -2,7 +2,7 @@ import { extraLinks, pageLinks, socialLinks } from '../data';
 import { useGlobalContext } from './Context';
 
 const Footer = () => {
-  const { setToggleContactFormModal, setToggleApplicationFormNannyModal } =
+  const { setToggleContactFormModal, setToggleApplicationFormParentsModal } =
     useGlobalContext();
 
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
               <a
                 onClick={
                   link.id === pageLinks.length - 2
-                    ? () => setToggleApplicationFormNannyModal(true)
+                    ? () => setToggleApplicationFormParentsModal(true)
                     : null
                 }
                 href={link.id !== pageLinks.length - 2 ? link.href : null}

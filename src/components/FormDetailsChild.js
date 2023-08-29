@@ -129,7 +129,9 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               </button>
               <button
                 className="btn hero-btn next-btn btn-secondary"
-                onClick={() => setCurrentChild(currentChild + 1)}
+                onClick={() => setCurrentChild(currentChild + 1)} style={{
+                  border: '0.05rem solid rgba(0, 0, 0, 0.09)'
+                }}
               >
                 Next child
               </button>
