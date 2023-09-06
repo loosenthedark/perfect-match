@@ -368,7 +368,7 @@ const SignedAgreementForm = ({
         Agreement
       </h3>
       {!stripeCheckout ? (
-        <div className="form-row form-row__additional-requirements">
+        <div className="form-row form-row__additional-requirements form-row__agreement">
           {!isAgreementShown ? (
             <LuFileSignature
               color="#ffb3d0"
@@ -513,12 +513,7 @@ const SignedAgreementForm = ({
         >
           Create signature
         </button> */}
-          <div
-            className="form-row form-row__additional-requirements"
-            style={{
-              marginTop: "1.25rem",
-            }}
-          >
+          <div className="form-row form-row__additional-requirements form-row__agreement">
             <div
               className="slider-wrapper"
               style={{
@@ -539,8 +534,8 @@ const SignedAgreementForm = ({
                 <span className="slider round"></span>
               </label>
               <span
-                className="slider-label-additional"
-                style={{ textAlign: "left", width: "4.5rem" }}
+                className="slider-label-additional slider-label-confirm"
+                style={{ textAlign: "left" }}
               >
                 CONFIRM
               </span>
@@ -633,11 +628,8 @@ const SignedAgreementForm = ({
             }}
           >
             <button
-              className="btn hero-btn next-btn btn-secondary"
+              className="btn hero-btn next-btn btn-secondary btn-confirm"
               onClick={() => setIsAgreementShown(true)}
-              style={{
-                width: "10rem",
-              }}
             >
               Confirm agreement
             </button>

@@ -12,7 +12,7 @@ import ChildrenForm from "./FormChildren";
 import ChildDetailsForm from "./FormDetailsChild";
 import PregnantOrPetsForm from "./FormPregnantOrPets";
 import AvailabilityForm from "./FormAvailability";
-import SignedAgreementForm from "./FormSignedAgreement";
+import AgreementForm from "./FormAgreement";
 
 const INITIAL_FORM_DATA = {
   firstNameParent1: "",
@@ -76,7 +76,7 @@ const ApplicationFormParentsModal = () => {
     <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
     <AvailabilityForm {...formData} updateFields={updateFormFields} />,
     <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
-    <SignedAgreementForm {...formData} updateFields={updateFormFields} />,
+    <AgreementForm {...formData} updateFields={updateFormFields} />,
   ]);
 
   const handleSubmit = (event) => {
@@ -99,7 +99,7 @@ const ApplicationFormParentsModal = () => {
       }
     >
       <div
-        className="modal-container modal-container__application-form"
+        className={!stripeCheckout ? "modal-container modal-container__application-form" : "modal-container modal-container__application-form modal-container__stripe"}
         style={{
           height: !stripeCheckout ? "66vh" : "auto",
           maxHeight: !stripeCheckout ? "39rem" : "unset",
@@ -178,7 +178,7 @@ const ApplicationFormParentsModal = () => {
                 style={{
                   paddingLeft: "1.375rem",
                   paddingRight: "1.375rem",
-                  width: !stripePaymentSubmitted ? "10.75rem" : "11.75rem",
+                  width: "13rem",
                   opacity: !isAgreementChecked ? ".625" : 1,
                 }}
                 onClick={
