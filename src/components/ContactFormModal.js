@@ -43,7 +43,8 @@ const ContactFormModal = () => {
             data-netlify-recaptcha="true"
             encType="multipart/form-data"
             style={{
-              marginBottom: "2.75vh",
+              marginBottom: "3vh",
+              marginTop: "1vh",
             }}
           >
             {/* first name */}
@@ -90,14 +91,13 @@ const ContactFormModal = () => {
               />
             </div>
             {/* query */}
-            <div
-              className="form-row"
-              style={{
-                marginBottom: "5vh",
-              }}
-            >
+            <div className="form-row">
               <textarea
                 className="form-input"
+                style={{
+                  lineHeight: "1.6",
+                  resize: "none",
+                }}
                 placeholder="Please submit your query and we will get back to you as soon as possible..."
                 rows="4"
                 name="query"
