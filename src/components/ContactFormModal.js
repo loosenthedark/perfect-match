@@ -57,7 +57,7 @@ const ContactFormModal = () => {
               />
             </div>
             {/* file upload */}
-            <div className="form-row">
+            {/* <div className="form-row">
               <label htmlFor="upload" className="btn form-label">
                 Upload CV
               </label>
@@ -68,7 +68,7 @@ const ContactFormModal = () => {
                 id="upload"
                 name="upload"
               />
-            </div>
+            </div> */}
             {/* Netlify spam filtering */}
             <div className="form-row">
               <div data-netlify-recaptcha="true"></div>

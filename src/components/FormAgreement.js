@@ -28,16 +28,12 @@ const SignedAgreementForm = ({
   address3,
   address4,
   numberOfChildren,
-  dueDate,
-  petDetails,
   startDate,
   availability,
   otherRequirements,
 }) => {
   const {
     inputFieldsChildren,
-    pregnantChecked,
-    petsChecked,
     temporaryOrPermanent,
     partOrFullTime,
     liveInOrOut,
@@ -294,18 +290,6 @@ const SignedAgreementForm = ({
           </div>
         );
       })}
-      <input
-        type="hidden"
-        value={pregnantChecked ? "Yes" : "No"}
-        name="Currently pregnant?"
-      />
-      <input
-        type="hidden"
-        value={formatDateString(dueDate)}
-        name="Pregnancy due date:"
-      />
-      <input type="hidden" value={petsChecked ? "Yes" : "No"} name="Pet(s)?" />
-      <input type="hidden" value={petDetails} name="Details of pet(s):" />
       <input
         type="hidden"
         value={

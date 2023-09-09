@@ -17,8 +17,6 @@ export const AppProvider = ({ children }) => {
   const [experienceChecked, setExperienceChecked] = useState(false);
   const [qualificationsChecked, setQualificationsChecked] = useState(false);
   const [employedChecked, setEmployedChecked] = useState(false);
-  const [pregnantChecked, setPregnantChecked] = useState(false);
-  const [petsChecked, setPetsChecked] = useState(false);
   const [temporaryOrPermanent, setTemporaryOrPermanent] = useState(false);
   const [partOrFullTime, setPartOrFullTime] = useState(false);
   const [liveInOrOut, setLiveInOrOut] = useState(false);
@@ -61,10 +59,6 @@ export const AppProvider = ({ children }) => {
         setQualificationsChecked,
         employedChecked,
         setEmployedChecked,
-        pregnantChecked,
-        setPregnantChecked,
-        petsChecked,
-        setPetsChecked,
         temporaryOrPermanent,
         setTemporaryOrPermanent,
         partOrFullTime,
@@ -100,7 +94,7 @@ export const AppProvider = ({ children }) => {
         isLoading,
         setIsLoading,
         message,
-        setMessage
+        setMessage,
       }}
     >
       {children}

@@ -1,49 +1,49 @@
-import { useState } from 'react';
-import FormStepWrapper from './FormStepWrapper';
-import { useGlobalContext } from './Context';
-import { useEffect } from 'react';
+import { useState } from "react";
+import FormStepWrapper from "./FormStepWrapper";
+import { useGlobalContext } from "./Context";
+import { useEffect } from "react";
 
 const ChildDetailsForm = ({ numberOfKids }) => {
   const inputFieldsChildrenConfig = [
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
     {
-      nameChild: '',
-      dobChild: '',
-      schoolLocationChild: '',
+      nameChild: "",
+      dobChild: "",
+      schoolLocationChild: "",
     },
   ];
 
@@ -65,13 +65,13 @@ const ChildDetailsForm = ({ numberOfKids }) => {
       <h3
         className="form-heading"
         style={{
-          position: 'absolute',
-          width: '100%',
-         
-          lineHeight: '1.5',
+          position: "absolute",
+          width: "100%",
+
+          lineHeight: "1.5",
         }}
       >
-        {'Child #' + currentChild + ' Details'}
+        {"Child #" + currentChild + " Details"}
       </h3>
 
       {inputFieldsChildren.map((inputGroup, index) => {
@@ -79,12 +79,15 @@ const ChildDetailsForm = ({ numberOfKids }) => {
           <div
             key={index}
             className="current-child-wrapper"
-            style={{ display: index + 1 === currentChild ? 'block' : 'none' }}
+            style={{ display: index + 1 === currentChild ? "block" : "none" }}
           >
             <div className="form-row">
               <input
                 required
                 className="form-input"
+                style={{
+                  paddingLeft: ".775rem",
+                }}
                 type="text"
                 name="nameChild"
                 placeholder="Name"
@@ -96,10 +99,13 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               <input
                 required
                 className="form-input"
+                style={{
+                  paddingLeft: ".775rem",
+                }}
                 name="dobChild"
                 placeholder="Date of birth"
                 value={inputGroup.dobChild}
-                onFocus={(e) => (e.target.type = 'date')}
+                onFocus={(e) => (e.target.type = "date")}
                 onChange={(event) => handleFormChange(index, event)}
               />
             </div>
@@ -107,18 +113,21 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               <input
                 required
                 className="form-input"
+                style={{
+                  paddingLeft: ".775rem",
+                }}
                 name="schoolLocationChild"
-                placeholder="Location of school/Montessori"
+                placeholder="Location of school/Montessori (if applicable)"
                 value={inputGroup.schoolLocationChild}
                 onChange={(event) => handleFormChange(index, event)}
               />
             </div>
             <div
               style={{
-                marginTop: '1vh',
-                display: 'flex',
-                gap: '.5rem',
-                justifyContent: 'flex-end',
+                marginTop: "1vh",
+                display: "flex",
+                gap: ".5rem",
+                justifyContent: "flex-end",
               }}
             >
               <button
@@ -129,8 +138,9 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               </button>
               <button
                 className="btn hero-btn next-btn btn-secondary"
-                onClick={() => setCurrentChild(currentChild + 1)} style={{
-                  border: '0.05rem solid rgba(0, 0, 0, 0.09)'
+                onClick={() => setCurrentChild(currentChild + 1)}
+                style={{
+                  border: "0.05rem solid rgba(0, 0, 0, 0.09)",
                 }}
               >
                 Next child

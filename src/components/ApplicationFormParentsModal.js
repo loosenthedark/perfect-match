@@ -10,7 +10,6 @@ import CoreRequirementsForm from "./FormRequirementsCore";
 import OtherRequirementsForm from "./FormRequirementsOther";
 import ChildrenForm from "./FormChildren";
 import ChildDetailsForm from "./FormDetailsChild";
-import PregnantOrPetsForm from "./FormPregnantOrPets";
 import AvailabilityForm from "./FormAvailability";
 import AgreementForm from "./FormAgreement";
 
@@ -28,8 +27,6 @@ const INITIAL_FORM_DATA = {
   address3: "",
   address4: "",
   numberOfChildren: 1,
-  petDetails: "",
-  dueDate: "",
   startDate: "",
   availability: [],
   otherRequirements: "",
@@ -72,7 +69,6 @@ const ApplicationFormParentsModal = () => {
     <AddressForm {...formData} updateFields={updateFormFields} />,
     <ChildrenForm {...formData} updateFields={updateFormFields} />,
     <ChildDetailsForm numberOfKids={howManyKids} />,
-    <PregnantOrPetsForm {...formData} updateFields={updateFormFields} />,
     <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
     <AvailabilityForm {...formData} updateFields={updateFormFields} />,
     <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
@@ -99,7 +95,11 @@ const ApplicationFormParentsModal = () => {
       }
     >
       <div
-        className={!stripeCheckout ? "modal-container modal-container__application-form" : "modal-container modal-container__application-form modal-container__stripe"}
+        className={
+          !stripeCheckout
+            ? "modal-container modal-container__application-form"
+            : "modal-container modal-container__application-form modal-container__stripe"
+        }
         style={{
           height: !stripeCheckout ? "66vh" : "auto",
           maxHeight: !stripeCheckout ? "39rem" : "unset",
@@ -147,7 +147,7 @@ const ApplicationFormParentsModal = () => {
                   ? "none"
                   : "flex",
               justifyContent: !isFirstStep ? "center" : "flex-end",
-              gap: '.5rem'
+              gap: ".5rem",
             }}
           >
             {!isFirstStep && !isLastStep && (

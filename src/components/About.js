@@ -1,13 +1,13 @@
-import aboutImg1 from '../images/image-woman-in-videocall.jpg';
-import aboutImg2 from '../images/image-women-videochatting.jpg';
-import aboutImg3 from '../images/image-nanny-feeding-toddler.jpg';
-import aboutImg4 from '../images/image-nanny-outdoors-with-boy-and-girl.jpg';
+// import aboutImg1 from '../images/image-woman-in-videocall.jpg';
+// import aboutImg2 from '../images/image-women-videochatting.jpg';
+// import aboutImg3 from '../images/image-nanny-feeding-toddler.jpg';
+// import aboutImg4 from '../images/image-nanny-outdoors-with-boy-and-girl.jpg';
 
 const About = () => {
   return (
     <section className="section section__about" id="about">
       <div className="section-center about-center">
-        <div className="about-img-container">
+        {/* <div className="about-img-container">
           <div className="about-img">
             <img
               src={aboutImg1}
@@ -36,7 +36,7 @@ const About = () => {
               alt="a smiling man texting"
             />
           </div>
-        </div>
+        </div> */}
         <article className="about-info">
           <h3>explore the difference</h3>
           <h2>Nanny recruitment done better</h2>

@@ -183,22 +183,18 @@ export const formParentsSteps = [
   },
   {
     id: 6,
-    text: "Additional Details",
-  },
-  {
-    id: 7,
     text: "Core Requirements",
   },
   {
-    id: 8,
+    id: 7,
     text: "Times Required",
   },
   {
-    id: 9,
+    id: 8,
     text: "Other Requirements",
   },
   {
-    id: 10,
+    id: 9,
     text: "Agreement",
   },
 ];
