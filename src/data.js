@@ -64,7 +64,7 @@ export const socialLinks = [
   },
   {
     id: 4,
-    href: "https://www.whatsapp.com",
+    href: "https://wa.me/353872436380?text=Hello there.%0A%0AI'd%20like%20to%20inquire%20about%20Perfect%20Match%20Nanny%20Agency...%0A%0A",
     name: "whatsapp",
   },
 ];

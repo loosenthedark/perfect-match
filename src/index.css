@@ -973,8 +973,8 @@ Footer
 .footer {
   background: var(--clr-primary-5);
   text-align: center;
-  padding-left: 1.125rem;
-  padding-right: 1.125rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
 }
 
 .footer-links,
@@ -1333,7 +1333,7 @@ Sidebar
   align-items: center;
   font-size: 1.25rem;
   text-transform: capitalize;
-  padding: 1.9vh 1.5rem 1.9vh 33%;
+  padding: 2vh 1.5rem 2vh 33%;
   color: var(--grey-700);
   transition: var(--transition);
   letter-spacing: var(--spacing-reduced);
@@ -1424,7 +1424,7 @@ Sidebar
   }
 
   .social-links.logo-text {
-    height: 28.75vh;
+    height: 27.5vh;
   }
 
   .social-links {

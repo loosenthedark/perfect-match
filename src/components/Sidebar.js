@@ -48,11 +48,13 @@ const Sidebar = () => {
                   paddingTop:
                     id === pageLinks.length || id === pageLinks.length - 1
                       ? ".775rem"
-                      : "1.9vh",
+                      : id === 1
+                      ? "0"
+                      : "2vh",
                   paddingBottom:
                     id === pageLinks.length || id === pageLinks.length - 1
                       ? ".775rem"
-                      : "1.9vh",
+                      : "2vh",
                 }}
                 onClick={
                   id === pageLinks.length - 2
