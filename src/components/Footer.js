@@ -19,6 +19,9 @@ const Footer = () => {
                 }
                 href={link.id !== pageLinks.length - 2 ? link.href : null}
                 className="footer-link"
+                style={{
+                  fontWeight: "500",
+                }}
               >
                 {link.text}
               </a>
@@ -28,7 +31,7 @@ const Footer = () => {
         <li>
           <button
             type="button"
-            style={{ cursor: "pointer" }}
+            style={{ cursor: "pointer", fontWeight: "500" }}
             className="footer-link footer-link__contact"
             onClick={() => setToggleContactFormModal(true)}
           >
@@ -41,13 +44,15 @@ const Footer = () => {
           className="nav-item"
           style={{
             color: "#28283d",
+            marginBottom: ".5rem",
+            fontWeight: "500",
           }}
         >
           <i
             className="fas fa-phone"
             style={{
               marginRight: ".25rem",
-              fontSize: '1rem'
+              fontSize: "1rem",
             }}
           ></i>{" "}
           +353 87 243 6380
@@ -60,15 +65,16 @@ const Footer = () => {
             rel="noreferrer"
             style={{
               color: "#28283d",
+              fontWeight: "500",
             }}
           >
             <i
               className="fas fa-envelope"
               style={{
                 marginRight: ".5rem",
-                fontSize: '1rem',
-                position: 'relative',
-                top: '.0625rem'
+                fontSize: "1rem",
+                position: "relative",
+                top: ".0625rem",
               }}
             ></i>
             perfectmatchnanny@gmail.com
