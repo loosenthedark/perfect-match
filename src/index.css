@@ -1333,7 +1333,7 @@ Sidebar
   align-items: center;
   font-size: 1.25rem;
   text-transform: capitalize;
-  padding: .875rem 1.5rem .875rem 33%;
+  padding: 2vh 1.5rem 2vh 33%;
   color: var(--grey-700);
   transition: var(--transition);
   letter-spacing: var(--spacing-reduced);
