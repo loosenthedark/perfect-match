@@ -14,7 +14,8 @@ const ContactFormModal = () => {
         className="modal-container modal-container__application-form"
         style={{
           top: "1.875rem",
-          height: "auto",
+          height: "66vh",
+          maxHeight: "39rem",
         }}
       >
         <h3
@@ -124,7 +125,7 @@ const ContactFormModal = () => {
             <input type="hidden" name="form-name" value="contactForm" />
             <button
               type="submit"
-              className="btn hero-btn next-btn"
+              className="btn hero-btn next-btn submit-btn"
               style={{
                 display: "flex",
                 width: "100%",
