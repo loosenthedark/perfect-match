@@ -47,12 +47,12 @@ const Sidebar = () => {
                 style={{
                   paddingTop:
                     id === pageLinks.length || id === pageLinks.length - 1
-                      ? '.8515625rem'
-                      : '1rem',
+                      ? '.775rem'
+                      : '.875rem',
                   paddingBottom:
                     id === pageLinks.length || id === pageLinks.length - 1
-                      ? '.8515625rem'
-                      : '1rem',
+                      ? '.775rem'
+                      : '.875rem',
                 }}
                 onClick={
                   id === pageLinks.length - 2

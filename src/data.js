@@ -62,6 +62,11 @@ export const socialLinks = [
     href: "https://www.instagram.com",
     name: "instagram",
   },
+  {
+    id: 4,
+    href: "https://www.whatsapp.com",
+    name: "whatsapp",
+  },
 ];
 
 export const extraLinks = [

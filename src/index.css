@@ -1227,6 +1227,8 @@ Navbar
     color: var(--clr-primary-5);
     font-size: 1.675vw;
     transition: var(--transition);
+    min-width: 1.340625rem;
+    display: inline-block;
   }
 
   .nav-icon:hover {
@@ -1330,7 +1332,7 @@ Sidebar
   align-items: center;
   font-size: 1.25rem;
   text-transform: capitalize;
-  padding: 1rem 1.5rem 1rem 33%;
+  padding: .875rem 1.5rem .875rem 33%;
   color: var(--grey-700);
   transition: var(--transition);
   letter-spacing: var(--spacing-reduced);
