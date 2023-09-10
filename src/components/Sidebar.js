@@ -49,7 +49,7 @@ const Sidebar = () => {
                     id === pageLinks.length || id === pageLinks.length - 1
                       ? ".775rem"
                       : id === 1
-                      ? "0"
+                      ? "1vh"
                       : "2vh",
                   paddingBottom:
                     id === pageLinks.length || id === pageLinks.length - 1
