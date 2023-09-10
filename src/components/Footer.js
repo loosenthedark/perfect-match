@@ -1,5 +1,5 @@
-import { extraLinks, pageLinks, socialLinks } from '../data';
-import { useGlobalContext } from './Context';
+import { extraLinks, pageLinks, socialLinks } from "../data";
+import { useGlobalContext } from "./Context";
 
 const Footer = () => {
   const { setToggleContactFormModal, setToggleApplicationFormParentsModal } =
@@ -28,12 +28,51 @@ const Footer = () => {
         <li>
           <button
             type="button"
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer" }}
             className="footer-link footer-link__contact"
             onClick={() => setToggleContactFormModal(true)}
           >
             Contact
           </button>
+        </li>
+      </ul>
+      <ul className="footer-nav footer-nav-contact">
+        <li
+          className="nav-item"
+          style={{
+            color: "#28283d",
+          }}
+        >
+          <i
+            className="fas fa-phone"
+            style={{
+              marginRight: ".25rem",
+              fontSize: '1rem'
+            }}
+          ></i>{" "}
+          +353 87 243 6380
+        </li>
+        <li className="nav-item">
+          <a
+            href="mailto:perfectmatchnanny@gmail.com"
+            className="email-link"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              color: "#28283d",
+            }}
+          >
+            <i
+              className="fas fa-envelope"
+              style={{
+                marginRight: ".5rem",
+                fontSize: '1rem',
+                position: 'relative',
+                top: '.0625rem'
+              }}
+            ></i>
+            perfectmatchnanny@gmail.com
+          </a>
         </li>
       </ul>
       <ul className="footer-icons">
@@ -47,13 +86,18 @@ const Footer = () => {
                 rel="noreferrer"
                 className="footer-icon"
               >
-                <i className={'fab fa-' + name}></i>
+                <i className={"fab fa-" + name}></i>
               </a>
             </li>
           );
         })}
       </ul>
-      <p className="copyright">
+      <p
+        className="copyright"
+        style={{
+          color: "#28283d",
+        }}
+      >
         &copy; Perfect Match
         <span id="date">{new Date().getFullYear()}</span>
         <br />

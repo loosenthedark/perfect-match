@@ -985,6 +985,10 @@ Footer
   flex-wrap: wrap;
 }
 
+.footer-icons {
+  margin-top: 1.5rem;
+}
+
 .footer-links {
   grid-row-gap: 1rem;
   align-items: center;
@@ -1023,23 +1027,20 @@ Footer
 }
 
 .footer-icon {
-  font-size: 2rem;
-  margin-right: 1rem;
+  font-size: 1.625rem;
+  margin-right: 1.45rem;
   color: var(--clr-white);
   transition: var(--transition);
+  display: inline-block;
+  min-width: 1.625rem;
 }
 
 .footer-icons li:last-child .footer-icon {
   margin-right: 0;
 }
 
-.copyright {
-  letter-spacing: var(--spacing-slightly-reduced);
-  color: var(--clr-white);
-}
-
 .copyright span {
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -1217,7 +1218,7 @@ Navbar
   .nav-icons {
     position: absolute;
     display: flex;
-    width: 10vw;
+    width: 12.5vw;
     justify-content: space-between;
     right: 1.5rem;
   }
@@ -1302,7 +1303,7 @@ Sidebar
   background: var(--clr-off-white);
   display: grid;
   grid-template-rows: auto 1fr auto;
-  row-gap: 1rem;
+  row-gap: .75rem;
   box-shadow: var(--clr-red-dark);
   transition: var(--transition);
   padding-top: 3.75rem;

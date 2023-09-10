@@ -1,7 +1,7 @@
-import { AiOutlineMail } from 'react-icons/ai';
-import { pageLinks, socialLinks } from '../data';
-import { useGlobalContext } from './Context';
-import { useState } from 'react';
+import { AiOutlineMail } from "react-icons/ai";
+import { pageLinks, socialLinks } from "../data";
+import { useGlobalContext } from "./Context";
+import { useState } from "react";
 
 const Sidebar = () => {
   const {
@@ -15,7 +15,7 @@ const Sidebar = () => {
   const [isApplySubmenuShown, setIsApplySubmenuShown] = useState(false);
 
   return (
-    <aside className={toggleSidebar ? 'sidebar show-sidebar' : 'sidebar'}>
+    <aside className={toggleSidebar ? "sidebar show-sidebar" : "sidebar"}>
       <div
         className="social-links logo-text"
         onClick={() => {
@@ -32,13 +32,13 @@ const Sidebar = () => {
                 display:
                   !isApplySubmenuShown &&
                   (id === pageLinks.length || id === pageLinks.length - 1)
-                    ? 'none'
-                    : 'list-item',
+                    ? "none"
+                    : "list-item",
               }}
               className={
                 id === pageLinks.length || id === pageLinks.length - 1
-                  ? 'submenu-link'
-                  : ''
+                  ? "submenu-link"
+                  : ""
               }
               key={id}
             >
@@ -47,12 +47,12 @@ const Sidebar = () => {
                 style={{
                   paddingTop:
                     id === pageLinks.length || id === pageLinks.length - 1
-                      ? '.775rem'
-                      : '.875rem',
+                      ? ".775rem"
+                      : ".875rem",
                   paddingBottom:
                     id === pageLinks.length || id === pageLinks.length - 1
-                      ? '.775rem'
-                      : '.875rem',
+                      ? ".775rem"
+                      : ".875rem",
                 }}
                 onClick={
                   id === pageLinks.length - 2
@@ -69,14 +69,14 @@ const Sidebar = () => {
                 href={href}
               >
                 {icon} {text}
-              </a>{' '}
+              </a>{" "}
             </li>
           );
         })}
         <li>
           <button type="button" onClick={() => setToggleContactFormModal(true)}>
             <AiOutlineMail /> Contact
-          </button>{' '}
+          </button>{" "}
         </li>
       </ul>
       <ul className="social-links">
@@ -85,7 +85,12 @@ const Sidebar = () => {
           return (
             <li key={id}>
               <a href={href} target="_blank" rel="noopener noreferrer">
-                <i className={'fab fa-' + name}></i>
+                <i
+                  className={"fab fa-" + name}
+                  style={{
+                    minWidth: "1.5rem",
+                  }}
+                ></i>
               </a>
             </li>
           );
