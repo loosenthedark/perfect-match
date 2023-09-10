@@ -96,7 +96,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               />
             </div>
             <div className="form-row">
-              <input
+              {/* <input
                 required
                 className="form-input"
                 style={{
@@ -106,6 +106,37 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                 placeholder="Date of birth"
                 value={inputGroup.dobChild}
                 onFocus={(e) => (e.target.type = "date")}
+                onChange={(event) => handleFormChange(index, event)}
+              /> */}
+              <label
+                htmlFor="dobChild"
+                className="label-q form-input"
+                style={{
+                  borderRadius: "unset",
+                  border: "unset",
+                  color: "#c7c7d1",
+                  paddingTop: "unset",
+                  paddingLeft: ".775rem",
+                  paddingRight: "unset",
+                  paddingBottom: ".125rem",
+                  fontWeight: "400",
+                  display: "block",
+                  textAlign: "left",
+                }}
+              >
+                Date of birth
+              </label>
+              <input
+                className="form-input"
+                style={{
+                  paddingLeft: ".775rem",
+                  paddingTop: '.7125rem',
+                  paddingBottom: '.7125rem',
+                }}
+                id="dobChild"
+                name="dobChild"
+                type="date"
+                value={inputGroup.dobChild}
                 onChange={(event) => handleFormChange(index, event)}
               />
             </div>
@@ -139,9 +170,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               <button
                 className="btn hero-btn next-btn btn-secondary"
                 onClick={() => setCurrentChild(currentChild + 1)}
-                style={{
-                  border: "0.05rem solid rgba(0, 0, 0, 0.09)",
-                }}
               >
                 Next child
               </button>

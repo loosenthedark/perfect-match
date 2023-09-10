@@ -34,10 +34,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             gap: ".5rem",
           }}
         >
-          <span
-            className="core-requirements"
-            style={{ textAlign: "right" }}
-          >
+          <span className="core-requirements" style={{ textAlign: "right" }}>
             TEMPORARY
           </span>
           <label htmlFor="tempOrPerm" className="switch">
@@ -49,10 +46,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             />
             <span className="slider round"></span>
           </label>
-          <span
-            className="core-requirements"
-            style={{ textAlign: "left" }}
-          >
+          <span className="core-requirements" style={{ textAlign: "left" }}>
             PERMANENT
           </span>
         </div>
@@ -67,10 +61,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             gap: ".5rem",
           }}
         >
-          <span
-            className="core-requirements"
-            style={{ textAlign: "right" }}
-          >
+          <span className="core-requirements" style={{ textAlign: "right" }}>
             PART-TIME
           </span>
           <label htmlFor="ptOrFt" className="switch">
@@ -82,10 +73,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             />
             <span className="slider round"></span>
           </label>
-          <span
-            className="core-requirements"
-            style={{ textAlign: "left" }}
-          >
+          <span className="core-requirements" style={{ textAlign: "left" }}>
             FULL-TIME
           </span>
         </div>
@@ -100,10 +88,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             gap: ".5rem",
           }}
         >
-          <span
-            className="core-requirements"
-            style={{ textAlign: "right" }}
-          >
+          <span className="core-requirements" style={{ textAlign: "right" }}>
             LIVE OUT
           </span>
           <label htmlFor="liveInOrOut" className="switch">
@@ -115,20 +100,48 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
             />
             <span className="slider round"></span>
           </label>
-          <span
-            className="core-requirements"
-            style={{ textAlign: "left" }}
-          >
+          <span className="core-requirements" style={{ textAlign: "left" }}>
             LIVE IN
           </span>
         </div>
       </div>
       <div className="form-row">
-        <input
+        {/* <input
           className="form-input"
           placeholder="What is your preferred start date?"
           value={startDate}
           onFocus={(e) => (e.target.type = "date")}
+          onChange={(e) => updateFields({ startDate: e.target.value })}
+        /> */}
+        <label
+          htmlFor="startDate"
+          className="label-q form-input"
+          style={{
+            borderRadius: "unset",
+            border: "unset",
+            color: "#c7c7d1",
+            paddingTop: "unset",
+            paddingLeft: ".775rem",
+            paddingRight: "unset",
+            paddingBottom: ".125rem",
+            fontWeight: "400",
+            display: "block",
+            textAlign: "left",
+          }}
+        >
+          What is your preferred start date?
+        </label>
+        <input
+          className="form-input"
+          style={{
+            paddingLeft: ".775rem",
+            paddingTop: ".7125rem",
+            paddingBottom: ".7125rem",
+          }}
+          id="startDate"
+          name="startDate"
+          type="date"
+          value={startDate}
           onChange={(e) => updateFields({ startDate: e.target.value })}
         />
       </div>
