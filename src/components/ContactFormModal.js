@@ -14,8 +14,8 @@ const ContactFormModal = () => {
         className="modal-container modal-container__application-form"
         style={{
           top: "1.875rem",
-          height: "66vh",
-          maxHeight: "39rem",
+          height: "unset",
+          maxHeight: "unset",
           gridTemplateColumns: "unset",
           paddingLeft: "unset",
         }}

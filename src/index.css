@@ -1027,7 +1027,7 @@ Footer
 
 .footer-links:last-child .footer-link {
   font-size: 0.875rem;
-  width: 9rem;
+  width: 12rem;
 }
 
 .footer-link {
@@ -1049,20 +1049,25 @@ Footer
 }
 
 .footer-icon {
-  font-size: 1.625rem;
-  margin-right: 1.45rem;
+  font-size: 1.7rem;
+  margin-right: 2.5rem;
   color: var(--clr-white);
   transition: var(--transition);
   display: inline-block;
   min-width: 1.625rem;
 }
 
+.footer-icons li:nth-last-child(2) .footer-icon,
 .footer-icons li:last-child .footer-icon {
   margin-right: 0;
 }
 
 .copyright span {
   margin-left: 0.25rem;
+}
+
+.footer-nav-contact a {
+  color: #28283d;
 }
 
 @media screen and (min-width: 992px) {
@@ -1107,10 +1112,6 @@ Footer
 
   .footer-nav-contact {
     font-size: 1.25vw;
-  }
-
-  .footer-nav-contact a {
-    color: #28283d;
   }
 
   .footer-nav-contact a:hover {

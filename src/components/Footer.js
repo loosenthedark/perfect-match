@@ -1,5 +1,6 @@
 import { extraLinks, pageLinks, socialLinks } from "../data";
 import { useGlobalContext } from "./Context";
+import whatsappBtn from "../images/WhatsAppButtonGreenMedium.svg";
 
 const Footer = () => {
   const { setToggleContactFormModal, setToggleApplicationFormParentsModal } =
@@ -85,14 +86,27 @@ const Footer = () => {
         {socialLinks.map((link) => {
           const { id, href, name } = link;
           return (
-            <li key={id}>
+            <li
+              style={{
+                width: id === socialLinks.length ? "100%" : "auto",
+                marginBottom: "1rem",
+              }}
+              key={id}
+            >
               <a
                 href={href}
                 target="_blank"
                 rel="noreferrer"
                 className="footer-icon"
+                style={{
+                  width: id === socialLinks.length ? "12rem" : "auto",
+                }}
               >
-                <i className={"fab fa-" + name}></i>
+                {id === socialLinks.length ? (
+                  <img src={whatsappBtn} alt="WhatsApp button" />
+                ) : (
+                  <i className={"fab fa-" + name}></i>
+                )}
               </a>
             </li>
           );
