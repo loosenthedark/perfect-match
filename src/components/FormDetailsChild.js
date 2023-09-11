@@ -85,9 +85,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               <input
                 required
                 className="form-input"
-                style={{
-                  paddingLeft: ".775rem",
-                }}
                 type="text"
                 name="nameChild"
                 placeholder="Name"
@@ -99,9 +96,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               {/* <input
                 required
                 className="form-input"
-                style={{
-                  paddingLeft: ".775rem",
-                }}
                 name="dobChild"
                 placeholder="Date of birth"
                 value={inputGroup.dobChild}
@@ -116,7 +110,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                   border: "unset",
                   color: "#c7c7d1",
                   paddingTop: "unset",
-                  paddingLeft: ".775rem",
                   paddingRight: "unset",
                   paddingBottom: ".125rem",
                   fontWeight: "400",
@@ -127,12 +120,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                 Date of birth
               </label>
               <input
-                className="form-input"
-                style={{
-                  paddingLeft: ".775rem",
-                  paddingTop: '.7125rem',
-                  paddingBottom: '.7125rem',
-                }}
+                className="form-input form-input__date"
                 id="dobChild"
                 name="dobChild"
                 type="date"
@@ -144,9 +132,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               <input
                 required
                 className="form-input"
-                style={{
-                  paddingLeft: ".775rem",
-                }}
                 name="schoolLocationChild"
                 placeholder="Location of school/Montessori (if applicable)"
                 value={inputGroup.schoolLocationChild}
@@ -163,12 +148,12 @@ const ChildDetailsForm = ({ numberOfKids }) => {
             >
               <button
                 type="button"
-                className="btn hero-btn back-btn btn-secondary"
+                className="btn hero-btn back-btn back-btn__child btn-secondary"
               >
                 Previous child
               </button>
               <button
-                className="btn hero-btn next-btn btn-secondary"
+                className="btn hero-btn next-btn next-btn__child btn-secondary"
                 onClick={() => setCurrentChild(currentChild + 1)}
               >
                 Next child

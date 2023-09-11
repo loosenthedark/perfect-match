@@ -16,6 +16,8 @@ const ContactFormModal = () => {
           top: "1.875rem",
           height: "66vh",
           maxHeight: "39rem",
+          gridTemplateColumns: "unset",
+          paddingLeft: "unset",
         }}
       >
         <h3
@@ -39,7 +41,7 @@ const ContactFormModal = () => {
           <form
             form-name="contactForm"
             method="POST"
-            className="form"
+            className="form form__contact"
             data-netlify="true"
             data-netlify-recaptcha="true"
             encType="multipart/form-data"

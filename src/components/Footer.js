@@ -21,6 +21,7 @@ const Footer = () => {
                 className="footer-link"
                 style={{
                   fontWeight: "500",
+                  cursor: "pointer",
                 }}
               >
                 {link.text}
@@ -64,7 +65,6 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
             style={{
-              color: "#28283d",
               fontWeight: "500",
             }}
           >

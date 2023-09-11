@@ -58,6 +58,7 @@ Variables
   --clr-bg-grey: #d8d8d8;
   --clr-secondary: #ffc8dd;
   --clr-secondary-active: #ffb3d0;
+  --clr-secondary-active-darker: #ff99c0;
   /* font-weight */
   --fw-400: 400;
   --fw-500: 500;
@@ -520,10 +521,21 @@ Hero
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
   }
 
+  .hero-btn.next-btn.next-btn__child:hover,
+  .hero-btn.next-btn.next-btn__child:focus {
+    background-color: var(--clr-white);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  }
+
   .hero-btn.back-btn:hover,
   .hero-btn.back-btn:focus {
     background: unset;
     border: 2px solid var(--clr-secondary-active);
+  }
+
+  .hero-btn.back-btn.back-btn__child:hover,
+  .hero-btn.back-btn.back-btn__child:focus {
+  border-color: var(--clr-grey-muted);
   }
 }
 
@@ -838,6 +850,10 @@ Services
     padding-right: 2.7vw;
     width: 13.4vw;
   }
+
+  .service-info .hero-btn.hero-btn__secondary:hover {
+    background: var(--clr-secondary-active-darker);
+  }
 }
 
 @media screen and (min-width: 1170px) {}
@@ -1061,15 +1077,15 @@ Footer
 
   .footer-link {
     margin: 0 0.75vw;
-    width: 7.25vw;
-    font-size: 1.1111vw;
+    width: 8vw;
+    font-size: 1.2vw;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .footer-link:hover {
-    color: var(--clr-primary-5);
+    color: var(--clr-secondary);
   }
 
   .footer-icon {
@@ -1078,15 +1094,32 @@ Footer
   }
 
   .footer-icon:hover {
-    color: var(--clr-primary-5);
+    color: var(--clr-secondary);
   }
 
   .copyright {
-    font-size: 1.111111111vw;
+    font-size: 1.2vw;
   }
 
   .footer-links:last-child .footer-link {
-    font-size: 1vw;
+    font-size: 1.111111111111vw;
+  }
+
+  .footer-nav-contact {
+    font-size: 1.25vw;
+  }
+
+  .footer-nav-contact a {
+    color: #28283d;
+  }
+
+  .footer-nav-contact a:hover {
+    font-weight: var(--fw-400);
+    color: var(--clr-secondary);
+  }
+
+  .footer-icons li:last-child .footer-icon {
+    margin-right: 1.5vw;
   }
 }
 
@@ -1224,7 +1257,7 @@ Navbar
   .nav-icons {
     position: absolute;
     display: flex;
-    width: 12.5vw;
+    width: 13.5vw;
     justify-content: space-between;
     right: 1.5rem;
   }
@@ -1619,6 +1652,11 @@ Contact Form Modal
   padding-bottom: .875rem;
 }
 
+.form-input.form-input__date {
+  padding-top: .7125rem;
+  padding-bottom: .7125rem;
+}
+
 .form-input.label-q {
   padding-bottom: .5rem;
 }
@@ -1769,6 +1807,11 @@ Contact Form Modal
     margin-left: 5vw;
     margin-right: 5vw;
   }
+
+  .form-input.form-input__date {
+    padding-top: .8125rem;
+    padding-bottom: .8125rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -1776,6 +1819,13 @@ Contact Form Modal
     padding-left: 7vw;
     padding-right: 7vw;
     width: 45vw;
+    max-width: unset;
+  }
+
+  .form.form__contact {
+    padding-left: 4vw;
+    padding-right: 4vw;
+    width: 38vw;
     max-width: unset;
   }
 
@@ -1798,6 +1848,11 @@ Contact Form Modal
   .form-row.form-row__additional-requirements p {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
+  }
+
+  .form-input.form-input__date {
+    padding-top: .51vw;
+    padding-bottom: .51vw;
   }
 }
 
