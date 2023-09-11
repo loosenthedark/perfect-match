@@ -88,7 +88,8 @@ const Footer = () => {
           return (
             <li
               style={{
-                width: id === socialLinks.length ? "100%" : "auto",
+                width: id === socialLinks.length ? "100%" : "18vw",
+                maxWidth: id === socialLinks.length ? "auto" : "5rem",
                 marginBottom: "1rem",
               }}
               key={id}
@@ -99,7 +100,8 @@ const Footer = () => {
                 rel="noreferrer"
                 className="footer-icon"
                 style={{
-                  width: id === socialLinks.length ? "12rem" : "auto",
+                  width: id === socialLinks.length ? "50vw" : "auto",
+                  maxWidth: id === socialLinks.length ? "14rem" : "auto",
                 }}
               >
                 {id === socialLinks.length ? (

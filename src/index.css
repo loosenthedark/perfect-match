@@ -1050,7 +1050,6 @@ Footer
 
 .footer-icon {
   font-size: 1.7rem;
-  margin-right: 2.5rem;
   color: var(--clr-white);
   transition: var(--transition);
   display: inline-block;
@@ -1095,7 +1094,6 @@ Footer
 
   .footer-icon {
     font-size: 2.22222222vw;
-    margin: 0 1.5vw;
   }
 
   .footer-icon:hover {
@@ -1117,10 +1115,6 @@ Footer
   .footer-nav-contact a:hover {
     font-weight: var(--fw-400);
     color: var(--clr-secondary);
-  }
-
-  .footer-icons li:last-child .footer-icon {
-    margin-right: 1.5vw;
   }
 }
 
