@@ -1,10 +1,10 @@
 import FormStepWrapper from './FormStepWrapper';
 
-const Parent1DetailsForm = ({
-  firstNameParent1,
-  lastNameParent1,
-  phoneParent1,
-  emailParent1,
+const ParentDetailsForm = ({
+  firstNameParent,
+  lastNameParent,
+  phoneParent,
+  emailParent,
   updateFields,
 }) => {
   return (
@@ -26,8 +26,8 @@ const Parent1DetailsForm = ({
           className="form-input"
           type="text"
           placeholder="First Name"
-          value={firstNameParent1}
-          onChange={(e) => updateFields({ firstNameParent1: e.target.value })}
+          value={firstNameParent}
+          onChange={(e) => updateFields({ firstNameParent: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -36,8 +36,8 @@ const Parent1DetailsForm = ({
           className="form-input"
           type="text"
           placeholder="Last Name"
-          value={lastNameParent1}
-          onChange={(e) => updateFields({ lastNameParent1: e.target.value })}
+          value={lastNameParent}
+          onChange={(e) => updateFields({ lastNameParent: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -47,8 +47,8 @@ const Parent1DetailsForm = ({
           type="tel"
           pattern="\+?[0-9]{6,20}"
           placeholder="Phone"
-          value={phoneParent1}
-          onChange={(e) => updateFields({ phoneParent1: e.target.value })}
+          value={phoneParent}
+          onChange={(e) => updateFields({ phoneParent: e.target.value })}
         />
       </div>
       <div className="form-row">
@@ -57,11 +57,11 @@ const Parent1DetailsForm = ({
           className="form-input"
           type="email"
           placeholder="Email"
-          value={emailParent1}
-          onChange={(e) => updateFields({ emailParent1: e.target.value })}
+          value={emailParent}
+          onChange={(e) => updateFields({ emailParent: e.target.value })}
         />
       </div>
     </FormStepWrapper>
   );
 };
-export default Parent1DetailsForm;
+export default ParentDetailsForm;
