@@ -4,8 +4,7 @@ import useMultiStepForm from "../hooks/useMultiStepForm";
 import AddressForm from "./FormAddress";
 import { useState } from "react";
 import { formParentsSteps } from "../data";
-import Parent1DetailsForm from "./FormDetailsParent1";
-import Parent2DetailsForm from "./FormDetailsParent2";
+import ParentDetailsForm from "./FormDetailsParent";
 import CoreRequirementsForm from "./FormRequirementsCore";
 import OtherRequirementsForm from "./FormRequirementsOther";
 import ChildrenForm from "./FormChildren";
@@ -14,14 +13,10 @@ import AvailabilityForm from "./FormAvailability";
 import AgreementForm from "./FormAgreement";
 
 const INITIAL_FORM_DATA = {
-  firstNameParent1: "",
-  lastNameParent1: "",
-  phoneParent1: "",
-  emailParent1: "",
-  firstNameParent2: "",
-  lastNameParent2: "",
-  phoneParent2: "",
-  emailParent2: "",
+  firstNameParent: "",
+  lastNameParent: "",
+  phoneParent: "",
+  emailParent: "",
   address1: "",
   address2: "",
   address3: "",
@@ -64,8 +59,7 @@ const ApplicationFormParentsModal = () => {
     isFirstStep,
     isLastStep,
   } = useMultiStepForm([
-    <Parent1DetailsForm {...formData} updateFields={updateFormFields} />,
-    <Parent2DetailsForm {...formData} updateFields={updateFormFields} />,
+    <ParentDetailsForm {...formData} updateFields={updateFormFields} />,
     <AddressForm {...formData} updateFields={updateFormFields} />,
     <ChildrenForm {...formData} updateFields={updateFormFields} />,
     <ChildDetailsForm numberOfKids={howManyKids} />,

@@ -15,14 +15,10 @@ import {
 import axios from "axios";
 
 const SignedAgreementForm = ({
-  firstNameParent1,
-  lastNameParent1,
-  phoneParent1,
-  emailParent1,
-  firstNameParent2,
-  lastNameParent2,
-  phoneParent2,
-  emailParent2,
+  firstNameParent,
+  lastNameParent,
+  phoneParent,
+  emailParent,
   address1,
   address2,
   address3,
@@ -249,18 +245,11 @@ const SignedAgreementForm = ({
     <FormStepWrapper>
       <input
         type="hidden"
-        value={firstNameParent1 + " " + lastNameParent1}
-        name="Parent #1 name:"
+        value={firstNameParent + " " + lastNameParent}
+        name="Contact name:"
       />
-      <input type="hidden" value={phoneParent1} name="Parent #1 phone:" />
-      <input type="hidden" value={emailParent1} name="Parent #1 email:" />
-      <input
-        type="hidden"
-        value={firstNameParent2 + " " + lastNameParent2}
-        name="Parent #2 name:"
-      />
-      <input type="hidden" value={phoneParent2} name="Parent #2 phone:" />
-      <input type="hidden" value={emailParent2} name="Parent #2 email:" />
+      <input type="hidden" value={phoneParent} name="Contact phone:" />
+      <input type="hidden" value={emailParent} name="Contact email:" />
       <input
         type="hidden"
         value={

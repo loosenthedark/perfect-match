@@ -64,7 +64,7 @@ export const socialLinks = [
   },
   {
     id: 4,
-    href: "https://wa.me/353872436380?text=Hello there.%0A%0AI'd%20like%20to%20inquire%20about%20Perfect%20Match%20Nanny%20Agency...%0A%0A",
+    href: "https://wa.me/353892644059?text=Hello there.%0A%0AI'd%20like%20to%20inquire%20about%20Perfect%20Match%20Nanny%20Agency...%0A%0A",
     name: "whatsapp",
   },
 ];
@@ -168,39 +168,35 @@ export const formNannySteps = [
 export const formParentsSteps = [
   {
     id: 1,
-    text: "Parent #1 Details",
+    text: "Your Details",
   },
   {
     id: 2,
-    text: "Parent #2 Details",
+    text: "Your Address",
   },
   {
     id: 3,
-    text: "Home Address",
-  },
-  {
-    id: 4,
     text: "Your Children",
   },
   {
-    id: 5,
+    id: 4,
     text: "Children Details",
   },
   {
-    id: 6,
+    id: 5,
     text: "Core Requirements",
   },
   {
-    id: 7,
+    id: 6,
     text: "Times Required",
   },
   {
-    id: 8,
+    id: 7,
     text: "Other Requirements",
   },
   {
-    id: 9,
-    text: "Agreement",
+    id: 8,
+    text: "Your Agreement",
   },
 ];
 

@@ -57,7 +57,7 @@ const Footer = () => {
               fontSize: "1rem",
             }}
           ></i>{" "}
-          +353 87 243 6380
+          +353 89 264 4059
         </li>
         <li className="nav-item">
           <a
