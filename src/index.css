@@ -1611,6 +1611,10 @@ Modal
   .modal-overlay.show-modal {
     background: var(--clr-off-white-text);
   }
+
+  .modal-overlay.show-modal.modal-overlay__cookie-consent {
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 
 /*
@@ -1875,6 +1879,12 @@ Contact Form Modal
     max-width: unset;
   }
 
+  .form.form__cookies {
+    padding-left: 0;
+    padding-right: 0;
+    width: 71vw;
+  }
+
   .form-input,
   .form-textarea {
     font-size: 1.1vw;
@@ -1899,6 +1909,11 @@ Contact Form Modal
   .form-input.form-input__date {
     padding-top: .51vw;
     padding-bottom: .51vw;
+  }
+
+  .form-row__cookies {
+    margin-bottom: 0;
+    margin-right: 80px;
   }
 }
 
