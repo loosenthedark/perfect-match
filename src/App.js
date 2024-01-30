@@ -9,8 +9,12 @@ import ContactFormModal from './components/ContactFormModal';
 import ApplicationFormNannyModal from './components/ApplicationFormNannyModal';
 import { faqs } from './data';
 import ApplicationFormParentsModal from './components/ApplicationFormParentsModal';
+import CookieConsent from './components/CookieConsent';
+import { useCookies } from 'react-cookie';
 
 function App() {
+  const [cookies] = useCookies(["cookieConsent"]);
+
   return (
     <>
       <Navbar />
@@ -18,6 +22,8 @@ function App() {
       <ContactFormModal />
       <ApplicationFormNannyModal />
       <ApplicationFormParentsModal />
+      {/* {!cookies.cookieConsent && <CookieConsent />} */}
+      <CookieConsent />
       <Hero />
       <About />
       <Services />

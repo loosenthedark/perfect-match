@@ -535,7 +535,7 @@ Hero
 
   .hero-btn.back-btn.back-btn__child:hover,
   .hero-btn.back-btn.back-btn__child:focus {
-  border-color: var(--clr-grey-muted);
+    border-color: var(--clr-grey-muted);
   }
 }
 
@@ -1547,6 +1547,11 @@ Modal
   top: 3.75rem;
 }
 
+.modal-container.modal-container__application-form.modal-container__cookie-consent {
+  height: 37.5vh;
+  max-height: 20rem;
+}
+
 .close-modal-btn {
   position: absolute;
   top: 1rem;
@@ -1569,6 +1574,10 @@ Modal
 @media screen and (min-width: 768px) {
   .modal-container.modal-container__application-form {
     max-height: 35rem;
+  }
+
+  .modal-container.modal-container__application-form.modal-container__cookie-consent {
+    max-height: 9rem;
   }
 
   .close-modal-btn {
@@ -1740,6 +1749,19 @@ Contact Form Modal
   color: var(--grey-400);
 }
 
+.form.form__cookies {
+  margin-bottom: 3vh;
+  margin-top: 1vh;
+}
+
+.para__learn-more {
+  margin-top: 1.5rem;
+}
+
+.link__learn-more {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .form {
     padding-left: 2.5rem;
@@ -1806,6 +1828,35 @@ Contact Form Modal
   .form-input.form-input__date {
     padding-top: .8125rem;
     padding-bottom: .8125rem;
+  }
+
+  .form.form__cookies {
+    max-width: unset;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .form-row__cookies,
+  .para__cookies,
+  .para__learn-more {
+    margin-bottom: 0;
+  }
+
+  .para__cookies {
+    text-align: left;
+  }
+
+  .para__learn-more {
+    display: none;
+  }
+
+  .link__learn-more {
+    display: inline;
   }
 }
 
