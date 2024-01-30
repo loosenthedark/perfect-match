@@ -22,8 +22,7 @@ function App() {
       <ContactFormModal />
       <ApplicationFormNannyModal />
       <ApplicationFormParentsModal />
-      {/* {!cookies.cookieConsent && <CookieConsent />} */}
-      <CookieConsent />
+      {!cookies.cookieConsent && <CookieConsent />}
       <Hero />
       <About />
       <Services />
