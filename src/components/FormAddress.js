@@ -33,7 +33,7 @@ const AddressForm = ({
         address3.length > 2 &&
         address3.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
-        address4.length > 2 &&
+        address4.length > 1 &&
         address4.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address4)
     );
@@ -56,7 +56,7 @@ const AddressForm = ({
         address3.length > 2 &&
         address3.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
-        address4.length > 2 &&
+        address4.length > 1 &&
         address4.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address4)
     );
@@ -79,7 +79,7 @@ const AddressForm = ({
         address2.length > 0 &&
         address2.length < 36 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address2) &&
-        address4.length > 2 &&
+        address4.length > 1 &&
         address4.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address4)
     );
@@ -88,12 +88,12 @@ const AddressForm = ({
 
   const handleAddress4Change = (event) => {
     setIsAddress4Valid(
-      event.target.value.length > 2 &&
+      event.target.value.length > 1 &&
         event.target.value.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
     );
     setIsFormValid(
-      event.target.value.length > 2 &&
+      event.target.value.length > 1 &&
         event.target.value.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
         address1.length > 0 &&
@@ -120,7 +120,7 @@ const AddressForm = ({
         address3.length > 2 &&
         address3.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
-        address4.length > 2 &&
+        address4.length > 1 &&
         address4.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address4)
     );
@@ -181,7 +181,7 @@ const AddressForm = ({
           className="form-input"
           type="text"
           placeholder="Address line 4"
-          minLength={3}
+          minLength={2}
           maxLength={50}
           value={address4}
           onChange={handleAddress4Change}
