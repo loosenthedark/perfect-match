@@ -85,3 +85,5 @@ package.json
 [Photo by Anna Shvets](https://www.pexels.com/photo/elderly-woman-sitting-on-sofa-with-children-11378068/)
 
 [Looka (logo generator)](https://looka.com/dashboard)
+
+Lightweight cookie consent form implementation [c/o DevBySeb](https://www.devbyseb.com/article/how-to-create-a-cookie-consent-form-in-react-a-step-by-step-guide)

@@ -1,7 +1,27 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
+import { useEffect, useState } from "react";
 
+function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
+  if (daysOrMonths === "days") {
+    date.setDate(date.getDate() + numberOfDaysOrMonths);
+  } else {
+    date.setMonth(date.getMonth() + numberOfDaysOrMonths);
+  }
+  return date;
+}
+
+const minDate = addDaysOrMonths(new Date(), 1, "days");
+const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
+  .toISOString()
+  .split("T")[0];
+const maxDate = addDaysOrMonths(new Date(), 12, "months");
+const maxDateStringified = addDaysOrMonths(new Date(), 12, "months")
+  .toISOString()
+  .split("T")[0];
 const CoreRequirementsForm = ({ startDate, updateFields }) => {
+  // eslint-disable-next-line no-unused-vars
+  const [isStartDateValid, setIsStartDateValid] = useState(false);
   const {
     temporaryOrPermanent,
     setTemporaryOrPermanent,
@@ -9,7 +29,37 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
     setPartOrFullTime,
     liveInOrOut,
     setLiveInOrOut,
+    setIsFormValid,
   } = useGlobalContext();
+
+  const handleStartDateChange = (event) => {
+    const start = new Date(event.target.value);
+    setIsStartDateValid(
+      start > minDate &&
+        start < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          event.target.value
+        )
+    );
+    setIsFormValid(
+      start > minDate &&
+        start < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          event.target.value
+        )
+    );
+    updateFields({ startDate: event.target.value });
+  };
+
+  useEffect(() => {
+    const startDateData = new Date(startDate);
+    setIsFormValid(
+      startDateData > minDate &&
+        startDateData < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(startDate)
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <FormStepWrapper>
@@ -18,7 +68,6 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
         style={{
           position: "absolute",
           width: "100%",
-
           lineHeight: "1.5",
         }}
       >
@@ -140,9 +189,11 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           }}
           id="startDate"
           name="startDate"
+          min={minDateStringified}
+          max={maxDateStringified}
           type="date"
           value={startDate}
-          onChange={(e) => updateFields({ startDate: e.target.value })}
+          onChange={handleStartDateChange}
         />
       </div>
     </FormStepWrapper>

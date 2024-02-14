@@ -42,6 +42,7 @@ const ApplicationFormParentsModal = () => {
     setToggleApplicationFormParentsModal,
     howManyKids,
     isAgreementShown,
+    isFormValid,
     isAgreementChecked,
     stripePaymentSubmitted,
     isFinalScreenShown,
@@ -162,6 +163,7 @@ const ApplicationFormParentsModal = () => {
                   paddingRight: ".75rem",
                   width: "calc(50% - .25rem)",
                 }}
+                disabled={!isFormValid}
               >
                 Next step
               </button>
@@ -184,7 +186,7 @@ const ApplicationFormParentsModal = () => {
                       : () => console.log("Registration flow complete!")
                     : () => setStripePaymentSubmitted(true)
                 }
-                disabled={!isAgreementChecked}
+                disabled={!isAgreementChecked || !isFormValid}
               >
                 {!isFinalScreenShown
                   ? "Next step"

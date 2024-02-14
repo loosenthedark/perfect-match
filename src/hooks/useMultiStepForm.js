@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { useGlobalContext } from "../components/Context";
 
 const useMultiStepForm = (steps) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
+  const { setIsFormValid } = useGlobalContext();
 
   const goToNext = () => {
     setCurrentStepIndex((i) => {
@@ -10,6 +12,7 @@ const useMultiStepForm = (steps) => {
   };
 
   const goToPrev = () => {
+    setIsFormValid(true);
     setCurrentStepIndex((i) => {
       return i <= 0 ? i : i - 1;
     });

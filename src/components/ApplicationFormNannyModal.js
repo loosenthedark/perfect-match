@@ -1,30 +1,30 @@
-import { GrFormClose } from 'react-icons/gr';
-import { useGlobalContext } from './Context';
-import useMultiStepForm from '../hooks/useMultiStepForm';
-import DetailsForm from './FormDetails';
-import AddressForm from './FormAddress';
-import EligibilityFormNationality from './FormEligibilityNationality';
-import EligibilityFormDriving from './FormEligibilityDriving';
-import ExperienceForm from './FormExperience';
-import { useState } from 'react';
-import { formNannySteps } from '../data';
-import AvailabilityForm from './FormAvailability';
-import EmployedForm from './FormEmployed';
-import CVForm from './FormCV';
+import { GrFormClose } from "react-icons/gr";
+import { useGlobalContext } from "./Context";
+import useMultiStepForm from "../hooks/useMultiStepForm";
+import DetailsForm from "./FormDetails";
+import AddressForm from "./FormAddress";
+import EligibilityFormNationality from "./FormEligibilityNationality";
+import EligibilityFormDriving from "./FormEligibilityDriving";
+import ExperienceForm from "./FormExperience";
+import { useState } from "react";
+import { formNannySteps } from "../data";
+import AvailabilityForm from "./FormAvailability";
+import EmployedForm from "./FormEmployed";
+import CVForm from "./FormCV";
 
 const INITIAL_FORM_DATA = {
-  firstName: '',
-  lastName: '',
-  phone: '',
-  emailNanny: '',
-  address1: '',
-  address2: '',
-  address3: '',
-  address4: '',
-  nationality: 'Irish',
-  qualificationDetails: '',
+  firstName: "",
+  lastName: "",
+  phone: "",
+  emailNanny: "",
+  address1: "",
+  address2: "",
+  address3: "",
+  address4: "",
+  nationality: "Irish",
+  qualificationDetails: "",
   availability: [],
-  startDate: '',
+  startDate: "",
 };
 
 const ApplicationFormNannyModal = () => {
@@ -40,6 +40,7 @@ const ApplicationFormNannyModal = () => {
   const {
     toggleApplicationFormNannyModal,
     setToggleApplicationFormNannyModal,
+    isFormValid,
   } = useGlobalContext();
 
   const {
@@ -74,8 +75,8 @@ const ApplicationFormNannyModal = () => {
     <div
       className={
         toggleApplicationFormNannyModal
-          ? 'modal-overlay show-modal'
-          : 'modal-overlay'
+          ? "modal-overlay show-modal"
+          : "modal-overlay"
       }
     >
       <div className="modal-container modal-container__application-form">
@@ -85,7 +86,7 @@ const ApplicationFormNannyModal = () => {
             return (
               <li
                 key={step.id}
-                className={currentStepIndex + 1 >= step.id ? 'active' : null}
+                className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
                 {step.text}
               </li>
@@ -109,9 +110,9 @@ const ApplicationFormNannyModal = () => {
           {currentStep}
           <div
             style={{
-              display: 'flex',
-              gap: '.5rem',
-              justifyContent: 'flex-end',
+              display: "flex",
+              gap: ".5rem",
+              justifyContent: "flex-end",
             }}
           >
             {!isFirstStep && (
@@ -123,8 +124,12 @@ const ApplicationFormNannyModal = () => {
                 Go back
               </button>
             )}
-            <button type="submit" className="btn hero-btn next-btn">
-              {isLastStep ? 'Submit form' : 'Next step'}
+            <button
+              type="submit"
+              className="btn hero-btn next-btn"
+              disabled={!isFormValid}
+            >
+              {isLastStep ? "Submit form" : "Next step"}
             </button>
           </div>
         </form>

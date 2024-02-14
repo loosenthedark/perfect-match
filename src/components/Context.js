@@ -27,6 +27,7 @@ export const AppProvider = ({ children }) => {
   const [howManyKids, setHowManyKids] = useState(1);
   const [inputFieldsChildren, setInputFieldsChildren] = useState([]);
   const [isAgreementShown, setIsAgreementShown] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
   const [isAgreementChecked, setIsAgreementChecked] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isFinalScreenShown, setIsFinalScreenShown] = useState(false);
@@ -35,6 +36,7 @@ export const AppProvider = ({ children }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
+  const [CVPath, setCVPath] = useState("");
 
   return (
     <AppContext.Provider
@@ -59,6 +61,8 @@ export const AppProvider = ({ children }) => {
         setQualificationsChecked,
         employedChecked,
         setEmployedChecked,
+        CVPath,
+        setCVPath,
         temporaryOrPermanent,
         setTemporaryOrPermanent,
         partOrFullTime,
@@ -67,6 +71,8 @@ export const AppProvider = ({ children }) => {
         setLiveInOrOut,
         howManyKids,
         setHowManyKids,
+        isFormValid,
+        setIsFormValid,
         inputFieldsChildren,
         setInputFieldsChildren,
         driver,

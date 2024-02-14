@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
+import { useEffect, useState } from "react";
 // import logoBackground from '../images/perfect-match-logo_square_no-text.png';
 
-const OtherRequirementsForm = ({
-  otherRequirements,
-  updateFields,
-}) => {
+const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
+  const [isOtherRequirementsValid, setIsOtherRequirementsValid] =
+    useState(true);
   const {
     driver,
     setDriver,
@@ -15,7 +16,34 @@ const OtherRequirementsForm = ({
     setNonSmoker,
     cooking,
     setCooking,
+    setIsFormValid,
   } = useGlobalContext();
+
+  const handleOtherRequirementsChange = (event) => {
+    setIsOtherRequirementsValid(
+      !event.target.value.length ||
+        (event.target.value.length > 2 &&
+          event.target.value.length < 1001 &&
+          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+    );
+    setIsFormValid(
+      !event.target.value.length ||
+        (event.target.value.length > 2 &&
+          event.target.value.length < 1001 &&
+          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+    );
+    updateFields({ otherRequirements: event.target.value });
+  };
+
+  useEffect(() => {
+    setIsFormValid(
+      !otherRequirements.length ||
+        (otherRequirements.length > 2 &&
+          otherRequirements.length < 1001 &&
+          /^[#.0-9a-zA-Z\s',-]+$/.test(otherRequirements))
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <FormStepWrapper>
@@ -24,7 +52,6 @@ const OtherRequirementsForm = ({
         style={{
           position: "absolute",
           width: "100%",
-
           lineHeight: "1.5",
         }}
       >
@@ -146,8 +173,9 @@ const OtherRequirementsForm = ({
           className="form-input"
           placeholder="Please let us know of any other requirements..."
           rows="3"
+          maxLength={1000}
           value={otherRequirements}
-          onChange={(e) => updateFields({ otherRequirements: e.target.value })}
+          onChange={handleOtherRequirementsChange}
         ></textarea>
       </div>
     </FormStepWrapper>

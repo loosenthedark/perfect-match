@@ -1,18 +1,69 @@
-import FormStepWrapper from './FormStepWrapper';
-import { useGlobalContext } from './Context';
+import FormStepWrapper from "./FormStepWrapper";
+import { useGlobalContext } from "./Context";
+import { useEffect, useState } from "react";
+
+function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
+  if (daysOrMonths === "days") {
+    date.setDate(date.getDate() + numberOfDaysOrMonths);
+  } else {
+    date.setMonth(date.getMonth() + numberOfDaysOrMonths);
+  }
+  return date;
+}
+
+const minDate = addDaysOrMonths(new Date(), 1, "days");
+const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
+  .toISOString()
+  .split("T")[0];
+const maxDate = addDaysOrMonths(new Date(), 12, "months");
+const maxDateStringified = addDaysOrMonths(new Date(), 12, "months")
+  .toISOString()
+  .split("T")[0];
 
 const EmployedForm = ({ startDate, updateFields }) => {
-  const { employedChecked, setEmployedChecked } = useGlobalContext();
+  // eslint-disable-next-line no-unused-vars
+  const [isStartDateValid, setIsStartDateValid] = useState(false);
+  const { employedChecked, setEmployedChecked, setIsFormValid } =
+    useGlobalContext();
+
+  const handleStartDateChange = (event) => {
+    const start = new Date(event.target.value);
+    setIsStartDateValid(
+      start > minDate &&
+        start < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          event.target.value
+        )
+    );
+    setIsFormValid(
+      start > minDate &&
+        start < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          event.target.value
+        )
+    );
+    updateFields({ startDate: event.target.value });
+  };
+
+  useEffect(() => {
+    const startDateData = new Date(startDate);
+    setIsFormValid(
+      startDateData > minDate &&
+        startDateData < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(startDate)
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <FormStepWrapper>
       <h3
         className="form-heading"
         style={{
-          position: 'absolute',
-          width: '100%',
-         
-          lineHeight: '1.5',
+          position: "absolute",
+          width: "100%",
+
+          lineHeight: "1.5",
         }}
       >
         Your Availability
@@ -22,12 +73,12 @@ const EmployedForm = ({ startDate, updateFields }) => {
           <span
             className="label-q form-input"
             style={{
-              borderRadius: 'unset',
-              border: 'unset',
-              paddingTop: 'unset',
-              paddingLeft: 'unset',
-              paddingRight: 'unset',
-              display: 'block',
+              borderRadius: "unset",
+              border: "unset",
+              paddingTop: "unset",
+              paddingLeft: "unset",
+              paddingRight: "unset",
+              display: "block",
             }}
           >
             Are you currently employed?
@@ -36,13 +87,13 @@ const EmployedForm = ({ startDate, updateFields }) => {
         <div
           className="slider-wrapper"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '.5rem',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: ".5rem",
           }}
         >
-          <span style={{ textAlign: 'right' }}>NO</span>
+          <span style={{ textAlign: "right" }}>NO</span>
           <label htmlFor="employed" className="switch">
             <input
               checked={employedChecked}
@@ -60,23 +111,25 @@ const EmployedForm = ({ startDate, updateFields }) => {
           htmlFor="start-date"
           className="label-q form-input"
           style={{
-            borderRadius: 'unset',
-            border: 'unset',
-            paddingTop: 'unset',
-            paddingLeft: 'unset',
-            paddingRight: 'unset',
-            paddingBottom: '.25rem',
-            display: 'block',
+            borderRadius: "unset",
+            border: "unset",
+            paddingTop: "unset",
+            paddingLeft: "unset",
+            paddingRight: "unset",
+            paddingBottom: ".25rem",
+            display: "block",
           }}
         >
-          If yes, what is your earliest available start date?
+          What is your earliest available start date?
         </label>
         <input
           className="form-input"
           id="start-date"
+          min={minDateStringified}
+          max={maxDateStringified}
           type="date"
           value={startDate}
-          onChange={(e) => updateFields({ startDate: e.target.value })}
+          onChange={handleStartDateChange}
         />
       </div>
     </FormStepWrapper>

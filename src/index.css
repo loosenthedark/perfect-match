@@ -345,6 +345,11 @@ Hero
   line-height: 1.5;
 }
 
+.hero-btn:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
 .hero-btn.hero-btn__secondary {
   margin-top: 1rem;
   background: var(--clr-secondary);
