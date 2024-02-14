@@ -1,154 +1,9 @@
-/* eslint-disable no-unused-vars */
 import { GrFormClose } from "react-icons/gr";
 import { useGlobalContext } from "./Context";
-import { useState } from "react";
-
-const INITIAL_FORM_DATA = {
-  firstNameContact: "",
-  lastNameContact: "",
-  phoneContact: "",
-  emailContact: "",
-  queryContact: "",
-};
 
 const ContactFormModal = () => {
-  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
-  const updateFormFields = (fieldsBeingUpdated) => {
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        ...fieldsBeingUpdated,
-      };
-    });
-  };
-
-  const [isFirstNameContactValid, setIsFirstNameContactValid] = useState(false);
-  const [isLastNameContactValid, setIsLastNameContactValid] = useState(false);
-  const [isPhoneContactValid, setIsPhoneContactValid] = useState(false);
-  const [isEmailContactValid, setIsEmailContactValid] = useState(false);
-  const [isQueryContactValid, setIsQueryContactValid] = useState(false);
-
-  const {
-    toggleContactFormModal,
-    setToggleContactFormModal,
-    isFormValid,
-    setIsFormValid,
-  } = useGlobalContext();
-
-  const handleFirstNameContactChange = (event) => {
-    setIsFirstNameContactValid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
-    );
-    setIsFormValid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
-        formData.lastNameContact.length > 1 &&
-        formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
-        /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-          formData.emailContact
-        ) &&
-        formData.queryContact.length > 2 &&
-        formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
-    );
-    updateFormFields({ firstNameContact: event.target.value });
-  };
-
-  const handleLastNameContactChange = (event) => {
-    setIsLastNameContactValid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
-    );
-    setIsFormValid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
-        formData.firstNameContact.length > 1 &&
-        formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
-        /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-          formData.emailContact
-        ) &&
-        formData.queryContact.length > 2 &&
-        formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
-    );
-    updateFormFields({ lastNameContact: event.target.value });
-  };
-
-  const handlePhoneContactChange = (event) => {
-    setIsPhoneContactValid(/^\+?[0-9]{6,20}$/.test(event.target.value));
-    setIsFormValid(
-      /^\+?[0-9]{6,20}$/.test(event.target.value) &&
-        formData.firstNameContact.length > 1 &&
-        formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
-        formData.lastNameContact.length > 1 &&
-        formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-          formData.emailContact
-        ) &&
-        formData.queryContact.length > 2 &&
-        formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
-    );
-    updateFormFields({ phoneContact: event.target.value });
-  };
-
-  const handleEmailContactChange = (event) => {
-    setIsEmailContactValid(
-      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(event.target.value)
-    );
-    setIsFormValid(
-      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-        event.target.value
-      ) &&
-        formData.firstNameContact.length > 1 &&
-        formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
-        formData.lastNameContact.length > 1 &&
-        formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
-        /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        formData.queryContact.length > 2 &&
-        formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
-    );
-    updateFormFields({ emailContact: event.target.value });
-  };
-
-  const handleQueryContactChange = (event) => {
-    setIsQueryContactValid(
-      event.target.value.length > 2 &&
-        event.target.value.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
-    );
-    setIsFormValid(
-      event.target.value.length > 2 &&
-        event.target.value.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
-        formData.firstNameContact.length > 1 &&
-        formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
-        formData.lastNameContact.length > 1 &&
-        formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
-        /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
-          formData.emailContact
-        )
-    );
-    updateFormFields({ queryContact: event.target.value });
-  };
-
+  const { toggleContactFormModal, setToggleContactFormModal } =
+    useGlobalContext();
   return (
     <div
       className={
@@ -202,12 +57,8 @@ const ContactFormModal = () => {
                 placeholder="First Name"
                 className="form-input"
                 id="firstName"
-                name="First Name:"
+                name="firstName"
                 required
-                value={formData.firstNameContact}
-                minLength={2}
-                maxLength={30}
-                onChange={handleFirstNameContactChange}
               />
             </div>
             {/* last name */}
@@ -217,12 +68,8 @@ const ContactFormModal = () => {
                 placeholder="Last Name"
                 className="form-input"
                 id="lastName"
-                name="Last Name:"
+                name="lastName"
                 required
-                value={formData.lastNameContact}
-                minLength={2}
-                maxLength={50}
-                onChange={handleLastNameContactChange}
               />
             </div>
             {/* phone */}
@@ -232,9 +79,7 @@ const ContactFormModal = () => {
                 type="tel"
                 pattern="\+?[0-9]{6,20}"
                 placeholder="Phone"
-                name="Phone:"
-                value={formData.phoneContact}
-                onChange={handlePhoneContactChange}
+                name="phone"
               />
             </div>
             {/* email */}
@@ -244,10 +89,8 @@ const ContactFormModal = () => {
                 placeholder="Email"
                 className="form-input"
                 id="email"
-                name="Email:"
+                name="email"
                 required
-                value={formData.emailContact}
-                onChange={handleEmailContactChange}
               />
             </div>
             {/* query */}
@@ -260,11 +103,8 @@ const ContactFormModal = () => {
                 }}
                 placeholder="Please submit your query and we will get back to you as soon as possible..."
                 rows="4"
-                name="Query:"
+                name="query"
                 required
-                maxLength={3000}
-                value={formData.queryContact}
-                onChange={handleQueryContactChange}
               ></textarea>
             </div>
             {/* file upload */}
@@ -294,7 +134,6 @@ const ContactFormModal = () => {
                 justifyContent: "center",
                 borderRadius: ".3125rem",
               }}
-              disabled={!isFormValid}
             >
               Submit
             </button>
