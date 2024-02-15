@@ -54,7 +54,7 @@ const ContactFormModal = () => {
         ) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ firstNameContact: event.target.value });
   };
@@ -78,7 +78,7 @@ const ContactFormModal = () => {
         ) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ lastNameContact: event.target.value });
   };
@@ -98,7 +98,7 @@ const ContactFormModal = () => {
         ) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ phoneContact: event.target.value });
   };
@@ -120,7 +120,7 @@ const ContactFormModal = () => {
         /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ emailContact: event.target.value });
   };
@@ -129,12 +129,12 @@ const ContactFormModal = () => {
     setIsQueryContactValid(
       event.target.value.length > 2 &&
         event.target.value.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
+        /^[#.0-9a-zA-Z\s'?,-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 2 &&
         event.target.value.length < 3001 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
+        /^[#.0-9a-zA-Z\s'?,-]+$/.test(event.target.value) &&
         formData.firstNameContact.length > 1 &&
         formData.firstNameContact.length < 31 &&
         /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&

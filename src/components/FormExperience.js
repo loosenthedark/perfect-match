@@ -19,13 +19,13 @@ const ExperienceForm = ({ qualificationDetails, updateFields }) => {
       !event.target.value.length ||
         (event.target.value.length > 2 &&
           event.target.value.length < 1001 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+          /^[#.0-9a-zA-Z\s'?,-]+$/.test(event.target.value))
     );
     setIsFormValid(
       !event.target.value.length ||
         (event.target.value.length > 2 &&
           event.target.value.length < 1001 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+          /^[#.0-9a-zA-Z\s'?,-]+$/.test(event.target.value))
     );
     updateFields({ qualificationDetails: event.target.value });
   };
@@ -35,7 +35,7 @@ const ExperienceForm = ({ qualificationDetails, updateFields }) => {
       !qualificationDetails.length ||
         (qualificationDetails.length > 2 &&
           qualificationDetails.length < 1001 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(qualificationDetails))
+          /^[#.0-9a-zA-Z\s'?,-]+$/.test(qualificationDetails))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

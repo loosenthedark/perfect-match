@@ -24,13 +24,13 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
       !event.target.value.length ||
         (event.target.value.length > 1 &&
           event.target.value.length < 2001 &&
-          /^[#.0-9a-zA-Z\s',&-]+$/.test(event.target.value))
+          /^[#.0-9a-zA-Z\s',&?-]+$/.test(event.target.value))
     );
     setIsFormValid(
       !event.target.value.length ||
         (event.target.value.length > 1 &&
           event.target.value.length < 2001 &&
-          /^[#.0-9a-zA-Z\s',&-]+$/.test(event.target.value))
+          /^[#.0-9a-zA-Z\s',&?-]+$/.test(event.target.value))
     );
     updateFields({ otherRequirements: event.target.value });
   };
@@ -40,7 +40,7 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
       !otherRequirements.length ||
         (otherRequirements.length > 1 &&
           otherRequirements.length < 2001 &&
-          /^[#.0-9a-zA-Z\s',&-]+$/.test(otherRequirements))
+          /^[#.0-9a-zA-Z\s',&?-]+$/.test(otherRequirements))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
