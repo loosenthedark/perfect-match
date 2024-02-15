@@ -33,7 +33,7 @@ const AddressForm = ({
         address3.length > 1 &&
         address3.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
-        (address4.length ||
+        (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
             /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
@@ -57,7 +57,7 @@ const AddressForm = ({
         address3.length > 2 &&
         address3.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
-        (address4.length ||
+        (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
             /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
@@ -81,7 +81,7 @@ const AddressForm = ({
         address2.length > 0 &&
         address2.length < 36 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address2) &&
-        (address4.length ||
+        (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
             /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
@@ -91,9 +91,10 @@ const AddressForm = ({
 
   const handleAddress4Change = (event) => {
     setIsAddress4Valid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
+      !event.target.value.length ||
+        (event.target.value.length > 1 &&
+          event.target.value.length < 51 &&
+          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
     );
     setIsFormValid(
       (!event.target.value.length ||
@@ -124,7 +125,7 @@ const AddressForm = ({
         address3.length > 2 &&
         address3.length < 51 &&
         /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
-        (address4.length ||
+        (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
             /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
