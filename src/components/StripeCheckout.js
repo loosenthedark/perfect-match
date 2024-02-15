@@ -178,7 +178,7 @@ const StripeCheckout = () => {
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":10000}'
+        '{"payment_amount":1000}'
       );
       // console.log(data);
       setClientSecret(data.data.clientSecret);
