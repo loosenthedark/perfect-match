@@ -414,7 +414,7 @@ const SignedAgreementForm = ({
             {!isAgreementShown
               ? "Thanks for joining our agency. We look forward to working with you and finding your Perfect Match."
               : !isFinalScreenShown
-              ? "In the event of us deciding to employ one of your nannies, we agree to settle your account in full within seven days of receiving your invoice."
+              ? "In the event of us deciding to employ one of your nannies, we agree to settle our account in full within seven days of receiving your invoice."
               : !stripePaymentSubmitted
               ? ""
               : "We have received your application details and will be in contact with you soon."}

@@ -22,15 +22,15 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
   const handleOtherRequirementsChange = (event) => {
     setIsOtherRequirementsValid(
       !event.target.value.length ||
-        (event.target.value.length > 2 &&
-          event.target.value.length < 1001 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+        (event.target.value.length > 1 &&
+          event.target.value.length < 2001 &&
+          /^[#.0-9a-zA-Z\s',&-]+$/.test(event.target.value))
     );
     setIsFormValid(
       !event.target.value.length ||
-        (event.target.value.length > 2 &&
-          event.target.value.length < 1001 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+        (event.target.value.length > 1 &&
+          event.target.value.length < 2001 &&
+          /^[#.0-9a-zA-Z\s',&-]+$/.test(event.target.value))
     );
     updateFields({ otherRequirements: event.target.value });
   };
@@ -38,9 +38,9 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
   useEffect(() => {
     setIsFormValid(
       !otherRequirements.length ||
-        (otherRequirements.length > 2 &&
-          otherRequirements.length < 1001 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(otherRequirements))
+        (otherRequirements.length > 1 &&
+          otherRequirements.length < 2001 &&
+          /^[#.0-9a-zA-Z\s',&-]+$/.test(otherRequirements))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -173,7 +173,7 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
           className="form-input"
           placeholder="Please let us know of any other requirements..."
           rows="3"
-          maxLength={1000}
+          maxLength={2000}
           value={otherRequirements}
           onChange={handleOtherRequirementsChange}
         ></textarea>

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState } from "react";
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
@@ -66,26 +68,47 @@ const ChildDetailsForm = ({ numberOfKids }) => {
   ];
 
   const [currentChild, setCurrentChild] = useState(1);
-  // eslint-disable-next-line no-unused-vars
   const [isNameChildValid, setIsNameChildValid] = useState(false);
   const [isDobChildValid, setIsDobChildValid] = useState(false);
   const [isSchoolLocationChildValid, setIsSchoolLocationChildValid] =
-    useState(false);
+    useState(true);
+  const [canNextChildBeClicked, setCanNextChildBeClicked] = useState(false);
   const { setInputFieldsChildren, inputFieldsChildren, setIsFormValid } =
     useGlobalContext();
 
   const handleNameChildChange = (event) => {
+    const dobNameChild = new Date(
+      inputFieldsChildren[currentChild - 1].dobChild
+    );
     setIsNameChildValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
         /^[a-zA-Z\s'-]+$/.test(event.target.value)
     );
-    setIsFormValid(
+    setCanNextChildBeClicked(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
         /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
-        isDobChildValid &&
-        isSchoolLocationChildValid
+        dobNameChild > minDate &&
+        dobNameChild < maxDate &&
+        (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
+          (inputFieldsChildren[currentChild - 1].schoolLocationChild.length >
+            1 &&
+            inputFieldsChildren[currentChild - 1].schoolLocationChild.length <
+              41))
+    );
+    setIsFormValid(
+      currentChild === parseInt(numberOfKids) &&
+        event.target.value.length > 1 &&
+        event.target.value.length < 31 &&
+        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        dobNameChild > minDate &&
+        dobNameChild < maxDate &&
+        (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
+          (inputFieldsChildren[currentChild - 1].schoolLocationChild.length >
+            1 &&
+            inputFieldsChildren[currentChild - 1].schoolLocationChild.length <
+              41))
     );
   };
 
@@ -98,30 +121,71 @@ const ChildDetailsForm = ({ numberOfKids }) => {
           event.target.value
         )
     );
-    setIsFormValid(
+    setCanNextChildBeClicked(
       dob > minDate &&
         dob < maxDate &&
         /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
           event.target.value
         ) &&
-        isNameChildValid &&
-        isSchoolLocationChildValid
+        inputFieldsChildren[currentChild - 1].nameChild.length > 1 &&
+        inputFieldsChildren[currentChild - 1].nameChild.length < 31 &&
+        (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
+          (inputFieldsChildren[currentChild - 1].schoolLocationChild.length >
+            1 &&
+            inputFieldsChildren[currentChild - 1].schoolLocationChild.length <
+              41))
+    );
+    setIsFormValid(
+      currentChild === parseInt(numberOfKids) &&
+        dob > minDate &&
+        dob < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          event.target.value
+        ) &&
+        inputFieldsChildren[currentChild - 1].nameChild.length > 1 &&
+        inputFieldsChildren[currentChild - 1].nameChild.length < 31 &&
+        (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
+          (inputFieldsChildren[currentChild - 1].schoolLocationChild.length >
+            1 &&
+            inputFieldsChildren[currentChild - 1].schoolLocationChild.length <
+              41))
     );
   };
 
   const handleSchoolLocationChildChange = (event) => {
+    const dobSchoolChild = new Date(
+      inputFieldsChildren[currentChild - 1].dobChild
+    );
     setIsSchoolLocationChildValid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 41 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
+      !event.target.value.length ||
+        (event.target.value.length > 1 &&
+          event.target.value.length < 41 &&
+          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
     );
-    setIsFormValid(
-      event.target.value.length > 1 &&
-        event.target.value.length < 41 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
-        isNameChildValid &&
-        isDobChildValid
+    setCanNextChildBeClicked(
+      (!event.target.value.length ||
+        (event.target.value.length > 1 &&
+          event.target.value.length < 41 &&
+          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))) &&
+        inputFieldsChildren[currentChild - 1].nameChild.length > 1 &&
+        inputFieldsChildren[currentChild - 1].nameChild.length < 31 &&
+        dobSchoolChild > minDate &&
+        dobSchoolChild < maxDate
     );
+    setIsFormValid(currentChild === parseInt(numberOfKids));
+  };
+
+  const handlePrevChildClick = () => {
+    setCurrentChild((num) => {
+      return num - 1;
+    });
+  };
+
+  const handleNextChildClick = (e) => {
+    e.preventDefault();
+    setCurrentChild((num) => {
+      return num + 1;
+    });
   };
 
   const handleFormChange = (i, e) => {
@@ -131,19 +195,40 @@ const ChildDetailsForm = ({ numberOfKids }) => {
   };
 
   useEffect(() => {
-    console.log(minDate);
-    console.log(maxDate);
     setInputFieldsChildren(inputFieldsChildrenConfig.slice(0, numberOfKids));
     setIsFormValid(
-      inputFieldsChildren.forEach(
-        (inputGroup) =>
+      inputFieldsChildren.every(function (inputGroup) {
+        const dobInputGroup = new Date(inputGroup.dobChild);
+        return (
           inputGroup.nameChild.length > 0 &&
           inputGroup.nameChild.length < 31 &&
-          /^[#.0-9a-zA-Z\s,-]+$/.test(inputGroup.nameChild)
-      )
+          /^[#.0-9a-zA-Z\s,-]+$/.test(inputGroup.nameChild) &&
+          dobInputGroup > minDate &&
+          dobInputGroup < maxDate &&
+          (!inputGroup.schoolLocationChild.length ||
+            (inputGroup.schoolLocationChild.length > 1 &&
+              inputGroup.schoolLocationChild.length < 41))
+        );
+      }) && currentChild === parseInt(numberOfKids)
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const dobUseEffect = new Date(
+      inputFieldsChildren[currentChild - 1]?.dobChild
+    );
+    setCanNextChildBeClicked(
+      inputFieldsChildren[currentChild - 1]?.nameChild.length > 1 &&
+        inputFieldsChildren[currentChild - 1].nameChild.length < 31 &&
+        dobUseEffect > minDate &&
+        dobUseEffect < maxDate &&
+        (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
+          (inputFieldsChildren[currentChild - 1].schoolLocationChild.length >
+            1 &&
+            inputFieldsChildren[currentChild - 1].schoolLocationChild.length <
+              41))
+    );
+  }, [currentChild]);
 
   return (
     <FormStepWrapper>
@@ -211,6 +296,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                 Date of birth
               </label>
               <input
+                required
                 className="form-input form-input__date"
                 id="dobChild"
                 name="dobChild"
@@ -226,7 +312,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
             </div>
             <div className="form-row">
               <input
-                required
                 className="form-input"
                 name="schoolLocationChild"
                 placeholder="Location of school/Montessori (if applicable)"
@@ -250,6 +335,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               <button
                 type="button"
                 className="btn hero-btn back-btn back-btn__child btn-secondary"
+                onClick={handlePrevChildClick}
                 style={{
                   visibility: currentChild === 1 ? "hidden" : "visible",
                 }}
@@ -258,11 +344,14 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               </button>
               <button
                 className="btn hero-btn next-btn next-btn__child btn-secondary"
-                onClick={() => setCurrentChild(currentChild + 1)}
+                onClick={handleNextChildClick}
                 style={{
                   visibility:
-                    currentChild === numberOfKids ? "hidden" : "visible",
+                    currentChild === parseInt(numberOfKids)
+                      ? "hidden"
+                      : "visible",
                 }}
+                disabled={!canNextChildBeClicked}
               >
                 Next child
               </button>
