@@ -81,6 +81,12 @@ const ApplicationFormParentsModal = () => {
     }
   };
 
+  const triggerStripePaymentAfterTimeout = () => {
+    setTimeout(() => {
+      setStripePaymentSubmitted(true);
+    }, 3000);
+  };
+
   return (
     <div
       className={
@@ -184,7 +190,7 @@ const ApplicationFormParentsModal = () => {
                       : !stripePaymentSubmitted
                       ? () => toggleStripeCheckout(true)
                       : () => console.log("Registration flow complete!")
-                    : () => setStripePaymentSubmitted(true)
+                    : triggerStripePaymentAfterTimeout
                 }
                 disabled={!isAgreementChecked || !isFormValid}
               >
