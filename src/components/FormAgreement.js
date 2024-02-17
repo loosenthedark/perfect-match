@@ -60,11 +60,6 @@ const SignedAgreementForm = ({
     const { clientSecret, toggleStripeCheckout, setStripePaymentSubmitted } =
       useGlobalContext();
 
-    // const handleChange = async (event) => {
-    //   setDisabled(event.empty);
-    //   setError(event.error ? event.error.message : "");
-    // };
-
     useEffect(() => {
       // console.log("BANANAS!");
       // console.log(clientSecret);
@@ -92,27 +87,6 @@ const SignedAgreementForm = ({
       });
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [stripe]);
-
-    // const handleSubmit = async (ev) => {
-    //   ev.preventDefault();
-    //   setProcessing(true);
-    //   const payload = await stripe.confirmCardPayment(clientSecret, {
-    //     payment_method: {
-    //       card: elements.getElement(CardElement),
-    //     },
-    //   });
-    //   if (payload.error) {
-    //     setError(`Payment failed - ${payload.error.message}`);
-    //     setProcessing(false);
-    //   } else {
-    //     setError(null);
-    //     setProcessing(false);
-    //     setSucceeded(true);
-    //     setTimeout(() => {
-    //       toggleStripeCheckout(false);
-    //     }, 5000);
-    //   }
-    // };
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -215,11 +189,13 @@ const SignedAgreementForm = ({
     return `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
   };
 
+  const { userEmailForStripeMetadata } = useGlobalContext();
+
   const createPaymentIntent = async () => {
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":100}'
+        '{"payment_amount":200,"email":' + userEmailForStripeMetadata + "}"
       );
       // console.log(data);
       setClientSecret(data.data.clientSecret);
