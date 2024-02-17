@@ -1,8 +1,8 @@
 // domain/.netlify/functions/create-payment-intent
 
-require('dotenv').config();
+require("dotenv").config();
 
-const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET_KEY);
 
 exports.handler = async function (event, context) {
   // console.log(event);
@@ -22,6 +22,9 @@ exports.handler = async function (event, context) {
       const paymentIntent = await stripe.paymentIntents.create({
         amount: calculateOrderAmount(),
         currency: "eur",
+        metadata: {
+          user_email: "paulharrington05@gmail.com",
+        },
       });
       return {
         statusCode: 200,
