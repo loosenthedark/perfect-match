@@ -175,11 +175,13 @@ const StripeCheckout = () => {
     userEmailForStripeMetadata
   } = useGlobalContext();
 
+
+
   const createPaymentIntent = async () => {
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":200,"email":userEmailForStripeMetadata}'
+        '{"payment_amount":200,"email":' + userEmailForStripeMetadata +'}'
       );
       // console.log(data);
       setClientSecret(data.data.clientSecret);
