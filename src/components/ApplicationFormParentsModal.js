@@ -2,7 +2,7 @@ import { GrFormClose } from "react-icons/gr";
 import { useGlobalContext } from "./Context";
 import useMultiStepForm from "../hooks/useMultiStepForm";
 import AddressForm from "./FormAddress";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { formParentsSteps } from "../data";
 import ParentDetailsForm from "./FormDetailsParent";
 import CoreRequirementsForm from "./FormRequirementsCore";
@@ -70,23 +70,31 @@ const ApplicationFormParentsModal = () => {
     <AgreementForm {...formData} updateFields={updateFormFields} />,
   ]);
 
+  const formElRef = useRef();
+
   const handleSubmit = (event) => {
     if (!isLastStep) {
       event.preventDefault();
       goToNext();
     } else {
       if (!stripePaymentSubmitted) {
+        console.log("BANANAS!");
         event.preventDefault();
+      }
+      if (isFinalScreenShown) {
+        console.log("PANCAKES!");
       }
     }
   };
 
-  const triggerStripePaymentAfterTimeout = () => {
-    setTimeout(() => {
-      setStripePaymentSubmitted(true);
-      console.log("Registration flow complete!");
-    }, 3000);
-  };
+  useEffect(() => {
+    if (stripePaymentSubmitted) {
+      console.log("BACON!");
+      setTimeout(() => {
+        formElRef.current && formElRef.current.submit();
+      }, 5000);
+    }
+  }, [stripePaymentSubmitted]);
 
   return (
     <div
@@ -139,6 +147,7 @@ const ApplicationFormParentsModal = () => {
           onSubmit={handleSubmit}
           encType="multipart/form-data"
           id="payment-form"
+          ref={formElRef}
         >
           {currentStep}
           <div
@@ -183,6 +192,10 @@ const ApplicationFormParentsModal = () => {
                   paddingRight: "1.375rem",
                   width: "13rem",
                   opacity: !isAgreementChecked ? ".625" : 1,
+                  display:
+                    !stripeCheckout && stripePaymentSubmitted
+                      ? "none"
+                      : "inline-block",
                 }}
                 onClick={
                   !stripeCheckout
@@ -190,8 +203,8 @@ const ApplicationFormParentsModal = () => {
                       ? () => setIsFinalScreenShown(true)
                       : !stripePaymentSubmitted
                       ? () => toggleStripeCheckout(true)
-                      : triggerStripePaymentAfterTimeout
-                    : triggerStripePaymentAfterTimeout
+                      : () => console.log("Registration flow complete!")
+                    : () => setStripePaymentSubmitted(true)
                 }
                 disabled={!isAgreementChecked || !isFormValid}
               >

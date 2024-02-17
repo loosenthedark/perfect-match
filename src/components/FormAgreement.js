@@ -219,7 +219,7 @@ const SignedAgreementForm = ({
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":1000}'
+        '{"payment_amount":100}'
       );
       // console.log(data);
       setClientSecret(data.data.clientSecret);
