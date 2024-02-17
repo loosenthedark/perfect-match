@@ -14,7 +14,7 @@ const ParentDetailsForm = ({
   const [isLastNameParentValid, setIsLastNameParentValid] = useState(false);
   const [isPhoneParentValid, setIsPhoneParentValid] = useState(false);
   const [isEmailParentValid, setIsEmailParentValid] = useState(false);
-  const { setIsFormValid } = useGlobalContext();
+  const { setIsFormValid, setUserEmailForStripeMetadata } = useGlobalContext();
 
   const handleFirstNameParentChange = (event) => {
     setIsFirstNameParentValid(
@@ -86,6 +86,7 @@ const ParentDetailsForm = ({
         /^\+?[0-9]{6,20}$/.test(phoneParent)
     );
     updateFields({ emailParent: event.target.value });
+    setUserEmailForStripeMetadata(event.target.value);
   };
 
   return (

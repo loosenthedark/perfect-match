@@ -92,7 +92,7 @@ const ApplicationFormParentsModal = () => {
       console.log("BACON!");
       setTimeout(() => {
         formElRef.current && formElRef.current.submit();
-      }, 5000);
+      }, 4000);
     }
   }, [stripePaymentSubmitted]);
 
