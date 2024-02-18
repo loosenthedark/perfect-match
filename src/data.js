@@ -81,7 +81,7 @@ export const extraLinks = [
     text: "cookie policy",
   },
   {
-    id: 2,
+    id: 3,
     href: "https://loosenthedark.tech/perfect-match-nanny-agency/privacy-policy",
     text: "privacy policy",
   },
