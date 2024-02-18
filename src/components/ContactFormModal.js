@@ -39,22 +39,22 @@ const ContactFormModal = () => {
     setIsFirstNameContactValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         formData.lastNameContact.length > 1 &&
         formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.lastNameContact) &&
         /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
+        /^[a-zA-ZÀ-ú0-9._-]+@[a-zA-ZÀ-ú0-9.-]+\.[a-zA-Z]{2,4}$/.test(
           formData.emailContact
         ) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-ZÀ-ú\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ firstNameContact: event.target.value });
   };
@@ -63,22 +63,22 @@ const ContactFormModal = () => {
     setIsLastNameContactValid(
       event.target.value.length > 1 &&
         event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 1 &&
         event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         formData.firstNameContact.length > 1 &&
         formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.firstNameContact) &&
         /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
+        /^[a-zA-ZÀ-ú0-9._-]+@[a-zA-ZÀ-ú0-9.-]+\.[a-zA-ZÀ-ú]{2,4}$/.test(
           formData.emailContact
         ) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-ZÀ-ú\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ lastNameContact: event.target.value });
   };
@@ -89,16 +89,16 @@ const ContactFormModal = () => {
       /^\+?[0-9]{6,20}$/.test(event.target.value) &&
         formData.firstNameContact.length > 1 &&
         formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.firstNameContact) &&
         formData.lastNameContact.length > 1 &&
         formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.lastNameContact) &&
+        /^[a-zA-ZÀ-ú0-9._-]+@[a-zA-ZÀ-ú0-9.-]+\.[a-zA-ZÀ-ú]{2,4}$/.test(
           formData.emailContact
         ) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-ZÀ-ú\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ phoneContact: event.target.value });
   };
@@ -113,14 +113,14 @@ const ContactFormModal = () => {
       ) &&
         formData.firstNameContact.length > 1 &&
         formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.firstNameContact) &&
         formData.lastNameContact.length > 1 &&
         formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.lastNameContact) &&
         /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
         formData.queryContact.length > 2 &&
         formData.queryContact.length < 3001 &&
-        /^[#.0-9a-zA-Z\s'?,-]+$/.test(formData.queryContact)
+        /^[#.0-9a-zA-ZÀ-ú\s'?,-]+$/.test(formData.queryContact)
     );
     updateFormFields({ emailContact: event.target.value });
   };
@@ -129,20 +129,20 @@ const ContactFormModal = () => {
     setIsQueryContactValid(
       event.target.value.length > 2 &&
         event.target.value.length < 3001 &&
-        /^[#.0-9a-zA-Z\s'?,-]+$/.test(event.target.value)
+        /^[#.0-9a-zA-ZÀ-ú\s'?,-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 2 &&
         event.target.value.length < 3001 &&
-        /^[#.0-9a-zA-Z\s'?,-]+$/.test(event.target.value) &&
+        /^[#.0-9a-zA-ZÀ-ú\s'?,-]+$/.test(event.target.value) &&
         formData.firstNameContact.length > 1 &&
         formData.firstNameContact.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.firstNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.firstNameContact) &&
         formData.lastNameContact.length > 1 &&
         formData.lastNameContact.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(formData.lastNameContact) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(formData.lastNameContact) &&
         /^\+?[0-9]{6,20}$/.test(formData.phoneContact) &&
-        /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(
+        /^[a-zA-ZÀ-ú0-9._-]+@[a-zA-ZÀ-ú0-9.-]+\.[a-zA-ZÀ-ú]{2,4}$/.test(
           formData.emailContact
         )
     );

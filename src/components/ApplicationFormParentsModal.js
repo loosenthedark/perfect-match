@@ -78,18 +78,13 @@ const ApplicationFormParentsModal = () => {
       goToNext();
     } else {
       if (!stripePaymentSubmitted) {
-        console.log("BANANAS!");
         event.preventDefault();
-      }
-      if (isFinalScreenShown) {
-        console.log("PANCAKES!");
       }
     }
   };
 
   useEffect(() => {
     if (stripePaymentSubmitted) {
-      console.log("BACON!");
       setTimeout(() => {
         formElRef.current && formElRef.current.submit();
       }, 4000);
@@ -112,7 +107,8 @@ const ApplicationFormParentsModal = () => {
         }
         style={{
           height: !stripeCheckout ? "66vh" : "auto",
-          maxHeight: !stripeCheckout ? "39rem" : "unset",
+          maxHeight: !stripeCheckout ? "39rem" : "96vh",
+          overflowY: stripeCheckout && "auto"
         }}
       >
         {/* progress bar */}

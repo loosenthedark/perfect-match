@@ -14,21 +14,21 @@ const ParentDetailsForm = ({
   const [isLastNameParentValid, setIsLastNameParentValid] = useState(false);
   const [isPhoneParentValid, setIsPhoneParentValid] = useState(false);
   const [isEmailParentValid, setIsEmailParentValid] = useState(false);
-  const { setIsFormValid, setUserEmailForStripeMetadata } = useGlobalContext();
+  const { setIsFormValid, setUserPhoneForStripeMetadata, setUserEmailForStripeMetadata } = useGlobalContext();
 
   const handleFirstNameParentChange = (event) => {
     setIsFirstNameParentValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         lastNameParent.length > 1 &&
         lastNameParent.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(lastNameParent) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(lastNameParent) &&
         /^\+?[0-9]{6,20}$/.test(phoneParent) &&
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailParent)
     );
@@ -39,15 +39,15 @@ const ParentDetailsForm = ({
     setIsLastNameParentValid(
       event.target.value.length > 1 &&
         event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 1 &&
         event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         firstNameParent.length > 1 &&
         firstNameParent.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(firstNameParent) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(firstNameParent) &&
         /^\+?[0-9]{6,20}$/.test(phoneParent) &&
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailParent)
     );
@@ -60,13 +60,14 @@ const ParentDetailsForm = ({
       /^\+?[0-9]{6,20}$/.test(event.target.value) &&
         firstNameParent.length > 1 &&
         firstNameParent.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(firstNameParent) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(firstNameParent) &&
         lastNameParent.length > 1 &&
         lastNameParent.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(lastNameParent) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(lastNameParent) &&
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailParent)
     );
     updateFields({ phoneParent: event.target.value });
+    setUserPhoneForStripeMetadata(event.target.value);
   };
 
   const handleEmailParentChange = (event) => {
@@ -79,10 +80,10 @@ const ParentDetailsForm = ({
       ) &&
         firstNameParent.length > 1 &&
         firstNameParent.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(firstNameParent) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(firstNameParent) &&
         lastNameParent.length > 1 &&
         lastNameParent.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(lastNameParent) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(lastNameParent) &&
         /^\+?[0-9]{6,20}$/.test(phoneParent)
     );
     updateFields({ emailParent: event.target.value });

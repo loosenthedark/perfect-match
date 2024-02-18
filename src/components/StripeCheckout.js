@@ -8,7 +8,6 @@ import {
   useElements,
   PaymentElement,
 } from "@stripe/react-stripe-js";
-import axios from "axios";
 import styled from "styled-components";
 
 const promise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
@@ -20,8 +19,7 @@ const CheckoutForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
 
-  const { clientSecret } =
-    useGlobalContext();
+  const { clientSecret } = useGlobalContext();
 
   // const handleChange = async (event) => {
   //   setDisabled(event.empty);
@@ -29,7 +27,6 @@ const CheckoutForm = () => {
   // };
 
   useEffect(() => {
-    // console.log("BANANAS!");
     // console.log(clientSecret);
     if (!stripe) {
       return;
@@ -115,10 +112,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form
-      id="payment-form"
-      onSubmit={handleSubmit}
-    >
+    <form id="payment-form" onSubmit={handleSubmit}>
       {/* <LinkAuthenticationElement
         id="link-authentication-element"
         onChange={(e) => setEmail(e.target?.value)}
@@ -167,33 +161,8 @@ const CheckoutForm = () => {
 };
 
 const StripeCheckout = () => {
-  const {
-    stripeCheckout,
-    toggleStripeCheckout,
-    clientSecret,
-    setClientSecret,
-    userEmailForStripeMetadata
-  } = useGlobalContext();
-
-
-
-  const createPaymentIntent = async () => {
-    try {
-      const data = await axios.post(
-        "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":100,"email":' + userEmailForStripeMetadata +'}'
-      );
-      // console.log(data);
-      setClientSecret(data.data.clientSecret);
-    } catch (error) {
-      console.log(error.response);
-    }
-  };
-
-  useEffect(() => {
-    createPaymentIntent();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { stripeCheckout, toggleStripeCheckout, clientSecret } =
+    useGlobalContext();
 
   const appearance = {
     theme: "stripe",

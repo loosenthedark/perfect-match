@@ -61,7 +61,6 @@ const SignedAgreementForm = ({
       useGlobalContext();
 
     useEffect(() => {
-      // console.log("BANANAS!");
       // console.log(clientSecret);
       if (!stripe) {
         return;
@@ -189,13 +188,18 @@ const SignedAgreementForm = ({
     return `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
   };
 
-  const { userEmailForStripeMetadata } = useGlobalContext();
+  const { userEmailForStripeMetadata, userPhoneForStripeMetadata } =
+    useGlobalContext();
 
   const createPaymentIntent = async () => {
     try {
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
-        '{"payment_amount":200,"email":' + userEmailForStripeMetadata + "}"
+        JSON.stringify({
+          payment_amount: 10000,
+          email: userEmailForStripeMetadata,
+          phone: userPhoneForStripeMetadata,
+        })
       );
       // console.log(data);
       setClientSecret(data.data.clientSecret);
@@ -274,6 +278,7 @@ const SignedAgreementForm = ({
       <input
         type="hidden"
         value={availability
+          .sort((a, b) => new Date(a) - new Date(b))
           .map((timePeriod) =>
             timePeriod
               .toLocaleDateString("en-gb", {

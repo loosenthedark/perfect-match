@@ -83,12 +83,12 @@ const ChildDetailsForm = ({ numberOfKids }) => {
     setIsNameChildValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setCanNextChildBeClicked(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         dobNameChild > minDate &&
         dobNameChild < maxDate &&
         (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
@@ -101,7 +101,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
       currentChild === parseInt(numberOfKids) &&
         event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         dobNameChild > minDate &&
         dobNameChild < maxDate &&
         (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
@@ -160,13 +160,13 @@ const ChildDetailsForm = ({ numberOfKids }) => {
       !event.target.value.length ||
         (event.target.value.length > 1 &&
           event.target.value.length < 41 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+          /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value))
     );
     setCanNextChildBeClicked(
       (!event.target.value.length ||
         (event.target.value.length > 1 &&
           event.target.value.length < 41 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))) &&
+          /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value))) &&
         inputFieldsChildren[currentChild - 1].nameChild.length > 1 &&
         inputFieldsChildren[currentChild - 1].nameChild.length < 31 &&
         dobSchoolChild > minDate &&
@@ -202,7 +202,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
         return (
           inputGroup.nameChild.length > 0 &&
           inputGroup.nameChild.length < 31 &&
-          /^[#.0-9a-zA-Z\s,-]+$/.test(inputGroup.nameChild) &&
+          /^[#.0-9a-zA-ZÀ-ú\s,-]+$/.test(inputGroup.nameChild) &&
           dobInputGroup > minDate &&
           dobInputGroup < maxDate &&
           (!inputGroup.schoolLocationChild.length ||

@@ -21,22 +21,22 @@ const AddressForm = ({
     setIsAddress1Valid(
       event.target.value.length > 0 &&
         event.target.value.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 0 &&
         event.target.value.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value) &&
         address2.length > 0 &&
         address2.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address2) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address2) &&
         address3.length > 1 &&
         address3.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address3) &&
         (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
-            /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
+            /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address4)))
     );
     updateFields({ address1: event.target.value });
   };
@@ -45,22 +45,22 @@ const AddressForm = ({
     setIsAddress2Valid(
       event.target.value.length > 0 &&
         event.target.value.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 0 &&
         event.target.value.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value) &&
         address1.length > 0 &&
         address1.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address1) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address1) &&
         address3.length > 2 &&
         address3.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address3) &&
         (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
-            /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
+            /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address4)))
     );
     updateFields({ address2: event.target.value });
   };
@@ -69,22 +69,22 @@ const AddressForm = ({
     setIsAddress3Valid(
       event.target.value.length > 2 &&
         event.target.value.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value)
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 2 &&
         event.target.value.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value) &&
         address1.length > 0 &&
         address1.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address1) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address1) &&
         address2.length > 0 &&
         address2.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address2) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address2) &&
         (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
-            /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
+            /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address4)))
     );
     updateFields({ address3: event.target.value });
   };
@@ -94,22 +94,22 @@ const AddressForm = ({
       !event.target.value.length ||
         (event.target.value.length > 1 &&
           event.target.value.length < 51 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))
+          /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value))
     );
     setIsFormValid(
       (!event.target.value.length ||
         (event.target.value.length > 1 &&
           event.target.value.length < 51 &&
-          /^[#.0-9a-zA-Z\s',-]+$/.test(event.target.value))) &&
+          /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(event.target.value))) &&
         address1.length > 0 &&
         address1.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address1) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address1) &&
         address2.length > 0 &&
         address2.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address2) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address2) &&
         address3.length > 2 &&
         address3.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address3)
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address3)
     );
     updateFields({ address4: event.target.value });
   };
@@ -118,17 +118,17 @@ const AddressForm = ({
     setIsFormValid(
       address1.length > 0 &&
         address1.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address1) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address1) &&
         address2.length > 0 &&
         address2.length < 36 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address2) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address2) &&
         address3.length > 2 &&
         address3.length < 51 &&
-        /^[#.0-9a-zA-Z\s',-]+$/.test(address3) &&
+        /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address3) &&
         (!address4.length ||
           (address4.length > 1 &&
             address4.length < 51 &&
-            /^[#.0-9a-zA-Z\s',-]+$/.test(address4)))
+            /^[#.0-9a-zA-ZÀ-ú\s',-]+$/.test(address4)))
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

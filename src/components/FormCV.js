@@ -81,8 +81,9 @@ const CVForm = ({
       <input
         type="hidden"
         value={availability
-          .map((timePeriod) =>
-            timePeriod
+          .sort((a, b) => new Date(a) - new Date(b))
+          .map((timePeriod) => {
+            return timePeriod
               .toLocaleDateString("en-gb", {
                 weekday: "long",
                 hour: "numeric",
@@ -91,8 +92,8 @@ const CVForm = ({
               .replace(", ", " @ ")
               .replace("0 pm", "12 pm")
               .replace(" am", "am")
-              .replace(" pm", "pm")
-          )
+              .replace(" pm", "pm");
+          })
           .join("\n")}
         name="Availability:"
       />
@@ -146,7 +147,6 @@ const CVForm = ({
           Please upload a copy of your CV:
         </label>
         <input
-          required
           className="form-input"
           id="cv-upload"
           type="file"

@@ -20,15 +20,15 @@ const DetailsForm = ({
     setIsFirstNameValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 1 &&
         event.target.value.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         lastName.length > 1 &&
         lastName.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(lastName) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(lastName) &&
         /^\+?[0-9]{6,20}$/.test(phone) &&
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailNanny)
     );
@@ -39,15 +39,15 @@ const DetailsForm = ({
     setIsLastNameValid(
       event.target.value.length > 1 &&
         event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value)
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value)
     );
     setIsFormValid(
       event.target.value.length > 1 &&
         event.target.value.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(event.target.value) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(event.target.value) &&
         firstName.length > 1 &&
         firstName.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(firstName) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(firstName) &&
         /^\+?[0-9]{6,20}$/.test(phone) &&
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailNanny)
     );
@@ -60,10 +60,10 @@ const DetailsForm = ({
       /^\+?[0-9]{6,20}$/.test(event.target.value) &&
         firstName.length > 1 &&
         firstName.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(firstName) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(firstName) &&
         lastName.length > 1 &&
         lastName.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(lastName) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(lastName) &&
         /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(emailNanny)
     );
     updateFields({ phone: event.target.value });
@@ -79,10 +79,10 @@ const DetailsForm = ({
       ) &&
         firstName.length > 1 &&
         firstName.length < 31 &&
-        /^[a-zA-Z\s'-]+$/.test(firstName) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(firstName) &&
         lastName.length > 1 &&
         lastName.length < 51 &&
-        /^[a-zA-Z\s'-]+$/.test(lastName) &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(lastName) &&
         /^\+?[0-9]{6,20}$/.test(phone)
     );
     updateFields({ emailNanny: event.target.value });

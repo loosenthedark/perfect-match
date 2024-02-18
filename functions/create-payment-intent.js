@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   // console.log(event);
 
   if (event.body) {
-    const { payment_amount, email } = JSON.parse(event.body);
+    const { payment_amount, phone, email } = JSON.parse(event.body);
     // console.log(payment_amount);
 
     const calculateOrderAmount = () => {
@@ -23,6 +23,7 @@ exports.handler = async function (event, context) {
         amount: calculateOrderAmount(),
         currency: "eur",
         metadata: {
+          user_phone: phone,
           user_email: email,
         },
       });

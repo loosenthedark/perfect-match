@@ -37,7 +37,10 @@ export const AppProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const [CVPath, setCVPath] = useState("");
-  const [userEmailForStripeMetadata, setUserEmailForStripeMetadata] = useState("");
+  const [userEmailForStripeMetadata, setUserEmailForStripeMetadata] =
+    useState("");
+  const [userPhoneForStripeMetadata, setUserPhoneForStripeMetadata] =
+    useState("");
 
   return (
     <AppContext.Provider
@@ -66,6 +69,8 @@ export const AppProvider = ({ children }) => {
         setCVPath,
         userEmailForStripeMetadata,
         setUserEmailForStripeMetadata,
+        userPhoneForStripeMetadata,
+        setUserPhoneForStripeMetadata,
         temporaryOrPermanent,
         setTemporaryOrPermanent,
         partOrFullTime,
