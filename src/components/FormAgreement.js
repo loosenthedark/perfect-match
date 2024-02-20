@@ -196,7 +196,7 @@ const SignedAgreementForm = ({
       const data = await axios.post(
         "/.netlify/functions/create-payment-intent",
         JSON.stringify({
-          payment_amount: 10000,
+          payment_amount: 100,
           email: userEmailForStripeMetadata,
           phone: userPhoneForStripeMetadata,
         })
