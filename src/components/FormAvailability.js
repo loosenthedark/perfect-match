@@ -89,7 +89,6 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         <ScheduleSelector
           id="available"
           selection={availability}
-          startDate={new Date("01-05-2060")}
           dateFormat="ddd"
           numDays={5}
           minTime={8}

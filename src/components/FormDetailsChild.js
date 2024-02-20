@@ -196,7 +196,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
 
   useEffect(() => {
     setInputFieldsChildren(inputFieldsChildrenConfig.slice(0, numberOfKids));
-    console.log(inputFieldsChildren);
     const dobInputGroup = new Date(
       inputFieldsChildren[currentChild - 1]?.dobChild
     );
