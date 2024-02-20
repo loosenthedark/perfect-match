@@ -196,20 +196,24 @@ const ChildDetailsForm = ({ numberOfKids }) => {
 
   useEffect(() => {
     setInputFieldsChildren(inputFieldsChildrenConfig.slice(0, numberOfKids));
+    console.log(inputFieldsChildren);
+    const dobInputGroup = new Date(
+      inputFieldsChildren[currentChild - 1]?.dobChild
+    );
     setIsFormValid(
-      inputFieldsChildren.every(function (inputGroup) {
-        const dobInputGroup = new Date(inputGroup.dobChild);
-        return (
-          inputGroup.nameChild.length > 0 &&
-          inputGroup.nameChild.length < 31 &&
-          /^[#.0-9a-zA-ZÀ-ú\s,-]+$/.test(inputGroup.nameChild) &&
-          dobInputGroup > minDate &&
-          dobInputGroup < maxDate &&
-          (!inputGroup.schoolLocationChild.length ||
-            (inputGroup.schoolLocationChild.length > 1 &&
-              inputGroup.schoolLocationChild.length < 41))
-        );
-      }) && currentChild === parseInt(numberOfKids)
+      currentChild === parseInt(numberOfKids) &&
+        inputFieldsChildren[currentChild - 1]?.nameChild.length > 1 &&
+        inputFieldsChildren[currentChild - 1].nameChild.length < 31 &&
+        /^[a-zA-ZÀ-ú\s'-]+$/.test(
+          inputFieldsChildren[currentChild - 1].nameChild
+        ) &&
+        dobInputGroup > minDate &&
+        dobInputGroup < maxDate &&
+        (!inputFieldsChildren[currentChild - 1].schoolLocationChild.length ||
+          (inputFieldsChildren[currentChild - 1].schoolLocationChild.length >
+            1 &&
+            inputFieldsChildren[currentChild - 1].schoolLocationChild.length <
+              41))
     );
   }, []);
 

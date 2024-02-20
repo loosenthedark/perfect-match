@@ -1,14 +1,15 @@
-import { useGlobalContext } from './Context';
+import { useGlobalContext } from "./Context";
 
 const Hero = () => {
-  const { setToggleApplicationFormParentsModal } = useGlobalContext();
+  const { setToggleParentsOrNannyToggleModal } = useGlobalContext();
 
   return (
     <section className="hero" id="home">
       <div className="hero-banner">
         <h1>
           Let us help you find <br className="hero-line-break-mobile" />
-          your <br className="hero-line-break-tablet" />Perfect Match
+          your <br className="hero-line-break-tablet" />
+          Perfect Match
         </h1>
         <p>
           Perfect Match is Ireland’s newest professional nanny agency. We are
@@ -28,7 +29,7 @@ const Hero = () => {
           <button
             type="button"
             className="btn hero-btn"
-            onClick={() => setToggleApplicationFormParentsModal(true)}
+            onClick={() => setToggleParentsOrNannyToggleModal(true)}
           >
             Apply today
           </button>

@@ -5,6 +5,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [toggleContactFormModal, setToggleContactFormModal] = useState(false);
+  const [toggleParentsOrNannyToggleModal, setToggleParentsOrNannyToggleModal] = useState(false);
   const [toggleApplicationFormNannyModal, setToggleApplicationFormNannyModal] =
     useState(false);
   const [
@@ -49,6 +50,8 @@ export const AppProvider = ({ children }) => {
         setToggleSidebar,
         toggleContactFormModal,
         setToggleContactFormModal,
+        toggleParentsOrNannyToggleModal,
+        setToggleParentsOrNannyToggleModal,
         toggleApplicationFormNannyModal,
         toggleApplicationFormParentsModal,
         setToggleApplicationFormNannyModal,

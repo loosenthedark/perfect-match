@@ -3,7 +3,7 @@ import { useGlobalContext } from "./Context";
 import whatsappBtn from "../images/WhatsAppButtonGreenMedium.svg";
 
 const Footer = () => {
-  const { setToggleContactFormModal, setToggleApplicationFormParentsModal } =
+  const { setToggleContactFormModal, setToggleParentsOrNannyToggleModal } =
     useGlobalContext();
 
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
               <a
                 onClick={
                   link.id === pageLinks.length - 2
-                    ? () => setToggleApplicationFormParentsModal(true)
+                    ? () => setToggleParentsOrNannyToggleModal(true)
                     : null
                 }
                 href={link.id !== pageLinks.length - 2 ? link.href : null}

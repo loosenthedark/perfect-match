@@ -11,6 +11,7 @@ import { faqs } from './data';
 import ApplicationFormParentsModal from './components/ApplicationFormParentsModal';
 import CookieConsent from './components/CookieConsent';
 import { useCookies } from 'react-cookie';
+import ParentsOrNannyToggleModal from './components/ParentsOrNannyToggleModal';
 
 function App() {
   const [cookies] = useCookies(["cookieConsent"]);
@@ -20,6 +21,7 @@ function App() {
       <Navbar />
       <Sidebar />
       <ContactFormModal />
+      <ParentsOrNannyToggleModal />
       <ApplicationFormNannyModal />
       <ApplicationFormParentsModal />
       {!cookies.cookieConsent && <CookieConsent />}

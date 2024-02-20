@@ -384,8 +384,7 @@ const SignedAgreementForm = ({
                 !isAgreementShown || isFinalScreenShown ? "#87879d" : "#666",
               fontSize:
                 !isAgreementShown || isFinalScreenShown ? ".95rem" : ".825rem",
-              lineHeight:
-                !isAgreementShown || isFinalScreenShown ? "1.5625" : "1.4",
+              lineHeight: "1.4",
               marginBottom:
                 !isAgreementShown || isFinalScreenShown ? ".375rem" : ".25rem",
               textAlign:
@@ -405,7 +404,7 @@ const SignedAgreementForm = ({
               style={{
                 color: "#87879d",
                 fontSize: ".95rem",
-                lineHeight: "1.5625",
+                lineHeight: "1.4",
                 textAlign: "center",
               }}
             >
@@ -443,7 +442,7 @@ const SignedAgreementForm = ({
               style={{
                 color: "#87879d",
                 fontSize: ".95rem",
-                lineHeight: "1.5625",
+                lineHeight: "1.4",
                 textAlign: "center",
               }}
             >
