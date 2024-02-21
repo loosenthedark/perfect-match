@@ -11,7 +11,7 @@ function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   return date;
 }
 
-const minDate = addDaysOrMonths(new Date(), 1, "days");
+const minDate = new Date();
 const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
   .toISOString()
   .split("T")[0];
