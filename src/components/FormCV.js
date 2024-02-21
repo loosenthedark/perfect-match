@@ -83,16 +83,33 @@ const CVForm = ({
         value={availability
           .sort((a, b) => new Date(a) - new Date(b))
           .map((timePeriod) => {
-            return timePeriod
-              .toLocaleDateString("en-gb", {
-                weekday: "long",
-                hour: "numeric",
-                hour12: true,
-              })
-              .replace(", ", " @ ")
-              .replace("0 pm", "12 pm")
-              .replace(" am", "am")
-              .replace(" pm", "pm");
+            const today = new Date().toLocaleDateString("en-US", {
+              weekday: "long",
+            });
+            return today === "Monday"
+              ? timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am")
+              : timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am")
+                  .replace("Wednesday", "Monday")
+                  .replace("Thursday", "Tuesday")
+                  .replace("Friday", "Wednesday")
+                  .replace("Saturday", "Thursday")
+                  .replace("Sunday", "Friday");
           })
           .join("\n")}
         name="Availability:"

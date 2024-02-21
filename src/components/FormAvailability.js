@@ -3,6 +3,10 @@ import FormStepWrapper from "./FormStepWrapper";
 import ScheduleSelector from "react-schedule-selector";
 
 const AvailabilityForm = ({ availability, updateFields }) => {
+  const today = new Date().toLocaleDateString("en-US", {
+    weekday: "long",
+  });
+
   const renderCustomDateCell = (time, selected, innerRef) => (
     <div
       style={{
@@ -11,7 +15,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         width: "100%",
         background: selected ? "#ffc8dd" : "#d8d8d8",
         borderRadius: ".125rem",
-        cursor: 'pointer'
+        cursor: "pointer",
       }}
       ref={innerRef}
     ></div>
@@ -45,9 +49,19 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         color: "#87879d",
       }}
     >
-      {date.toLocaleString("en-gb", {
-        weekday: "short",
-      })}
+      {today === "Monday"
+        ? date.toLocaleString("en-gb", {
+            weekday: "short",
+          })
+        : date
+            .toLocaleString("en-gb", {
+              weekday: "short",
+            })
+            .replace("Wed", "Mon")
+            .replace("Thu", "Tue")
+            .replace("Fri", "Wed")
+            .replace("Sat", "Thu")
+            .replace("Sun", "Fri")}
     </div>
   );
 
