@@ -8,7 +8,7 @@ import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const notify = () =>
-  toast("Your child must be at least 3 months old", {
+  toast("Must be between 3 months and 16 years old", {
     className: "toast-position",
     position: "top-center",
     autoClose: 5000,
@@ -18,8 +18,8 @@ const notify = () =>
     draggable: true,
     progress: undefined,
     type: "warning",
-    theme: "colored",
-    transition: Bounce,
+    theme: "light",
+    transition: Bounce
   });
 
 function subtractYearsOrMonths(date, numberOfYearsOrMonths, yearsOrMonths) {
@@ -131,9 +131,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
 
   const handleDobChildChange = (event) => {
     const dob = new Date(event.target.value);
-    if (dob < minDate) {
-      notify();
-    }
     setIsDobChildValid(
       dob > minDate &&
         dob < maxDate &&
@@ -215,6 +212,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
   };
 
   useEffect(() => {
+    notify();
     setInputFieldsChildren(inputFieldsChildrenConfig.slice(0, numberOfKids));
     const dobInputGroup = new Date(
       inputFieldsChildren[currentChild - 1]?.dobChild
