@@ -2235,11 +2235,11 @@ React-Toastify custom styles
 }
 
 .toast-position .Toastify__progress-bar--warning {
-  background: var(--clr-primary-5);
+  background: var(--clr-secondary);
 }
 
 .toast-position {
   svg {
-    fill: var(--clr-primary-5);
+    fill: var(--clr-secondary);
   }
 }
