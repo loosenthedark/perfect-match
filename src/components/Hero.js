@@ -3,12 +3,6 @@ import { useGlobalContext } from "./Context";
 const Hero = () => {
   const { setToggleParentsOrNannyToggleModal } = useGlobalContext();
 
-  const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
-  console.log(today);
-  const newDay = new Date();
-  newDay.setDate(new Date().getDate() - 2);
-  console.log(newDay.toLocaleDateString("en-US", { weekday: "long" }));
-
   return (
     <section className="hero" id="home">
       <div className="hero-banner">

@@ -49,11 +49,18 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         color: "#87879d",
       }}
     >
-      {today === "Monday"
-        ? date.toLocaleString("en-gb", {
-            weekday: "short",
-          })
-        : date
+      {today === "Tuesday"
+        ? date
+            .toLocaleString("en-gb", {
+              weekday: "short",
+            })
+            .replace("Tue", "Mon")
+            .replace("Wed", "Tue")
+            .replace("Thu", "Wed")
+            .replace("Fri", "Thu")
+            .replace("Sat", "Fri")
+        : today === "Wednesday"
+        ? date
             .toLocaleString("en-gb", {
               weekday: "short",
             })
@@ -61,7 +68,50 @@ const AvailabilityForm = ({ availability, updateFields }) => {
             .replace("Thu", "Tue")
             .replace("Fri", "Wed")
             .replace("Sat", "Thu")
-            .replace("Sun", "Fri")}
+            .replace("Sun", "Fri")
+        : today === "Thursday"
+        ? date
+            .toLocaleString("en-gb", {
+              weekday: "short",
+            })
+            .replace("Thu", "Mon")
+            .replace("Fri", "Tue")
+            .replace("Sat", "Wed")
+            .replace("Sun", "Thu")
+            .replace("Mon", "Fri")
+        : today === "Friday"
+        ? date
+            .toLocaleString("en-gb", {
+              weekday: "short",
+            })
+            .replace("Fri", "Mon")
+            .replace("Sat", "Tue")
+            .replace("Sun", "Wed")
+            .replace("Mon", "Thu")
+            .replace("Tue", "Fri")
+        : today === "Saturday"
+        ? date
+            .toLocaleString("en-gb", {
+              weekday: "short",
+            })
+            .replace("Sat", "Mon")
+            .replace("Sun", "Tue")
+            .replace("Mon", "Wed")
+            .replace("Tue", "Thu")
+            .replace("Wed", "Fri")
+        : today === "Sunday"
+        ? date
+            .toLocaleString("en-gb", {
+              weekday: "short",
+            })
+            .replace("Sun", "Mon")
+            .replace("Mon", "Tue")
+            .replace("Tue", "Wed")
+            .replace("Wed", "Thu")
+            .replace("Thu", "Fri")
+        : date.toLocaleString("en-gb", {
+            weekday: "short",
+          })}
     </div>
   );
 

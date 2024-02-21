@@ -86,7 +86,7 @@ const CVForm = ({
             const today = new Date().toLocaleDateString("en-US", {
               weekday: "long",
             });
-            return today === "Monday"
+            return today === "Tuesday"
               ? timePeriod
                   .toLocaleDateString("en-gb", {
                     weekday: "long",
@@ -96,7 +96,13 @@ const CVForm = ({
                   .replace(", ", " @ ")
                   .replace("0 pm", "12 pm")
                   .replace(" am", "am")
-              : timePeriod
+                  .replace("Tuesday", "Monday")
+                  .replace("Wednesday", "Tuesday")
+                  .replace("Thursday", "Wednesday")
+                  .replace("Friday", "Thursday")
+                  .replace("Saturday", "Friday")
+              : today === "Wednesday"
+              ? timePeriod
                   .toLocaleDateString("en-gb", {
                     weekday: "long",
                     hour: "numeric",
@@ -109,7 +115,76 @@ const CVForm = ({
                   .replace("Thursday", "Tuesday")
                   .replace("Friday", "Wednesday")
                   .replace("Saturday", "Thursday")
-                  .replace("Sunday", "Friday");
+                  .replace("Sunday", "Friday")
+              : today === "Thursday"
+              ? timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am")
+                  .replace("Thursday", "Monday")
+                  .replace("Friday", "Tuesday")
+                  .replace("Saturday", "Wednesday")
+                  .replace("Sunday", "Thursday")
+                  .replace("Monday", "Friday")
+              : today === "Friday"
+              ? timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am")
+                  .replace("Friday", "Monday")
+                  .replace("Saturday", "Tuesday")
+                  .replace("Sunday", "Wednesday")
+                  .replace("Monday", "Thursday")
+                  .replace("Tuesday", "Friday")
+              : today === "Saturday"
+              ? timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am")
+                  .replace("Saturday", "Monday")
+                  .replace("Sunday", "Tuesday")
+                  .replace("Monday", "Wednesday")
+                  .replace("Tuesday", "Thursday")
+                  .replace("Wednesday", "Friday")
+              : today === "Sunday"
+              ? timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am")
+                  .replace("Sunday", "Monday")
+                  .replace("Monday", "Tuesday")
+                  .replace("Tuesday", "Wednesday")
+                  .replace("Wednesday", "Thursday")
+                  .replace("Thursday", "Friday")
+              : timePeriod
+                  .toLocaleDateString("en-gb", {
+                    weekday: "long",
+                    hour: "numeric",
+                    hour12: true,
+                  })
+                  .replace(", ", " @ ")
+                  .replace("0 pm", "12 pm")
+                  .replace(" am", "am");
           })
           .join("\n")}
         name="Availability:"
