@@ -4,6 +4,23 @@ import { useState } from "react";
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect } from "react";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const notify = () =>
+  toast("Your child must be at least 3 months old", {
+    className: "toast-position",
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    type: "warning",
+    theme: "colored",
+    transition: Bounce,
+  });
 
 function subtractYearsOrMonths(date, numberOfYearsOrMonths, yearsOrMonths) {
   if (yearsOrMonths === "years") {
@@ -114,6 +131,9 @@ const ChildDetailsForm = ({ numberOfKids }) => {
 
   const handleDobChildChange = (event) => {
     const dob = new Date(event.target.value);
+    if (dob < minDate) {
+      notify();
+    }
     setIsDobChildValid(
       dob > minDate &&
         dob < maxDate &&
@@ -247,7 +267,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
           ? "Child Details"
           : "Child #" + currentChild + " Details"}
       </h3>
-
+      <ToastContainer />
       {inputFieldsChildren.map((inputGroup, index) => {
         return (
           <div

@@ -2223,3 +2223,13 @@ input:checked+.slider::before {
   padding: 10px;
   object-fit: contain;
 }
+
+/*
+=============== 
+React-Toastify custom styles
+===============
+*/
+
+.toast-position {
+  top: 3.75rem;
+}
