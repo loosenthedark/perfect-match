@@ -18,7 +18,7 @@ const notify = () =>
     draggable: true,
     progress: undefined,
     type: "warning",
-    theme: "light",
+    theme: "dark",
     transition: Bounce
   });
 
