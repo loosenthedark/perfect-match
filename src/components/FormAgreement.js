@@ -843,10 +843,10 @@ const SignedAgreementForm = ({
                 gap: ".5rem",
               }}
             >
-              <label htmlFor="agreed" className="switch">
+              <label htmlFor="toggle__form-agreement" className="switch">
                 <input
                   checked={isAgreementChecked}
-                  id="agreed"
+                  id="toggle__form-agreement"
                   type="checkbox"
                   onChange={(e) => setIsAgreementChecked(e.target.checked)}
                 />

@@ -129,7 +129,7 @@ const ParentsOrNannyToggleModal = () => {
               }}
             >
               <label
-                htmlFor="agreed"
+                htmlFor="toggle__parents-or-nanny"
                 className="switch"
                 style={{
                   flex: 1,
@@ -141,7 +141,7 @@ const ParentsOrNannyToggleModal = () => {
                     setIsNanny(e.target.checked);
                     setIsParent(!e.target.checked);
                   }}
-                  id="agreed"
+                  id="toggle__parents-or-nanny"
                   type="checkbox"
                 />
                 <span
