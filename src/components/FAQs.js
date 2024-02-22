@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import FAQ from './FAQ';
-import { FiPlus, FiMinus } from 'react-icons/fi';
+import { useState } from "react";
+import FAQ from "./FAQ";
+import { FiPlus, FiMinus } from "react-icons/fi";
+import { useGlobalContext } from "./Context";
 
 const FAQs = ({ faqs }) => {
+  const { setToggleContactFormModal } = useGlobalContext();
   const [expandedQuestion, setExpandedQuestion] = useState(null);
   const handleSetExpandedQuestion = (id) => {
     setExpandedQuestion(id);
@@ -28,7 +30,7 @@ const FAQs = ({ faqs }) => {
             <div className="question">
               <header
                 className={
-                  faqs.length + 1 !== expandedQuestion && 'not-expanded'
+                  faqs.length + 1 !== expandedQuestion && "not-expanded"
                 }
               >
                 <h5>How can I apply?</h5>
@@ -49,18 +51,24 @@ const FAQs = ({ faqs }) => {
               </header>
               {faqs.length + 1 === expandedQuestion && (
                 <p>
-                  Once you have <a href="#home">made initial contact</a> with
-                  us, we will phone you for a chat and, if you wish to proceed,
-                  we will ask you to fill out a simple online form outlining
-                  your requirements. We will then arrange our visit to your home
-                  at a time of your choosing.
+                  Once you have{" "}
+                  <button
+                    className="question-btn"
+                    onClick={() => setToggleContactFormModal(true)}
+                  >
+                    made initial contact
+                  </button>{" "}
+                  with us, we will phone you for a chat and, if you wish to
+                  proceed, we will ask you to fill out a simple online form
+                  outlining your requirements. We will then arrange our visit to
+                  your home at a time of your choosing.
                 </p>
               )}
             </div>
             <div className="question">
               <header
                 className={
-                  faqs.length + 2 !== expandedQuestion && 'not-expanded'
+                  faqs.length + 2 !== expandedQuestion && "not-expanded"
                 }
               >
                 <h5>What if I'm not happy with my nanny?</h5>
@@ -87,7 +95,7 @@ const FAQs = ({ faqs }) => {
                   remain available to you and your nanny for the duration of
                   their employment, should you need any advice or to discuss any
                   concerns you might have. For more information on replacement
-                  nannies and refunds please see our{' '}
+                  nannies and refunds please see our{" "}
                   <a
                     href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions"
                     target="_blank"

@@ -86,96 +86,369 @@ const CVForm = ({
             const today = new Date().toLocaleDateString("en-US", {
               weekday: "long",
             });
+            const todayStringified = timePeriod.toLocaleString("en-gb", {
+              weekday: "long",
+            });
             return today === "Tuesday"
-              ? timePeriod
-                  .toLocaleDateString("en-gb", {
-                    weekday: "long",
-                    hour: "numeric",
-                    hour12: true,
-                  })
-                  .replace(", ", " @ ")
-                  .replace("0 pm", "12 pm")
-                  .replace(" am", "am")
-                  .replace("Tuesday", "Monday")
-                  .replace("Wednesday", "Tuesday")
-                  .replace("Thursday", "Wednesday")
-                  .replace("Friday", "Thursday")
-                  .replace("Saturday", "Friday")
+              ? todayStringified === "Tuesday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Tuesday", "Monday")
+                : todayStringified === "Wednesday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Wednesday", "Tuesday")
+                : todayStringified === "Thursday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Thursday", "Wednesday")
+                : todayStringified === "Friday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Friday", "Thursday")
+                : timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Saturday", "Friday")
               : today === "Wednesday"
-              ? timePeriod
-                  .toLocaleDateString("en-gb", {
-                    weekday: "long",
-                    hour: "numeric",
-                    hour12: true,
-                  })
-                  .replace(", ", " @ ")
-                  .replace("0 pm", "12 pm")
-                  .replace(" am", "am")
-                  .replace("Wednesday", "Monday")
-                  .replace("Thursday", "Tuesday")
-                  .replace("Friday", "Wednesday")
-                  .replace("Saturday", "Thursday")
-                  .replace("Sunday", "Friday")
+              ? todayStringified === "Wednesday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Wednesday", "Monday")
+                : todayStringified === "Thursday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Thursday", "Tuesday")
+                : todayStringified === "Friday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Friday", "Wednesday")
+                : todayStringified === "Friday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Saturday", "Thursday")
+                : timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Sunday", "Friday")
               : today === "Thursday"
-              ? timePeriod
-                  .toLocaleDateString("en-gb", {
-                    weekday: "long",
-                    hour: "numeric",
-                    hour12: true,
-                  })
-                  .replace(", ", " @ ")
-                  .replace("0 pm", "12 pm")
-                  .replace(" am", "am")
-                  .replace("Thursday", "Monday")
-                  .replace("Friday", "Tuesday")
-                  .replace("Saturday", "Wednesday")
-                  .replace("Sunday", "Thursday")
-                  .replace("Monday", "Friday")
+              ? todayStringified === "Thursday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Thursday", "Monday")
+                : todayStringified === "Friday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Friday", "Tuesday")
+                : todayStringified === "Saturday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Saturday", "Wednesday")
+                : todayStringified === "Sunday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Sunday", "Thursday")
+                : timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Monday", "Friday")
               : today === "Friday"
-              ? timePeriod
-                  .toLocaleDateString("en-gb", {
-                    weekday: "long",
-                    hour: "numeric",
-                    hour12: true,
-                  })
-                  .replace(", ", " @ ")
-                  .replace("0 pm", "12 pm")
-                  .replace(" am", "am")
-                  .replace("Friday", "Monday")
-                  .replace("Saturday", "Tuesday")
-                  .replace("Sunday", "Wednesday")
-                  .replace("Monday", "Thursday")
-                  .replace("Tuesday", "Friday")
+              ? todayStringified === "Friday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Friday", "Monday")
+                : todayStringified === "Saturday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Saturday", "Tuesday")
+                : todayStringified === "Sunday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Sunday", "Wednesday")
+                : todayStringified === "Monday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Monday", "Thursday")
+                : timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Tuesday", "Friday")
               : today === "Saturday"
-              ? timePeriod
-                  .toLocaleDateString("en-gb", {
-                    weekday: "long",
-                    hour: "numeric",
-                    hour12: true,
-                  })
-                  .replace(", ", " @ ")
-                  .replace("0 pm", "12 pm")
-                  .replace(" am", "am")
-                  .replace("Saturday", "Monday")
-                  .replace("Sunday", "Tuesday")
-                  .replace("Monday", "Wednesday")
-                  .replace("Tuesday", "Thursday")
-                  .replace("Wednesday", "Friday")
+              ? todayStringified === "Saturday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Saturday", "Monday")
+                : todayStringified === "Sunday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Sunday", "Tuesday")
+                : todayStringified === "Monday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Monday", "Wednesday")
+                : todayStringified === "Tuesday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Tuesday", "Thursday")
+                : timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Wednesday", "Friday")
               : today === "Sunday"
-              ? timePeriod
-                  .toLocaleDateString("en-gb", {
-                    weekday: "long",
-                    hour: "numeric",
-                    hour12: true,
-                  })
-                  .replace(", ", " @ ")
-                  .replace("0 pm", "12 pm")
-                  .replace(" am", "am")
-                  .replace("Sunday", "Monday")
-                  .replace("Monday", "Tuesday")
-                  .replace("Tuesday", "Wednesday")
-                  .replace("Wednesday", "Thursday")
-                  .replace("Thursday", "Friday")
+              ? todayStringified === "Sunday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Sunday", "Monday")
+                : todayStringified === "Monday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Monday", "Tuesday")
+                : todayStringified === "Tuesday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Tuesday", "Wednesday")
+                : todayStringified === "Wednesday"
+                ? timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Wednesday", "Thursday")
+                : timePeriod
+                    .toLocaleDateString("en-gb", {
+                      weekday: "long",
+                      hour: "numeric",
+                      hour12: true,
+                    })
+                    .replace(", ", " @ ")
+                    .replace("0 pm", "12 pm")
+                    .replace(" am", "am")
+                    .replace(" pm", "pm")
+                    .replace("Thursday", "Friday")
               : timePeriod
                   .toLocaleDateString("en-gb", {
                     weekday: "long",
@@ -184,7 +457,8 @@ const CVForm = ({
                   })
                   .replace(", ", " @ ")
                   .replace("0 pm", "12 pm")
-                  .replace(" am", "am");
+                  .replace(" am", "am")
+                  .replace(" pm", "pm");
           })
           .join("\n")}
         name="Availability:"

@@ -84,7 +84,18 @@ const Sidebar = () => {
       <ul className="social-links">
         {socialLinks.map((link) => {
           const { id, href, name } = link;
-          return (
+          return name === "twitter" ? (
+            <li key={id}>
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                <i
+                  className={"fa-brands fa-x-" + name}
+                  style={{
+                    minWidth: "1.5rem",
+                  }}
+                ></i>
+              </a>
+            </li>
+          ) : (
             <li key={id}>
               <a href={href} target="_blank" rel="noopener noreferrer">
                 <i

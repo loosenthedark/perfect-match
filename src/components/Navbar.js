@@ -91,7 +91,18 @@ const Navbar = () => {
         <ul className="nav-icons">
           {socialLinks.map((link) => {
             const { id, href, name } = link;
-            return (
+            return name === "twitter" ? (
+              <li key={id}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="nav-icon"
+                >
+                  <i className={"fa-brands fa-x-" + name}></i>
+                </a>
+              </li>
+            ) : (
               <li key={id}>
                 <a
                   href={href}

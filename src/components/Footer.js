@@ -106,6 +106,8 @@ const Footer = () => {
               >
                 {id === socialLinks.length ? (
                   <img src={whatsappBtn} alt="WhatsApp button" />
+                ) : name === "twitter" ? (
+                  <i className={"fa-brands fa-x-" + name}></i>
                 ) : (
                   <i className={"fab fa-" + name}></i>
                 )}

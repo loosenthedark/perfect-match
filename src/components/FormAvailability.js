@@ -42,78 +42,83 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     </div>
   );
 
-  const renderCustomDateLabel = (date) => (
-    <div
-      style={{
-        fontSize: ".75rem",
-        color: "#87879d",
-      }}
-    >
-      {today === "Tuesday"
-        ? date
-            .toLocaleString("en-gb", {
+  const renderCustomDateLabel = (date) => {
+    const todayStringifiedShort = date.toLocaleString("en-gb", {
+      weekday: "short",
+    });
+    return (
+      <div
+        style={{
+          fontSize: ".75rem",
+          color: "#87879d",
+        }}
+      >
+        {today === "Tuesday"
+          ? todayStringifiedShort === "Tue"
+            ? "Mon"
+            : todayStringifiedShort === "Wed"
+            ? "Tue"
+            : todayStringifiedShort === "Thu"
+            ? "Wed"
+            : todayStringifiedShort === "Fri"
+            ? "Thu"
+            : "Fri"
+          : today === "Wednesday"
+          ? todayStringifiedShort === "Wed"
+            ? "Mon"
+            : todayStringifiedShort === "Thu"
+            ? "Tue"
+            : todayStringifiedShort === "Fri"
+            ? "Wed"
+            : todayStringifiedShort === "Sat"
+            ? "Thu"
+            : "Fri"
+          : today === "Thursday"
+          ? todayStringifiedShort === "Thu"
+            ? "Mon"
+            : todayStringifiedShort === "Fri"
+            ? "Tue"
+            : todayStringifiedShort === "Sat"
+            ? "Wed"
+            : todayStringifiedShort === "Sun"
+            ? "Thu"
+            : "Fri"
+          : today === "Friday"
+          ? todayStringifiedShort === "Fri"
+            ? "Mon"
+            : todayStringifiedShort === "Sat"
+            ? "Tue"
+            : todayStringifiedShort === "Sun"
+            ? "Wed"
+            : todayStringifiedShort === "Mon"
+            ? "Thu"
+            : "Fri"
+          : today === "Saturday"
+          ? todayStringifiedShort === "Sat"
+            ? "Mon"
+            : todayStringifiedShort === "Sun"
+            ? "Tue"
+            : todayStringifiedShort === "Mon"
+            ? "Wed"
+            : todayStringifiedShort === "Tue"
+            ? "Thu"
+            : "Fri"
+          : today === "Sunday"
+          ? todayStringifiedShort === "Sun"
+            ? "Mon"
+            : todayStringifiedShort === "Mon"
+            ? "Tue"
+            : todayStringifiedShort === "Tue"
+            ? "Wed"
+            : todayStringifiedShort === "Wed"
+            ? "Thu"
+            : "Fri"
+          : date.toLocaleString("en-gb", {
               weekday: "short",
-            })
-            .replace("Tue", "Mon")
-            .replace("Wed", "Tue")
-            .replace("Thu", "Wed")
-            .replace("Fri", "Thu")
-            .replace("Sat", "Fri")
-        : today === "Wednesday"
-        ? date
-            .toLocaleString("en-gb", {
-              weekday: "short",
-            })
-            .replace("Wed", "Mon")
-            .replace("Thu", "Tue")
-            .replace("Fri", "Wed")
-            .replace("Sat", "Thu")
-            .replace("Sun", "Fri")
-        : today === "Thursday"
-        ? date
-            .toLocaleString("en-gb", {
-              weekday: "short",
-            })
-            .replace("Thu", "Mon")
-            .replace("Fri", "Tue")
-            .replace("Sat", "Wed")
-            .replace("Sun", "Thu")
-            .replace("Mon", "Fri")
-        : today === "Friday"
-        ? date
-            .toLocaleString("en-gb", {
-              weekday: "short",
-            })
-            .replace("Fri", "Mon")
-            .replace("Sat", "Tue")
-            .replace("Sun", "Wed")
-            .replace("Mon", "Thu")
-            .replace("Tue", "Fri")
-        : today === "Saturday"
-        ? date
-            .toLocaleString("en-gb", {
-              weekday: "short",
-            })
-            .replace("Sat", "Mon")
-            .replace("Sun", "Tue")
-            .replace("Mon", "Wed")
-            .replace("Tue", "Thu")
-            .replace("Wed", "Fri")
-        : today === "Sunday"
-        ? date
-            .toLocaleString("en-gb", {
-              weekday: "short",
-            })
-            .replace("Sun", "Mon")
-            .replace("Mon", "Tue")
-            .replace("Tue", "Wed")
-            .replace("Wed", "Thu")
-            .replace("Thu", "Fri")
-        : date.toLocaleString("en-gb", {
-            weekday: "short",
-          })}
-    </div>
-  );
+            })}
+      </div>
+    );
+  };
 
   const handleChange = (newAvailability) => {
     updateFields({ availability: newAvailability });

@@ -192,7 +192,7 @@ p {
 
 @media screen and (min-width: 992px) {
   h1 {
-    font-size: 3vw;
+    font-size: clamp(30px, 3vw, 52px);
     margin-bottom: 3vw;
   }
 
@@ -201,7 +201,7 @@ p {
   }
 
   h3 {
-    font-size: 1.1111vw;
+    font-size: clamp(12px, 1.11111vw, 20px);
   }
 
   h5 {
@@ -469,8 +469,8 @@ Hero
     min-height: 100vh;
     /* background-image: url(./images//image-hero-left__alt.png), url(./images/image-hero-right__alt.png); */
     /* background-position: 0 33%, 100% 40%; */
-    background-size: 35%;
-    background-position-y: 6rem;
+    background-size: clamp(350px, 33vw, 620px);
+    background-position-y: clamp(96px, 13vh, 13vh);
     padding-bottom: unset;
     align-items: flex-start;
   }
@@ -484,8 +484,8 @@ Hero
   }
 
   .hero-banner p {
-    max-width: 50vw;
-    font-size: 1.25vw;
+    max-width: clamp(496px, 50vw, 800px);
+    font-size: clamp(14px, 1.25vw, 20px);
     line-height: 1.44;
   }
 
@@ -494,9 +494,9 @@ Hero
   }
 
   .hero-btn {
-    padding-top: 1.05vw;
+    padding-top: clamp(11px, 1.05vw, 18px);
     padding-bottom: 1.05vw;
-    font-size: 1.11111vw;
+    font-size: clamp(12px, 1.11111vw, 20px);
     font-weight: 900;
     background: var(--clr-primary-5);
     color: var(--clr-white);
@@ -505,7 +505,7 @@ Hero
   }
 
   .hero-btn.hero-btn__secondary {
-    width: 11.3888889vw;
+    width: clamp(134px, 13.4vw, 248px);
   }
 
   .hero-btn:hover {
@@ -684,7 +684,7 @@ About
   }
 
   .about-info p {
-    font-size: 1.25vw;
+    font-size: clamp(14px, 1.25vw, 20px);
     line-height: 1.44;
     max-width: 49vw;
     margin-bottom: 1.1111vw;
@@ -833,7 +833,7 @@ Services
 
   .service-text {
     max-width: unset;
-    font-size: 1.25vw;
+    font-size: clamp(14px, 1.25vw, 20px);
     margin-bottom: 1.3888888889vw;
   }
 
@@ -943,6 +943,16 @@ FAQs
   fill: var(--clr-secondary);
 }
 
+.question p .question-btn {
+  display: inline;
+  padding: 0;
+  border: 0;
+  font-size: 1rem;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-500);
+  border-radius: unset;
+}
+
 @media screen and (min-width: 768px) {
   .questions-wrapper {
     flex-direction: row;
@@ -988,6 +998,10 @@ FAQs
   }
 
   .about-info.about-info__faqs p {
+    font-size: 1.075vw;
+  }
+
+  .question p .question-btn {
     font-size: 1.075vw;
   }
 }
@@ -1110,11 +1124,11 @@ Footer
   }
 
   .footer-links:last-child .footer-link {
-    font-size: 1.111111111111vw;
+    font-size: clamp(12px, 1.11111vw, 20px);
   }
 
   .footer-nav-contact {
-    font-size: 1.25vw;
+    font-size: clamp(14px, 1.25vw, 20px);
   }
 
   .footer-nav-contact a:hover {
@@ -1238,10 +1252,10 @@ Navbar
 
   .nav-link {
     padding: 0 0;
-    font-size: 1.388888889vw;
+    font-size: clamp(14px, 1.4vw, 20px);
     margin-right: 1vw;
     margin-left: 1vw;
-    width: 9vw;
+    width: clamp(90px, 9vw, 140px);
     border: none;
     background: none;
     font-family: var(--ff-primary);
@@ -1265,7 +1279,7 @@ Navbar
   .nav-icon {
     margin-right: 0.777777778vw;
     color: var(--clr-primary-5);
-    font-size: 1.675vw;
+    font-size: clamp(18px, 1.675vw, 28px);
     transition: var(--transition);
     min-width: 1.340625rem;
     display: inline-block;
@@ -2176,52 +2190,6 @@ input:checked+.slider::before {
   .slider-wrapper>.slider-label-additional.slider-label-confirm {
     width: 5rem;
   }
-}
-
-/* signature pad - styles adapted from https://www.commoninja.com/blog/how-to-build-a-digital-signature-pad-in-react#Building-a-Digital-Signature-Pad */
-
-.sigPadContainer {
-  background-color: rgb(238, 235, 235);
-  padding: 0 10px 10px;
-}
-
-.sigCanvas {
-  width: 100%;
-  height: 200px;
-}
-
-.sigPadContainer hr {
-  margin-bottom: unset;
-  background-color: gainsboro;
-}
-
-.sigPadContainer button {
-  border: none;
-  margin-left: auto;
-  color: rgb(78, 75, 75);
-  padding: 0;
-  display: block;
-  margin-top: 5px;
-}
-
-.sigPadContainer button:hover {
-  background-color: unset;
-  color: black;
-}
-
-.modal__bottom .create {
-  margin-left: 10px;
-  background-color: rgb(126, 119, 119);
-  color: white;
-}
-
-​ .signature {
-  width: 200px;
-  height: 70px;
-  margin-top: 20px;
-  box-shadow: 0 0 4px 2px gainsboro;
-  padding: 10px;
-  object-fit: contain;
 }
 
 /*
