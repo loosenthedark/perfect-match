@@ -53,8 +53,9 @@ const Footer = () => {
           <i
             className="fas fa-phone"
             style={{
-              marginRight: ".25rem",
-              fontSize: "1rem",
+              position: "relative",
+              top: ".125rem",
+              marginRight: 0
             }}
           ></i>{" "}
           +353 89 264 4059
@@ -72,10 +73,8 @@ const Footer = () => {
             <i
               className="fas fa-envelope"
               style={{
-                marginRight: ".5rem",
-                fontSize: "1rem",
                 position: "relative",
-                top: ".0625rem",
+                top: ".125rem",
               }}
             ></i>
             perfectmatchnanny@gmail.com
@@ -89,8 +88,6 @@ const Footer = () => {
             <li
               style={{
                 width: id === socialLinks.length ? "100%" : "18vw",
-                maxWidth: id === socialLinks.length ? "auto" : "5rem",
-                marginBottom: "1rem",
               }}
               key={id}
             >
@@ -101,7 +98,6 @@ const Footer = () => {
                 className="footer-icon"
                 style={{
                   width: id === socialLinks.length ? "50vw" : "auto",
-                  maxWidth: id === socialLinks.length ? "14rem" : "auto",
                 }}
               >
                 {id === socialLinks.length ? (
