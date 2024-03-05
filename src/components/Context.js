@@ -5,7 +5,8 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [toggleContactFormModal, setToggleContactFormModal] = useState(false);
-  const [toggleParentsOrNannyToggleModal, setToggleParentsOrNannyToggleModal] = useState(false);
+  const [toggleParentsOrNannyToggleModal, setToggleParentsOrNannyToggleModal] =
+    useState(false);
   const [toggleApplicationFormNannyModal, setToggleApplicationFormNannyModal] =
     useState(false);
   const [
@@ -42,6 +43,9 @@ export const AppProvider = ({ children }) => {
     useState("");
   const [userPhoneForStripeMetadata, setUserPhoneForStripeMetadata] =
     useState("");
+  const [isParent, setIsParent] = useState(true);
+  const [isNanny, setIsNanny] = useState(false);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
   return (
     <AppContext.Provider
@@ -112,6 +116,12 @@ export const AppProvider = ({ children }) => {
         setIsLoading,
         message,
         setMessage,
+        isParent,
+        setIsParent,
+        isNanny,
+        setIsNanny,
+        currentStepIndex,
+        setCurrentStepIndex,
       }}
     >
       {children}

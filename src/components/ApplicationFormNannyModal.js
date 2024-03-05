@@ -41,10 +41,19 @@ const ApplicationFormNannyModal = () => {
     toggleApplicationFormNannyModal,
     setToggleApplicationFormNannyModal,
     isFormValid,
+    setPermitChecked,
+    setLicenceChecked,
+    setCarChecked,
+    setExperienceChecked,
+    setQualificationsChecked,
+    setEmployedChecked,
+    setIsNanny,
+    setIsParent,
+    currentStepIndex,
+    setCurrentStepIndex
   } = useGlobalContext();
 
   const {
-    currentStepIndex,
     currentStep,
     goToPrev,
     goToNext,
@@ -64,14 +73,28 @@ const ApplicationFormNannyModal = () => {
     <CVForm {...formData} updateFields={updateFormFields} />,
   ]);
 
+  const handleFormReset = () => {
+    setFormData(INITIAL_FORM_DATA);
+    setPermitChecked(false);
+    setLicenceChecked(false);
+    setCarChecked(false);
+    setExperienceChecked(false);
+    setQualificationsChecked(false);
+    setEmployedChecked(false);
+    setIsNanny(false);
+    setIsParent(true);
+    setCurrentStepIndex(0);
+  };
+
   const handleSubmit = (event) => {
     if (!isLastStep) {
       event.preventDefault();
       goToNext();
     } else {
       setTimeout(() => {
+        handleFormReset();
         setToggleApplicationFormNannyModal(false);
-      }, 4000);
+      }, 3000);
     }
   };
 
@@ -100,7 +123,10 @@ const ApplicationFormNannyModal = () => {
         {/* end progress bar */}
         <button
           className="close-modal-btn close-modal-btn__application-form"
-          onClick={() => setToggleApplicationFormNannyModal(false)}
+          onClick={() => {
+            setToggleApplicationFormNannyModal(false);
+            handleFormReset();
+          }}
         >
           <GrFormClose />
         </button>

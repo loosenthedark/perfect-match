@@ -50,27 +50,46 @@ const ApplicationFormParentsModal = () => {
     toggleStripeCheckout,
     stripeCheckout,
     setStripePaymentSubmitted,
+    currentStepIndex,
+    setCurrentStepIndex,
+    setHowManyKids,
+    setTemporaryOrPermanent,
+    setPartOrFullTime,
+    setLiveInOrOut,
+    setDriver,
+    setOwnCar,
+    setNonSmoker,
+    setCooking,
+    setIsAgreementChecked,
   } = useGlobalContext();
 
-  const {
-    currentStepIndex,
-    currentStep,
-    goToPrev,
-    goToNext,
-    isFirstStep,
-    isLastStep,
-  } = useMultiStepForm([
-    <ParentDetailsForm {...formData} updateFields={updateFormFields} />,
-    <AddressForm {...formData} updateFields={updateFormFields} />,
-    <ChildrenForm {...formData} updateFields={updateFormFields} />,
-    <ChildDetailsForm numberOfKids={howManyKids} />,
-    <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
-    <AvailabilityForm {...formData} updateFields={updateFormFields} />,
-    <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
-    <AgreementForm {...formData} updateFields={updateFormFields} />,
-  ]);
+  const { currentStep, goToPrev, goToNext, isFirstStep, isLastStep } =
+    useMultiStepForm([
+      <ParentDetailsForm {...formData} updateFields={updateFormFields} />,
+      <AddressForm {...formData} updateFields={updateFormFields} />,
+      <ChildrenForm {...formData} updateFields={updateFormFields} />,
+      <ChildDetailsForm numberOfKids={howManyKids} />,
+      <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
+      <AvailabilityForm {...formData} updateFields={updateFormFields} />,
+      <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
+      <AgreementForm {...formData} updateFields={updateFormFields} />,
+    ]);
 
   const formElRef = useRef();
+
+  const handleFormReset = () => {
+    setFormData(INITIAL_FORM_DATA);
+    setHowManyKids(1);
+    setTemporaryOrPermanent(false);
+    setPartOrFullTime(false);
+    setLiveInOrOut(false);
+    setDriver(false);
+    setOwnCar(false);
+    setNonSmoker(false);
+    setCooking(false);
+    setIsAgreementChecked(false);
+    setCurrentStepIndex(0);
+  };
 
   const handleSubmit = (event) => {
     if (!isLastStep) {
@@ -108,7 +127,7 @@ const ApplicationFormParentsModal = () => {
         style={{
           height: !stripeCheckout ? "66vh" : "auto",
           maxHeight: !stripeCheckout ? "39rem" : "96vh",
-          overflowY: stripeCheckout && "auto"
+          overflowY: stripeCheckout && "auto",
         }}
       >
         {/* progress bar */}
@@ -132,7 +151,10 @@ const ApplicationFormParentsModal = () => {
         {/* end progress bar */}
         <button
           className="close-modal-btn close-modal-btn__application-form"
-          onClick={() => setToggleApplicationFormParentsModal(false)}
+          onClick={() => {
+            setToggleApplicationFormParentsModal(false);
+            handleFormReset();
+          }}
         >
           <GrFormClose />
         </button>

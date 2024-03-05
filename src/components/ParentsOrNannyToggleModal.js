@@ -1,17 +1,17 @@
 import { GrFormClose } from "react-icons/gr";
 import { useGlobalContext } from "./Context";
-import { useState } from "react";
 import { MdChildFriendly, MdFamilyRestroom, MdWoman } from "react-icons/md";
 
 const ParentsOrNannyToggleModal = () => {
-  const [isParent, setIsParent] = useState(true);
-  const [isNanny, setIsNanny] = useState(false);
-
   const {
     toggleParentsOrNannyToggleModal,
     setToggleParentsOrNannyToggleModal,
     setToggleApplicationFormParentsModal,
     setToggleApplicationFormNannyModal,
+    isNanny,
+    setIsNanny,
+    isParent,
+    setIsParent,
   } = useGlobalContext();
 
   return (
