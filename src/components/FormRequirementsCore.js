@@ -16,7 +16,7 @@ const notify = () =>
   toast("Start date must be within the next year", {
     className: "toast-position",
     position: "top-center",
-    autoClose: 5000,
+    autoClose: 50000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
