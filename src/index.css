@@ -1789,7 +1789,7 @@ Contact Form Modal
 
 .form .fixed-height {
   height: 48vh;
-  max-height: 20rem;
+  max-height: 21rem;
 }
 
 .form .fixed-height+div {
