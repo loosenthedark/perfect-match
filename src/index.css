@@ -409,8 +409,11 @@ Hero
       url('./images/main.jpeg') center/cover no-repeat; */
     /* background-image: url('./images/image-hero__tablet__alt.png'); */
     background-size: 64%;
-    background-position-y: 7rem;
-    padding-bottom: 17rem;
+    background-position-y: calc(8rem + 5vh);
+    min-height: 70vh;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-line-break-mobile {
@@ -423,7 +426,7 @@ Hero
 
   .hero-banner {
     padding: 0;
-    margin-top: 35vh;
+    margin-top: 40vh;
   }
 
   .hero-banner p {
@@ -480,8 +483,6 @@ Hero
     background-position-y: 12vh;
     padding-bottom: unset;
     align-items: flex-start;
-    position: relative;
-    z-index: 2;
   }
 
   .hero-banner {
@@ -625,8 +626,15 @@ About
 }
 
 @media screen and (min-width: 768px) {
+  #about {
+    position: relative;
+    top: -6vh;
+  }
+
   .section__about {
+    padding-top: 22vh;
     padding-bottom: 10rem;
+    margin-bottom: -10vh;
   }
 
   /* .about-img-container {
@@ -672,7 +680,6 @@ About
 
 @media screen and (min-width: 992px) {
   #about {
-    position: relative;
     top: -10vh;
   }
 
