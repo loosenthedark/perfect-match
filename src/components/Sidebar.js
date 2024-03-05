@@ -1,7 +1,6 @@
 import { AiOutlineMail } from "react-icons/ai";
 import { pageLinks, socialLinks } from "../data";
 import { useGlobalContext } from "./Context";
-import { useState } from "react";
 
 const Sidebar = () => {
   const {
@@ -10,9 +9,9 @@ const Sidebar = () => {
     setToggleContactFormModal,
     setToggleApplicationFormNannyModal,
     setToggleApplicationFormParentsModal,
+    isApplySubmenuShown,
+    setIsApplySubmenuShown,
   } = useGlobalContext();
-
-  const [isApplySubmenuShown, setIsApplySubmenuShown] = useState(false);
 
   return (
     <aside className={toggleSidebar ? "sidebar show-sidebar" : "sidebar"}>
@@ -60,9 +59,9 @@ const Sidebar = () => {
                   id === pageLinks.length - 2
                     ? () => setIsApplySubmenuShown(!isApplySubmenuShown)
                     : id === pageLinks.length - 1
-                    ? () => setToggleApplicationFormNannyModal(true)
-                    : id === pageLinks.length
                     ? () => setToggleApplicationFormParentsModal(true)
+                    : id === pageLinks.length
+                    ? () => setToggleApplicationFormNannyModal(true)
                     : () => {
                         setToggleSidebar(false);
                         setIsApplySubmenuShown(false);

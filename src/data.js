@@ -35,14 +35,14 @@ export const pageLinks = [
   {
     id: 5,
     href: "#home",
-    text: "Nanny",
-    icon: <AiOutlineUserAdd />,
+    text: "Parents",
+    icon: <AiOutlineUsergroupAdd />,
   },
   {
     id: 6,
     href: "#home",
-    text: "Parents",
-    icon: <AiOutlineUsergroupAdd />,
+    text: "Nanny",
+    icon: <AiOutlineUserAdd />,
   },
 ];
 

@@ -45,6 +45,7 @@ export const AppProvider = ({ children }) => {
     useState("");
   const [isParent, setIsParent] = useState(true);
   const [isNanny, setIsNanny] = useState(false);
+  const [isApplySubmenuShown, setIsApplySubmenuShown] = useState(false);
 
   return (
     <AppContext.Provider
@@ -119,6 +120,8 @@ export const AppProvider = ({ children }) => {
         setIsParent,
         isNanny,
         setIsNanny,
+        isApplySubmenuShown,
+        setIsApplySubmenuShown
       }}
     >
       {children}

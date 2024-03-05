@@ -11,7 +11,7 @@ const notify = () =>
   toast("Must be between 3 months and 16 years old", {
     className: "toast-position",
     position: "top-left",
-    autoClose: 50000,
+    autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,

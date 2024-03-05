@@ -485,14 +485,13 @@ const CVForm = ({
       </h3>
       <div
         style={{
-          height: "17.5vh",
-          width: "17.5vh",
           marginLeft: "auto",
           marginRight: "auto",
           marginBottom: "2vh",
           backgroundImage: "url(" + logoBackground + ")",
           backgroundSize: "cover",
         }}
+        className="bg-cv"
       ></div>
       <div className="form-row">
         <label

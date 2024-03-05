@@ -8,6 +8,7 @@ const Navbar = () => {
     setToggleContactFormModal,
     setToggleApplicationFormNannyModal,
     setToggleApplicationFormParentsModal,
+    setIsApplySubmenuShown,
   } = useGlobalContext();
   return (
     <nav className="navbar">
@@ -19,7 +20,10 @@ const Navbar = () => {
             id="nav-toggle"
             onClick={
               toggleSidebar
-                ? () => setToggleSidebar(false)
+                ? () => {
+                    setIsApplySubmenuShown(false);
+                    setToggleSidebar(false);
+                  }
                 : () => setToggleSidebar(true)
             }
           >
@@ -58,12 +62,12 @@ const Navbar = () => {
                             onClick={
                               link.id === pageLinks.length - 1
                                 ? () => {
-                                    setToggleApplicationFormNannyModal(true);
-                                    setToggleApplicationFormParentsModal(false);
-                                  }
-                                : () => {
                                     setToggleApplicationFormParentsModal(true);
                                     setToggleApplicationFormNannyModal(false);
+                                  }
+                                : () => {
+                                    setToggleApplicationFormNannyModal(true);
+                                    setToggleApplicationFormParentsModal(false);
                                   }
                             }
                           >
