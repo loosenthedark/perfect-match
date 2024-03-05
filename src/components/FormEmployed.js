@@ -1,6 +1,7 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
+import { Slide, ToastContainer, toast } from "react-toastify";
 
 function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   if (daysOrMonths === "days") {
@@ -10,6 +11,21 @@ function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   }
   return date;
 }
+
+const notify = () =>
+  toast("Start date must be within the next year", {
+    className: "toast-position",
+    position: "top-center",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    type: "warning",
+    theme: "dark",
+    transition: Slide
+  });
 
 const minDate = new Date();
 const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
@@ -46,6 +62,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
   };
 
   useEffect(() => {
+    notify();
     const startDateData = new Date(startDate);
     setIsFormValid(
       startDateData > minDate &&
@@ -66,6 +83,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
       >
         Your Availability
       </h3>
+      <ToastContainer />
       <div className="form-row">
         <div className="label-q">
           <span
