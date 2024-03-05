@@ -15,7 +15,7 @@ function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
 const notify = () =>
   toast("Start date must be within the next year", {
     className: "toast-position",
-    position: "top-center",
+    position: "top-left",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
