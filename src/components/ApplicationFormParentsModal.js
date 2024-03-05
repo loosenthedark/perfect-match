@@ -43,6 +43,7 @@ const ApplicationFormParentsModal = () => {
     howManyKids,
     isAgreementShown,
     isFormValid,
+    setIsFormValid,
     isAgreementChecked,
     stripePaymentSubmitted,
     isFinalScreenShown,
@@ -50,8 +51,6 @@ const ApplicationFormParentsModal = () => {
     toggleStripeCheckout,
     stripeCheckout,
     setStripePaymentSubmitted,
-    currentStepIndex,
-    setCurrentStepIndex,
     setHowManyKids,
     setTemporaryOrPermanent,
     setPartOrFullTime,
@@ -60,20 +59,28 @@ const ApplicationFormParentsModal = () => {
     setOwnCar,
     setNonSmoker,
     setCooking,
-    setIsAgreementChecked,
+    setIsAgreementChecked
   } = useGlobalContext();
 
-  const { currentStep, goToPrev, goToNext, isFirstStep, isLastStep } =
-    useMultiStepForm([
-      <ParentDetailsForm {...formData} updateFields={updateFormFields} />,
-      <AddressForm {...formData} updateFields={updateFormFields} />,
-      <ChildrenForm {...formData} updateFields={updateFormFields} />,
-      <ChildDetailsForm numberOfKids={howManyKids} />,
-      <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
-      <AvailabilityForm {...formData} updateFields={updateFormFields} />,
-      <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
-      <AgreementForm {...formData} updateFields={updateFormFields} />,
-    ]);
+  const {
+    currentStepIndex,
+    // eslint-disable-next-line no-unused-vars
+    setCurrentStepIndex,
+    currentStep,
+    goToPrev,
+    goToNext,
+    isFirstStep,
+    isLastStep,
+  } = useMultiStepForm([
+    <ParentDetailsForm {...formData} updateFields={updateFormFields} />,
+    <AddressForm {...formData} updateFields={updateFormFields} />,
+    <ChildrenForm {...formData} updateFields={updateFormFields} />,
+    <ChildDetailsForm numberOfKids={howManyKids} />,
+    <CoreRequirementsForm {...formData} updateFields={updateFormFields} />,
+    <AvailabilityForm {...formData} updateFields={updateFormFields} />,
+    <OtherRequirementsForm {...formData} updateFields={updateFormFields} />,
+    <AgreementForm {...formData} updateFields={updateFormFields} />,
+  ]);
 
   const formElRef = useRef();
 
@@ -88,7 +95,6 @@ const ApplicationFormParentsModal = () => {
     setNonSmoker(false);
     setCooking(false);
     setIsAgreementChecked(false);
-    setCurrentStepIndex(0);
   };
 
   const handleSubmit = (event) => {
@@ -109,6 +115,14 @@ const ApplicationFormParentsModal = () => {
       }, 4000);
     }
   }, [stripePaymentSubmitted]);
+
+  useEffect(() => {
+    if(toggleApplicationFormParentsModal && currentStepIndex) {
+      setCurrentStepIndex(0);
+      setIsFormValid(false);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toggleApplicationFormParentsModal]);
 
   return (
     <div
@@ -152,8 +166,8 @@ const ApplicationFormParentsModal = () => {
         <button
           className="close-modal-btn close-modal-btn__application-form"
           onClick={() => {
-            setToggleApplicationFormParentsModal(false);
             handleFormReset();
+            setToggleApplicationFormParentsModal(false);
           }}
         >
           <GrFormClose />

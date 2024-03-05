@@ -6,7 +6,7 @@ import AddressForm from "./FormAddress";
 import EligibilityFormNationality from "./FormEligibilityNationality";
 import EligibilityFormDriving from "./FormEligibilityDriving";
 import ExperienceForm from "./FormExperience";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formNannySteps } from "../data";
 import AvailabilityForm from "./FormAvailability";
 import EmployedForm from "./FormEmployed";
@@ -40,7 +40,6 @@ const ApplicationFormNannyModal = () => {
   const {
     toggleApplicationFormNannyModal,
     setToggleApplicationFormNannyModal,
-    isFormValid,
     setPermitChecked,
     setLicenceChecked,
     setCarChecked,
@@ -49,11 +48,13 @@ const ApplicationFormNannyModal = () => {
     setEmployedChecked,
     setIsNanny,
     setIsParent,
-    currentStepIndex,
-    setCurrentStepIndex
+    isFormValid,
+    setIsFormValid
   } = useGlobalContext();
 
   const {
+    currentStepIndex,
+    setCurrentStepIndex,
     currentStep,
     goToPrev,
     goToNext,
@@ -83,7 +84,6 @@ const ApplicationFormNannyModal = () => {
     setEmployedChecked(false);
     setIsNanny(false);
     setIsParent(true);
-    setCurrentStepIndex(0);
   };
 
   const handleSubmit = (event) => {
@@ -97,6 +97,14 @@ const ApplicationFormNannyModal = () => {
       }, 3000);
     }
   };
+
+  useEffect(() => {
+    if(toggleApplicationFormNannyModal && currentStepIndex) {
+      setCurrentStepIndex(0);
+      setIsFormValid(false);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toggleApplicationFormNannyModal]);
 
   return (
     <div
@@ -124,8 +132,8 @@ const ApplicationFormNannyModal = () => {
         <button
           className="close-modal-btn close-modal-btn__application-form"
           onClick={() => {
-            setToggleApplicationFormNannyModal(false);
             handleFormReset();
+            setToggleApplicationFormNannyModal(false);
           }}
         >
           <GrFormClose />

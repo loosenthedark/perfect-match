@@ -45,7 +45,6 @@ export const AppProvider = ({ children }) => {
     useState("");
   const [isParent, setIsParent] = useState(true);
   const [isNanny, setIsNanny] = useState(false);
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
   return (
     <AppContext.Provider
@@ -120,8 +119,6 @@ export const AppProvider = ({ children }) => {
         setIsParent,
         isNanny,
         setIsNanny,
-        currentStepIndex,
-        setCurrentStepIndex,
       }}
     >
       {children}
