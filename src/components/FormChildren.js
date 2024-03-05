@@ -1,5 +1,5 @@
 import FormStepWrapper from './FormStepWrapper';
-import logoBackground from '../../public/images/perfect-match-logo_square_no-text.png';
+import logoBackground from 'public-folder/images/perfect-match-logo_square_no-text.png';
 import { useGlobalContext } from './Context';
 
 const ChildrenForm = ({ numberOfChildren, updateFields }) => {
