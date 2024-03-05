@@ -69,7 +69,9 @@ const ApplicationFormNannyModal = () => {
       event.preventDefault();
       goToNext();
     } else {
-      setToggleApplicationFormNannyModal(false);
+      setTimeout(() => {
+        setToggleApplicationFormNannyModal(false);
+      }, 4000);
     }
   };
 
