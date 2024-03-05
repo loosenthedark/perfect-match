@@ -68,6 +68,8 @@ const ApplicationFormNannyModal = () => {
     if (!isLastStep) {
       event.preventDefault();
       goToNext();
+    } else {
+      toggleApplicationFormNannyModal(false);
     }
   };
 
