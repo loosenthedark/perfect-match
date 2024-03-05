@@ -1922,8 +1922,8 @@ Contact Form Modal
 
 @media screen and (min-width: 768px) {
   .form {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     margin-bottom: 2vh;
     padding-top: 1vh;
   }
@@ -2136,7 +2136,10 @@ Application Form Modals
   color: var(--clr-grey);
   letter-spacing: var(--spacing-slightly-reduced);
   font-size: 1.125rem;
-  top: -5vh;
+  top: 2.4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
 }
 
 @media screen and (min-width: 768px) {
@@ -2156,7 +2159,7 @@ Application Form Modals
   }
 
   .progress-bar__parents li {
-    font-size: .65rem;
+    font-size: .71rem;
   }
 
   .progress-bar li::before {
@@ -2329,6 +2332,22 @@ input:checked+.slider::before {
 
 /*
 =============== 
+Parents or Nanny Toggle Modal
+===============
+*/
+
+.form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny h5 {
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny h5 {
+    font-size: clamp(28px, 2.75vw, 46px);
+  }
+}
+
+/*
+=============== 
 React-Toastify custom styles
 ===============
 */
@@ -2344,5 +2363,23 @@ React-Toastify custom styles
 .toast-position {
   svg {
     fill: var(--clr-primary-5);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Toastify .Toastify__toast-container--top-center {
+    top: 3.75rem;
+    padding: 0;
+    width: 100vw;
+  }
+
+  .Toastify .Toastify__toast-container--top-center .toast-position {
+    top: unset;
+    border-radius: 0;
+  }
+
+  .Toastify .Toastify__toast-container--top-center .toast-position .Toastify__progress-bar--wrp,
+  .Toastify .Toastify__toast-container--top-center .toast-position .Toastify__progress-bar--wrp .Toastify__progress-bar {
+    border-bottom-left-radius: 0;
   }
 }

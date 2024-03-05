@@ -168,7 +168,6 @@ const ContactFormModal = () => {
         <h3
           className="form-heading"
           style={{
-            width: "100%",
             lineHeight: "1.5",
             marginTop: "1rem",
             marginBottom: "0",

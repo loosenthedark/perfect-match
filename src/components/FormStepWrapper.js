@@ -15,7 +15,6 @@ const FormStepWrapper = ({ title, children }) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          position: "relative",
         }}
         className={!title && !stripeCheckout ? "fixed-height" : ""}
       >

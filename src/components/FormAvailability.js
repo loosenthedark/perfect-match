@@ -132,7 +132,6 @@ const AvailabilityForm = ({ availability, updateFields }) => {
         className="form-heading"
         style={{
           position: "absolute",
-          width: "100%",
           lineHeight: "1.5",
         }}
       >

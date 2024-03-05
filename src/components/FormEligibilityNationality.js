@@ -10,9 +10,7 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
       <h3
         className="form-heading"
         style={{
-          position: 'absolute',
-          width: '100%',
-         
+          position: 'absolute',         
           lineHeight: '1.5',
         }}
       >

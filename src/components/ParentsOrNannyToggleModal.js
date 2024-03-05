@@ -33,10 +33,10 @@ const ParentsOrNannyToggleModal = () => {
         }}
       >
         <div
-          className="form-row form-row__additional-requirements form-row__agreement"
+          className="form-row form-row__additional-requirements form-row__agreement form-row__parents-or-nanny"
           style={{
             padding: "3vh 1.5rem 0",
-            margin: "3vh auto 1vh",
+            margin: "3vh auto 1.75vh",
           }}
         >
           {
@@ -52,8 +52,8 @@ const ParentsOrNannyToggleModal = () => {
           }
           <h5
             style={{
-              fontSize: "1.5rem",
-              color: "#102a42",
+              fontWeight: "900",
+              color: "#28283d",
               marginBottom: ".375rem",
               display: "block",
             }}

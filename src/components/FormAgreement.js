@@ -679,7 +679,6 @@ const SignedAgreementForm = ({
         className="form-heading"
         style={{
           position: "absolute",
-          width: "100%",
           lineHeight: "1.5",
           visibility:
             isAgreementShown && !isFinalScreenShown ? "visible" : "hidden",
