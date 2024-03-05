@@ -171,6 +171,8 @@ const ContactFormModal = () => {
             lineHeight: "1.5",
             marginTop: "1rem",
             marginBottom: "0",
+            width: "unset",
+            transform: "unset"
           }}
         >
           Contact us
