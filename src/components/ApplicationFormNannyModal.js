@@ -69,7 +69,7 @@ const ApplicationFormNannyModal = () => {
       event.preventDefault();
       goToNext();
     } else {
-      toggleApplicationFormNannyModal(false);
+      setToggleApplicationFormNannyModal(false);
     }
   };
 
