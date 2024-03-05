@@ -4,13 +4,13 @@ import { useState } from "react";
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect } from "react";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+import { Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const notify = () =>
   toast("Must be between 3 months and 16 years old", {
     className: "toast-position",
-    position: "top-center",
+    position: "top-left",
     autoClose: 50000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -19,7 +19,7 @@ const notify = () =>
     progress: undefined,
     type: "warning",
     theme: "dark",
-    transition: Bounce
+    transition: Slide
   });
 
 function subtractYearsOrMonths(date, numberOfYearsOrMonths, yearsOrMonths) {

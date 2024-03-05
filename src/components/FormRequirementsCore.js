@@ -1,7 +1,7 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+import { Slide, ToastContainer, toast } from "react-toastify";
 
 function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   if (daysOrMonths === "days") {
@@ -15,8 +15,8 @@ function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
 const notify = () =>
   toast("Start date must be within the next year", {
     className: "toast-position",
-    position: "top-center",
-    autoClose: 50000,
+    position: "top-left",
+    autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -24,7 +24,7 @@ const notify = () =>
     progress: undefined,
     type: "warning",
     theme: "dark",
-    transition: Bounce
+    transition: Slide
   });
 
 const minDate = new Date();
