@@ -155,16 +155,7 @@ const ContactFormModal = () => {
         toggleContactFormModal ? "modal-overlay show-modal" : "modal-overlay"
       }
     >
-      <div
-        className="modal-container modal-container__application-form"
-        style={{
-          top: "1.875rem",
-          height: "unset",
-          maxHeight: "unset",
-          gridTemplateColumns: "unset",
-          paddingLeft: "unset",
-        }}
-      >
+      <div className="modal-container modal-container__application-form modal-container__contact-form">
         <h3
           className="form-heading"
           style={{
@@ -172,7 +163,7 @@ const ContactFormModal = () => {
             marginTop: "1rem",
             marginBottom: "0",
             width: "unset",
-            transform: "unset"
+            transform: "unset",
           }}
         >
           Contact us
