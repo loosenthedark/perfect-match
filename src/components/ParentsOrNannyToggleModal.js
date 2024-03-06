@@ -43,18 +43,16 @@ const ParentsOrNannyToggleModal = () => {
             <MdChildFriendly
               color="#ffb3d0"
               style={{
-                width: "4rem",
-                height: "4rem",
-                marginBottom: ".5rem",
+                marginBottom: ".25rem",
                 transform: "scaleX(-1)",
               }}
+              className="icon-pram"
             />
           }
           <h5
             style={{
               fontWeight: "900",
               color: "#28283d",
-              marginBottom: ".375rem",
               display: "block",
             }}
           >
@@ -63,9 +61,7 @@ const ParentsOrNannyToggleModal = () => {
           <p
             style={{
               color: "#87879d",
-              fontSize: ".95rem",
               lineHeight: "1.4",
-              marginBottom: ".375rem",
               textAlign: "center",
             }}
           >
@@ -74,9 +70,7 @@ const ParentsOrNannyToggleModal = () => {
           <p
             style={{
               color: "#87879d",
-              fontSize: ".95rem",
               lineHeight: "1.4",
-              marginBottom: ".375rem",
               textAlign: "center",
             }}
           >
@@ -85,7 +79,6 @@ const ParentsOrNannyToggleModal = () => {
           <p
             style={{
               color: "#87879d",
-              fontSize: ".95rem",
               lineHeight: "1.4",
               textAlign: "center",
               marginBottom: ".5rem",
@@ -113,10 +106,10 @@ const ParentsOrNannyToggleModal = () => {
               <MdFamilyRestroom
                 color="#87879d"
                 style={{
-                  width: "2.5rem",
-                  height: "2.5rem",
                   marginRight: ".375rem",
+                  marginBottom: 0,
                 }}
+                className="icon-family"
               />
             </span>
             <div
@@ -161,9 +154,9 @@ const ParentsOrNannyToggleModal = () => {
               <MdWoman
                 color="#87879d"
                 style={{
-                  width: "2.5rem",
-                  height: "2.5rem",
+                  marginBottom: 0,
                 }}
+                className="icon-nanny"
               />
             </span>
             <button
