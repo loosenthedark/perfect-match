@@ -59,7 +59,8 @@ const ApplicationFormParentsModal = () => {
     setOwnCar,
     setNonSmoker,
     setCooking,
-    setIsAgreementChecked
+    setIsAgreementChecked,
+    setIsAgreementShown,
   } = useGlobalContext();
 
   const {
@@ -95,6 +96,8 @@ const ApplicationFormParentsModal = () => {
     setNonSmoker(false);
     setCooking(false);
     setIsAgreementChecked(false);
+    setIsAgreementShown(false);
+    setIsFinalScreenShown(false);
   };
 
   const handleSubmit = (event) => {
@@ -117,11 +120,11 @@ const ApplicationFormParentsModal = () => {
   }, [stripePaymentSubmitted]);
 
   useEffect(() => {
-    if(toggleApplicationFormParentsModal && currentStepIndex) {
+    if (toggleApplicationFormParentsModal && currentStepIndex) {
       setCurrentStepIndex(0);
       setIsFormValid(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleApplicationFormParentsModal]);
 
   return (
@@ -222,7 +225,8 @@ const ApplicationFormParentsModal = () => {
                 style={{
                   paddingLeft: "1.375rem",
                   paddingRight: "1.375rem",
-                  width: "13rem",
+                  width: "14rem",
+                  fontSize: "15px",
                   opacity: !isAgreementChecked ? ".625" : 1,
                   display:
                     !stripeCheckout && stripePaymentSubmitted

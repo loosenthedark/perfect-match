@@ -13,19 +13,24 @@ function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
 }
 
 const notify = () =>
-  toast("Start date must be within the next year", {
-    className: "toast-position",
-    position: "top-left",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    type: "warning",
-    theme: "dark",
-    transition: Slide
-  });
+  toast(
+    window.innerWidth > 767
+      ? "Your preferred start date must be within the next year"
+      : "Start date must be within the next year",
+    {
+      className: "toast-position",
+      position: "top-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      type: "warning",
+      theme: "dark",
+      transition: Slide,
+    }
+  );
 
 const minDate = new Date();
 const minDateStringified = addDaysOrMonths(new Date(), 1, "days")

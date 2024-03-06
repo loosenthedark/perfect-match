@@ -689,50 +689,26 @@ const SignedAgreementForm = ({
       {!stripeCheckout ? (
         <div className="form-row form-row__additional-requirements form-row__agreement">
           {!isAgreementShown ? (
-            <LuFileSignature
-              color="#ffb3d0"
-              style={{
-                width: "2.5rem",
-                height: "2.5rem",
-                marginBottom: ".75rem",
-              }}
-            />
+            <LuFileSignature color="#ffb3d0" />
           ) : !isFinalScreenShown ? (
             <div
+              className="img-wrapper"
               style={{
                 backgroundImage: "url(" + logoBackground + ")",
-                height: "10vh",
-                width: "10vh",
                 backgroundSize: "cover",
                 marginLeft: "auto",
                 marginRight: "auto",
-                marginBottom: "2vh",
               }}
             ></div>
           ) : !stripePaymentSubmitted ? (
-            <FaCcStripe
-              color="#ffb3d0"
-              style={{
-                width: "4rem",
-                height: "auto",
-                marginBottom: ".25rem",
-              }}
-            />
+            <FaCcStripe color="#ffb3d0" className="icon-stripe" />
           ) : (
-            <LuHeartHandshake
-              color="#ffb3d0"
-              style={{
-                width: "2.5rem",
-                height: "2.5rem",
-                marginBottom: ".75rem",
-              }}
-            />
+            <LuHeartHandshake color="#ffb3d0" />
           )}
           <h5
             style={{
-              fontSize: "1.5rem",
               color: "#102a42",
-              marginBottom: ".375rem",
+              fontWeight: 900,
               display:
                 isAgreementShown && !isFinalScreenShown ? "none" : "block",
             }}
@@ -744,17 +720,11 @@ const SignedAgreementForm = ({
               : "Thank you!"}
           </h5>
           <p
-            style={{
-              color:
-                !isAgreementShown || isFinalScreenShown ? "#87879d" : "#666",
-              fontSize:
-                !isAgreementShown || isFinalScreenShown ? ".95rem" : ".825rem",
-              lineHeight: "1.4",
-              marginBottom:
-                !isAgreementShown || isFinalScreenShown ? ".375rem" : ".25rem",
-              textAlign:
-                !isAgreementShown || isFinalScreenShown ? "center" : "left",
-            }}
+            className={
+              !isAgreementShown || isFinalScreenShown
+                ? "agreement-text"
+                : "agreement-text__alt"
+            }
           >
             {!isAgreementShown
               ? "Thanks for joining our agency. We look forward to working with you and finding your Perfect Match."
@@ -765,26 +735,12 @@ const SignedAgreementForm = ({
               : "We have received your application details and will be in contact with you soon."}
           </p>
           {!isAgreementShown ? (
-            <p
-              style={{
-                color: "#87879d",
-                fontSize: ".95rem",
-                lineHeight: "1.4",
-                textAlign: "center",
-              }}
-            >
+            <p className="agreement-text">
               Please read and confirm the following agreement so we can begin
               our search for you and your family...
             </p>
           ) : !isFinalScreenShown ? (
-            <p
-              style={{
-                color: "#666",
-                fontSize: ".825rem",
-                lineHeight: "1.4",
-                textAlign: "left",
-              }}
-            >
+            <p className="agreement-text__alt">
               We confirm that we have read and are in agreement with the{" "}
               <a
                 target="_blank"
@@ -803,14 +759,7 @@ const SignedAgreementForm = ({
               of the agency.
             </p>
           ) : !stripePaymentSubmitted ? (
-            <p
-              style={{
-                color: "#87879d",
-                fontSize: ".95rem",
-                lineHeight: "1.4",
-                textAlign: "center",
-              }}
-            >
+            <p className="agreement-text">
               Please submit a registration fee of €100 (VAT included), which
               will be deducted from our placement fee if you employ one of our
               nannies.
@@ -870,7 +819,7 @@ const SignedAgreementForm = ({
               className="btn hero-btn next-btn btn-secondary btn-confirm"
               onClick={() => setIsAgreementShown(true)}
             >
-              Confirm agreement
+              Read agreement
             </button>
           </div>
         </div>
