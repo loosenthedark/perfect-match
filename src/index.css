@@ -573,6 +573,14 @@ Hero
     max-height: 66px;
   }
 
+  .hero-btn.next-btn.submit-btn {
+    max-width: unset;
+    font-size: clamp(14px, 1.125vw, 20px);
+    padding-top: 1.333vh;
+    padding-bottom: 1.333vh;
+    max-height: 60px;
+  }
+
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement {
     width: 15vw;
   }
@@ -1842,6 +1850,10 @@ Modal
 
   .close-modal-btn {
     font-size: clamp(24px, 2.25vw, 38px);
+  }
+
+  .modal-container.modal-container__application-form.modal-container__contact-form {
+    height: 75vh;
   }
 }
 
