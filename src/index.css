@@ -2748,10 +2748,11 @@ React-Toastify custom styles
   background: var(--clr-primary-5);
 }
 
-.toast-position {
+.Toastify__toast.toast-position {
   svg {
     fill: var(--clr-primary-5);
   }
+  font-family: var(--ff-primary);
 }
 
 @media screen and (min-width: 768px) {
@@ -2778,5 +2779,11 @@ React-Toastify custom styles
 
   .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body>div:last-child {
     flex: unset;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Toastify .Toastify__toast-container--top-left .toast-position {
+    font-size: clamp(14px, 1.111111vw, 18px);
   }
 }
