@@ -1852,6 +1852,8 @@ Modal
 
   .modal-container.modal-container__application-form {
     grid-template-columns: 17vw 1fr;
+    height: 66vh;
+    max-height: 39rem;
   }
 }
 
@@ -1981,13 +1983,17 @@ Contact Form Modal
 .modal-footer-text {
   color: var(--clr-grey-muted);
   font-size: 12px;
-  line-height: 1.91;
+  line-height: 1.5;
   font-weight: var(--fw-500);
 }
 
 .modal-footer-text span {
   font-weight: var(--fw-700);
   color: var(--clr-secondary);
+}
+
+.modal-footer-text.modal-footer-text__application-form br {
+  display: none;
 }
 
 .modal-footer-text.modal-footer-text__application-form span {
@@ -2207,6 +2213,14 @@ Contact Form Modal
   .form-row.form-row__nationality {
     margin-bottom: 5.16vh;
   }
+
+  .modal-footer-text {
+    font-size: .85rem;
+  }
+
+  .modal-footer-text.modal-footer-text__application-form br {
+    display: inline;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -2328,6 +2342,10 @@ Contact Form Modal
   .form-row.form-row__driving-licence,
   .form-row.form-row__permit {
     margin-bottom: 7.74vh;
+  }
+
+  .modal-footer-text {
+    font-size: clamp(0.7rem, 1vw, 1rem);
   }
 }
 

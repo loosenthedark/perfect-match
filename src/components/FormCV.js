@@ -521,12 +521,11 @@ const CVForm = ({
       <p
         className="modal-footer-text modal-footer-text__application-form"
         style={{
-          marginTop: "1vh",
           marginLeft: "4%",
           marginRight: "4%",
         }}
       >
-        By submitting this form, you are agreeing to our{" "}
+        By submitting this form, you are agreeing to our <br />{" "}
         <a
           target="_blank"
           href="https://loosenthedark.tech/perfect-match-nanny-agency/terms-and-conditions/"
