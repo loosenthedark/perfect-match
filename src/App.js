@@ -12,6 +12,7 @@ import ApplicationFormParentsModal from './components/ApplicationFormParentsModa
 import CookieConsent from './components/CookieConsent';
 import { useCookies } from 'react-cookie';
 import ParentsOrNannyToggleModal from './components/ParentsOrNannyToggleModal';
+import ScrollButton from './components/ScrollButton';
 
 function App() {
   const [cookies] = useCookies(["cookieConsent"]);
@@ -29,6 +30,7 @@ function App() {
       <About />
       <Services />
       <FAQs faqs={faqs} />
+      <ScrollButton />
       <Footer />
     </>
   );

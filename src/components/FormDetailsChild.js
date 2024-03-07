@@ -15,7 +15,7 @@ const notify = () =>
     {
       className: "toast-position",
       position: "top-left",
-      autoClose: 50000,
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
