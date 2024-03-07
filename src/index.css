@@ -55,6 +55,7 @@ Variables
   --clr-grey-muted: #bab7d4;
   --clr-off-white: #f2f2f2;
   --clr-off-white-text: #fafafa;
+  --clr-pale-blue-bg: rgb(239, 245, 255);
   --clr-bg-grey: #d8d8d8;
   --clr-secondary: #ffc8dd;
   --clr-secondary-active: #ffb3d0;
@@ -1841,7 +1842,7 @@ Modal
   }
 
   .modal-overlay.show-modal {
-    background: var(--clr-off-white-text);
+    background: var(--clr-pale-blue-bg);
   }
 
   .modal-overlay.show-modal.modal-overlay__cookie-consent {
