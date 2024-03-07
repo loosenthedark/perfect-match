@@ -142,7 +142,7 @@ const AddressForm = ({
           lineHeight: "1.5",
         }}
       >
-        {toggleApplicationFormParentsModal ? "Home Address" : "Your Address"}
+        Your Address
       </h3>
       <div className="form-row">
         <input

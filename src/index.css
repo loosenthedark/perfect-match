@@ -513,8 +513,9 @@ Hero
     font-weight: 900;
     background: var(--clr-primary-5);
     color: var(--clr-white);
-    border-radius: 2vw;
+    border-radius: clamp(28px, 2vw, 38px);
     width: 13.4vw;
+    min-width: 134px;
     max-width: 220px;
     max-height: 66px;
   }
@@ -533,6 +534,11 @@ Hero
 
   .hero-banner p:nth-of-type(3) {
     margin-bottom: 1.5rem;
+  }
+
+  .hero-btn.next-btn,
+  .hero-btn.back-btn {
+    font-size: clamp(11px, 1.11111vw, 18px);
   }
 
   .hero-btn.next-btn:hover,
@@ -565,6 +571,16 @@ Hero
     width: 14vw;
     max-width: 220px;
     max-height: 66px;
+  }
+
+  .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement {
+    width: 15vw;
+  }
+
+  .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
+    width: 17vw;
+    position: relative;
+    top: -5vh;
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm:hover,
@@ -1457,11 +1473,11 @@ Navbar
   }
 
   .nav-icon {
-    margin-right: 0.777777778vw;
+    margin-right: 14px;
     color: var(--clr-primary-5);
     font-size: clamp(18px, 1.675vw, 1.675rem);
     transition: var(--transition);
-    min-width: 1.340625rem;
+    min-width: 1.5rem;
     display: inline-block;
   }
 
@@ -1823,6 +1839,10 @@ Modal
   .modal-overlay.show-modal.modal-overlay__cookie-consent {
     background: rgba(0, 0, 0, 0.5);
   }
+
+  .close-modal-btn {
+    font-size: clamp(24px, 2.25vw, 38px);
+  }
 }
 
 /*
@@ -1907,6 +1927,10 @@ Contact Form Modal
 
 .form-row.form-row__additional-requirements {
   margin-bottom: .75rem;
+}
+
+.form-row.form-row__additional-requirements:first-of-type {
+  margin-top: 1.25rem;
 }
 
 .form-textarea {
@@ -2083,6 +2107,7 @@ Contact Form Modal
   .form-row.form-row__additional-requirements.form-row__agreement .icon-stripe {
     width: 5rem;
     height: auto;
+    margin-bottom: 0;
   }
 
   .form-row.form-row__additional-requirements.form-row__agreement .icon-pram {
@@ -2152,6 +2177,10 @@ Contact Form Modal
   .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt {
     font-size: .95rem;
   }
+
+  .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt:last-of-type {
+    margin-bottom: 0.75vh;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -2177,9 +2206,13 @@ Contact Form Modal
 
   .form-input,
   .form-textarea {
-    font-size: 1.1vw;
-    padding: 0.575vw 1.675vw;
+    font-size: clamp(0.785rem, 1.1vw, 1.143rem);
+    padding-top: clamp(9px, 0.7375vw, 12px);
+    padding-bottom: clamp(9px, 0.7375vw, 12px);
+    padding-left: 1.675vw;
+    padding-right: 1.675vw;
     border-radius: var(--radius);
+    line-height: 1.575;
   }
 
   .form-row {
@@ -2191,14 +2224,28 @@ Contact Form Modal
     padding-bottom: .875rem;
   }
 
+  .form-row.form-row__requirements {
+    margin-bottom: 4.444vh;
+  }
+
   .form-row.form-row__additional-requirements p {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
   }
 
+  .form-row.form-row__additional-requirements:first-of-type {
+    margin-top: 0;
+  }
+
+  .form-row.form-row__additional-requirements.form-row__agreement svg {
+    width: clamp(3.125rem, 4.444vw, 80px);
+    height: clamp(3.125rem, 4.444vw, 80px);
+    margin-bottom: 1.777778vh;
+  }
+
   .form-input.form-input__date {
-    padding-top: .51vw;
-    padding-bottom: .51vw;
+    padding-top: clamp(8px, .66666vw, 11px);
+    padding-bottom: clamp(8px, .66666vw, 11px);
   }
 
   .form-row__cookies {
@@ -2211,14 +2258,41 @@ Contact Form Modal
   }
 
   .form-row.form-row__additional-requirements.form-row__agreement .icon-pram {
-    width: clamp(4.5rem, 7vw, 6.25rem);
-    height: clamp(4.5rem, 7vw, 6.25rem);
+    width: clamp(4rem, 7vw, 6.25rem);
+    height: clamp(4rem, 7vw, 6.25rem);
   }
 
   .form-row.form-row__additional-requirements.form-row__agreement .icon-family,
   .form-row.form-row__additional-requirements.form-row__agreement .icon-nanny {
     width: clamp(3rem, 5.78vh, 4rem);
     height: clamp(3rem, 5.78vh, 4rem);
+  }
+
+  .form-row.form-row__additional-requirements.form-row__agreement h5 {
+    font-size: clamp(25px, 2.375vw, 42px);
+    margin-bottom: 0.88888888889vh;
+  }
+
+  .form-row.form-row__additional-requirements.form-row__agreement .agreement-text {
+    font-size: clamp(14px, 1.25vw, 20px);
+    margin-bottom: 0.88888888889vh;
+  }
+
+  .form-row.form-row__additional-requirements.form-row__agreement {
+    gap: 1.777778vh;
+  }
+
+  .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt {
+    font-size: clamp(12px, 1.11111vw, 18px);
+    margin-bottom: 0.44444vh;
+  }
+
+  .form-row.form-row__additional-requirements {
+    margin-bottom: 3.111111vh;
+  }
+
+  .form-row.form-row__additional-requirements.form-row__agreement .icon-stripe {
+    width: clamp(60px, 5.5vw, 100px);
   }
 }
 
@@ -2351,14 +2425,14 @@ Application Form Modals
     border-radius: var(--radius-increased);
     justify-content: flex-start;
     padding-top: 2.78vw;
-    padding-left: 2.22222vw;
+    padding-left: 1.75vw;
   }
 
   .progress-bar li {
     width: unset;
     float: unset;
     text-align: left;
-    font-size: 1vw;
+    font-size: clamp(11px, .975vw, 1rem);
   }
 
   .progress-bar li::before {
@@ -2384,7 +2458,7 @@ Application Form Modals
     left: unset;
     right: 22.5vw;
     transform: translateX(50%);
-    font-size: 1.5rem;
+    font-size: clamp(18px, 1.666666667vw, 27px);
   }
 }
 
@@ -2510,6 +2584,34 @@ input:checked+.slider::before {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .slider-wrapper>span {
+    font-size: clamp(0.785rem, 1.1vw, 1.143rem);
+  }
+
+  .switch {
+    width: 4.444vw;
+    height: 2.222vw;
+  }
+
+  .slider::before {
+    height: 1.736vw;
+    width: 1.736vw;
+    left: 0.243vw;
+    bottom: 0.243vw;
+  }
+
+  input:checked+.slider::before {
+    -webkit-transform: translateX(2.222vw);
+    -ms-transform: translateX(2.222vw);
+    transform: translateX(2.222vw);
+  }
+
+  .img-wrapper {
+    margin-bottom: 1vh;
+  }
+}
+
 /*
 =============== 
 Parents or Nanny Toggle Modal
@@ -2527,6 +2629,10 @@ Parents or Nanny Toggle Modal
 }
 
 @media screen and (min-width: 768px) {
+  .form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny {
+    gap: .75rem;
+  }
+
   .form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny h5 {
     font-size: 2rem;
     margin-bottom: .5rem;
@@ -2534,12 +2640,13 @@ Parents or Nanny Toggle Modal
 
   .form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny p {
     font-size: 1.125rem;
+    margin-bottom: 0.25rem;
   }
 }
 
 @media screen and (min-width: 992px) {
   .form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny h5 {
-    font-size: clamp(25px, 2.25vw, 42px);
+    font-size: clamp(25px, 2.375vw, 42px);
   }
 
   .form-row.form-row__additional-requirements.form-row__agreement.form-row__parents-or-nanny p {

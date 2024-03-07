@@ -221,12 +221,14 @@ const ApplicationFormParentsModal = () => {
             ) : (
               <button
                 type="submit"
-                className="btn hero-btn next-btn"
+                className={
+                  !isFinalScreenShown
+                    ? "btn hero-btn next-btn"
+                    : !stripeCheckout && !stripePaymentSubmitted
+                    ? "btn hero-btn next-btn btn-secondary btn-confirm btn-read-agreement btn-proceed-to-payment"
+                    : "btn hero-btn next-btn"
+                }
                 style={{
-                  paddingLeft: "1.375rem",
-                  paddingRight: "1.375rem",
-                  width: "14rem",
-                  fontSize: "15px",
                   opacity: !isAgreementChecked ? ".625" : 1,
                   display:
                     !stripeCheckout && stripePaymentSubmitted

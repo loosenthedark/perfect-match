@@ -725,6 +725,15 @@ const SignedAgreementForm = ({
                 ? "agreement-text"
                 : "agreement-text__alt"
             }
+            style={{
+              display: !isAgreementShown
+                ? "block"
+                : !isFinalScreenShown
+                ? "block"
+                : !stripePaymentSubmitted
+                ? "none"
+                : "block",
+            }}
           >
             {!isAgreementShown
               ? "Thanks for joining our agency. We look forward to working with you and finding your Perfect Match."
@@ -816,7 +825,7 @@ const SignedAgreementForm = ({
             }}
           >
             <button
-              className="btn hero-btn next-btn btn-secondary btn-confirm"
+              className="btn hero-btn next-btn btn-secondary btn-confirm btn-read-agreement"
               onClick={() => setIsAgreementShown(true)}
             >
               Read agreement

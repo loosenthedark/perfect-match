@@ -58,7 +58,6 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
       </h3>
       <div
         className="form-row form-row__additional-requirements"
-        style={{ marginTop: "1.25rem" }}
       >
         <div
           className="slider-wrapper"

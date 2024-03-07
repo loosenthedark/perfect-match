@@ -203,12 +203,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           What is your preferred start date?
         </label>
         <input
-          className="form-input"
-          style={{
-            paddingLeft: ".775rem",
-            paddingTop: ".7125rem",
-            paddingBottom: ".7125rem",
-          }}
+          className="form-input form-input__date"
           id="startDate"
           name="startDate"
           min={minDateStringified}
