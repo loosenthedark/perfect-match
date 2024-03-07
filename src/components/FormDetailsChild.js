@@ -354,7 +354,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                 marginTop: "1vh",
                 display: "flex",
                 gap: ".5rem",
-                justifyContent: "flex-end",
+                justifyContent: "space-between",
               }}
             >
               <button

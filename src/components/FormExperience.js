@@ -51,7 +51,7 @@ const ExperienceForm = ({ qualificationDetails, updateFields }) => {
       >
         Your Experience
       </h3>
-      <div className="form-row">
+      <div className="form-row form-row__experience">
         <span
           className="label-q form-input"
           style={{
@@ -86,7 +86,7 @@ const ExperienceForm = ({ qualificationDetails, updateFields }) => {
           <span>YES</span>
         </div>
       </div>
-      <div className="form-row">
+      <div className="form-row form-row__experience">
         <span
           className="label-q form-input"
           style={{

@@ -1,6 +1,6 @@
-import FormStepWrapper from './FormStepWrapper';
-import { nationalities } from '../data';
-import { useGlobalContext } from './Context';
+import FormStepWrapper from "./FormStepWrapper";
+import { nationalities } from "../data";
+import { useGlobalContext } from "./Context";
 
 const EligibilityFormNationality = ({ nationality, updateFields }) => {
   const { permitChecked, setPermitChecked } = useGlobalContext();
@@ -10,28 +10,27 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
       <h3
         className="form-heading"
         style={{
-          position: 'absolute',         
-          lineHeight: '1.5',
+          position: "absolute",
+          lineHeight: "1.5",
         }}
       >
         Your Eligibility
       </h3>
       <div
-        className="form-row"
+        className="form-row form-row__nationality"
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          marginBottom: '2rem',
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <label
           className="form-input"
           htmlFor="nationality"
           style={{
-            borderRadius: 'unset',
-            border: 'unset',
-            marginBottom: '.125rem',
-            paddingLeft: '.75rem',
+            borderRadius: "unset",
+            border: "unset",
+            marginBottom: ".125rem",
+            paddingLeft: ".75rem",
           }}
         >
           What is your nationality?
@@ -51,15 +50,15 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
           })}
         </select>
       </div>
-      <div className="form-row" style={{ marginBottom: '3rem' }}>
+      <div className="form-row form-row__permit">
         <span
           className="label-q form-input"
           style={{
-            borderRadius: 'unset',
-            border: 'unset',
-            paddingLeft: 'unset',
-            paddingRight: 'unset',
-            display: 'block',
+            borderRadius: "unset",
+            border: "unset",
+            paddingLeft: "unset",
+            paddingRight: "unset",
+            display: "block",
           }}
         >
           Do you hold an Irish work permit?
@@ -67,13 +66,13 @@ const EligibilityFormNationality = ({ nationality, updateFields }) => {
         <div
           className="slider-wrapper"
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '.5rem',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: ".5rem",
           }}
         >
-          <span style={{ textAlign: 'right' }}>NO</span>
+          <span style={{ textAlign: "right" }}>NO</span>
           <label htmlFor="permit" className="switch">
             <input
               checked={permitChecked}

@@ -89,7 +89,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
         Your Availability
       </h3>
       <ToastContainer />
-      <div className="form-row">
+      <div className="form-row form-row__permit">
         <div className="label-q">
           <span
             className="label-q form-input"
@@ -127,7 +127,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
           <span>YES</span>
         </div>
       </div>
-      <div className="form-row">
+      <div className="form-row form-row__nationality">
         <label
           htmlFor="start-date"
           className="label-q form-input"
@@ -144,7 +144,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
           What is your earliest available start date?
         </label>
         <input
-          className="form-input"
+          className="form-input form-input__date"
           id="start-date"
           min={minDateStringified}
           max={maxDateStringified}

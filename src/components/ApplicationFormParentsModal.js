@@ -192,7 +192,11 @@ const ApplicationFormParentsModal = () => {
                 isLastStep && (!isAgreementShown || stripeCheckout)
                   ? "none"
                   : "flex",
-              justifyContent: !isFirstStep ? "center" : "flex-end",
+              justifyContent: isLastStep
+                ? "center"
+                : !isFirstStep
+                ? "space-between"
+                : "flex-end",
               gap: ".5rem",
             }}
           >
