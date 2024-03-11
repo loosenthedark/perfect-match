@@ -1,7 +1,7 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
-import logoBackground from "../images/perfect-match-logo_square_no-text.png";
 import { useState } from "react";
+import { TbFileCv } from "react-icons/tb";
 
 const CVForm = ({
   firstName,
@@ -488,11 +488,22 @@ const CVForm = ({
           marginLeft: "auto",
           marginRight: "auto",
           marginBottom: "2vh",
-          backgroundImage: "url(" + logoBackground + ")",
-          backgroundSize: "cover",
+          position: "relative",
         }}
         className="bg-cv"
-      ></div>
+      >
+        <TbFileCv
+          color="#ffc8dd"
+          style={{
+            position: "absolute",
+            left: "8%",
+            top: "16%",
+            width: "84%",
+            height: "84%",
+            strokeWidth: "1.5"
+          }}
+        />
+      </div>
       <div className="form-row">
         <label
           htmlFor="cv-upload"

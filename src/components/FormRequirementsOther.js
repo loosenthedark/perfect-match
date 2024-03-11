@@ -2,7 +2,6 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
-// import logoBackground from '../images/perfect-match-logo_square_no-text.png';
 
 const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
   const [isOtherRequirementsValid, setIsOtherRequirementsValid] =
