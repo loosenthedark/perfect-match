@@ -2113,6 +2113,10 @@ Contact Form Modal
   margin-bottom: 3rem;
 }
 
+.form-row.form-row__experience {
+  margin-bottom: 4vh;
+}
+
 @media screen and (min-width: 768px) {
   .form {
     padding-left: 5rem;
@@ -2625,7 +2629,7 @@ Application Form Modals
 }
 
 .slider-wrapper>.slider-label-additional {
-  width: 6.75rem;
+  width: 7rem;
 }
 
 .slider-wrapper>.slider-label-additional.slider-label-confirm {

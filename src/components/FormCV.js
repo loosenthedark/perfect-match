@@ -496,10 +496,10 @@ const CVForm = ({
           color="#ffc8dd"
           style={{
             position: "absolute",
-            left: "8%",
-            top: "16%",
-            width: "84%",
-            height: "84%",
+            left: "10%",
+            top: "20%",
+            width: "80%",
+            height: "80%",
             strokeWidth: "1.5"
           }}
         />
