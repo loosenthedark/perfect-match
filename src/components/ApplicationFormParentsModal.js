@@ -142,7 +142,12 @@ const ApplicationFormParentsModal = () => {
             : "modal-container modal-container__application-form modal-container__stripe"
         }
         style={{
-          height: !stripeCheckout ? "41.5vw" : "auto",
+          height:
+            !stripeCheckout && window.innerWidth < 992
+              ? "66vh"
+              : !stripeCheckout
+              ? "41.5vw"
+              : "auto",
           maxHeight: !stripeCheckout ? "none" : "96vh",
           overflowY: stripeCheckout && "auto",
         }}
