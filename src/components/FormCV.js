@@ -487,7 +487,6 @@ const CVForm = ({
         style={{
           marginLeft: "auto",
           marginRight: "auto",
-          marginBottom: "2vh",
           position: "relative",
         }}
         className="bg-cv"
