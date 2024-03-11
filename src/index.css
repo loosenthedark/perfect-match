@@ -2071,12 +2071,12 @@ Contact Form Modal
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt {
-  color: var(--clr-black);
+  color: var(--grey-700);
   font-size: .825rem;
   margin-bottom: 0.25rem;
   text-align: left;
   font-style: oblique;
-  font-weight: var(--fw-500);
+  font-weight: var(--fw-600);
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt:last-of-type {
