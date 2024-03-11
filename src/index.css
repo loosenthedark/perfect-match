@@ -1963,6 +1963,10 @@ Contact Form Modal
   margin-bottom: 1rem;
 }
 
+.form-row.form-row__additional-requirements.form-row.form-row__stripe {
+  margin-bottom: 6rem;
+}
+
 .form-row.form-row__additional-requirements:first-of-type {
   margin-top: 1.25rem;
 }
@@ -2052,8 +2056,9 @@ Contact Form Modal
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .icon-stripe {
-  width: 5rem;
+  width: 4.5rem;
   height: auto;
+  margin-bottom: 0;
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .icon-pram {
@@ -2086,7 +2091,7 @@ Contact Form Modal
 .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt {
   color: var(--grey-700);
   font-size: .875rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   text-align: left;
   font-style: oblique;
   font-weight: var(--fw-600);

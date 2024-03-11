@@ -192,7 +192,12 @@ const ApplicationFormParentsModal = () => {
           {currentStep}
           <div
             style={{
-              marginTop: isLastStep ? "0" : "1vh",
+              marginTop:
+                isLastStep && isFinalScreenShown
+                  ? "-5rem"
+                  : isLastStep
+                  ? 0
+                  : "1vh",
               display:
                 isLastStep && (!isAgreementShown || stripeCheckout)
                   ? "none"

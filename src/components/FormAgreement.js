@@ -692,6 +692,10 @@ const SignedAgreementForm = ({
           className={
             !isAgreementShown
               ? "form-row form-row__additional-requirements form-row__agreement form-row__almost-there"
+              : !isFinalScreenShown
+              ? "form-row form-row__additional-requirements form-row__agreement"
+              : !stripePaymentSubmitted
+              ? "form-row form-row__additional-requirements form-row__agreement form-row__stripe"
               : "form-row form-row__additional-requirements form-row__agreement"
           }
         >
