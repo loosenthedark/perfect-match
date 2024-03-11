@@ -1971,7 +1971,7 @@ Contact Form Modal
   margin-top: 1.25rem;
 }
 
-.form-row.form-row__additional-requirements.form-row__agreement:first-of-type {
+.agreement-text__alt + .form-row.form-row__additional-requirements.form-row__agreement {
   margin-top: 1rem;
   margin-bottom: 0;
 }
