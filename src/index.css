@@ -1952,7 +1952,11 @@ Contact Form Modal
 }
 
 .form-row.form-row__requirements {
-  margin-bottom: 1.5rem;
+  margin-bottom: 4vh;
+}
+
+.form-row.form-row__requirements:nth-child(3) {
+  margin-top: 2vh;
 }
 
 .form-row.form-row__additional-requirements {
