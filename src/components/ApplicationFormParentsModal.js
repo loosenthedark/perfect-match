@@ -226,7 +226,6 @@ const ApplicationFormParentsModal = () => {
                 style={{
                   paddingLeft: ".75rem",
                   paddingRight: ".75rem",
-                  width: "calc(50% - .25rem)",
                 }}
                 disabled={!isFormValid}
               >
