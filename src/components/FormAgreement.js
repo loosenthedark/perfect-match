@@ -12,7 +12,8 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
-import { LiaFileContractSolid } from "react-icons/lia";
+// import { LiaFileContractSolid } from "react-icons/lia";
+import { FaHandsHoldingChild } from "react-icons/fa6";
 
 const SignedAgreementForm = ({
   firstNameParent,
@@ -691,7 +692,7 @@ const SignedAgreementForm = ({
           {!isAgreementShown ? (
             <LuFileSignature color="#ffb3d0" />
           ) : !isFinalScreenShown ? (
-            <LiaFileContractSolid color="#87879d" />
+            <FaHandsHoldingChild color="#ffc8dd" />
           ) : !stripePaymentSubmitted ? (
             <FaCcStripe color="#ffb3d0" className="icon-stripe" />
           ) : (
