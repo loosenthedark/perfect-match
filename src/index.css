@@ -2020,6 +2020,7 @@ Contact Form Modal
   font-size: 12px;
   line-height: 1.5;
   font-weight: var(--fw-500);
+  margin-bottom: calc(4vh + 1.25rem);
 }
 
 .modal-footer-text span {
