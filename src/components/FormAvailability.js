@@ -10,7 +10,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
   const renderCustomDateCell = (time, selected, innerRef) => (
     <div
       style={{
-        height: "2.875vh",
+        height: "3vh",
         maxHeight: "1.625rem",
         width: "100%",
         background: selected ? "#ffc8dd" : "#d8d8d8",
