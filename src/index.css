@@ -377,7 +377,7 @@ Hero
 
 .hero-btn.next-btn {
   background: var(--clr-primary-5-active);
-  width: calc(50% - .25rem);
+  width: calc(50% - .0625rem);
 }
 
 .hero-btn.next-btn.btn-secondary,
@@ -387,7 +387,7 @@ Hero
 }
 
 .hero-btn.back-btn {
-  width: calc(50% - .25rem);
+  width: calc(50% - .0625rem);
   box-shadow: unset;
   color: var(--clr-secondary-active);
 }
