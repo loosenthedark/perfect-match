@@ -1,6 +1,5 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
-import logoBackground from "../images/perfect-match-logo_square_no-text.png";
 import { LuFileSignature, LuHeartHandshake } from "react-icons/lu";
 import { FaCcStripe } from "react-icons/fa";
 import styled from "styled-components";
@@ -13,6 +12,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import axios from "axios";
+import { LiaFileContractSolid } from "react-icons/lia";
 
 const SignedAgreementForm = ({
   firstNameParent,
@@ -691,15 +691,7 @@ const SignedAgreementForm = ({
           {!isAgreementShown ? (
             <LuFileSignature color="#ffb3d0" />
           ) : !isFinalScreenShown ? (
-            <div
-              className="img-wrapper"
-              style={{
-                backgroundImage: "url(" + logoBackground + ")",
-                backgroundSize: "cover",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            ></div>
+            <LiaFileContractSolid color="#87879d" />
           ) : !stripePaymentSubmitted ? (
             <FaCcStripe color="#ffb3d0" className="icon-stripe" />
           ) : (

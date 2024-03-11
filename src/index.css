@@ -408,6 +408,10 @@ Hero
   padding-bottom: 0.8rem;
 }
 
+.hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement {
+  width: 184px;
+}
+
 @media screen and (min-width: 768px) {
   .hero {
     /* background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
@@ -2029,9 +2033,14 @@ Contact Form Modal
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement svg {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   margin-bottom: 0.75rem;
+}
+
+.form-row.form-row__additional-requirements.form-row__agreement .icon-stripe {
+  width: 4.5rem;
+  height: auto;
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .icon-pram {
@@ -2148,7 +2157,6 @@ Contact Form Modal
 
   .form-row.form-row__additional-requirements.form-row__agreement .icon-stripe {
     width: 5rem;
-    height: auto;
     margin-bottom: 0;
   }
 
@@ -2615,9 +2623,9 @@ input:focus+.slider {
 }
 
 input:checked+.slider::before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
 }
 
 .slider.round {

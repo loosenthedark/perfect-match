@@ -35,10 +35,10 @@ const ChildrenForm = ({ numberOfChildren, updateFields }) => {
           color="#87879d"
           style={{
             position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100%",
+            left: "10%",
+            top: "20%",
+            width: "80%",
+            height: "80%",
           }}
         />
       </div>
