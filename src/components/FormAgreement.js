@@ -688,7 +688,13 @@ const SignedAgreementForm = ({
         Agreement
       </h3>
       {!stripeCheckout ? (
-        <div className="form-row form-row__additional-requirements form-row__agreement">
+        <div
+          className={
+            !isAgreementShown
+              ? "form-row form-row__additional-requirements form-row__agreement form-row__almost-there"
+              : "form-row form-row__additional-requirements form-row__agreement"
+          }
+        >
           {!isAgreementShown ? (
             <LuFileSignature color="#ffb3d0" />
           ) : !isFinalScreenShown ? (
