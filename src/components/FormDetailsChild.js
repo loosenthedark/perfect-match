@@ -10,8 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 const notify = () =>
   toast(
     window.innerWidth > 767
-      ? "All children should be between 3 months and 16 years old"
-      : "Should be between 3 months and 16 years old",
+      ? "All children must be between 3 months and 16 years old"
+      : "Must be between 3 months and 16 years old",
     {
       className: "toast-position",
       position: "top-left",

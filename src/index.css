@@ -2033,8 +2033,8 @@ Contact Form Modal
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement svg {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -2044,8 +2044,8 @@ Contact Form Modal
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .icon-pram {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .form-row.form-row__additional-requirements.form-row__agreement .icon-family,
@@ -2072,7 +2072,7 @@ Contact Form Modal
 
 .form-row.form-row__additional-requirements.form-row__agreement .agreement-text__alt {
   color: var(--grey-700);
-  font-size: .825rem;
+  font-size: .875rem;
   margin-bottom: 0.25rem;
   text-align: left;
   font-style: oblique;
