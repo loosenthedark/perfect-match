@@ -1963,6 +1963,11 @@ Contact Form Modal
   margin-top: 1.25rem;
 }
 
+.form-row.form-row__additional-requirements.form-row__agreement:first-of-type {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 .form-row.form-row__additional-requirements.form-row.form-row__almost-there {
   margin-bottom: 2rem;
 }
