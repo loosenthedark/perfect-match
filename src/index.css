@@ -2243,6 +2243,10 @@ Contact Form Modal
     padding-right: 7vw;
     width: 45vw;
     max-width: 780px;
+    min-height: calc(39vw - 2rem);
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: end;
   }
 
   .form.form__contact {
@@ -2360,6 +2364,11 @@ Contact Form Modal
 
   .modal-footer-text {
     font-size: clamp(0.7rem, 1vw, 1rem);
+  }
+
+  .form .fixed-height {
+    max-height: none;
+    height: calc(30.5vw - 2rem + 1.4vh);
   }
 }
 
@@ -2491,8 +2500,8 @@ Application Form Modals
     height: calc(100% - 2rem);
     border-radius: var(--radius-increased);
     justify-content: flex-start;
-    padding-top: clamp(24px, 2.78vw, 36px);
-    padding-left: 1.75vw;
+    padding-top: 1.5vw;
+    padding-left: 1.5vw;
     background-position: bottom;
     max-width: 20rem;
   }
@@ -2501,19 +2510,19 @@ Application Form Modals
     width: unset;
     float: unset;
     text-align: left;
-    font-size: clamp(11px, .975vw, 1rem);
+    font-size: clamp(11px, .95vw, 1rem);
     max-height: 54px;
   }
 
   .progress-bar li::before {
     display: inline-block;
     text-align: center;
-    margin-right: 1.11111vw;
+    margin-right: 0.75vw;
     margin-left: 0;
     margin-bottom: 1vw;
     font-size: 1vw;
-    width: clamp(23px, 2.3vw, 38px);
-    line-height: clamp(23px, 2.3vw, 38px);
+    width: clamp(22px, 2vw, 37px);
+    line-height: clamp(22px, 2vw, 37px);
     background: transparent;
     border: 1px solid var(--clr-white);
   }

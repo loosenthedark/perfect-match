@@ -1,6 +1,6 @@
-import FormStepWrapper from './FormStepWrapper';
-import logoBackground from 'public-folder/images/perfect-match-logo_square_no-text.png';
-import { useGlobalContext } from './Context';
+import FormStepWrapper from "./FormStepWrapper";
+import { useGlobalContext } from "./Context";
+import { FaChildren } from "react-icons/fa6";
 
 const ChildrenForm = ({ numberOfChildren, updateFields }) => {
   const { setHowManyKids } = useGlobalContext();
@@ -15,38 +15,48 @@ const ChildrenForm = ({ numberOfChildren, updateFields }) => {
       <h3
         className="form-heading"
         style={{
-          position: 'absolute',
-          lineHeight: '1.5',
+          position: "absolute",
+          lineHeight: "1.5",
         }}
       >
         Your Children
       </h3>
       <div
         style={{
-          height: '17.5vh',
-          width: '17.5vh',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          marginBottom: '2vh',
-          backgroundImage: 'url(' + logoBackground + ')',
-          backgroundSize: 'cover',
+          height: "17.5vh",
+          width: "17.5vh",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginBottom: "2vh",
+          position: "relative",
         }}
-      ></div>
+      >
+        <FaChildren
+          color="#87879d"
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
       <div
         className="form-row"
         style={{
-          display: 'flex',
-          flexDirection: 'column',
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <label
           className="form-input"
           htmlFor="howManyKids"
           style={{
-            borderRadius: 'unset',
-            border: 'unset',
-            marginBottom: '.125rem',
-            paddingLeft: '.75rem',
+            borderRadius: "unset",
+            border: "unset",
+            marginBottom: ".125rem",
+            paddingLeft: ".75rem",
           }}
         >
           How many children do you have?
