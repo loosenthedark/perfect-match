@@ -353,7 +353,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
               style={{
                 marginTop: "1vh",
                 display: "flex",
-                gap: ".5rem",
+                gap: ".125rem",
                 justifyContent: "space-between",
               }}
             >

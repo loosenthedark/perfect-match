@@ -207,7 +207,7 @@ const ApplicationFormParentsModal = () => {
                 : !isFirstStep
                 ? "space-between"
                 : "flex-end",
-              gap: ".5rem",
+              gap: ".125rem",
             }}
           >
             {!isFirstStep && !isLastStep && (
