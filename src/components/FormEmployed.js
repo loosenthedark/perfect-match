@@ -50,7 +50,13 @@ const EmployedForm = ({ startDate, updateFields }) => {
     useGlobalContext();
 
   const handleStartDateChange = (datepickerDate) => {
-    const datepickerDateFormatted = datepickerDate?.toISOString().split("T")[0];
+    const newDatepickerDate = new Date(
+      datepickerDate.getTime() +
+        Math.abs(datepickerDate.getTimezoneOffset() * 60000)
+    );
+    const datepickerDateFormatted = newDatepickerDate
+      ?.toISOString()
+      .split("T")[0];
     setIsStartDateValid(
       datepickerDate > minDate &&
         datepickerDate < maxDate &&
