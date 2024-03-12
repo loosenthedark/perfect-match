@@ -44,7 +44,7 @@ const maxDate = addDaysOrMonths(new Date(), 12, "months");
 
 const EmployedForm = ({ startDate, updateFields }) => {
   const [startDateFromPicker, setStartDateFromPicker] = useState(null);
-    // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars
   const [isStartDateValid, setIsStartDateValid] = useState(false);
   const { employedChecked, setEmployedChecked, setIsFormValid } =
     useGlobalContext();
@@ -162,6 +162,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
           }}
           minDate={new Date().setDate(new Date().getDate() + 1)}
           maxDate={new Date().setDate(new Date().getDate() + 365)}
+          isClearable
         />
         {/* <DatePicker
           dateFormat="dd/MM/yyyy"
