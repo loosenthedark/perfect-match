@@ -152,17 +152,13 @@ const EmployedForm = ({ startDate, updateFields }) => {
           onChange={handleStartDateChange}
         /> */}
         <DatePicker
-          dateFormat="dd/MM/yyyy"
           placeholderText="dd/mm/yyyy"
-          filterDate={(d) => {
-            return d > new Date();
-          }}
           selected={startDate}
           onChange={(date) => {
             handleStartDateChange(date);
           }}
-          minDate={new Date().setDate(new Date().getDate() - 40)}
-          maxDate={new Date().setDate(new Date().getDate() + 40)}
+          minDate={new Date().setDate(new Date().getDate() + 1)}
+          maxDate={new Date().setDate(new Date().getDate() + 365)}
         />
       </div>
     </FormStepWrapper>
