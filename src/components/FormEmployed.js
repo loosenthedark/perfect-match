@@ -43,7 +43,7 @@ const maxDate = addDaysOrMonths(new Date(), 12, "months");
 //   .split("T")[0];
 
 const EmployedForm = ({ startDate, updateFields }) => {
-  const [startDateFromPicker, setStartDateFromPicker] = useState(null);
+  const [startDateFromPicker, setStartDateFromPicker] = useState(startDate);
   // eslint-disable-next-line no-unused-vars
   const [isStartDateValid, setIsStartDateValid] = useState(false);
   const { employedChecked, setEmployedChecked, setIsFormValid } =
