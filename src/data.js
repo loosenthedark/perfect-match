@@ -197,7 +197,7 @@ export const formParentsSteps = [
   },
   {
     id: 7,
-    text: "Other Requirements",
+    text: "Additional Requirements",
   },
   {
     id: 8,

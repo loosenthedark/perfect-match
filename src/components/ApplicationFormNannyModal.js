@@ -49,7 +49,7 @@ const ApplicationFormNannyModal = () => {
     setIsNanny,
     setIsParent,
     isFormValid,
-    setIsFormValid
+    setIsFormValid,
   } = useGlobalContext();
 
   const {
@@ -99,11 +99,11 @@ const ApplicationFormNannyModal = () => {
   };
 
   useEffect(() => {
-    if(toggleApplicationFormNannyModal && currentStepIndex) {
+    if (toggleApplicationFormNannyModal && currentStepIndex) {
       setCurrentStepIndex(0);
       setIsFormValid(false);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleApplicationFormNannyModal]);
 
   return (
@@ -123,7 +123,7 @@ const ApplicationFormNannyModal = () => {
                 key={step.id}
                 className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
-                {step.text}
+                <pre>{step.text.split(" ").join("\n")}</pre>
               </li>
             );
           })}

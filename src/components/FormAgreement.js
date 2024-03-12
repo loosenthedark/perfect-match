@@ -674,7 +674,7 @@ const SignedAgreementForm = ({
       <input
         type="hidden"
         value={otherRequirements}
-        name="Other requirements:"
+        name="Additional requirements:"
       />
       <h3
         className="form-heading"
@@ -685,7 +685,7 @@ const SignedAgreementForm = ({
             isAgreementShown && !isFinalScreenShown ? "visible" : "hidden",
         }}
       >
-        Agreement
+        Your Agreement
       </h3>
       {!stripeCheckout ? (
         <div
@@ -821,8 +821,8 @@ const SignedAgreementForm = ({
             </div>
           </div>
           <div
+            className="container__btn-read-agreement"
             style={{
-              marginTop: "1vh",
               display: !isAgreementShown ? "flex" : "none",
               justifyContent: "center",
             }}

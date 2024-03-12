@@ -22,12 +22,12 @@ const ChildrenForm = ({ numberOfChildren, updateFields }) => {
         Your Children
       </h3>
       <div
+        className="children-container"
         style={{
           height: "17.5vh",
           width: "17.5vh",
           marginLeft: "auto",
           marginRight: "auto",
-          marginBottom: "2vh",
           position: "relative",
         }}
       >
@@ -43,7 +43,7 @@ const ChildrenForm = ({ numberOfChildren, updateFields }) => {
         />
       </div>
       <div
-        className="form-row"
+        className="form-row form-row__children"
         style={{
           display: "flex",
           flexDirection: "column",

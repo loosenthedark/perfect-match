@@ -165,7 +165,7 @@ const ApplicationFormParentsModal = () => {
                 key={step.id}
                 className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
-                {step.text}
+                <pre>{step.text.split(" ").join("\n")}</pre>
               </li>
             );
           })}
@@ -191,13 +191,14 @@ const ApplicationFormParentsModal = () => {
         >
           {currentStep}
           <div
+            className={
+              isLastStep && isFinalScreenShown
+                ? "container__btn move-btn-up"
+                : isLastStep
+                ? "container__btn"
+                : "container__btn move-btn-down"
+            }
             style={{
-              marginTop:
-                isLastStep && isFinalScreenShown
-                  ? "-5rem"
-                  : isLastStep
-                  ? 0
-                  : "1vh",
               display:
                 isLastStep && (!isAgreementShown || stripeCheckout)
                   ? "none"

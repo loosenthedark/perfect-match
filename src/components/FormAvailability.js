@@ -11,7 +11,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     <div
       style={{
         height: "3vh",
-        maxHeight: "1.625rem",
+        maxHeight: "1.875rem",
         width: "100%",
         background: selected ? "#ffc8dd" : "#d8d8d8",
         borderRadius: ".125rem",
@@ -25,11 +25,12 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     <div
       style={{
         width: "100%",
-        fontSize: ".7rem",
-        paddingRight: ".5rem",
+        fontSize: "clamp(11px, 2.66666666667vw, 14px)",
+        paddingRight: ".375rem",
         color: "#87879d",
         display: "flex",
         alignItems: "center",
+        justifyContent: "end"
       }}
     >
       {time
@@ -49,7 +50,7 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     return (
       <div
         style={{
-          fontSize: ".75rem",
+          fontSize: "clamp(12px, 3vw, 15px)",
           color: "#87879d",
         }}
       >
