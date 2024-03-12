@@ -45,28 +45,28 @@ const maxDate = addDaysOrMonths(new Date(), 12, "months");
 const EmployedForm = ({ startDate, updateFields }) => {
   // eslint-disable-next-line no-unused-vars
   const [startDateFromPicker, setStartDateFromPicker] = useState(null);
-  // const [isStartDateValid, setIsStartDateValid] = useState(false);
+  const [isStartDateValid, setIsStartDateValid] = useState(false);
   const { employedChecked, setEmployedChecked, setIsFormValid } =
     useGlobalContext();
 
-  // const handleStartDateChange = (datepickerDate) => {
-  //   const datepickerDateFormatted = datepickerDate.toISOString().split("T")[0];
-  //   setIsStartDateValid(
-  //     datepickerDate > minDate &&
-  //       datepickerDate < maxDate &&
-  //       /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
-  //         datepickerDateFormatted
-  //       )
-  //   );
-  //   setIsFormValid(
-  //     datepickerDate > minDate &&
-  //       datepickerDate < maxDate &&
-  //       /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
-  //         datepickerDateFormatted
-  //       )
-  //   );
-  //   updateFields({ startDate: datepickerDateFormatted });
-  // };
+  const handleStartDateChange = (datepickerDate) => {
+    const datepickerDateFormatted = datepickerDate.toISOString().split("T")[0];
+    setIsStartDateValid(
+      datepickerDate > minDate &&
+        datepickerDate < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          datepickerDateFormatted
+        )
+    );
+    setIsFormValid(
+      datepickerDate > minDate &&
+        datepickerDate < maxDate &&
+        /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
+          datepickerDateFormatted
+        )
+    );
+    updateFields({ startDate: datepickerDateFormatted });
+  };
 
   useEffect(() => {
     notify();
@@ -156,7 +156,12 @@ const EmployedForm = ({ startDate, updateFields }) => {
           dateFormat="dd/MM/yyyy"
           placeholderText="dd/mm/yyyy"
           selected={startDateFromPicker}
-          onChange={(date) => setStartDateFromPicker(date)}
+          onChange={(date) => {
+            setStartDateFromPicker(date);
+            handleStartDateChange(date);
+          }}
+          minDate={new Date().setDate(new Date().getDate() + 1)}
+          maxDate={new Date().setDate(new Date().getDate() + 365)}
         />
         {/* <DatePicker
           dateFormat="dd/MM/yyyy"
