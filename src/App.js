@@ -13,6 +13,8 @@ import CookieConsent from './components/CookieConsent';
 import { useCookies } from 'react-cookie';
 import ParentsOrNannyToggleModal from './components/ParentsOrNannyToggleModal';
 import ScrollButton from './components/ScrollButton';
+import "react-toastify/dist/ReactToastify.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   const [cookies] = useCookies(["cookieConsent"]);

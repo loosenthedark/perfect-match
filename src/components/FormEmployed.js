@@ -2,6 +2,7 @@ import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
 import { Slide, ToastContainer, toast } from "react-toastify";
+import DatePicker from "react-datepicker";
 
 function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   if (daysOrMonths === "days") {
@@ -33,13 +34,13 @@ const notify = () =>
   );
 
 const minDate = new Date();
-const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
-  .toISOString()
-  .split("T")[0];
+// const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
+//   .toISOString()
+//   .split("T")[0];
 const maxDate = addDaysOrMonths(new Date(), 12, "months");
-const maxDateStringified = addDaysOrMonths(new Date(), 12, "months")
-  .toISOString()
-  .split("T")[0];
+// const maxDateStringified = addDaysOrMonths(new Date(), 12, "months")
+//   .toISOString()
+//   .split("T")[0];
 
 const EmployedForm = ({ startDate, updateFields }) => {
   // eslint-disable-next-line no-unused-vars
@@ -47,23 +48,23 @@ const EmployedForm = ({ startDate, updateFields }) => {
   const { employedChecked, setEmployedChecked, setIsFormValid } =
     useGlobalContext();
 
-  const handleStartDateChange = (event) => {
-    const start = new Date(event.target.value);
+  const handleStartDateChange = (datepickerDate) => {
+    const datepickerDateFormatted = datepickerDate.toISOString().split("T")[0];
     setIsStartDateValid(
-      start > minDate &&
-        start < maxDate &&
+      datepickerDate > minDate &&
+        datepickerDate < maxDate &&
         /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
-          event.target.value
+          datepickerDateFormatted
         )
     );
     setIsFormValid(
-      start > minDate &&
-        start < maxDate &&
+      datepickerDate > minDate &&
+        datepickerDate < maxDate &&
         /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
-          event.target.value
+          datepickerDateFormatted
         )
     );
-    updateFields({ startDate: event.target.value });
+    updateFields({ startDate: datepickerDateFormatted });
   };
 
   useEffect(() => {
@@ -143,7 +144,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
         >
           What is your earliest available start date?
         </label>
-        <input
+        {/* <input
           className="form-input form-input__date"
           id="start-date"
           min={minDateStringified}
@@ -151,6 +152,17 @@ const EmployedForm = ({ startDate, updateFields }) => {
           type="date"
           value={startDate}
           onChange={handleStartDateChange}
+        /> */}
+        <DatePicker
+          dateFormat="dd/MM/yyyy"
+          placeholderText="dd/mm/yyyy"
+          filterDate={d => {
+            return d > new Date();
+          }}
+          selected={startDate}
+          onChange={(date) => {
+            handleStartDateChange(date);
+          }}
         />
       </div>
     </FormStepWrapper>

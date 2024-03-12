@@ -10,8 +10,10 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.3",
     "dotenv": "^16.0.3",
+    "public-folder": "file:./public",
     "react": "^18.2.0",
     "react-cookie": "^7.0.2",
+    "react-datepicker": "^6.3.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-schedule-selector": "^3.0.2",
@@ -19,8 +21,7 @@
     "react-toastify": "^10.0.4",
     "stripe": "^10.16.0",
     "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4",
-    "public-folder": "file:./public"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

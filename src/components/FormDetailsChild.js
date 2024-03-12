@@ -5,7 +5,7 @@ import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect } from "react";
 import { Slide, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import DatePicker from "react-datepicker";
 
 const notify = () =>
   toast(
@@ -95,6 +95,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
   const [isSchoolLocationChildValid, setIsSchoolLocationChildValid] =
     useState(true);
   const [canNextChildBeClicked, setCanNextChildBeClicked] = useState(false);
+  const [date, setDate] = useState(new Date());
   const { setInputFieldsChildren, inputFieldsChildren, setIsFormValid } =
     useGlobalContext();
 
@@ -136,6 +137,7 @@ const ChildDetailsForm = ({ numberOfKids }) => {
 
   const handleDobChildChange = (event) => {
     const dob = new Date(event.target.value);
+    console.log(dob);
     setIsDobChildValid(
       dob > minDate &&
         dob < maxDate &&
@@ -330,8 +332,16 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                 type="date"
                 value={inputGroup.dobChild}
                 onChange={(event) => {
+                  console.log(event);
                   handleFormChange(index, event);
                   handleDobChildChange(event);
+                }}
+              />
+              <DatePicker
+                selected={date}
+                onChange={(date) => {
+                  console.log(date);
+                  setDate(date);
                 }}
               />
             </div>
