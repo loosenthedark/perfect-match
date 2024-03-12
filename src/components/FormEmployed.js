@@ -43,8 +43,8 @@ const maxDate = addDaysOrMonths(new Date(), 12, "months");
 //   .split("T")[0];
 
 const EmployedForm = ({ startDate, updateFields }) => {
-  // eslint-disable-next-line no-unused-vars
   const [startDateFromPicker, setStartDateFromPicker] = useState(null);
+    // eslint-disable-next-line no-unused-vars
   const [isStartDateValid, setIsStartDateValid] = useState(false);
   const { employedChecked, setEmployedChecked, setIsFormValid } =
     useGlobalContext();
