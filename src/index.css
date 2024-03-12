@@ -2513,6 +2513,12 @@ Contact Form Modal
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .custom-date-cell {
+    min-height: 1.375rem;
+  }
+}
+
 /*
 =============== 
 Application Form Modals
