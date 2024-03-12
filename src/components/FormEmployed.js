@@ -44,7 +44,7 @@ const maxDate = addDaysOrMonths(new Date(), 12, "months");
 
 const EmployedForm = ({ startDate, updateFields }) => {
   // eslint-disable-next-line no-unused-vars
-  const [startDateFromPicker, setStartDateFromPicker] = useState(new Date());
+  const [startDateFromPicker, setStartDateFromPicker] = useState(null);
   // const [isStartDateValid, setIsStartDateValid] = useState(false);
   const { employedChecked, setEmployedChecked, setIsFormValid } =
     useGlobalContext();
@@ -154,6 +154,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
         /> */}
         <DatePicker
           dateFormat="dd/MM/yyyy"
+          placeholderText="dd/mm/yyyy"
           selected={startDateFromPicker}
           onChange={(date) => setStartDateFromPicker(date)}
         />
