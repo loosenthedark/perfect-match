@@ -2377,6 +2377,7 @@ Contact Form Modal
     padding-left: 0;
     padding-right: 0;
     width: 71vw;
+    min-height: 9rem;
   }
 
   .form-input,
