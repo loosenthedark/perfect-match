@@ -10,13 +10,13 @@ const AvailabilityForm = ({ availability, updateFields }) => {
   const renderCustomDateCell = (time, selected, innerRef) => (
     <div
       style={{
-        height: "3vh",
         maxHeight: "1.875rem",
         width: "100%",
         background: selected ? "#ffc8dd" : "#d8d8d8",
         borderRadius: ".125rem",
         cursor: "pointer",
       }}
+      className="custom-date-cell"
       ref={innerRef}
     ></div>
   );
@@ -25,13 +25,13 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     <div
       style={{
         width: "100%",
-        fontSize: "clamp(11px, 2.66666666667vw, 14px)",
         paddingRight: ".375rem",
         color: "#87879d",
         display: "flex",
         alignItems: "center",
-        justifyContent: "end"
+        justifyContent: "end",
       }}
+      className="custom-time-label"
     >
       {time
         .toLocaleString("en-gb", {
@@ -49,8 +49,8 @@ const AvailabilityForm = ({ availability, updateFields }) => {
     });
     return (
       <div
+        className="custom-date-label"
         style={{
-          fontSize: "clamp(12px, 3vw, 15px)",
           color: "#87879d",
         }}
       >

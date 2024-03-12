@@ -118,12 +118,19 @@ const ApplicationFormNannyModal = () => {
         {/* progress bar */}
         <ul className="progress-bar progress-bar__nanny">
           {formNannySteps.map((step) => {
-            return (
+            return window.innerWidth < 991 ? (
               <li
                 key={step.id}
                 className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
                 <pre>{step.text.split(" ").join("\n")}</pre>
+              </li>
+            ) : (
+              <li
+                key={step.id}
+                className={currentStepIndex + 1 >= step.id ? "active" : null}
+              >
+                {step.text}
               </li>
             );
           })}

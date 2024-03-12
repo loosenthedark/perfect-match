@@ -2149,6 +2149,8 @@ Contact Form Modal
 
 .form-row.form-row__nationality {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-row.form-row__permit {
@@ -2157,6 +2159,28 @@ Contact Form Modal
 
 .form-row.form-row__experience {
   margin-bottom: 4vh;
+}
+
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+  right: .25rem;
+  top: calc(50% - 16px);
+}
+
+.react-datepicker__view-calendar-icon input.form-input__date {
+  padding: .7125rem .75rem .7125rem 1.125rem;
+  line-height: 2;
+}
+
+.custom-date-cell {
+  height: 3vh;
+}
+
+.custom-time-label {
+  font-size: clamp(11px, 2.66666666667vw, 14px);
+}
+
+.custom-date-label {
+  font-size: clamp(12px, 3vw, 15px);
 }
 
 @media screen and (min-width: 768px) {
@@ -2320,6 +2344,14 @@ Contact Form Modal
   .form-row.form-row__additional-requirements.form-row.form-row__stripe {
     margin-bottom: 25vh;
   }
+
+  .react-datepicker__view-calendar-icon input.form-input__date {
+    padding: .8125rem 1.5rem;
+  }
+
+  .react-datepicker__input-container .react-datepicker__calendar-icon {
+    right: 1.125rem;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -2386,9 +2418,16 @@ Contact Form Modal
     margin-bottom: 1.777778vh;
   }
 
-  .form-input.form-input__date {
+  .form-input.form-input__date,
+  .react-datepicker__view-calendar-icon input.form-input__date {
     padding-top: clamp(8px, .66666vw, 11px);
     padding-bottom: clamp(8px, .66666vw, 11px);
+  }
+
+  .react-datepicker__view-calendar-icon input.form-input__date {
+    line-height: 1.75;
+    padding-left: 1.675vw;
+    padding-right: 1.675vw;
   }
 
   .form-row__cookies {
@@ -2452,8 +2491,24 @@ Contact Form Modal
   }
 
   .form .fixed-height {
-    max-height: none;
+    max-height: 100%;
     height: calc(30.5vw - 2rem + 1.4vh);
+  }
+
+  .react-datepicker__input-container .react-datepicker__calendar-icon {
+    right: calc(1.675vw - 8px);
+  }
+
+  .custom-date-cell {
+    height: 2.8vh;
+  }
+
+  .custom-time-label {
+    font-size: .7125rem;
+  }
+
+  .custom-date-label {
+    font-size: .75rem;
   }
 }
 
@@ -2603,19 +2658,20 @@ Application Form Modals
     width: unset;
     float: unset;
     text-align: left;
-    font-size: clamp(11px, .95vw, 1rem);
+    font-size: clamp(.725rem, .95vw, 1rem);
     max-height: 54px;
   }
 
   .progress-bar li::before {
-    display: inline-block;
-    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 0.75vw;
     margin-left: 0;
-    margin-bottom: 1vw;
-    font-size: 1vw;
-    width: clamp(22px, 2vw, 37px);
-    line-height: clamp(22px, 2vw, 37px);
+    margin-bottom: 1.25vw;
+    font-size: 1.111vw;
+    width: clamp(24px, 2vw, 37px);
+    line-height: clamp(24px, 2vw, 37px);
     background: transparent;
     border: 1px solid var(--clr-white);
   }
