@@ -144,13 +144,13 @@ const EmployedForm = ({ startDate, updateFields }) => {
         >
           What is your earliest available start date?
         </label>
-        <input
+        {/* <input
           className="form-input form-input__date"
           id="start-date"
           type="date"
           value={startDate}
           onChange={handleStartDateChange}
-        />
+        /> */}
         <DatePicker
           dateFormat="dd/MM/yyyy"
           placeholderText="dd/mm/yyyy"
