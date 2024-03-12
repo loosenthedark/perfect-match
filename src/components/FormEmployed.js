@@ -153,6 +153,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
           onChange={handleStartDateChange}
         /> */}
         <DatePicker
+          dateFormat="dd/MM/yyyy"
           selected={startDateFromPicker}
           onChange={(date) => setStartDateFromPicker(date)}
         />
