@@ -24,7 +24,7 @@ const INITIAL_FORM_DATA = {
   nationality: "Irish",
   qualificationDetails: "",
   availability: [],
-  startDate: "",
+  startDate: new Date().setDate(new Date().getDate() + 1),
 };
 
 const ApplicationFormNannyModal = () => {
