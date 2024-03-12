@@ -33,8 +33,6 @@ const notify = () =>
     }
   );
 
-const timeZoneOffsetInHours = (-1 * new Date().getTimezoneOffset()) / 60;
-
 const minDate = new Date();
 // const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
 //   .toISOString()
@@ -45,7 +43,6 @@ const maxDate = addDaysOrMonths(new Date(), 12, "months");
 //   .split("T")[0];
 
 const EmployedForm = ({ startDate, updateFields }) => {
-  console.log(timeZoneOffsetInHours);
   // eslint-disable-next-line no-unused-vars
   const [isStartDateValid, setIsStartDateValid] = useState(false);
   const { employedChecked, setEmployedChecked, setIsFormValid } =
@@ -163,7 +160,6 @@ const EmployedForm = ({ startDate, updateFields }) => {
           }}
           minDate={new Date().setDate(new Date().getDate() + 1)}
           maxDate={new Date().setDate(new Date().getDate() + 365)}
-          timeZoneOffsetInMinutes={timeZoneOffsetInHours * 60}
         />
       </div>
     </FormStepWrapper>
