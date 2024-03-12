@@ -161,7 +161,8 @@ const EmployedForm = ({ startDate, updateFields }) => {
           onChange={(date) => {
             handleStartDateChange(date);
           }}
-          timeZoneOffsetInMinutes={new Date().getTimezoneOffset()}
+          minDate={new Date().setDate(new Date().getDate() - 40)}
+          maxDate={new Date().setDate(new Date().getDate() + 40)}
         />
       </div>
     </FormStepWrapper>
