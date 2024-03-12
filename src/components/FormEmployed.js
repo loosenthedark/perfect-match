@@ -144,25 +144,24 @@ const EmployedForm = ({ startDate, updateFields }) => {
         >
           What is your earliest available start date?
         </label>
-        {/* <input
+        <input
           className="form-input form-input__date"
           id="start-date"
-          min={minDateStringified}
-          max={maxDateStringified}
           type="date"
           value={startDate}
           onChange={handleStartDateChange}
-        /> */}
+        />
         <DatePicker
           dateFormat="dd/MM/yyyy"
           placeholderText="dd/mm/yyyy"
-          filterDate={d => {
+          filterDate={(d) => {
             return d > new Date();
           }}
           selected={startDate}
           onChange={(date) => {
             handleStartDateChange(date);
           }}
+          timeZoneOffsetInMinutes={new Date().getTimezoneOffset()}
         />
       </div>
     </FormStepWrapper>

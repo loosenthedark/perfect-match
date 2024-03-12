@@ -337,13 +337,13 @@ const ChildDetailsForm = ({ numberOfKids }) => {
                   handleDobChildChange(event);
                 }}
               />
-              <DatePicker
+              {/* <DatePicker
                 selected={date}
                 onChange={(date) => {
                   console.log(date);
                   setDate(date);
                 }}
-              />
+              /> */}
             </div>
             <div className="form-row">
               <input
