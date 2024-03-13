@@ -1917,8 +1917,8 @@ Modal
   }
 
   .modal-container.modal-container__application-form.modal-container__contact-form {
-    height: 75vh;
-    min-height: 560px;
+    height: 72vh;
+    min-height: 480px;
   }
 }
 
