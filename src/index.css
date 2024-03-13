@@ -1930,8 +1930,7 @@ Modal
 
   .modal-container.modal-container__application-form {
     grid-template-columns: 18vw 1fr;
-    height: 66vh;
-    max-height: 39rem;
+    max-height: 40rem;
   }
 }
 
@@ -2585,6 +2584,12 @@ Contact Form Modal
 
   .form-input.label-q.label-q__availability {
     padding-top: 2vh;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .custom-date-cell {
+    height: 3.2vh;
   }
 }
 
