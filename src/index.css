@@ -1018,7 +1018,7 @@ Services
     left: unset;
     bottom: unset;
     top: calc(50% - 2.2vw);
-    right: -15vw;
+    right: -18vw;
     transform: unset;
     margin-top: unset;
     display: flex;
@@ -1918,7 +1918,7 @@ Modal
 
   .modal-container.modal-container__application-form.modal-container__contact-form {
     height: 72vh;
-    min-height: 480px;
+    min-height: 520px;
   }
 }
 
