@@ -122,7 +122,12 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           </span>
         </div>
       </div>
-      <div className="form-row form-row__requirements">
+      <div
+        className="form-row form-row__requirements"
+        style={{
+          marginTop: 0,
+        }}
+      >
         <div
           className="slider-wrapper"
           style={{
