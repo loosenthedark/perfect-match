@@ -150,7 +150,12 @@ const ApplicationFormParentsModal = () => {
               : !stripeCheckout
               ? "43vw"
               : "auto",
-          maxHeight: !stripeCheckout ? "none" : "96vh",
+          maxHeight:
+            !stripeCheckout && window.innerWidth < 1280
+              ? "none"
+              : !stripeCheckout
+              ? "86vh"
+              : "96vh",
           overflowY: stripeCheckout && "auto",
         }}
       >

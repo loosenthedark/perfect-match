@@ -1919,6 +1919,7 @@ Modal
 @media screen and (min-width: 1280px) {
   .modal-container.modal-container__application-form {
     height: 43vw;
+    max-height: 86vh;
   }
 }
 
