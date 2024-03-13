@@ -1,7 +1,7 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
-import { Slide, ToastContainer, toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 
 function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   if (daysOrMonths === "days") {
@@ -28,6 +28,7 @@ const notify = () =>
       progress: undefined,
       type: "warning",
       theme: "dark",
+      toastId: "toast2",
       transition: Slide,
     }
   );
@@ -94,7 +95,6 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
       >
         Core Requirements
       </h3>
-      <ToastContainer />
       <div className="form-row form-row__requirements">
         <div
           className="slider-wrapper"

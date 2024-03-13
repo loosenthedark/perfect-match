@@ -4,7 +4,7 @@ import { useState } from "react";
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect } from "react";
-import { Slide, ToastContainer, toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 
 const notify = () =>
@@ -23,6 +23,7 @@ const notify = () =>
       progress: undefined,
       type: "warning",
       theme: "dark",
+      toastId: "toast3",
       transition: Slide,
     }
   );
@@ -271,7 +272,6 @@ const ChildDetailsForm = ({ numberOfKids }) => {
           ? "Child Details"
           : "Child #" + currentChild + " Details"}
       </h3>
-      <ToastContainer />
       {inputFieldsChildren.map((inputGroup, index) => {
         return (
           <div
