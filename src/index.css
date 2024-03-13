@@ -3063,6 +3063,14 @@ React-Toastify custom styles
   font-family: var(--ff-primary);
 }
 
+.Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body {
+  justify-content: center;
+}
+
+.Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body>div:last-child {
+  flex: unset;
+}
+
 @media screen and (min-width: 768px) {
   .Toastify .Toastify__toast-container--top-left {
     top: 3.75rem;
@@ -3079,14 +3087,6 @@ React-Toastify custom styles
   .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__progress-bar--wrp,
   .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__progress-bar--wrp .Toastify__progress-bar {
     border-bottom-left-radius: 0;
-  }
-
-  .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body {
-    justify-content: center;
-  }
-
-  .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body>div:last-child {
-    flex: unset;
   }
 }
 
