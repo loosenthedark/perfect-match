@@ -160,12 +160,21 @@ const ApplicationFormParentsModal = () => {
           }}
         >
           {formParentsSteps.map((step) => {
-            return (
+            return window.innerWidth < 991 ? (
               <li
                 key={step.id}
                 className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
                 <pre>{step.text.split(" ").join("\n")}</pre>
+              </li>
+            ) : (
+              <li
+                key={step.id}
+                className={currentStepIndex + 1 >= step.id ? "active" : null}
+              >
+                {step.text === "Additional Requirements"
+                  ? "Other Requirements"
+                  : step.text}
               </li>
             );
           })}
