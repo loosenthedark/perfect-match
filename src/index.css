@@ -2564,7 +2564,7 @@ Contact Form Modal
 
 @media screen and (min-width: 1280px) {
   .custom-date-cell {
-    min-height: 1.375rem;
+    min-height: 23px;
   }
 
   .form-row {
@@ -3033,7 +3033,7 @@ React-Toastify custom styles
   }
 
   .Toastify .Toastify__toast-container--top-left .toast-position {
-    font-size: clamp(0.825rem, 1.2vw, 1.155rem);
+    font-size: clamp(0.785rem, 1.1vw, 1.143rem);
     min-height: 3.75rem;
     width: calc(64vw + 1rem);
     left: calc(18vw - .5rem);
