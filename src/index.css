@@ -625,13 +625,15 @@ Hero
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement {
-    width: 15vw;
+    width: 15.5vw;
+    max-width: unset;
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
-    width: 17vw;
+    width: 16.5vw;
     position: relative;
     top: -7vh;
+    max-width: unset;
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm:hover,
@@ -1938,7 +1940,7 @@ Modal
   }
 
   .modal-container.modal-container__application-form {
-    grid-template-columns: 19vw 1fr;
+    grid-template-columns: clamp(274px, 19vw, 320px) 1fr;
     max-height: 40rem;
   }
 }
@@ -2616,6 +2618,15 @@ Contact Form Modal
   .custom-date-label {
     font-size: 15px;
   }
+
+  .form {
+    height: clamp(530px, calc(39vw - 2rem), 34rem);
+    min-height: unset;
+  }
+
+  .form .fixed-height {
+    max-height: 440px;
+  }
 }
 
 /*
@@ -2815,6 +2826,12 @@ Application Form Modals
     font-size: 1.125vw;
     width: clamp(24px, 2.25vw, 37px);
     line-height: clamp(24px, 2.25vw, 37px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .progress-bar {
+    justify-self: start;
   }
 }
 
@@ -3071,6 +3088,7 @@ React-Toastify custom styles
 }
 
 @media screen and (min-width: 992px) {
+
   .Toastify .Toastify__toast-container--top-left,
   .Toastify .Toastify__toast-container--top-left .toast-position {
     top: 0;
