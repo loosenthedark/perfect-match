@@ -1929,7 +1929,7 @@ Modal
   }
 
   .modal-container.modal-container__application-form {
-    grid-template-columns: 17vw 1fr;
+    grid-template-columns: 18vw 1fr;
     height: 66vh;
     max-height: 39rem;
   }
@@ -2724,8 +2724,8 @@ Application Form Modals
     height: calc(100% - 2rem);
     border-radius: var(--radius-increased);
     justify-content: flex-start;
-    padding-top: 1.5vw;
-    padding-left: 1.5vw;
+    padding-top: 1rem;
+    padding-left: 1rem;
     background-position: bottom;
     max-width: 20rem;
   }
@@ -2734,7 +2734,7 @@ Application Form Modals
     width: unset;
     float: unset;
     text-align: left;
-    font-size: clamp(.725rem, .95vw, 1rem);
+    font-size: clamp(.725rem, .9vw, 1rem);
     max-height: 54px;
   }
 
@@ -2742,12 +2742,12 @@ Application Form Modals
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-right: 0.75vw;
+    margin-right: 0.5rem;
     margin-left: 0;
     margin-bottom: 1.25vw;
-    font-size: 1.111vw;
-    width: clamp(24px, 2vw, 37px);
-    line-height: clamp(24px, 2vw, 37px);
+    font-size: 1.05vw;
+    width: clamp(24px, 1.85vw, 37px);
+    line-height: clamp(24px, 1.85vw, 37px);
     background: transparent;
     border: 1px solid var(--clr-white);
   }
@@ -3046,5 +3046,12 @@ React-Toastify custom styles
 
   .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body {
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .Toastify .Toastify__toast-container--top-left .toast-position {
+    width: calc(63vw + 1rem);
+    left: calc(18.5vw - .5rem);
   }
 }
