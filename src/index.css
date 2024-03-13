@@ -556,14 +556,14 @@ Hero
     background: var(--clr-primary-5);
     color: var(--clr-white);
     border-radius: clamp(28px, 2vw, 38px);
-    width: 13.4vw;
-    min-width: 140px;
+    width: 14vw;
+    min-width: 150px;
     max-width: 248px;
     max-height: 66px;
   }
 
   .hero-btn.hero-btn__secondary {
-    width: clamp(134px, 13.4vw, 248px);
+    width: clamp(150px, 14vw, 248px);
   }
 
   .hero-btn:hover {
@@ -581,6 +581,7 @@ Hero
   .hero-btn.next-btn,
   .hero-btn.back-btn {
     font-size: clamp(11px, 1.11111vw, 18px);
+    width: calc(50% - .25rem);
   }
 
   .hero-btn.next-btn:hover,
@@ -671,6 +672,10 @@ Hero
 
   .hero-banner {
     margin-top: clamp(310px, 20vw, 330px);
+  }
+
+  .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
+    top: -12vh;
   }
 }
 
@@ -1887,7 +1892,7 @@ Modal
   }
 
   .modal-container.modal-container__application-form {
-    grid-template-columns: 19vw 1fr;
+    grid-template-columns: 20vw 1fr;
     padding-left: 1rem;
     height: 41.5vw;
     top: 1.875rem;
@@ -1929,7 +1934,7 @@ Modal
   }
 
   .modal-container.modal-container__application-form {
-    grid-template-columns: 18vw 1fr;
+    grid-template-columns: 19vw 1fr;
     max-height: 40rem;
   }
 }
@@ -3044,8 +3049,8 @@ React-Toastify custom styles
   .Toastify .Toastify__toast-container--top-left .toast-position {
     font-size: clamp(0.785rem, 1.1vw, 1.143rem);
     min-height: 3.75rem;
-    width: calc(64vw + 1rem);
-    left: calc(18vw - .5rem);
+    width: calc(65vw + 1rem);
+    left: calc(17.5vw - .5rem);
     border-radius: var(--radius-input);
   }
 
@@ -3056,7 +3061,7 @@ React-Toastify custom styles
 
 @media screen and (min-width: 1440px) {
   .Toastify .Toastify__toast-container--top-left .toast-position {
-    width: calc(63vw + 1rem);
-    left: calc(18.5vw - .5rem);
+    width: calc(64vw + 1rem);
+    left: calc(18vw - .5rem);
   }
 }
