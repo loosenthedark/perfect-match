@@ -1919,7 +1919,7 @@ Modal
 @media screen and (min-width: 1280px) {
   .modal-container.modal-container__application-form {
     height: 43vw;
-    max-height: 86vh;
+    max-height: 88vh;
   }
 }
 
@@ -2564,7 +2564,7 @@ Contact Form Modal
 
 @media screen and (min-width: 1280px) {
   .custom-date-cell {
-    min-height: 1.5rem;
+    min-height: 1.375rem;
   }
 
   .form-row {
@@ -3027,6 +3027,14 @@ React-Toastify custom styles
 }
 
 @media screen and (min-width: 992px) {
+  .Toastify .Toastify__toast-container--top-left {
+    top: .375rem;
+  }
+
+  .Toastify .Toastify__toast-container--top-left .toast-position {
+    top: 0;
+  }
+
   .Toastify .Toastify__toast-container--top-left .toast-position {
     font-size: clamp(0.785rem, 1.1vw, 1.143rem);
     min-height: 3rem;

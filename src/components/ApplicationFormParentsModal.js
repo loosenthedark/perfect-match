@@ -154,7 +154,7 @@ const ApplicationFormParentsModal = () => {
             !stripeCheckout && window.innerWidth < 1280
               ? "none"
               : !stripeCheckout
-              ? "86vh"
+              ? "88vh"
               : "96vh",
           overflowY: stripeCheckout && "auto",
         }}

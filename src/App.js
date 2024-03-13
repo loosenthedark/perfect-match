@@ -15,6 +15,7 @@ import ParentsOrNannyToggleModal from './components/ParentsOrNannyToggleModal';
 import ScrollButton from './components/ScrollButton';
 import "react-toastify/dist/ReactToastify.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const [cookies] = useCookies(["cookieConsent"]);
@@ -34,6 +35,7 @@ function App() {
       <FAQs faqs={faqs} />
       <ScrollButton />
       <Footer />
+      <ToastContainer />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
-import { Slide, ToastContainer, toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 
 function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
@@ -29,6 +29,7 @@ const notify = () =>
       progress: undefined,
       type: "warning",
       theme: "dark",
+      toastId: "toast1",
       transition: Slide,
     }
   );
@@ -96,7 +97,6 @@ const EmployedForm = ({ startDate, updateFields }) => {
       >
         Your Availability
       </h3>
-      <ToastContainer />
       <div className="form-row form-row__permit">
         <div className="label-q">
           <span
