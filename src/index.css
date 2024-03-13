@@ -558,7 +558,7 @@ Hero
     border-radius: clamp(28px, 2vw, 38px);
     width: 14vw;
     min-width: 150px;
-    max-width: 248px;
+    max-width: 252px;
     max-height: 66px;
   }
 
@@ -626,14 +626,14 @@ Hero
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement {
     width: 15.5vw;
-    max-width: unset;
+    max-width: 255px;
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
     width: 16.5vw;
     position: relative;
     top: -7vh;
-    max-width: unset;
+    max-width: 270px;
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm:hover,
@@ -681,7 +681,7 @@ Hero
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
-    top: -12vh;
+    top: -11vh;
   }
 }
 
@@ -2627,6 +2627,10 @@ Contact Form Modal
   .form .fixed-height {
     max-height: 440px;
   }
+
+  .form-input.label-q.label-q__availability {
+    padding-top: 1vh;
+  }
 }
 
 /*
@@ -2819,7 +2823,7 @@ Application Form Modals
   }
 
   .progress-bar li {
-    font-size: clamp(.75rem, .95vw, 1rem);
+    font-size: clamp(.75rem, .95vw, 15px);
   }
 
   .progress-bar li::before {
@@ -2832,6 +2836,10 @@ Application Form Modals
 @media screen and (min-width: 1440px) {
   .progress-bar {
     justify-self: start;
+  }
+
+  .progress-bar li::before {
+    font-size: clamp(1.0125rem, 1.125vw, 20px);
   }
 }
 
@@ -2884,7 +2892,7 @@ Application Form Modals
   color: var(--clr-grey);
   font-weight: var(--fw-500);
   letter-spacing: var(--spacing-reduced);
-  width: 1.875rem;
+  width: 2.25rem;
 }
 
 .slider-wrapper>.core-requirements {
@@ -3109,7 +3117,7 @@ React-Toastify custom styles
 
 @media screen and (min-width: 1440px) {
   .Toastify .Toastify__toast-container--top-left .toast-position {
-    width: calc(64vw + 1rem);
-    left: calc(18vw - .5rem);
+    width: clamp(938px, calc(64vw + 1rem), 1120px);
+    left: clamp(252px, calc(((100% - 1120px) / 2) + 1px), calc((100% - 1120px) / 2));
   }
 }
