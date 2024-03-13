@@ -650,6 +650,10 @@ Hero
 }
 
 @media screen and (min-width: 1280px) {
+  .hero-btn {
+    width: 15vw;
+  }
+
   .hero-banner {
     margin-top: 23vw;
   }
@@ -2489,7 +2493,7 @@ Contact Form Modal
   }
 
   .form-row.form-row__additional-requirements.form-row__agreement .agreement-text {
-    font-size: clamp(14px, 1.25vw, 20px);
+    font-size: clamp(14px, 1.175vw, 18px);
     margin-bottom: 0;
   }
 
@@ -2571,6 +2575,14 @@ Contact Form Modal
     min-height: 23px;
   }
 
+  .custom-time-label {
+    font-size: .8125rem;
+  }
+
+  .custom-date-label {
+    font-size: .875rem;
+  }
+
   .form-row {
     margin-bottom: 1.5vw;
   }
@@ -2594,7 +2606,15 @@ Contact Form Modal
 
 @media screen and (min-width: 1440px) {
   .custom-date-cell {
-    height: 3.2vh;
+    height: 3vh;
+  }
+
+  .custom-time-label {
+    font-size: 14px;
+  }
+
+  .custom-date-label {
+    font-size: 15px;
   }
 }
 
@@ -2785,6 +2805,16 @@ Application Form Modals
 @media screen and (min-width: 1280px) {
   .form-row.form-row__children {
     margin-bottom: 10vh;
+  }
+
+  .progress-bar li {
+    font-size: clamp(.75rem, .95vw, 1rem);
+  }
+
+  .progress-bar li::before {
+    font-size: 1.125vw;
+    width: clamp(24px, 2.25vw, 37px);
+    line-height: clamp(24px, 2.25vw, 37px);
   }
 }
 
