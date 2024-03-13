@@ -799,7 +799,7 @@ About
     justify-content: center;
     align-items: center;
     min-height: calc(90vh - 7.5rem);
-    padding-bottom: 10vw;
+    padding-bottom: 6vw;
     padding-top: 15vw;
     margin-bottom: -2.5vh;
   }
@@ -987,7 +987,7 @@ Services
     padding-bottom: 3.05555555vw;
     padding-left: 11.458vw;
     min-height: 22.222222222vw;
-    margin-bottom: 14vh;
+    margin-bottom: 9vw;
   }
 
   .section__services .overlay {
@@ -1151,7 +1151,7 @@ FAQs
 
 @media screen and (min-width: 992px) {
   .section__about.section__faqs {
-    padding-bottom: 8vh;
+    padding-bottom: 7vw;
     padding-top: 0;
     min-height: unset;
     margin-bottom: 0;
