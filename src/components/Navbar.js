@@ -33,13 +33,19 @@ const Navbar = () => {
         <ul className="nav-links" id="nav-links">
           {pageLinks.slice(0, pageLinks.length - 2).map((link, index) => {
             return index !== pageLinks.length - 3 ? (
-              <li key={link.id}>
+              <li
+                key={link.id}
+                style={{
+                  order:
+                    link.text === "Apply" ? 2 : link.text === "FAQs" ? 5 : 0,
+                }}
+              >
                 <a href={link.href} className="nav-link">
                   {link.text}
                 </a>
               </li>
             ) : (
-              <li style={{ position: "relative" }} key={link.id}>
+              <li style={{ position: "relative", order: 4 }} key={link.id}>
                 <a role="button" href={link.href} className="nav-link">
                   {link.text}
                 </a>
@@ -80,7 +86,7 @@ const Navbar = () => {
               </li>
             );
           })}
-          <li>
+          {/* <li>
             <button
               style={{ cursor: "pointer" }}
               type="button"
@@ -89,6 +95,15 @@ const Navbar = () => {
             >
               Contact
             </button>
+          </li> */}
+          <li
+            style={{
+              order: 3,
+            }}
+          >
+            <a href="#contact" className="nav-link">
+              Contact
+            </a>
           </li>
         </ul>
 

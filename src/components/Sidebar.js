@@ -33,6 +33,16 @@ const Sidebar = () => {
                   (id === pageLinks.length || id === pageLinks.length - 1)
                     ? "none"
                     : "list-item",
+                order:
+                  text === "Apply"
+                    ? 2
+                    : text === "Parents"
+                    ? 3
+                    : text === "Nanny"
+                    ? 4
+                    : text === "FAQs"
+                    ? 5
+                    : 0,
               }}
               className={
                 id === pageLinks.length || id === pageLinks.length - 1
@@ -74,10 +84,28 @@ const Sidebar = () => {
             </li>
           );
         })}
-        <li>
-          <button type="button" onClick={() => setToggleContactFormModal(true)}>
+        <li
+          style={{
+            order: 1,
+          }}
+        >
+          {/* <button type="button" onClick={() => setToggleContactFormModal(true)}>
             <AiOutlineMail /> Contact
-          </button>{" "}
+          </button>{" "} */}
+          <a
+            role="button"
+            style={{
+              paddingTop: "2vh",
+              paddingBottom: "2vh",
+            }}
+            onClick={() => {
+              setToggleSidebar(false);
+              setIsApplySubmenuShown(false);
+            }}
+            href="#contact"
+          >
+            <AiOutlineMail /> Contact
+          </a>
         </li>
       </ul>
       <ul className="social-links">

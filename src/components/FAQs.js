@@ -52,12 +52,13 @@ const FAQs = ({ faqs }) => {
               {faqs.length + 1 === expandedQuestion && (
                 <p>
                   Once you have{" "}
-                  <button
+                  {/* <button
                     className="question-btn"
                     onClick={() => setToggleContactFormModal(true)}
                   >
                     made initial contact
-                  </button>{" "}
+                  </button>{" "} */}
+                  <a href="#contact"> made initial contact </a>
                   with us, we will phone you for a chat and, if you wish to
                   proceed, we will ask you to fill out a simple online form
                   outlining your requirements. We will then arrange our visit to

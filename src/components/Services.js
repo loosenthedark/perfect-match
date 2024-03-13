@@ -5,7 +5,7 @@ const Services = () => {
   const { setToggleContactFormModal } = useGlobalContext();
 
   return (
-    <section className="section section__services">
+    <section className="section section__services" id="contact">
       <div className="overlay"></div>
       <Title color="#fff" textOne="Schedule a call with us today" />
       <div

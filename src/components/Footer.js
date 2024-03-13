@@ -11,7 +11,17 @@ const Footer = () => {
       <ul className="footer-links">
         {pageLinks.slice(0, pageLinks.length - 2).map((link) => {
           return (
-            <li key={link.id}>
+            <li
+              key={link.id}
+              style={{
+                order:
+                  link.text === "Apply"
+                    ? 4
+                    : link.text === "FAQs"
+                    ? 5
+                    : link.id,
+              }}
+            >
               <a
                 onClick={
                   link.id === pageLinks.length - 2
@@ -30,15 +40,29 @@ const Footer = () => {
             </li>
           );
         })}
-        <li>
-          <button
+        <li
+          style={{
+            order: 3,
+          }}
+        >
+          {/* <button
             type="button"
             style={{ cursor: "pointer", fontWeight: "500" }}
             className="footer-link footer-link__contact"
             onClick={() => setToggleContactFormModal(true)}
           >
             Contact
-          </button>
+          </button> */}
+          <a
+            href="#contact"
+            className="footer-link"
+            style={{
+              fontWeight: "500",
+              cursor: "pointer",
+            }}
+          >
+            Contact
+          </a>
         </li>
       </ul>
       <ul className="footer-nav footer-nav-contact">
@@ -55,7 +79,7 @@ const Footer = () => {
             style={{
               position: "relative",
               top: ".125rem",
-              marginRight: 0
+              marginRight: 0,
             }}
           ></i>{" "}
           +353 89 264 4059
