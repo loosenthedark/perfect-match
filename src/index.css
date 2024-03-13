@@ -850,11 +850,6 @@ About
 }
 
 @media screen and (min-width: 1440px) {
-  #about {
-    top: -20.5vh;
-    margin-bottom: -10vh;
-  }
-
   .about-info h2 {
     margin-bottom: 2.25vw;
   }
