@@ -188,7 +188,7 @@ const ContactFormModal = () => {
             }}
           >
             {/* first name */}
-            <div className="form-row">
+            <div className="form-row form-row__contact">
               <input
                 type="text"
                 placeholder="First Name"
@@ -203,7 +203,7 @@ const ContactFormModal = () => {
               />
             </div>
             {/* last name */}
-            <div className="form-row">
+            <div className="form-row form-row__contact">
               <input
                 type="text"
                 placeholder="Last Name"
@@ -218,7 +218,7 @@ const ContactFormModal = () => {
               />
             </div>
             {/* phone */}
-            <div className="form-row">
+            <div className="form-row form-row__contact">
               <input
                 className="form-input"
                 type="tel"
@@ -230,7 +230,7 @@ const ContactFormModal = () => {
               />
             </div>
             {/* email */}
-            <div className="form-row">
+            <div className="form-row form-row__contact">
               <input
                 type="email"
                 placeholder="Email"
@@ -243,7 +243,7 @@ const ContactFormModal = () => {
               />
             </div>
             {/* query */}
-            <div className="form-row">
+            <div className="form-row form-row__contact">
               <textarea
                 className="form-input"
                 style={{
@@ -260,7 +260,7 @@ const ContactFormModal = () => {
               ></textarea>
             </div>
             {/* file upload */}
-            {/* <div className="form-row">
+            {/* <div className="form-row form-row__contact">
               <label htmlFor="upload" className="btn form-label">
                 Upload CV
               </label>
@@ -273,7 +273,7 @@ const ContactFormModal = () => {
               />
             </div> */}
             {/* Netlify spam filtering */}
-            <div className="form-row">
+            <div className="form-row form-row__contact">
               <div data-netlify-recaptcha="true"></div>
             </div>
             <input type="hidden" name="form-name" value="contactForm" />

@@ -2428,6 +2428,10 @@ Contact Form Modal
     margin-bottom: 1.389vw;
   }
 
+  .form-row.form-row__contact {
+    margin-bottom: 2vh;
+  }
+
   .form-input.form-input__select {
     padding-top: clamp(.6rem, 1.3vh, 14px);
     padding-bottom: clamp(.6rem, 1.3vh, 14px);
