@@ -854,13 +854,13 @@ About
     margin-bottom: 2.25vw;
   }
 
-  .section__about {
-    min-height: calc(73vh - 7.5rem);
-    padding-top: 21vh;
-  }
-
   .about-info p:last-child {
     margin-bottom: 0;
+  }
+
+  #about {
+    top: -16vh;
+    padding-bottom: 1vw;
   }
 }
 
