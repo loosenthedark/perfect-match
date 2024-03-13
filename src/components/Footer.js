@@ -3,6 +3,7 @@ import { useGlobalContext } from "./Context";
 import whatsappBtn from "../images/WhatsAppButtonGreenMedium.svg";
 
 const Footer = () => {
+  // eslint-disable-next-line no-unused-vars
   const { setToggleContactFormModal, setToggleParentsOrNannyToggleModal } =
     useGlobalContext();
 

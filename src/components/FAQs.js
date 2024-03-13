@@ -4,6 +4,7 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import { useGlobalContext } from "./Context";
 
 const FAQs = ({ faqs }) => {
+  // eslint-disable-next-line no-unused-vars
   const { setToggleContactFormModal } = useGlobalContext();
   const [expandedQuestion, setExpandedQuestion] = useState(null);
   const handleSetExpandedQuestion = (id) => {

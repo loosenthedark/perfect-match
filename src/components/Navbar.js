@@ -5,6 +5,7 @@ const Navbar = () => {
   const {
     toggleSidebar,
     setToggleSidebar,
+    // eslint-disable-next-line no-unused-vars
     setToggleContactFormModal,
     setToggleApplicationFormNannyModal,
     setToggleApplicationFormParentsModal,
