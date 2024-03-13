@@ -496,7 +496,7 @@ const CVForm = ({
           style={{
             position: "absolute",
             left: "15%",
-            top: "30%",
+            top: "24%",
             width: "70%",
             height: "70%",
             strokeWidth: "1.5"

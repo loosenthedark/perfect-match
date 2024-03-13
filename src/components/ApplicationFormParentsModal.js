@@ -145,8 +145,10 @@ const ApplicationFormParentsModal = () => {
           height:
             !stripeCheckout && window.innerWidth < 992
               ? "66vh"
-              : !stripeCheckout
+              : !stripeCheckout && window.innerWidth < 1280
               ? "41.5vw"
+              : !stripeCheckout
+              ? "43vw"
               : "auto",
           maxHeight: !stripeCheckout ? "none" : "96vh",
           overflowY: stripeCheckout && "auto",
@@ -172,7 +174,8 @@ const ApplicationFormParentsModal = () => {
                 key={step.id}
                 className={currentStepIndex + 1 >= step.id ? "active" : null}
               >
-                {step.text === "Additional Requirements"
+                {window.innerWidth < 1280 &&
+                step.text === "Additional Requirements"
                   ? "Other Requirements"
                   : step.text}
               </li>

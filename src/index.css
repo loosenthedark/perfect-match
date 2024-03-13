@@ -656,6 +656,10 @@ Hero
   .hero-banner p:nth-of-type(3) {
     margin-bottom: 2.5rem;
   }
+
+  .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
+    top: -10vh;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -1912,6 +1916,12 @@ Modal
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .modal-container.modal-container__application-form {
+    height: 43vw;
+  }
+}
+
 @media screen and (min-width: 1440px) {
   .modal-container.modal-container__application-form {
     max-width: 1120px;
@@ -2010,6 +2020,10 @@ Contact Form Modal
 
 .form-row.form-row__additional-requirements {
   margin-bottom: 1rem;
+}
+
+.form-row.form-row__additional-requirements__last {
+  margin-bottom: .25rem;
 }
 
 .form-row.form-row__additional-requirements.form-row.form-row__stripe {
@@ -2189,6 +2203,10 @@ Contact Form Modal
 
 .custom-date-label {
   font-size: clamp(12px, 3vw, 15px);
+}
+
+.form .fixed-height+div {
+  gap: .125rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -2521,6 +2539,10 @@ Contact Form Modal
     font-size: .75rem;
   }
 
+  .form .fixed-height+div {
+    gap: .5rem;
+  }
+
   .form .fixed-height+div,
   .form .container__btn.move-btn-down {
     margin-top: 2vh;
@@ -2542,6 +2564,22 @@ Contact Form Modal
 @media screen and (min-width: 1280px) {
   .custom-date-cell {
     min-height: 1.5rem;
+  }
+
+  .form-row {
+    margin-bottom: 1.5vw;
+  }
+
+  .form-row.form-row__core-requirements__last {
+    margin-bottom: 6vh;
+  }
+
+  .form-row.form-row__additional-requirements__last {
+    margin-bottom: 3vh;
+  }
+
+  .form-row.form-row__additional-requirements.form-row.form-row__stripe {
+    margin-bottom: 10vh;
   }
 }
 
@@ -2726,6 +2764,12 @@ Application Form Modals
   .bg-cv {
     height: 17.5vh;
     width: 17.5vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .form-row.form-row__children {
+    margin-bottom: 10vh;
   }
 }
 

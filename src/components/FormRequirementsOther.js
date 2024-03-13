@@ -165,7 +165,7 @@ const OtherRequirementsForm = ({ otherRequirements, updateFields }) => {
           </span>
         </div>
       </div>
-      <div className="form-row" style={{ marginBottom: ".25rem" }}>
+      <div className="form-row form-row__additional-requirements__last">
         <textarea
           className="form-input"
           placeholder="Please let us know of any other requirements..."

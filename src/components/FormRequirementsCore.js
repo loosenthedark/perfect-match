@@ -176,7 +176,7 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           </span>
         </div>
       </div>
-      <div className="form-row">
+      <div className="form-row form-row__core-requirements__last">
         {/* <input
           className="form-input"
           placeholder="What is your preferred start date?"

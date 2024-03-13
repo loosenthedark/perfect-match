@@ -156,7 +156,6 @@ const ApplicationFormNannyModal = () => {
           <div
             style={{
               display: "flex",
-              gap: ".125rem",
               justifyContent: "flex-end",
             }}
           >
