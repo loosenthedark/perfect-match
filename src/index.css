@@ -2215,6 +2215,11 @@ Contact Form Modal
   gap: .125rem;
 }
 
+.form.form__contact {
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+}
+
 @media screen and (min-width: 768px) {
   .form {
     padding-left: 5rem;
@@ -2404,6 +2409,9 @@ Contact Form Modal
     padding-right: 4vw;
     width: 38vw;
     max-width: unset;
+    min-height: unset;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
   }
 
   .form.form__cookies {
@@ -2429,7 +2437,7 @@ Contact Form Modal
   }
 
   .form-row.form-row__contact {
-    margin-bottom: 2vh;
+    margin-bottom: 2.2vh;
   }
 
   .form-input.form-input__select {

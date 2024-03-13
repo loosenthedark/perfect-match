@@ -182,10 +182,6 @@ const ContactFormModal = () => {
             data-netlify="true"
             data-netlify-recaptcha="true"
             encType="multipart/form-data"
-            style={{
-              marginBottom: "3vh",
-              marginTop: "1vh",
-            }}
           >
             {/* first name */}
             <div className="form-row form-row__contact">
