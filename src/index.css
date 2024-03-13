@@ -2012,7 +2012,7 @@ Contact Form Modal
   margin-top: 1.25rem;
 }
 
-.agreement-text__alt + .form-row.form-row__additional-requirements.form-row__agreement {
+.agreement-text__alt+.form-row.form-row__additional-requirements.form-row__agreement {
   margin-top: 1rem;
   margin-bottom: 0;
 }
@@ -2919,6 +2919,7 @@ React-Toastify custom styles
   svg {
     fill: var(--clr-primary-5);
   }
+
   font-family: var(--ff-primary);
 }
 
@@ -2951,6 +2952,13 @@ React-Toastify custom styles
 
 @media screen and (min-width: 992px) {
   .Toastify .Toastify__toast-container--top-left .toast-position {
-    font-size: clamp(14px, 1.111111vw, 18px);
+    font-size: clamp(0.785rem, 1.1vw, 1.143rem);
+    min-height: 3.5rem;
+    width: calc(64vw + 1rem);
+    left: calc(18vw - .5rem);
+  }
+
+  .Toastify .Toastify__toast-container--top-left .toast-position .Toastify__toast-body {
+    padding: 0;
   }
 }
