@@ -294,6 +294,20 @@ p {
 
 /*
 =============== 
+Custom File Input styling
+===============
+*/
+
+input[type="file" i]::-webkit-file-upload-button {
+  display: inline-flex;
+  width: 86px;
+  justify-content: center;
+  margin-left: calc(50% - 94px);
+  margin-right: 8px;
+}
+
+/*
+=============== 
 Hero
 ===============
 */
@@ -682,7 +696,7 @@ Hero
   }
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
-    top: -11vh;
+    top: -12vh;
   }
 }
 
