@@ -306,6 +306,13 @@ input[type="file" i]::-webkit-file-upload-button {
   margin-right: 8px;
 }
 
+@media screen and (min-width: 1280px) {
+  input[type="file" i]::-webkit-file-upload-button {
+    width: 100px;
+    margin-left: calc(50% - 108px);
+  }
+}
+
 @media screen and (min-width: 1440px) {
   input[type="file" i]::-webkit-file-upload-button {
     width: 116px;
