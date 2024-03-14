@@ -2,6 +2,7 @@ import FormStepWrapper from "./FormStepWrapper";
 import { useGlobalContext } from "./Context";
 import { useEffect, useState } from "react";
 import { Slide, toast } from "react-toastify";
+import DatePicker from "react-datepicker";
 
 function addDaysOrMonths(date, numberOfDaysOrMonths, daysOrMonths) {
   if (daysOrMonths === "days") {
@@ -34,14 +35,15 @@ const notify = () =>
   );
 
 const minDate = new Date();
-const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
-  .toISOString()
-  .split("T")[0];
+// const minDateStringified = addDaysOrMonths(new Date(), 1, "days")
+//   .toISOString()
+//   .split("T")[0];
 const maxDate = addDaysOrMonths(new Date(), 12, "months");
-const maxDateStringified = addDaysOrMonths(new Date(), 12, "months")
-  .toISOString()
-  .split("T")[0];
+// const maxDateStringified = addDaysOrMonths(new Date(), 12, "months")
+//   .toISOString()
+//   .split("T")[0];
 const CoreRequirementsForm = ({ startDate, updateFields }) => {
+  const [startDateFromPicker, setStartDateFromPicker] = useState(startDate);
   // eslint-disable-next-line no-unused-vars
   const [isStartDateValid, setIsStartDateValid] = useState(false);
   const {
@@ -54,23 +56,29 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
     setIsFormValid,
   } = useGlobalContext();
 
-  const handleStartDateChange = (event) => {
-    const start = new Date(event.target.value);
+  const handleStartDateChange = (datepickerDate) => {
+    const newDatepickerDate = new Date(
+      datepickerDate.getTime() +
+        Math.abs(datepickerDate.getTimezoneOffset() * 60000)
+    );
+    const datepickerDateFormatted = newDatepickerDate
+      ?.toISOString()
+      .split("T")[0];
     setIsStartDateValid(
-      start > minDate &&
-        start < maxDate &&
+      datepickerDate > minDate &&
+        datepickerDate < maxDate &&
         /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
-          event.target.value
+          datepickerDateFormatted
         )
     );
     setIsFormValid(
-      start > minDate &&
-        start < maxDate &&
+      datepickerDate > minDate &&
+        datepickerDate < maxDate &&
         /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/.test(
-          event.target.value
+          datepickerDateFormatted
         )
     );
-    updateFields({ startDate: event.target.value });
+    updateFields({ startDate: datepickerDateFormatted });
   };
 
   useEffect(() => {
@@ -181,7 +189,13 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           </span>
         </div>
       </div>
-      <div className="form-row form-row__core-requirements__last">
+      <div
+        className="form-row form-row__core-requirements__last"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         {/* <input
           className="form-input"
           placeholder="What is your preferred start date?"
@@ -195,19 +209,16 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           style={{
             borderRadius: "unset",
             border: "unset",
-            color: "#c7c7d1",
             paddingTop: "unset",
-            paddingLeft: ".775rem",
+            paddingLeft: "unset",
             paddingRight: "unset",
-            paddingBottom: ".125rem",
-            fontWeight: "400",
-            display: "block",
-            textAlign: "left",
+            paddingBottom: ".25rem",
+            display: "block"
           }}
         >
           What is your preferred start date?
         </label>
-        <input
+        {/* <input
           className="form-input form-input__date"
           id="startDate"
           name="startDate"
@@ -216,6 +227,48 @@ const CoreRequirementsForm = ({ startDate, updateFields }) => {
           type="date"
           value={startDate}
           onChange={handleStartDateChange}
+        /> */}
+        <DatePicker
+          className="form-input form-input__date"
+          dateFormat="dd/MM/yyyy"
+          placeholderText="dd/mm/yyyy"
+          selected={startDateFromPicker}
+          onChange={(date) => {
+            setStartDateFromPicker(date);
+            handleStartDateChange(date);
+          }}
+          minDate={new Date().setDate(new Date().getDate() + 1)}
+          maxDate={new Date().setDate(new Date().getDate() + 365)}
+          showIcon
+          icon={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              viewBox="0 0 48 48"
+            >
+              <mask id="ipSApplication0">
+                <g
+                  fill="none"
+                  stroke="#fff"
+                  strokeLinejoin="round"
+                  strokeWidth="4"
+                >
+                  <path strokeLinecap="round" d="M40.04 22v20h-32V22"></path>
+                  <path
+                    fill="#fff"
+                    d="M5.842 13.777C4.312 17.737 7.263 22 11.51 22c3.314 0 6.019-2.686 6.019-6a6 6 0 0 0 6 6h1.018a6 6 0 0 0 6-6c0 3.314 2.706 6 6.02 6c4.248 0 7.201-4.265 5.67-8.228L39.234 6H8.845l-3.003 7.777Z"
+                  ></path>
+                </g>
+              </mask>
+              <path
+                fill="currentColor"
+                d="M0 0h48v48H0z"
+                mask="url(#ipSApplication0)"
+              ></path>
+            </svg>
+          }
+          toggleCalendarOnIconClick
         />
       </div>
     </FormStepWrapper>

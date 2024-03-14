@@ -200,16 +200,6 @@ const EmployedForm = ({ startDate, updateFields }) => {
           }
           toggleCalendarOnIconClick
         />
-        {/* <DatePicker
-          dateFormat="dd/MM/yyyy"
-          placeholderText="dd/mm/yyyy"
-          selected={startDate}
-          onChange={(date) => {
-            handleStartDateChange(date);
-          }}
-          minDate={new Date().setDate(new Date().getDate() + 1)}
-          maxDate={new Date().setDate(new Date().getDate() + 365)}
-        /> */}
       </div>
     </FormStepWrapper>
   );
