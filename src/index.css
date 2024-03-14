@@ -901,6 +901,11 @@ About
   .section__about {
     min-height: calc(78.25vh - 7.5rem);
   }
+
+  #about {
+    top: -20.5vh;
+    padding-bottom: 0;
+  }
 }
 
 /*
