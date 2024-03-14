@@ -300,10 +300,17 @@ Custom File Input styling
 
 input[type="file" i]::-webkit-file-upload-button {
   display: inline-flex;
-  width: 116px;
+  width: 86px;
   justify-content: center;
-  margin-left: calc(50% - 124px);
+  margin-left: calc(50% - 94px);
   margin-right: 8px;
+}
+
+@media screen and (min-width: 1440px) {
+  input[type="file" i]::-webkit-file-upload-button {
+    width: 116px;
+    margin-left: calc(50% - 124px);
+  }
 }
 
 /*
