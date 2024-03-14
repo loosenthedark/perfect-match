@@ -163,10 +163,9 @@ const EmployedForm = ({ startDate, updateFields }) => {
           dateFormat="dd/MM/yyyy"
           placeholderText="dd/mm/yyyy"
           selected={startDateFromPicker}
-          onChange={(date, event) => {
+          onChange={(date) => {
             setStartDateFromPicker(date);
             handleStartDateChange(date);
-            event.nativeEvent.currentTarget.blur();
           }}
           minDate={new Date().setDate(new Date().getDate() + 1)}
           maxDate={new Date().setDate(new Date().getDate() + 365)}
