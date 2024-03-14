@@ -298,7 +298,7 @@ Custom File Input styling
 ===============
 */
 
-input[type="file" i]::-webkit-file-upload-button {
+/* input[type="file" i]::-webkit-file-upload-button {
   display: inline-flex;
   width: 86px;
   justify-content: center;
@@ -318,7 +318,7 @@ input[type="file" i]::-webkit-file-upload-button {
     width: 116px;
     margin-left: calc(50% - 124px);
   }
-}
+} */
 
 /*
 =============== 
