@@ -16,13 +16,16 @@ const Sidebar = () => {
 
   return (
     <aside className={toggleSidebar ? "sidebar show-sidebar" : "sidebar"}>
-      <div
-        className="social-links logo-text"
+      <a
+        href="#home"
+        role="button"
         onClick={() => {
           setToggleSidebar(false);
           setIsApplySubmenuShown(false);
         }}
-      ></div>
+      >
+        <div className="social-links logo-text"></div>
+      </a>
       <ul className="links">
         {pageLinks.map((link) => {
           const { id, icon, href, text } = link;
