@@ -70,9 +70,17 @@ const Sidebar = () => {
                   id === pageLinks.length - 2
                     ? () => setIsApplySubmenuShown(!isApplySubmenuShown)
                     : id === pageLinks.length - 1
-                    ? () => setToggleApplicationFormParentsModal(true)
+                    ? () => {
+                        setToggleApplicationFormParentsModal(true);
+                        setToggleSidebar(false);
+                        setIsApplySubmenuShown(false);
+                      }
                     : id === pageLinks.length
-                    ? () => setToggleApplicationFormNannyModal(true)
+                    ? () => {
+                        setToggleApplicationFormNannyModal(true);
+                        setToggleSidebar(false);
+                        setIsApplySubmenuShown(false);
+                      }
                     : () => {
                         setToggleSidebar(false);
                         setIsApplySubmenuShown(false);

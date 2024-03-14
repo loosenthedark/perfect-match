@@ -123,6 +123,7 @@ const ApplicationFormParentsModal = () => {
     if (toggleApplicationFormParentsModal && currentStepIndex) {
       setCurrentStepIndex(0);
       setIsFormValid(false);
+      handleFormReset();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleApplicationFormParentsModal]);

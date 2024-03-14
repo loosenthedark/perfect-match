@@ -3131,6 +3131,6 @@ React-Toastify custom styles
 @media screen and (min-width: 1440px) {
   .Toastify .Toastify__toast-container--top-left .toast-position {
     width: clamp(938px, calc(64vw + 1rem), 1120px);
-    left: clamp(252px, calc(((100% - 1120px) / 2) + 1px), calc((100% - 1120px) / 2));
+    left: calc(50% - (clamp(938px, calc(64vw + 1rem), 1120px) / 2));
   }
 }

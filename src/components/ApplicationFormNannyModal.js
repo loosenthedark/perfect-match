@@ -102,6 +102,7 @@ const ApplicationFormNannyModal = () => {
     if (toggleApplicationFormNannyModal && currentStepIndex) {
       setCurrentStepIndex(0);
       setIsFormValid(false);
+      handleFormReset();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [toggleApplicationFormNannyModal]);

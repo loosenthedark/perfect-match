@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { GrFormClose } from "react-icons/gr";
 import { useGlobalContext } from "./Context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const INITIAL_FORM_DATA = {
   firstNameContact: "",
@@ -34,6 +34,10 @@ const ContactFormModal = () => {
     isFormValid,
     setIsFormValid,
   } = useGlobalContext();
+
+  const handleFormReset = () => {
+    setFormData(INITIAL_FORM_DATA);
+  };
 
   const handleFirstNameContactChange = (event) => {
     setIsFirstNameContactValid(
@@ -149,6 +153,14 @@ const ContactFormModal = () => {
     updateFormFields({ queryContact: event.target.value });
   };
 
+  useEffect(() => {
+    if (toggleContactFormModal) {
+      setIsFormValid(false);
+      handleFormReset();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [toggleContactFormModal]);
+
   return (
     <div
       className={
@@ -170,7 +182,10 @@ const ContactFormModal = () => {
         </h3>
         <button
           className="close-modal-btn"
-          onClick={() => setToggleContactFormModal(false)}
+          onClick={() => {
+            handleFormReset();
+            setToggleContactFormModal(false);
+          }}
         >
           <GrFormClose />
         </button>

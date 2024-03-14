@@ -5,11 +5,13 @@ const Navbar = () => {
   const {
     toggleSidebar,
     setToggleSidebar,
-    // eslint-disable-next-line no-unused-vars
     setToggleContactFormModal,
     setToggleApplicationFormNannyModal,
     setToggleApplicationFormParentsModal,
     setIsApplySubmenuShown,
+    setToggleParentsOrNannyToggleModal,
+    setIsNanny,
+    setIsParent,
   } = useGlobalContext();
   return (
     <nav className="navbar">
@@ -25,7 +27,15 @@ const Navbar = () => {
                     setIsApplySubmenuShown(false);
                     setToggleSidebar(false);
                   }
-                : () => setToggleSidebar(true)
+                : () => {
+                    setToggleSidebar(true);
+                    setToggleParentsOrNannyToggleModal(false);
+                    setToggleApplicationFormParentsModal(false);
+                    setToggleApplicationFormNannyModal(false);
+                    setToggleContactFormModal(false);
+                    setIsNanny(false);
+                    setIsParent(true);
+                  }
             }
           >
             <i className="fas fa-bars"></i>
@@ -41,7 +51,19 @@ const Navbar = () => {
                     link.text === "Apply" ? 2 : link.text === "FAQs" ? 5 : 0,
                 }}
               >
-                <a href={link.href} className="nav-link">
+                <a
+                  role="button"
+                  onClick={() => {
+                    setToggleParentsOrNannyToggleModal(false);
+                    setToggleApplicationFormParentsModal(false);
+                    setToggleApplicationFormNannyModal(false);
+                    setToggleContactFormModal(false);
+                    setIsNanny(false);
+                    setIsParent(true);
+                  }}
+                  href={link.href}
+                  className="nav-link"
+                >
                   {link.text}
                 </a>
               </li>
@@ -71,10 +93,18 @@ const Navbar = () => {
                                 ? () => {
                                     setToggleApplicationFormParentsModal(true);
                                     setToggleApplicationFormNannyModal(false);
+                                    setToggleParentsOrNannyToggleModal(false);
+                                    setToggleContactFormModal(false);
+                                    setIsNanny(false);
+                                    setIsParent(true);
                                   }
                                 : () => {
                                     setToggleApplicationFormNannyModal(true);
                                     setToggleApplicationFormParentsModal(false);
+                                    setToggleParentsOrNannyToggleModal(false);
+                                    setToggleContactFormModal(false);
+                                    setIsNanny(false);
+                                    setIsParent(true);
                                   }
                             }
                           >
