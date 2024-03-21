@@ -222,6 +222,13 @@ p {
   }
 }
 
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+}
+
 /*  global classes */
 
 .btn {
@@ -711,6 +718,34 @@ Hero
 
   .hero-btn.next-btn.btn-secondary.btn-confirm.btn-read-agreement.btn-proceed-to-payment {
     top: -12vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero {
+    background-size: 80%;
+    background-position-y: 56px;
+  }
+
+  .hero-banner {
+    margin-top: 35vh;
+  }
+
+  .hero-banner p {
+    font-size: .825rem;
+    margin-bottom: 1.125rem;
+  }
+
+  .hero-btn {
+    font-size: .825rem;
+    width: 163px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .hero-btn.hero-btn__secondary {
+    width: 139px;
+    margin-top: 0.65rem;
   }
 }
 
@@ -1976,6 +2011,12 @@ Modal
   .modal-container.modal-container__application-form {
     grid-template-columns: clamp(274px, 19vw, 320px) 1fr;
     max-height: 40rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal-container.modal-container__application-form.modal-container__cookie-consent {
+    height: 54vh;
   }
 }
 
