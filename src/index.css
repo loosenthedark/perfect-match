@@ -2457,7 +2457,9 @@ Contact Form Modal
     padding-left: 0;
     padding-right: 0;
     width: 71vw;
-    min-height: 9rem;
+    height: 9rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   .form-input,
@@ -2633,6 +2635,10 @@ Contact Form Modal
 
   .form-row {
     margin-bottom: 1.5vw;
+  }
+
+  .form-row__cookies {
+    margin-bottom: 0;
   }
 
   .form-row.form-row__core-requirements__last {
