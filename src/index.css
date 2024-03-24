@@ -2193,6 +2193,7 @@ Contact Form Modal
 
 .para__learn-more {
   margin-top: 1.5rem;
+  font-size: 1rem;
 }
 
 .link__learn-more {
@@ -2298,6 +2299,10 @@ Contact Form Modal
 .form.form__contact {
   margin-top: 1vh;
   margin-bottom: 3vh;
+}
+
+.para__cookies {
+  font-size: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -2501,6 +2506,7 @@ Contact Form Modal
     height: 9rem;
     margin-top: 0;
     margin-bottom: 0;
+    max-width: 1080px;
   }
 
   .form-input,
@@ -2658,6 +2664,10 @@ Contact Form Modal
 
   .form-row.form-row__additional-requirements.form-row.form-row__stripe {
     margin-bottom: 8vh;
+  }
+
+  .para__cookies {
+    font-size: clamp(14px, 1.25vw, 20px);
   }
 }
 
