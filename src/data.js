@@ -150,7 +150,7 @@ export const formNannySteps = [
   },
   {
     id: 4,
-    text: "Your Eligibility",
+    text: "Your Mobility",
   },
   {
     id: 5,
@@ -162,7 +162,7 @@ export const formNannySteps = [
   },
   {
     id: 7,
-    text: "Your Availability",
+    text: "Your Employment",
   },
   {
     id: 8,

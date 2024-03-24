@@ -14,7 +14,7 @@ const EligibilityFormDriving = () => {
           lineHeight: "1.5",
         }}
       >
-        Your Eligibility
+        Your Mobility
       </h3>
       <div className="form-row form-row__driving-licence">
         <span

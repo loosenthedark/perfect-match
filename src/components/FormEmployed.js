@@ -95,7 +95,7 @@ const EmployedForm = ({ startDate, updateFields }) => {
           lineHeight: "1.5",
         }}
       >
-        Your Availability
+        Your Employment
       </h3>
       <div className="form-row form-row__permit">
         <div className="label-q">
