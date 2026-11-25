@@ -1,6 +1,8 @@
 # Perfect Match Website
 
-[Working Application - Deployed](https://perfectmatchnannyagency.com/)
+_<u>NB</u>: Business ceased operating in late 2026 - website is therefore no longer live_
+
+[Deployed Application](https://perfectmatchnannyagency.com/)
 
 #### Credits
 
